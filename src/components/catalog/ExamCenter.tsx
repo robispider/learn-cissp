@@ -109,7 +109,7 @@ export default function ExamCenter({ catalog }: { catalog: CatalogData }) {
 
       {/* FULL CISSP ----------------------------------------------------------- */}
       {tab === 'full' && (
-        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
           <section className={`${card} p-5 sm:p-6`}>
             <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Full CISSP practice exam</h2>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -170,7 +170,7 @@ export default function ExamCenter({ catalog }: { catalog: CatalogData }) {
           <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">
             Start a quick auto-generated exam, or open a domain for fixed sets and custom lengths.
           </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {catalog.domains.map((d) => (
               <DomainCard
                 key={d.domainId}

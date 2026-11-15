@@ -13,7 +13,7 @@ export default function PacingTimeline({ pacing, onSelectQuestionId }: Props) {
   );
 
   return (
-    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
+    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h3 className="text-base font-bold text-slate-900 dark:text-white">
@@ -26,7 +26,7 @@ export default function PacingTimeline({ pacing, onSelectQuestionId }: Props) {
           </p>
         </div>
 
-        <div className="flex items-center gap-3 text-[11px] text-slate-500">
+        <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-500">
           <span className="inline-flex items-center gap-1">
             <span className="h-2.5 w-2.5 rounded-xs bg-emerald-500" /> Correct
           </span>
@@ -39,8 +39,12 @@ export default function PacingTimeline({ pacing, onSelectQuestionId }: Props) {
         </div>
       </div>
 
+      {/* Bars + labels share one horizontal scroller: they fill the card on wide screens and
+          scroll sideways (instead of widening the page) on phones or for long exams. */}
+      <div className="-mx-1 mt-6 overflow-x-auto overscroll-x-contain px-1 pb-1">
+        <div style={{ minWidth: `${items.length * 30}px` }}>
       {/* Vertical Bar Timeline */}
-      <div className="mt-6 flex h-44 items-end gap-2 border-b border-slate-200 pb-2 pt-4 dark:border-slate-800">
+      <div className="flex h-44 items-end gap-1.5 sm:gap-2 border-b border-slate-200 pb-2 pt-4 dark:border-slate-800">
         {items.map((item) => {
           const barHeightPct = Math.max(
             6,
@@ -59,7 +63,8 @@ export default function PacingTimeline({ pacing, onSelectQuestionId }: Props) {
               title={`Q${item.questionNumber}: ${item.timeSpentSeconds}s spent (Benchmark: ${item.estimatedTimeSeconds}s) — ${
                 item.isCorrect ? 'Correct' : 'Incorrect'
               }`}
-              className="group relative flex h-full flex-1 flex-col items-center justify-end"
+              aria-label={`Question ${item.questionNumber}: ${item.timeSpentSeconds} seconds, ${item.isCorrect ? 'correct' : 'incorrect'}`}
+              className="group relative flex h-full min-w-0 flex-1 flex-col items-center justify-end"
             >
               {/* Benchmark tick mark */}
               <div
@@ -79,13 +84,15 @@ export default function PacingTimeline({ pacing, onSelectQuestionId }: Props) {
       </div>
 
       {/* X-Axis Question Labels */}
-      <div className="mt-2 flex gap-2 text-center font-mono text-[10px] text-slate-400">
+      <div className="mt-2 flex gap-1.5 text-center font-mono text-[10px] text-slate-400 sm:gap-2">
         {items.map((item) => (
-          <div key={item.questionId} className="flex-1">
+          <div key={item.questionId} className="min-w-0 flex-1">
             <div>Q{item.questionNumber}</div>
             <div className="text-[9px] text-slate-500">{item.timeSpentSeconds}s</div>
           </div>
         ))}
+      </div>
+        </div>
       </div>
     </div>
   );

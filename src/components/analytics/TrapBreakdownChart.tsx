@@ -11,7 +11,7 @@ export default function TrapBreakdownChart({ report }: Props) {
   const topTrap = trapTallies[0];
 
   return (
-    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
+    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70">
       <div>
         <h3 className="text-base font-bold text-slate-900 dark:text-white">
           3. Distractor Trap & Cognitive Level Diagnostics
@@ -21,7 +21,7 @@ export default function TrapBreakdownChart({ report }: Props) {
         </p>
       </div>
 
-      <div className="mt-5 grid gap-6 lg:grid-cols-2">
+      <div className="mt-5 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Left: Distractor Traps Triggered */}
         <div className="space-y-3">
           <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">

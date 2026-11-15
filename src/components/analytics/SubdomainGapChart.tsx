@@ -7,7 +7,7 @@ interface Props {
 
 export default function SubdomainGapChart({ nodes, onSelectSubdomain }: Props) {
   return (
-    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
+    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h3 className="text-base font-bold text-slate-900 dark:text-white">
@@ -50,11 +50,11 @@ export default function SubdomainGapChart({ nodes, onSelectSubdomain }: Props) {
               onClick={() => onSelectSubdomain?.(node.id)}
               className="group block w-full text-left"
             >
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-medium text-slate-800 group-hover:text-emerald-500 dark:text-slate-200">
+              <div className="flex items-start justify-between gap-3 text-xs">
+                <span className="min-w-0 font-medium text-slate-800 group-hover:text-emerald-500 dark:text-slate-200">
                   <strong className="font-mono">{node.id}</strong> • {node.name}
                 </span>
-                <div className="flex items-center gap-2 font-mono text-xs">
+                <div className="flex shrink-0 items-center gap-2 whitespace-nowrap font-mono text-xs">
                   <span className="font-bold text-slate-900 dark:text-white">
                     {achieved}%
                   </span>

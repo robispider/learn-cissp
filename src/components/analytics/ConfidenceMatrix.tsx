@@ -57,7 +57,7 @@ export default function ConfidenceMatrix({
   ];
 
   return (
-    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
+    <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h3 className="text-base font-bold text-slate-900 dark:text-white">

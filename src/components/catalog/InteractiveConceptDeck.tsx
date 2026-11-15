@@ -257,7 +257,7 @@ export default function InteractiveConceptDeck() {
             {currentCard.ruleOfThumb}
           </p>
 
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-3.5">
               <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                 {currentCard.contrastLeft.label}
@@ -302,7 +302,7 @@ export default function InteractiveConceptDeck() {
                     prev === 0 ? DOMAIN_1_FLASHCARDS.length - 1 : prev - 1
                   )
                 }
-                className="rounded-lg border border-amber-500/30 p-1 hover:bg-amber-500/20"
+                className="rounded-lg border border-amber-500/30 p-2 hover:bg-amber-500/20 sm:p-1"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -311,7 +311,7 @@ export default function InteractiveConceptDeck() {
                 onClick={() =>
                   setCardIndex((prev) => (prev + 1) % DOMAIN_1_FLASHCARDS.length)
                 }
-                className="rounded-lg border border-amber-500/30 p-1 hover:bg-amber-500/20"
+                className="rounded-lg border border-amber-500/30 p-2 hover:bg-amber-500/20 sm:p-1"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
@@ -322,7 +322,7 @@ export default function InteractiveConceptDeck() {
 
       {/* TAB 2: QUANTITATIVE RISK CALCULATOR */}
       {activeTab === 'riskCalc' && (
-        <div className="mt-5 grid gap-5 lg:grid-cols-12">
+        <div className="mt-5 grid grid-cols-1 gap-5 lg:grid-cols-12">
           <div className="space-y-3 lg:col-span-6">
             <div className="grid grid-cols-2 gap-3">
               <label className="block rounded-xl border border-slate-200 p-3 dark:border-slate-800">

@@ -61,7 +61,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
   return (
     <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
       {/* Hero */}
-      <section className="grid items-center gap-8 pb-10 pt-10 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <section className="grid grid-cols-1 items-center gap-8 pb-10 pt-10 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div>
           <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400">CISSP practice, without the noise</p>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
@@ -143,7 +143,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
 
       {/* Exam entry points */}
       <section>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {entries.map(({ href, Icon, title, body, meta }) => (
             <a
               key={href}
@@ -175,7 +175,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
             </a>
           }
         />
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {catalog.domains.map((d) => (
             <DomainCard
               key={d.domainId}

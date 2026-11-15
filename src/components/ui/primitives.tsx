@@ -45,7 +45,7 @@ export function ModeToggle({ className = '' }: { className?: string }) {
           aria-checked={mode === id}
           title={hint}
           onClick={() => setMode(id)}
-          className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
+          className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition sm:py-1.5 ${
             mode === id
               ? 'bg-white text-slate-900 shadow-sm dark:bg-slate-700 dark:text-white'
               : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'

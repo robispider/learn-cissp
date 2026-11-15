@@ -39,7 +39,7 @@ export default function StrengthWeaknessTable({
 
   return (
     <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
-      <div className="border-b border-slate-200/70 p-6 dark:border-slate-800/70">
+      <div className="border-b border-slate-200/70 p-4 sm:p-6 dark:border-slate-800/70">
         <h3 className="text-base font-bold text-slate-900 dark:text-white">
           Granular Strength, Weakness & Priority Gap Table
         </h3>
@@ -49,11 +49,11 @@ export default function StrengthWeaknessTable({
         </p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
+      <div className="overflow-x-auto overscroll-x-contain">
+        <table className="w-full min-w-[760px] text-left text-xs">
           <thead className="border-b border-slate-200/70 bg-slate-50/80 text-[11px] uppercase tracking-wider text-slate-500 dark:border-slate-800/70 dark:bg-slate-950/40 dark:text-slate-400">
             <tr>
-              <th className="px-5 py-3.5">Sub-Domain</th>
+              <th className="w-64 px-5 py-3.5">Sub-Domain</th>
               <th className="px-4 py-3.5">Diagnostic Tier</th>
               <th className="px-4 py-3.5 font-mono">Raw %</th>
               <th className="px-4 py-3.5 font-mono">Conf-Adj %</th>

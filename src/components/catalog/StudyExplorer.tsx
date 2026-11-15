@@ -47,7 +47,7 @@ export default function StudyExplorer({
     .filter((d) => d.subdomains.length > 0);
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[200px_minmax(0,1fr)]">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[200px_minmax(0,1fr)]">
       {/* Domain index */}
       <nav aria-label="Domains" className="hidden lg:block">
         <ul className="sticky top-24 space-y-0.5">
@@ -101,7 +101,7 @@ export default function StudyExplorer({
                   </span>
                 </div>
 
-                <div className="mt-3 grid gap-3 md:grid-cols-2">
+                <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
                   {d.subdomains.map((s) => {
                     const isOpen = openSub === s.subdomainId || Boolean(q);
                     const tk = takeawaysBySub[s.subdomainId] ?? [];
@@ -134,7 +134,7 @@ export default function StudyExplorer({
                               type="button"
                               onClick={() => setOpenSub(isOpen && !q ? null : s.subdomainId)}
                               aria-expanded={isOpen}
-                              className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 dark:text-amber-400"
+                              className="-my-1.5 inline-flex items-center gap-1.5 py-1.5 text-xs font-semibold text-amber-700 dark:text-amber-400"
                             >
                               <Lightbulb className="h-3.5 w-3.5" />
                               {tk.length} key takeaway{tk.length > 1 ? 's' : ''}
@@ -160,7 +160,7 @@ export default function StudyExplorer({
                           {s.questionCount > 0 && (
                             <a
                               href={buildGeneratedExamHref({ scope: 'subdomain', subdomainId: s.subdomainId, length: drillLen, mode })}
-                              className="inline-flex items-center gap-1 rounded-lg bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-700 transition hover:bg-emerald-500 hover:text-slate-950 dark:text-emerald-400"
+                              className="inline-flex items-center gap-1 rounded-lg bg-emerald-500/10 px-3 py-2 text-xs font-semibold sm:px-2.5 sm:py-1.5 text-emerald-700 transition hover:bg-emerald-500 hover:text-slate-950 dark:text-emerald-400"
                             >
                               <Zap className="h-3.5 w-3.5" /> Drill {drillLen}
                             </a>

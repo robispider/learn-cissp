@@ -62,7 +62,7 @@ export default function DomainHub({ catalog, domainId }: { catalog: CatalogData;
       </header>
 
       {/* Exams */}
-      <section className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <section className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className={`${card} p-5 sm:p-6`}>
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
@@ -87,7 +87,7 @@ export default function DomainHub({ catalog, domainId }: { catalog: CatalogData;
           <h2 className="text-base font-semibold text-slate-900 dark:text-white">Fixed sets</h2>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Curated question sets — same questions every attempt.</p>
           {sets.length > 0 ? (
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {sets.map((e, i) => (
                 <PresetExamCard key={e.examId} exam={e} index={i} />
               ))}

@@ -1,0 +1,1617 @@
+[
+  {
+    "id": "cissp-d2-s2.2-q001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.2",
+    "topicName": "Custodian Duties",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "first_action",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 87,
+    "conceptsTested": [
+      "Custodian Duties"
+    ],
+    "keyTerms": [
+      "Custodian Duties"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.2",
+      "certkingdom-1373",
+      "book-q300",
+      "think-like-a-manager"
+    ],
+    "stem": "You have been tasked to develop an effective information classification program. Which one of the following steps should be performed first?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "FIRST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Establish procedures for periodically reviewing the classification and ownership",
+        "isCorrect": false,
+        "explanation": "Incorrect. Create a procedure to periodically review the classification and ownership. Indicate termination procedures for declassifying the data.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Specify the security controls required for each classification level",
+        "isCorrect": false,
+        "explanation": "Incorrect. Specify the criteria that will determine how data is classified. Identify the data custodian who will be responsible for maintaining data and its security level.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Identify the data custodian who will be responsible for maintaining the security level of data",
+        "isCorrect": false,
+        "explanation": "Incorrect. Specify the criteria that will determine how data is classified. Have the data owner indicate the classification of the data she is responsible for.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Specify the criteria that will determine how data is classified",
+        "isCorrect": true,
+        "explanation": "Correct. Specify the criteria that will determine how data is classified is right because according to the AIO 3rd edition, these are the necessary steps for a proper classification program:\n1. Define classification levels.\n2. Specify the criteria that will determine how data is classified.\n3. Have the data owner indicate the classification of the data she is responsible for.\n4. Identify the data custodian who will be responsible for maintaining data and its security level.\n5. Indicate the security controls, or protection mechanisms, that are required for each classification\nlevel.\n6. Document any exceptions to the previous classification issues.\n7. Indicate the methods that can be used to transfer custody of the information to a different data\nowner.\n8. Create a procedure to periodically review the classification and ownership. Communicate any\nchanges to the data custodian.\n9. Indicate termination procedures for declassifying the data.\n10. Integrate these issues into the security-awareness program so that all employees understand\nhow to handle data at different classification levels. Domain: Information security and risk management",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "According to the AIO 3rd edition, these are the necessary steps for a proper classification program:\n1. Define classification levels.\n2. Specify the criteria that will determine how data is classified.\n3. Have the data owner indicate the classification of the data she is responsible for.\n4. Identify the data custodian who will be responsible for maintaining data and its security level.\n5. Indicate the security controls, or protection mechanisms, that are required for each classification\nlevel.\n6. Document any exceptions to the previous classification issues.\n7. Indicate the methods that can be used to transfer custody of the information to a different data\nowner.\n8. Create a procedure to periodically review the classification and ownership. Communicate any\nchanges to the data custodian.\n9. Indicate termination procedures for declassifying the data.\n10. Integrate these issues into the security-awareness program so that all employees understand\nhow to handle data at different classification levels. Domain: Information security and risk management",
+      "managerMindsetTip": "From a governance lens in Information and Asset Ownership, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Custodian Duties (2.2.2) focusing on Custodian Duties, and contrast why 'Specify the criteria that will determine how data is classified' outperforms close distractors.",
+      "keyTakeaway": "According to the AIO 3rd edition, these are the necessary steps for a proper classification program:\n1.",
+      "references": [
+        {
+          "source": "AIO 3rd edition",
+          "section": "page 50"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 54,
+    "conceptsTested": [
+      "Data Owner vs. Data Controller vs. Data Processor",
+      "DAC"
+    ],
+    "keyTerms": [
+      "DAC"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.2",
+      "certkingdom-1373",
+      "book-q497",
+      "think-like-a-manager"
+    ],
+    "stem": "In discretionary access environments, which of the following entities is authorized to grant information access to other people?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Manager",
+        "isCorrect": false,
+        "explanation": "Incorrect. manager. Is incorrect because in Discretionary Access Control (DAC) environments it is the owner/user that is authorized to grant information access to other people. group leader. Is incorrect because in Discretionary Access Control (DAC) environments it is the owner/user that is authorized to grant information access to other people. security manager. Is incorrect because in Discretionary Access Control (DAC) environments it is the owner/user that is authorized to grant information access to other people.\nIMPORTANT NOTE:\nThe term Data Owner is also used within Classifications as well. Under the subject of classification the Data Owner is a person from management who has been entrusted with a data set that belongs to the company. For example it could be the Chief Financial Officer (CFO) who is entrusted with all of the financial data for a company. As such the CFO would determine the classification of the financial data and who can access as well. The Data Owner would then tell the Data Custodian (a technical person) what the classification and need to know is on the specific set of data. The term Data Owner under DAC simply means whoever created the file and as the creator of the file the owner has full access and can grant access to other subjects based on their identity.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "Group Leader",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'Group Leader' does not fulfill the core requirement tested in Information and Asset Ownership; 'Data Owner' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Security Manager",
+        "isCorrect": false,
+        "explanation": "Incorrect. The following answers are incorrect: manager. security manager.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Data Owner",
+        "isCorrect": true,
+        "explanation": "Correct. Data Owner is right because in Discretionary Access Control (DAC) environments, the user who creates a file is also considered the owner and has full control over the file including the ability to set permissions for that file.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "In Discretionary Access Control (DAC) environments, the user who creates a file is also considered the owner and has full control over the file including the ability to set permissions for that file.",
+      "managerMindsetTip": "From a governance lens in Information and Asset Ownership, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Data Owner vs. Data Controller vs. Data Processor (2.2.1) focusing on DAC, and contrast why 'Data Owner' outperforms close distractors.",
+      "keyTakeaway": "In Discretionary Access Control (DAC) environments, the user who creates a file is also considered the owner and has full control over the file including the ability to set permissions for that file.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Common Body of Knowledge (CBK)",
+          "section": "Domain 2 — Sub-domain 2.2"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q003",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 52,
+    "conceptsTested": [
+      "Data Owner vs. Data Controller vs. Data Processor"
+    ],
+    "keyTerms": [
+      "Data Owner vs. Data Controller vs. Data Processor"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.2",
+      "certkingdom-1373",
+      "book-q536",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following is given the responsibility of the maintenance and protection of the data?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Data owner",
+        "isCorrect": false,
+        "explanation": "Incorrect. Data owner is usually a member of management , in charge of a specific business unit and is ultimately responsible for the protection and use of the information.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Data custodian",
+        "isCorrect": true,
+        "explanation": "Correct. Data custodian is right because it is usually responsible for maintaining and protecting the data.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "User",
+        "isCorrect": false,
+        "explanation": "Incorrect. User is any individual who routinely uses the data for work-related tasks. Security administrator's tasks include creating new system user accounts , implementing new security software.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Security administrator",
+        "isCorrect": false,
+        "explanation": "Incorrect. Security administrator's tasks include creating new system user accounts , implementing new security software.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "It is usually responsible for maintaining and protecting the data.",
+      "managerMindsetTip": "From a governance lens in Information and Asset Ownership, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Data Owner vs. Data Controller vs. Data Processor (2.2.1) focusing on Data Owner vs. Data Controller vs. Data Processor, and contrast why 'Data custodian' outperforms close distractors.",
+      "keyTakeaway": "It is usually responsible for maintaining and protecting the data.",
+      "references": [
+        {
+          "source": "Shon Harris AIO v3",
+          "section": "Chapter - 3: Security Management Practices , Pages : 99 - 103"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.1-q001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 52,
+    "conceptsTested": [
+      "Government vs. Commercial Classification Labels",
+      "Data Classification"
+    ],
+    "keyTerms": [
+      "Data Classification"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.1",
+      "certkingdom-1373",
+      "book-q542",
+      "think-like-a-manager"
+    ],
+    "stem": "According to private sector data classification levels, how would salary levels and medical information be classified?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Public.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Public: Information that may be disclosed to the general public without concern for harming the company, employees, or business partners. No special protections are required, and information in this category is sometimes referred to as unclassified. For example, information that is posted to a company’s public Internet site, publicly released announcements, marketing materials, cafeteria menus, and any internal documents that would not present harm to the company if they were disclosed would be classified as public. While there is little concern for confidentiality, integrity and availability should be considered. Internal Use Only: Information that could be disclosed within the company, but could harm the company if disclosed externally. Information such as customer lists, vendor pricing, organizational policies, standards and procedures, and internal organization announcements would need baseline security protections, but do not rise to the level of protection as confidential information. In other words, the information may be used freely within the company but any unapproved use outside the company can pose a chance of harm. Restricted: Information that requires the utmost protection or, if discovered by unauthorized personnel, would cause irreparable harm to the organization would have the highest level of classification. There may be very few pieces of information like this within an organization, but data classified at this level requires all the access control and protection mechanisms available to the organization. Even when information classified at this level exists, there will be few copies of it",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Internal Use Only.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Information may include payroll information, health records, credit information, formulas, technical designs, restricted regulatory information, senior management internal correspondence, or business strategies or plans. For example, information that is posted to a company’s public Internet site, publicly released announcements, marketing materials, cafeteria menus, and any internal documents that would not present harm to the company if they were disclosed would be classified as public.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Restricted.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Information may include payroll information, health records, credit information, formulas, technical designs, restricted regulatory information, senior management internal correspondence, or business strategies or plans. Restricted: Information that requires the utmost protection or, if discovered by unauthorized personnel, would cause irreparable harm to the organization would have the highest level of classification.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Confidential.",
+        "isCorrect": true,
+        "explanation": "Correct. Confidential. is right because typically there are three to four levels of information classification used by most organizations: Confidential: Information that, if released or disclosed outside of the organization, would create severe problems for the organization. For example, information that provides a competitive advantage is important to the technical or financial success (like trade secrets, intellectual property, or research designs), or protects the privacy of individuals would be considered confidential. Information may include payroll information, health records, credit information, formulas, technical designs, restricted regulatory information, senior management internal correspondence, or business strategies or plans. These may also be called top secret, privileged, personal, sensitive, or highly confidential. In other words this information is ok within a defined\n\ngroup in the company such as marketing or sales, but is not suited for release to anyone else in the company without permission.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Typically there are three to four levels of information classification used by most organizations: Confidential: Information that, if released or disclosed outside of the organization, would create severe problems for the organization. For example, information that provides a competitive advantage is important to the technical or financial success (like trade secrets, intellectual property, or research designs), or protects the privacy of individuals would be considered confidential. Information may include payroll information, health records, credit information, formulas, technical designs, restricted regulatory information, senior management internal correspondence, or business strategies or plans. These may also be called top secret, privileged, personal, sensitive, or highly confidential. In other words this information is ok within a defined\n\ngroup in the company such as marketing or sales, but is not suited for release to anyone else in the company without permission.",
+      "managerMindsetTip": "From a governance lens in Identify and Classify Information and Assets, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Government vs. Commercial Classification Labels (2.1.1) focusing on Data Classification, and contrast why 'Confidential.' outperforms close distractors.",
+      "keyTakeaway": "Government vs. Commercial Classification Labels: Confidential — According to private sector data classification levels, how would salary levels and medical information be classified.",
+      "references": [
+        {
+          "source": "Hernandez CISSP, Steven (2012-12-21). Official (ISC)2 Guide to the CISSP CBK, Third Edition ((ISC)2 Press) (",
+          "section": "Kindle Locations 952-976). Auerbach Publications. Kindle Edition."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.1-q002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.2",
+    "topicName": "Asset Inventory & Categorization (FIPS 199)",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 62,
+    "conceptsTested": [
+      "Asset Inventory & Categorization"
+    ],
+    "keyTerms": [
+      "Asset Inventory & Categorization"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.1",
+      "certkingdom-1373",
+      "book-q543",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following would be the best criterion to consider in determining the classification of an information asset?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "BEST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Value",
+        "isCorrect": true,
+        "explanation": "Correct. Value is right because information classification should be based on the value of the information to the organization and its sensitivity (reflection of how much damage would accrue due to disclosure). Age is incorrect. While age might be a consideration in some cases, the guiding principles should be value and sensitivity. Useful life. While useful lifetime is relevant to how long data protections should be applied, the classification is based on information value and sensitivity. Personal association is incorrect. Information classification decisions should be based on value of the information and its sensitiviry.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Age",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'Age' does not fulfill the core requirement tested in Identify and Classify Information and Assets; 'Value' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Useful life",
+        "isCorrect": false,
+        "explanation": "Incorrect. While useful lifetime is relevant to how long data protections should be applied, the classification is based on information value and sensitivity.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Personal association",
+        "isCorrect": false,
+        "explanation": "Incorrect. Personal association is incorrect.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Information classification should be based on the value of the information to the organization and its sensitivity (reflection of how much damage would accrue due to disclosure). Age is incorrect. While age might be a consideration in some cases, the guiding principles should be value and sensitivity. Useful life. While useful lifetime is relevant to how long data protections should be applied, the classification is based on information value and sensitivity. Personal association is incorrect. Information classification decisions should be based on value of the information and its sensitiviry.",
+      "managerMindsetTip": "From a governance lens in Identify and Classify Information and Assets, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Asset Inventory & Categorization (FIPS 199) (2.1.2) focusing on Asset Inventory & Categorization, and contrast why 'Value' outperforms close distractors.",
+      "keyTakeaway": "Information classification should be based on the value of the information to the organization and its sensitivity (reflection of how much damage would accrue due to disclosure).",
+      "references": [
+        {
+          "source": "CBK, pp. 101 - 102.",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q004",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Data Owner vs. Data Controller vs. Data Processor"
+    ],
+    "keyTerms": [
+      "Data Owner vs. Data Controller vs. Data Processor"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.2",
+      "certkingdom-1373",
+      "book-q544",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following is not a responsibility of an information (data) owner?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Determine what level of classification the information requires.",
+        "isCorrect": false,
+        "explanation": "Incorrect. \"Determine what level of classification the information requires\" is incorrect. \"Periodically review the classification assignments against business needs\" is incorrect.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Periodically review the classification assignments against business needs.",
+        "isCorrect": false,
+        "explanation": "Incorrect. \"Determine what level of classification the information requires\" is incorrect. \"Periodically review the classification assignments against business needs\" is incorrect.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Delegate the responsibility of data protection to data custodians.",
+        "isCorrect": false,
+        "explanation": "Incorrect. This responsibility would be delegated to a data custodian rather than being performed directly by the information owner. \"Delegates responsibility of maintenance of the data protection mechanisms to the data custodian\" is incorrect.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Running regular backups and periodically testing the validity of the backup data.",
+        "isCorrect": true,
+        "explanation": "Correct. Running regular backups and periodically testing the validity of the backup data. is right because this responsibility would be delegated to a data custodian rather than being performed directly by the information owner. \"Determine what level of classification the information requires\" is incorrect. This is one of the major responsibilities of an information owner. \"Periodically review the classification assignments against business needs\" is incorrect. This is one of the major responsibilities of an information owner. \"Delegates responsibility of maintenance of the data protection mechanisms to the data custodian\" is incorrect. This is a responsibility of the information owner.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "This responsibility would be delegated to a data custodian rather than being performed directly by the information owner. \"Determine what level of classification the information requires\" is incorrect. This is one of the major responsibilities of an information owner. \"Periodically review the classification assignments against business needs\" is incorrect. This is one of the major responsibilities of an information owner. \"Delegates responsibility of maintenance of the data protection mechanisms to the data custodian\" is incorrect. This is a responsibility of the information owner.",
+      "managerMindsetTip": "From a governance lens in Information and Asset Ownership, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Data Owner vs. Data Controller vs. Data Processor (2.2.1) focusing on Data Owner vs. Data Controller vs. Data Processor, and contrast why 'Running regular backups and periodically testing the validity of the backup data.' outperforms close distractors.",
+      "keyTakeaway": "This responsibility would be delegated to a data custodian rather than being performed directly by the information owner.",
+      "references": [
+        {
+          "source": "CBK p. 105. AIO3, p. 53-54, 960",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q005",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 54,
+    "conceptsTested": [
+      "Data Owner vs. Data Controller vs. Data Processor"
+    ],
+    "keyTerms": [
+      "Data Owner vs. Data Controller vs. Data Processor"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.2",
+      "certkingdom-1373",
+      "book-q620",
+      "think-like-a-manager"
+    ],
+    "stem": "What is the appropriate role of the security analyst in the application system development or acquisition project?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "policeman",
+        "isCorrect": false,
+        "explanation": "Incorrect. The other answers are not correct because: policeman - It is never a good idea for the security staff to be placed into this type of role (though it is sometimes unavoidable). During system development or acquisition, there should be no need of anyone filling the role of policeman.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "control evaluator & consultant",
+        "isCorrect": true,
+        "explanation": "Correct. control evaluator & consultant is right because the correct answer is \"control evaluator & consultant\". During any system development or acquisition, the security staff should evaluate security controls and advise (or consult) on the strengths and weaknesses with those responsible for making the final decisions on the project. The other answers are not correct because: policeman - It is never a good idea for the security staff to be placed into this type of role (though it is sometimes unavoidable). During system development or acquisition, there should be no need of anyone filling the role of policeman. data owner - In this case, the data owner would be the person asking for the new system to manage, control, and secure information they are responsible for. While it is possible the security staff could also be the data owner for such a project if they happen to have responsibility for the information, it is also possible someone else would fill this role. Therefore, the best answer remains \"control evaluator & consultant\". application user - Again, it is possible this could be the security staff, but it could also be many other people or groups. So this is not the best answer.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "data owner",
+        "isCorrect": false,
+        "explanation": "Incorrect. data owner - In this case, the data owner would be the person asking for the new system to manage, control, and secure information they are responsible for. While it is possible the security staff could also be the data owner for such a project if they happen to have responsibility for the information, it is also possible someone else would fill this role.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "application user",
+        "isCorrect": false,
+        "explanation": "Incorrect. application user - Again, it is possible this could be the security staff, but it could also be many other people or groups.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The correct answer is \"control evaluator & consultant\". During any system development or acquisition, the security staff should evaluate security controls and advise (or consult) on the strengths and weaknesses with those responsible for making the final decisions on the project. The other answers are not correct because: policeman - It is never a good idea for the security staff to be placed into this type of role (though it is sometimes unavoidable). During system development or acquisition, there should be no need of anyone filling the role of policeman. data owner - In this case, the data owner would be the person asking for the new system to manage, control, and secure information they are responsible for. While it is possible the security staff could also be the data owner for such a project if they happen to have responsibility for the information, it is also possible someone else would fill this role. Therefore, the best answer remains \"control evaluator & consultant\". application user - Again, it is possible this could be the security staff, but it could also be many other people or groups. So this is not the best answer.",
+      "managerMindsetTip": "From a governance lens in Information and Asset Ownership, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Data Owner vs. Data Controller vs. Data Processor (2.2.1) focusing on Data Owner vs. Data Controller vs. Data Processor, and contrast why 'control evaluator & consultant' outperforms close distractors.",
+      "keyTakeaway": "The correct answer is \"control evaluator & consultant\".",
+      "references": [
+        {
+          "source": "Official ISC2 Guide",
+          "section": "page: 555 - 560 All in One Third Edition page: 832 - 846"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.3-q001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.3",
+    "subdomainName": "Protect Privacy & Sensitive Data",
+    "topicId": "2.3.2",
+    "topicName": "Data Anonymization, Pseudonymization, Tokenization, Masking",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 53,
+    "conceptsTested": [
+      "Data Anonymization, Pseudonymization, Tokenization, Masking"
+    ],
+    "keyTerms": [
+      "Data Anonymization, Pseudonymization, Tokenization, Masking"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.3",
+      "certkingdom-1373",
+      "book-q697",
+      "think-like-a-manager"
+    ],
+    "stem": "What is the act of obtaining information of a higher sensitivity by combining information from lower\n\nlevels of sensitivity?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Polyinstantiation",
+        "isCorrect": false,
+        "explanation": "Incorrect. The incorrect answers are: Polyinstantiation is the development of a detailed version of an object from another object using different values in the new object.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Inference",
+        "isCorrect": false,
+        "explanation": "Incorrect. Inference is the ability of users to infer or deduce information about data at sensitivity levels for which they do not have access privilege.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Aggregation",
+        "isCorrect": true,
+        "explanation": "Correct. Aggregation is the act of obtaining information of a higher sensitivity by combining information from lower levels of sensitivity. The incorrect answers are: Polyinstantiation is the development of a detailed version of an object from another object using different values in the new object. Inference is the ability of users to infer or deduce information about data at sensitivity levels for which they do not have access privilege. Data mining refers to searching through a data warehouse for data correlations. Sources: KRUTZ, Ronald L. & VINES, Russel D., The CISSP Prep Guide: Mastering the Ten Domains of Computer Security, John Wiley & Sons, 2001, Chapter 7: Applications and Systems Development (page 261). KRUTZ, Ronald & VINES, Russel, The CISSP Prep Guide: Gold Edition, Wiley Publishing Inc., 2003, Chapter 7: Database Security Issues (page 358).",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Data mining",
+        "isCorrect": false,
+        "explanation": "Incorrect. Inference is the ability of users to infer or deduce information about data at sensitivity levels for which they do not have access privilege. Data mining refers to searching through a data warehouse for data correlations.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Aggregation is the act of obtaining information of a higher sensitivity by combining information from lower levels of sensitivity. The incorrect answers are: Polyinstantiation is the development of a detailed version of an object from another object using different values in the new object. Inference is the ability of users to infer or deduce information about data at sensitivity levels for which they do not have access privilege. Data mining refers to searching through a data warehouse for data correlations. Sources: KRUTZ, Ronald L. & VINES, Russel D., The CISSP Prep Guide: Mastering the Ten Domains of Computer Security, John Wiley & Sons, 2001, Chapter 7: Applications and Systems Development (page 261). KRUTZ, Ronald & VINES, Russel, The CISSP Prep Guide: Gold Edition, Wiley Publishing Inc., 2003, Chapter 7: Database Security Issues (page 358).",
+      "managerMindsetTip": "From a governance lens in Protect Privacy & Sensitive Data, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Data Anonymization, Pseudonymization, Tokenization, Masking (2.3.2) focusing on Data Anonymization, Pseudonymization, Tokenization, Masking, and contrast why 'Aggregation' outperforms close distractors.",
+      "keyTakeaway": "Aggregation is the act of obtaining information of a higher sensitivity by combining information from lower levels of sensitivity.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Common Body of Knowledge (CBK)",
+          "section": "Domain 2 — Sub-domain 2.3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.3-q002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.3",
+    "subdomainName": "Protect Privacy & Sensitive Data",
+    "topicId": "2.3.2",
+    "topicName": "Data Anonymization, Pseudonymization, Tokenization, Masking",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 80,
+    "conceptsTested": [
+      "Data Anonymization, Pseudonymization, Tokenization, Masking"
+    ],
+    "keyTerms": [
+      "Data Anonymization, Pseudonymization, Tokenization, Masking"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.3",
+      "certkingdom-1373",
+      "book-q705",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following is best defined as a circumstance in which a collection of information items is required to be classified at a higher security level than any of the individual items that comprise it?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "BEST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Aggregation",
+        "isCorrect": true,
+        "explanation": "Correct. Aggregation is right because the Internet Security Glossary (RFC2828) defines aggregation as a circumstance in which a collection of information items is required to be classified at a higher security level than any of the individual items that comprise it.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Inference",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'Inference' does not fulfill the core requirement tested in Protect Privacy & Sensitive Data; 'Aggregation' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Clustering",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'Clustering' does not fulfill the core requirement tested in Protect Privacy & Sensitive Data; 'Aggregation' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Collision",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'Collision' does not fulfill the core requirement tested in Protect Privacy & Sensitive Data; 'Aggregation' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The Internet Security Glossary (RFC2828) defines aggregation as a circumstance in which a collection of information items is required to be classified at a higher security level than any of the individual items that comprise it.",
+      "managerMindsetTip": "From a governance lens in Protect Privacy & Sensitive Data, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Data Anonymization, Pseudonymization, Tokenization, Masking (2.3.2) focusing on Data Anonymization, Pseudonymization, Tokenization, Masking, and contrast why 'Aggregation' outperforms close distractors.",
+      "keyTakeaway": "Data Anonymization, Pseudonymization, Tokenization, Masking: Aggregation — Which of the following is best defined as a circumstance in which a collection of information items is required to be classified at a higher security level than any of the individual items that comprise it.",
+      "references": [
+        {
+          "source": "SHIREY, Robert W., RFC2828: Internet Security Glossary, may 2000.",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.1-q003",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 1,
+    "difficultyLabel": "foundational",
+    "estimatedTimeSeconds": 53,
+    "conceptsTested": [
+      "Government vs. Commercial Classification Labels"
+    ],
+    "keyTerms": [
+      "Government vs. Commercial Classification Labels"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.1",
+      "certkingdom-1373",
+      "book-q914",
+      "think-like-a-manager"
+    ],
+    "stem": "What are the components of an object's sensitivity label?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A Classification Set and a single Compartment.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The following are incorrect: A Classification Set and a single Compartment. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not a \"single compartment\" but a Compartment Set.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "A single classification and a single compartment.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The following are incorrect: A Classification Set and a single Compartment. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not a \"single compartment\" but a Compartment Set.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "A Classification Set and user credentials.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The following are incorrect: A Classification Set and a single Compartment. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not a \"single compartment\" but a Compartment Set.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "A single classification and a Compartment Set.",
+        "isCorrect": true,
+        "explanation": "Correct. A single classification and a Compartment Set. is right because both are the components of a sensitivity label. The following are incorrect: A Classification Set and a single Compartment. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not a \"single compartment\" but a Compartment Set. A single classification and a single compartment. Is incorrect because while there only is one classifcation, it is not a \"single compartment\" but a Compartment Set. A Classification Set and user credentials. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not \"user credential\" but a Compartment Set. The user would have their own sensitivity label.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Both are the components of a sensitivity label. The following are incorrect: A Classification Set and a single Compartment. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not a \"single compartment\" but a Compartment Set. A single classification and a single compartment. Is incorrect because while there only is one classifcation, it is not a \"single compartment\" but a Compartment Set. A Classification Set and user credentials. Is incorrect because the nomenclature \"Classification Set\" is incorrect, there only one classifcation and it is not \"user credential\" but a Compartment Set. The user would have their own sensitivity label.",
+      "managerMindsetTip": "From a governance lens in Identify and Classify Information and Assets, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Government vs. Commercial Classification Labels (2.1.1) focusing on Government vs. Commercial Classification Labels, and contrast why 'A single classification and a Compartment Set.' outperforms close distractors.",
+      "keyTakeaway": "Both are the components of a sensitivity label.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Common Body of Knowledge (CBK)",
+          "section": "Domain 2 — Sub-domain 2.1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.1-q004",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 1,
+    "difficultyLabel": "foundational",
+    "estimatedTimeSeconds": 61,
+    "conceptsTested": [
+      "Government vs. Commercial Classification Labels"
+    ],
+    "keyTerms": [
+      "Government vs. Commercial Classification Labels"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.1",
+      "certkingdom-1373",
+      "book-q915",
+      "think-like-a-manager"
+    ],
+    "stem": "What does it mean to say that sensitivity labels are \"incomparable\"?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The number of classification in the two labels is different.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The number of classification in the two labels is different. Is incorrect because the categories are what is being compared, not the classifications. Neither label contains all the classifications of the other. Is incorrect because the categories are what is being compared, not the classifications. the number of categories in the two labels is different. Is incorrect because it is possibe a category exists more than once in one sensitivity label and does exist in the other so they would be comparable.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "Neither label contains all the classifications of the other.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Incomparable is when you have two disjointed sensitivity labels, that is a category in one of the labels is not in the other label. \"Because neither label contains all the categories of the other, the labels can't be compared.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "the number of categories in the two labels are different.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Incomparable is when you have two disjointed sensitivity labels, that is a category in one of the labels is not in the other label. \"Because neither label contains all the categories of the other, the labels can't be compared.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Neither label contains all the categories of the other.",
+        "isCorrect": true,
+        "explanation": "Correct. Neither label contains all the categories of the other. is right because if a category does not exist then you cannot compare it. Incomparable is when you have two disjointed sensitivity labels, that is a category in one of the labels is not in the other label. \"Because neither label contains all the categories of the other, the labels can't be compared.\n\nThey're said to be incomparable\"\nCOMPARABILITY:\nThe label:\nTOP SECRET [VENUS ALPHA]\nis \"higher\" than either of the labels:\nSECRET [VENUS ALPHA] TOP SECRET [VENUS]\nBut you can't really say that the label:\nTOP SECRET [VENUS]\nis higher than the label:\nSECRET [ALPHA]\nBecause neither label contains all the categories of the other, the labels can't be compared. They're said to be incomparable. In a mandatory access control system, you won't be allowed access to a file whose label is incomparable to your clearance. The Multilevel Security policy uses an ordering relationship between labels known as the dominance relationship. Intuitively, we think of a label that dominates another as being \"higher\" than the other. Similarly, we think of a label that is dominated by another as being \"lower\" than the other. The dominance relationship is used to determine permitted operations and information flows.\nDOMINANCE\nThe dominance relationship is determined by the ordering of the Sensitivity/Clearance component of the label and the intersection of the set of Compartments. Sample Sensitivity/Clearance ordering are: Top Secret > Secret > Confidential > Unclassified s3 > s2 > s1 > s0 Formally, for label one to dominate label 2 both of the following must be true: The sensitivity/clearance of label one must be greater than or equal to the sensitivity/clearance of label two. The intersection of the compartments of label one and label two must equal the compartments of label two. Additionally: Two labels are said to be equal if their sensitivity/clearance and set of compartments are exactly equal. Note that dominance includes equality. One label is said to strictly dominate the other if it dominates the other but is not equal to the other. Two labels are said to be incomparable if each label has at least one compartment that is not included in the other's set of compartments. The dominance relationship will produce a partial ordering over all possible MLS labels, resulting in what is known as the MLS Security Lattice.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "If a category does not exist then you cannot compare it. Incomparable is when you have two disjointed sensitivity labels, that is a category in one of the labels is not in the other label. \"Because neither label contains all the categories of the other, the labels can't be compared.\n\nThey're said to be incomparable\"\nCOMPARABILITY:\nThe label:\nTOP SECRET [VENUS ALPHA]\nis \"higher\" than either of the labels:\nSECRET [VENUS ALPHA] TOP SECRET [VENUS]\nBut you can't really say that the label:\nTOP SECRET [VENUS]\nis higher than the label:\nSECRET [ALPHA]\nBecause neither label contains all the categories of the other, the labels can't be compared. They're said to be incomparable. In a mandatory access control system, you won't be allowed access to a file whose label is incomparable to your clearance. The Multilevel Security policy uses an ordering relationship between labels known as the dominance relationship. Intuitively, we think of a label that dominates another as being \"higher\" than the other. Similarly, we think of a label that is dominated by another as being \"lower\" than the other. The dominance relationship is used to determine permitted operations and information flows.\nDOMINANCE\nThe dominance relationship is determined by the ordering of the Sensitivity/Clearance component of the label and the intersection of the set of Compartments. Sample Sensitivity/Clearance ordering are: Top Secret > Secret > Confidential > Unclassified s3 > s2 > s1 > s0 Formally, for label one to dominate label 2 both of the following must be true: The sensitivity/clearance of label one must be greater than or equal to the sensitivity/clearance of label two. The intersection of the compartments of label one and label two must equal the compartments of label two. Additionally: Two labels are said to be equal if their sensitivity/clearance and set of compartments are exactly equal. Note that dominance includes equality. One label is said to strictly dominate the other if it dominates the other but is not equal to the other. Two labels are said to be incomparable if each label has at least one compartment that is not included in the other's set of compartments. The dominance relationship will produce a partial ordering over all possible MLS labels, resulting in what is known as the MLS Security Lattice.",
+      "managerMindsetTip": "From a governance lens in Identify and Classify Information and Assets, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Government vs. Commercial Classification Labels (2.1.1) focusing on Government vs. Commercial Classification Labels, and contrast why 'Neither label contains all the categories of the other.' outperforms close distractors.",
+      "keyTakeaway": "If a category does not exist then you cannot compare it.",
+      "references": [
+        {
+          "source": "OReilly - Computer Systems and Access Control (",
+          "section": "Chapter 3)"
+        },
+        {
+          "source": "Web Reference",
+          "section": "http://www.oreilly.com/catalog/csb/chapter/ch03.html"
+        },
+        {
+          "source": "Web Reference",
+          "section": "http://rubix.com/cms/mls_dom"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 52,
+    "conceptsTested": [
+      "Media Sanitization",
+      "Degaussing"
+    ],
+    "keyTerms": [
+      "Degaussing"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1028",
+      "think-like-a-manager"
+    ],
+    "stem": "Degaussing is used to clear data from all of the following medias except:",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "EXCEPT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Floppy Disks",
+        "isCorrect": false,
+        "explanation": "Incorrect. Therefore, degaussing will work on any electronic based media such as floppy disks, or hard disks - all of these are examples of electronic storage. The other answers are incorrect because: Floppy Disks, Magnetic Tapes, and Magnetic Hard Disks are all examples of magnetic storage, and therefore are erased by degaussing.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Read-Only Media",
+        "isCorrect": true,
+        "explanation": "Correct. Read-Only Media is right because atoms and Data Shon Harris says: \"A device that performs degaussing generates a coercive magnetic force that reduces the magnetic flux density of the storage media to zero. This magnetic force is what properly erases data from media. Data are stored on magnetic media by the representation of the polarization of the atoms. Degaussing changes\" The latest ISC2 book says: \"Degaussing can also be a form of media destruction. High-power degaussers are so strong in some cases that they can literally bend and warp the platters in a hard drive. Shredding and burning are effective destruction methods for non-rigid magnetic media. Indeed, some shredders are capable of shredding some rigid media such as an optical disk. This may be an effective alternative for any optical media containing nonsensitive information due to the residue size remaining after feeding the disk into the machine. However, the residue size might be too large for media containing sensitive information. Alternatively, grinding and pulverizing are acceptable choices for rigid and solid-state media. Specialized devices are available for grinding the face of optical media that either sufficiently scratches the surface to render the media unreadable or actually grinds off the data layer of the disk. Several services also exist which will collect drives, destroy them on site if requested and provide certification of completion. It will be the responsibility of the security professional to help, select, and maintain the most appropriate solutions for media cleansing and disposal.\" Degaussing is achieved by passing the magnetic media through a powerful magnet field to rearrange the metallic particles, completely removing any resemblance of the previously recorded signal (from the \"all about degaussers link below). Therefore, degaussing will work on any electronic based media such as floppy disks, or hard disks - all of these are examples of electronic storage. However, \"read-only media\" includes items such as paper printouts and CD-ROM wich do not store data in an electronic form or is not magnetic storage. Passing them through a magnet field has no effect on them. Not all clearing/ purging methods are applicable to all media— for example, optical media is not susceptible to degaussing, and overwriting may not be effective against Flash devices. The degree to which information may be recoverable by a sufficiently motivated and capable adversary must not be underestimated or guessed at in ignorance. For the highest-value commercial data, and for all data regulated by government or military classification rules, read and follow the rules and standards. I will admit that this is a bit of a trick question. Determining the difference between \"read-only media\" and \"read-only memory\" is difficult for the question taker. However, I believe it is representative of the type of question you might one day see on an exam. The other answers are incorrect because: Floppy Disks, Magnetic Tapes, and Magnetic Hard Disks are all examples of magnetic storage, and therefore are erased by degaussing. A videotape is a recording of images and sounds on to magnetic tape as opposed to film stock used in filmmaking or random access digital media. Videotapes are also used for storing scientific or medical data, such as the data produced by an electrocardiogram. In most cases, a helical scan video head rotates against the moving tape to record the data in two dimensions, because video\n\nsignals have a very high bandwidth, and static heads would require extremely high tape speeds. Videotape is used in both video tape recorders (VTRs) or, more commonly and more recently, videocassette recorder (VCR) and camcorders. A Tape use a linear method of storing information and since nearly all video recordings made nowadays are digital direct to disk recording (DDR), videotape is expected to gradually lose importance as non-linear/random-access methods of storing digital video data become more common.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Video Tapes",
+        "isCorrect": false,
+        "explanation": "Incorrect. The other answers are incorrect because: Floppy Disks, Magnetic Tapes, and Magnetic Hard Disks are all examples of magnetic storage, and therefore are erased by degaussing. In most cases, a helical scan video head rotates against the moving tape to record the data in two dimensions, because video\n\nsignals have a very high bandwidth, and static heads would require extremely high tape speeds.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Magnetic Hard Disks",
+        "isCorrect": false,
+        "explanation": "Incorrect. Atoms and Data Shon Harris says: \"A device that performs degaussing generates a coercive magnetic force that reduces the magnetic flux density of the storage media to zero. This magnetic force is what properly erases data from media.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Atoms and Data Shon Harris says: \"A device that performs degaussing generates a coercive magnetic force that reduces the magnetic flux density of the storage media to zero. This magnetic force is what properly erases data from media. Data are stored on magnetic media by the representation of the polarization of the atoms. Degaussing changes\" The latest ISC2 book says: \"Degaussing can also be a form of media destruction. High-power degaussers are so strong in some cases that they can literally bend and warp the platters in a hard drive. Shredding and burning are effective destruction methods for non-rigid magnetic media. Indeed, some shredders are capable of shredding some rigid media such as an optical disk. This may be an effective alternative for any optical media containing nonsensitive information due to the residue size remaining after feeding the disk into the machine. However, the residue size might be too large for media containing sensitive information. Alternatively, grinding and pulverizing are acceptable choices for rigid and solid-state media. Specialized devices are available for grinding the face of optical media that either sufficiently scratches the surface to render the media unreadable or actually grinds off the data layer of the disk. Several services also exist which will collect drives, destroy them on site if requested and provide certification of completion. It will be the responsibility of the security professional to help, select, and maintain the most appropriate solutions for media cleansing and disposal.\" Degaussing is achieved by passing the magnetic media through a powerful magnet field to rearrange the metallic particles, completely removing any resemblance of the previously recorded signal (from the \"all about degaussers link below). Therefore, degaussing will work on any electronic based media such as floppy disks, or hard disks - all of these are examples of electronic storage. However, \"read-only media\" includes items such as paper printouts and CD-ROM wich do not store data in an electronic form or is not magnetic storage. Passing them through a magnet field has no effect on them. Not all clearing/ purging methods are applicable to all media— for example, optical media is not susceptible to degaussing, and overwriting may not be effective against Flash devices. The degree to which information may be recoverable by a sufficiently motivated and capable adversary must not be underestimated or guessed at in ignorance. For the highest-value commercial data, and for all data regulated by government or military classification rules, read and follow the rules and standards. I will admit that this is a bit of a trick question. Determining the difference between \"read-only media\" and \"read-only memory\" is difficult for the question taker. However, I believe it is representative of the type of question you might one day see on an exam. The other answers are incorrect because: Floppy Disks, Magnetic Tapes, and Magnetic Hard Disks are all examples of magnetic storage, and therefore are erased by degaussing. A videotape is a recording of images and sounds on to magnetic tape as opposed to film stock used in filmmaking or random access digital media. Videotapes are also used for storing scientific or medical data, such as the data produced by an electrocardiogram. In most cases, a helical scan video head rotates against the moving tape to record the data in two dimensions, because video\n\nsignals have a very high bandwidth, and static heads would require extremely high tape speeds. Videotape is used in both video tape recorders (VTRs) or, more commonly and more recently, videocassette recorder (VCR) and camcorders. A Tape use a linear method of storing information and since nearly all video recordings made nowadays are digital direct to disk recording (DDR), videotape is expected to gradually lose importance as non-linear/random-access methods of storing digital video data become more common.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase) (2.4.2) focusing on Degaussing, and contrast why 'Read-Only Media' outperforms close distractors.",
+      "keyTakeaway": "Atoms and Data Shon Harris says: \"A device that performs degaussing generates a coercive magnetic force that reduces the magnetic flux density of the storage media to zero.",
+      "references": [
+        {
+          "source": "Harris, Shon (2012-10-25). CISSP All-in-One Exam Guide, 6th Edition (",
+          "section": "Kindle Locations 25627-25630). McGraw-Hill. Kindle Edition. Schneiter, Andrew (2013-04-15). Official (ISC)2 Guide to the CISSP CBK, Third Edition : Security Operations (Kindle Locations 580-588). . Kindle Edition. All About Degaussers and Erasure of Magnetic Media"
+        },
+        {
+          "source": "Web Reference",
+          "section": "http://www.degausser.co.uk/degauss/degabout.htm"
+        },
+        {
+          "source": "Web Reference",
+          "section": "http://www.degaussing.net/"
+        },
+        {
+          "source": "Web Reference",
+          "section": "http://www.cerberussystems.com/INFOSEC/stds/ncsctg25.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.1",
+    "topicName": "Record Retention Schedules",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 52,
+    "conceptsTested": [
+      "Record Retention Schedules"
+    ],
+    "keyTerms": [
+      "Record Retention Schedules"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1035",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following is NOT a media viability control used to protect the viability of data storage media?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "clearing",
+        "isCorrect": true,
+        "explanation": "Correct. clearing is right because media clearing/sanitization removes or purges data at end of life rather than preserving media viability; controls protecting media viability include environmental controls, physical safeguards, and preventive maintenance.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "marking",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'marking' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'clearing' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "handling",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'handling' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'clearing' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "storage",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'storage' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'clearing' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Media clearing/sanitization removes or purges data at end of life rather than preserving media viability; controls protecting media viability include environmental controls, physical safeguards, and preventive maintenance.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Record Retention Schedules (2.4.1) focusing on Record Retention Schedules, and contrast why 'clearing' outperforms close distractors.",
+      "keyTakeaway": "Record Retention Schedules: clearing — Which of the following is NOT a media viability control used to protect the viability of data storage media.",
+      "references": [
+        {
+          "source": "KRUTZ, Ronald L. & VINES, Russel D., The CISSP Prep Guide: Mastering the Ten Domains of Computer Security, pages 231, 34",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q003",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 52,
+    "conceptsTested": [
+      "Media Sanitization"
+    ],
+    "keyTerms": [
+      "Media Sanitization"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1037",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following refers to the data left on the media after the media has been erased?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "remanence",
+        "isCorrect": true,
+        "explanation": "Correct. remanence is right because actually the term \"remanence\" comes from electromagnetism, the study of the electromagnetics. Originally referred to (and still does in that field of study) the magnetic flux that remains in a magnetic circuit after an applied magnetomotive force has been removed. Absolutely no way a candidate will see anywhere near that much detail on any similar CISSP question, but having read this, a candidate won't be likely to forget it either. It is becoming increasingly commonplace for people to buy used computer equipment, such as a hard drive, or router, and find information on the device left there by the previous owner; information they thought had been deleted. This is a classic example of data remanence: the remains of partial or even the entire data set of digital information. Normally, this refers to the data that remain on media after they are written over or degaussed. Data remanence is most common in storage systems but can also occur in memory. Specialized hardware devices known as degaussers can be used to erase data saved to magnetic media. The measure of the amount of energy needed to reduce the magnetic field on the media to zero is known as coercivity. It is important to make sure that the coercivity of the degausser is of sufficient strength to meet object reuse requirements when erasing data. If a degausser is used with insufficient coercivity, then a remanence of the data will exist. Remanence is the measure of the existing magnetic field on the media; it is the residue that remains after an object is degaussed or written over. Data is still recoverable even when the remanence is small. While data remanence exists, there is no assurance of safe object reuse.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "recovery",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'recovery' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'remanence' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "sticky bits",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'sticky bits' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'remanence' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "semi-hidden",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'semi-hidden' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'remanence' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Actually the term \"remanence\" comes from electromagnetism, the study of the electromagnetics. Originally referred to (and still does in that field of study) the magnetic flux that remains in a magnetic circuit after an applied magnetomotive force has been removed. Absolutely no way a candidate will see anywhere near that much detail on any similar CISSP question, but having read this, a candidate won't be likely to forget it either. It is becoming increasingly commonplace for people to buy used computer equipment, such as a hard drive, or router, and find information on the device left there by the previous owner; information they thought had been deleted. This is a classic example of data remanence: the remains of partial or even the entire data set of digital information. Normally, this refers to the data that remain on media after they are written over or degaussed. Data remanence is most common in storage systems but can also occur in memory. Specialized hardware devices known as degaussers can be used to erase data saved to magnetic media. The measure of the amount of energy needed to reduce the magnetic field on the media to zero is known as coercivity. It is important to make sure that the coercivity of the degausser is of sufficient strength to meet object reuse requirements when erasing data. If a degausser is used with insufficient coercivity, then a remanence of the data will exist. Remanence is the measure of the existing magnetic field on the media; it is the residue that remains after an object is degaussed or written over. Data is still recoverable even when the remanence is small. While data remanence exists, there is no assurance of safe object reuse.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase) (2.4.2) focusing on Media Sanitization, and contrast why 'remanence' outperforms close distractors.",
+      "keyTakeaway": "Actually the term \"remanence\" comes from electromagnetism, the study of the electromagnetics.",
+      "references": [
+        {
+          "source": "Hernandez CISSP, Steven (2012-12-21). Official (ISC)2 Guide to the CISSP CBK, Third Edition ((ISC)2 Press) (",
+          "section": "Kindle Locations 4207-4210). Auerbach Publications. Kindle Edition."
+        },
+        {
+          "source": "Hernandez CISSP, Steven (2012-12-21). Official (ISC)2 Guide to the CISSP CBK, Third Edition ((ISC)2 Press) (",
+          "section": "Kindle Locations 19694-19699). Auerbach Publications. Kindle Edition."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q004",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.1",
+    "topicName": "Record Retention Schedules",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 49,
+    "conceptsTested": [
+      "Record Retention Schedules"
+    ],
+    "keyTerms": [
+      "Record Retention Schedules"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1076",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following is NOT a proper component of Media Viability Controls?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Storage",
+        "isCorrect": false,
+        "explanation": "Incorrect. Media Viability Controls include marking, handling and storage.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Writing",
+        "isCorrect": true,
+        "explanation": "Correct. Writing is right because media Viability Controls include marking, handling and storage.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Handling",
+        "isCorrect": false,
+        "explanation": "Incorrect. Media Viability Controls include marking, handling and storage.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Marking",
+        "isCorrect": false,
+        "explanation": "Incorrect. Media Viability Controls include marking, handling and storage.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Media Viability Controls include marking, handling and storage.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Record Retention Schedules (2.4.1) focusing on Record Retention Schedules, and contrast why 'Writing' outperforms close distractors.",
+      "keyTakeaway": "Media Viability Controls include marking, handling and storage.",
+      "references": [
+        {
+          "source": "KRUTZ, Ronald L. & VINES, Russel D., The CISSP Prep Guide: Mastering the Ten Domains of Computer Security, 2001, John Wiley & Sons",
+          "section": "Page 231."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q005",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 84,
+    "conceptsTested": [
+      "Media Sanitization",
+      "Degaussing"
+    ],
+    "keyTerms": [
+      "Degaussing"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1088",
+      "think-like-a-manager"
+    ],
+    "stem": "When it comes to magnetic media sanitization, what difference can be made between clearing and purging information?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Clearing completely erases the media whereas purging only removes file headers, allowing the recovery of files.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A distinction can be made between clearing information (rendering it unrecoverable by a keyboard attack) and purging (rendering it unrecoverable against laboratory attack). There are three general methods of purging media: overwriting, degaussing, and destruction.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "B",
+        "text": "Clearing renders information unrecoverable by a keyboard attack and purging renders information unrecoverable against laboratory attack.",
+        "isCorrect": true,
+        "explanation": "Correct. Clearing renders information unrecoverable by a keyboard attack and purging renders information unrecoverable against laboratory attack. is right because the removal of information from a storage medium is called sanitization. Different kinds of sanitization provide different levels of protection. A distinction can be made between clearing information (rendering it unrecoverable by a keyboard attack) and purging (rendering it unrecoverable against laboratory attack). There are three general methods of purging media: overwriting, degaussing, and destruction. There should be continuous assurance that sensitive information is protected and not allowed to be placed in a circumstance wherein a possible compromise can occur. There are two primary levels of threat that the protector of information must guard against: keyboard attack (information scavenging through system software capabilities) and laboratory attack (information scavenging through laboratory means). Procedures should be implemented to address these threats before the Automated Information System (AIS) is procured, and the procedures should be continued throughout the life cycle of the AIS.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "They both involve rewriting the media.",
+        "isCorrect": false,
+        "explanation": "Incorrect. There are three general methods of purging media: overwriting, degaussing, and destruction.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "D",
+        "text": "Clearing renders information unrecoverable against a laboratory attack and purging renders information unrecoverable to a keyboard attack.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The removal of information from a storage medium is called sanitization. A distinction can be made between clearing information (rendering it unrecoverable by a keyboard attack) and purging (rendering it unrecoverable against laboratory attack).",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The removal of information from a storage medium is called sanitization. Different kinds of sanitization provide different levels of protection. A distinction can be made between clearing information (rendering it unrecoverable by a keyboard attack) and purging (rendering it unrecoverable against laboratory attack). There are three general methods of purging media: overwriting, degaussing, and destruction. There should be continuous assurance that sensitive information is protected and not allowed to be placed in a circumstance wherein a possible compromise can occur. There are two primary levels of threat that the protector of information must guard against: keyboard attack (information scavenging through system software capabilities) and laboratory attack (information scavenging through laboratory means). Procedures should be implemented to address these threats before the Automated Information System (AIS) is procured, and the procedures should be continued throughout the life cycle of the AIS.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase) (2.4.2) focusing on Degaussing, and contrast why 'Clearing renders information unrecoverable by a keyboard attack and purging renders information unrecoverable against laboratory attack.' outperforms close distractors.",
+      "keyTakeaway": "The removal of information from a storage medium is called sanitization.",
+      "references": [
+        {
+          "source": "(s) use for this question: SWANSON, Marianne & GUTTMAN, Barbara, National Institute of Standards and Technology (NIST), NIST Special Publication 800-14, Generally Accepted Principles and Practices for Securing Information Technology Systems, September 1996 (",
+          "section": "page 26)."
+        },
+        {
+          "source": "A guide to understanding Data Remanence in Automated Information Systems",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q006",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 1,
+    "difficultyLabel": "foundational",
+    "estimatedTimeSeconds": 39,
+    "conceptsTested": [
+      "Media Sanitization",
+      "Degaussing"
+    ],
+    "keyTerms": [
+      "Degaussing"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1090",
+      "think-like-a-manager"
+    ],
+    "stem": "What is the main issue with media reuse?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Degaussing",
+        "isCorrect": false,
+        "explanation": "Incorrect. Degaussing, purging and destruction are ways to handle media that contains data that is no longer needed or used.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Data remanence",
+        "isCorrect": true,
+        "explanation": "Correct. Data remanence is right because the main issue with media reuse is data remanence, where residual information still resides on a media that has been erased. Degaussing, purging and destruction are ways to handle media that contains data that is no longer needed or used.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Media destruction",
+        "isCorrect": false,
+        "explanation": "Incorrect. The main issue with media reuse is data remanence, where residual information still resides on a media that has been erased. Degaussing, purging and destruction are ways to handle media that contains data that is no longer needed or used.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "D",
+        "text": "Purging",
+        "isCorrect": false,
+        "explanation": "Incorrect. Degaussing, purging and destruction are ways to handle media that contains data that is no longer needed or used.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The main issue with media reuse is data remanence, where residual information still resides on a media that has been erased. Degaussing, purging and destruction are ways to handle media that contains data that is no longer needed or used.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase) (2.4.2) focusing on Degaussing, and contrast why 'Data remanence' outperforms close distractors.",
+      "keyTakeaway": "The main issue with media reuse is data remanence, where residual information still resides on a media that has been erased.",
+      "references": [
+        {
+          "source": "WALLHOFF, John, CBK#10 Physical Security (CISSP Study Guide), April 2002 (",
+          "section": "page 5)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q007",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 73,
+    "conceptsTested": [
+      "Media Sanitization",
+      "TCSEC",
+      "Degaussing"
+    ],
+    "keyTerms": [
+      "TCSEC",
+      "Degaussing"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1093",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following is not appropriate in addressing object reuse?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Degaussing magnetic tapes when they're no longer needed.",
+        "isCorrect": false,
+        "explanation": "Incorrect. 'Degaussing magnetic tapes when they're no longer needed.' does not fulfill the core requirement tested in Asset Retention & End-of-Life Media Sanitization; 'Deleting files on disk before reusing the space.' is the accurate choice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Deleting files on disk before reusing the space.",
+        "isCorrect": true,
+        "explanation": "Correct. Deleting files on disk before reusing the space. is right because object reuse requirements, applying to systems rated TCSEC C2 and above, are used to protect files, memory, and other objects in a trusted system from being accidentally accessed by users who are not authorized to access them. Deleting files on disk merely erases file headers in a directory structure. It does not clear data from the disk surface, thus making files still recoverable. All other options involve clearing used space, preventing any unauthorized access.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Clearing memory blocks before they are allocated to a program or data.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Object reuse requirements, applying to systems rated TCSEC C2 and above, are used to protect files, memory, and other objects in a trusted system from being accidentally accessed by users who are not authorized to access them. All other options involve clearing used space, preventing any unauthorized access.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Clearing buffered pages, documents, or screens from the local memory of a terminal or printer.",
+        "isCorrect": false,
+        "explanation": "Incorrect. All other options involve clearing used space, preventing any unauthorized access.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Object reuse requirements, applying to systems rated TCSEC C2 and above, are used to protect files, memory, and other objects in a trusted system from being accidentally accessed by users who are not authorized to access them. Deleting files on disk merely erases file headers in a directory structure. It does not clear data from the disk surface, thus making files still recoverable. All other options involve clearing used space, preventing any unauthorized access.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase) (2.4.2) focusing on TCSEC, Degaussing, and contrast why 'Deleting files on disk before reusing the space.' outperforms close distractors.",
+      "keyTakeaway": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase): Deleting files on disk before reusing the space — Which of the following is not appropriate in addressing object reuse.",
+      "references": [
+        {
+          "source": "RUSSEL, Deborah & GANGEMI, G.T. Sr., Computer Security Basics, O'Reilly, July 1992 (",
+          "section": "page 119)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q008",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 72,
+    "conceptsTested": [
+      "Media Sanitization",
+      "AC",
+      "DC"
+    ],
+    "keyTerms": [
+      "AC",
+      "DC"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.4",
+      "certkingdom-1373",
+      "book-q1106",
+      "think-like-a-manager"
+    ],
+    "stem": "An electrical device (AC or DC) which can generate coercive magnetic force for the purpose of reducing magnetic flux density to zero on storage media or other magnetic media is called:",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "a magnetic field.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A degausser generates a powerful AC or DC magnetic field to randomize magnetic domains on tapes or hard drives, purging stored data and permanently rendering magnetic media unreadable.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "a degausser.",
+        "isCorrect": true,
+        "explanation": "Correct. a degausser. is right because a degausser generates a powerful AC or DC magnetic field to randomize magnetic domains on tapes or hard drives, purging stored data and permanently rendering magnetic media unreadable.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "magnetic remanence.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A degausser generates a powerful AC or DC magnetic field to randomize magnetic domains on tapes or hard drives, purging stored data and permanently rendering magnetic media unreadable.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "magnetic saturation.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A degausser generates a powerful AC or DC magnetic field to randomize magnetic domains on tapes or hard drives, purging stored data and permanently rendering magnetic media unreadable.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "A degausser generates a powerful AC or DC magnetic field to randomize magnetic domains on tapes or hard drives, purging stored data and permanently rendering magnetic media unreadable.",
+      "managerMindsetTip": "From a governance lens in Asset Retention & End-of-Life Media Sanitization, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase) (2.4.2) focusing on AC, DC, and contrast why 'a degausser.' outperforms close distractors.",
+      "keyTakeaway": "A degausser generates a powerful AC or DC magnetic field to randomize magnetic domains on tapes or hard drives, purging stored data and permanently rendering magnetic media unreadable.",
+      "references": [
+        {
+          "source": "TIPTON, Hal, (ISC)2, Introduction to the CISSP Exam presentation.",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.3-q003",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.3",
+    "subdomainName": "Protect Privacy & Sensitive Data",
+    "topicId": "2.3.1",
+    "topicName": "PII, PHI, Cardholder Data",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 62,
+    "conceptsTested": [
+      "PII, PHI, Cardholder Data",
+      "Degaussing"
+    ],
+    "keyTerms": [
+      "Degaussing"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.3",
+      "certkingdom-1373",
+      "book-q1121",
+      "think-like-a-manager"
+    ],
+    "stem": "Which of the following method is recommended by security professional to PERMANENTLY erase sensitive data on magnetic media?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Degaussing",
+        "isCorrect": true,
+        "explanation": "Correct. Degaussing is right because pERMANENTLY is the keyword used in the question. You need to find out data removal method which remove data permanently from magnetic media. Degaussing is the most effective method out of all provided choices to erase sensitive data on magnetic media provided magnetic media is not require to be reuse. Some degaussers can destroy drives. The security professional should exercise caution when recommending or using degaussers on media for reuse. A device that performs degaussing generates a coercive magnetic force that reduces the magnetic flux density of the storage media to zero. This magnetic force is what properly erases data from media. Data are stored on magnetic media by the representation of the polarization of the atoms. Degaussing changes this polarization (magnetic alignment) by using a type of large magnet to bring it back to its original flux (magnetic alignment). For your exam you should know the information below: When media is to be reassigned (a form of object reuse), it is important that all residual data is carefully removed. Simply deleting files or formatting the media does not actually remove the information. File deletion and media formatting often simply remove the pointers to the information. Providing assurance for object reuse requires specialized tools and techniques according to the type of media on which the data resides. Specialized hardware devices known as degaussers can be used to erase data saved to magnetic media. The measure of the amount of energy needed to reduce the magnetic field on the media to zero is known as coercivity. It is important to make sure that the coercivity of the degausser is of sufficient strength to meet object reuse requirements when erasing data. If a degausser is used with insufficient coercivity, then a remanence of the data will exist.\n\nRemanence is the measure of the existing magnetic field on the media; it is the residue that remains after an object is degaussed or written over. Data is still recoverable even when the remanence is small. While data remanence exists, there is no assurance of safe object reuse. Some degaussers can destroy drives. The security professional should exercise caution when recommending or using degaussers on media for reuse. Software tools also exist that can provide object reuse assurance. These tools overwrite every sector of magnetic media with a random or predetermined bit pattern. Overwrite methods are effective for all forms of electronic media with the exception of read-only optical media. There is a drawback to using overwrite software. During normal write operations with magnetic media, the head of the drive moves back-and-forth across the media as data is written. The track of the head does not usually follow the exact path each time. The result is a miniscule amount of data remanence with each pass. With specialized equipment, it is possible to read data that has been overwritten. To provide higher assurance in this case, it is necessary to overwrite each sector multiple times. Security practitioners should keep in mind that a one-time pass may be acceptable for noncritical information, but sensitive data should be overwritten with multiple passes. Overwrite software can also be used to clear the sectors within solid-state media such as USB thumb drives. It is suggested that physical destruction methods such as incineration or secure recycling should be considered for solid-state media that is no longer used. The last form of preventing unauthorized access to sensitive data is media destruction. Shredding, burning, grinding, and pulverizing are common methods of physically destroying media. Degaussing can also be a form of media destruction. High-power degaussers are so strong in some cases that they can literally bend and warp the platters in a hard drive. Shredding and burning are effective destruction methods for non-rigid magnetic media. Indeed, some shredders are capable of shredding some rigid media such as an optical disk. This may be an effective alternative for any optical media containing nonsensitive information due to the residue size remaining after feeding the disk into the machine. However, the residue size might be too large for media containing sensitive information. Alternatively, grinding and pulverizing are acceptable choices for rigid and solid-state media. Specialized devices are available for grinding the face of optical media that either sufficiently scratches the surface to render the media unreadable or actually grinds off the data layer of the disk. Several services also exist which will collect drives, destroy them on site if requested and provide certification of completion. It will be the responsibility of the security professional to help, select, and maintain the most appropriate solutions for media cleansing and disposal.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Overwrite every sector of magnetic media with pattern of 1's and 0's",
+        "isCorrect": false,
+        "explanation": "Incorrect. Overwrite every sector of magnetic media with pattern of 1's and 0's- Less effective than degaussing provided magnetic media is not require to be reuse. Format magnetic media – Formatting magnetic media does not erase all data. Data can be recoverable after formatting using software tools. Delete File allocation table - It will not erase all data. Data can be recoverable using software tools. The following reference(s) were/was used to create this question: CISA review manual 2014 Page number 338 Official ISC2 guide to CISSP CBK 3rd Edition Page number 720 (Business Continuity and Disaster Recovery Planning)",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "C",
+        "text": "Format magnetic media",
+        "isCorrect": false,
+        "explanation": "Incorrect. You need to find out data removal method which remove data permanently from magnetic media. Degaussing is the most effective method out of all provided choices to erase sensitive data on magnetic media provided magnetic media is not require to be reuse.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "D",
+        "text": "Delete File allocation table",
+        "isCorrect": false,
+        "explanation": "Incorrect. File deletion and media formatting often simply remove the pointers to the information. Delete File allocation table - It will not erase all data.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "PERMANENTLY is the keyword used in the question. You need to find out data removal method which remove data permanently from magnetic media. Degaussing is the most effective method out of all provided choices to erase sensitive data on magnetic media provided magnetic media is not require to be reuse. Some degaussers can destroy drives. The security professional should exercise caution when recommending or using degaussers on media for reuse. A device that performs degaussing generates a coercive magnetic force that reduces the magnetic flux density of the storage media to zero. This magnetic force is what properly erases data from media. Data are stored on magnetic media by the representation of the polarization of the atoms. Degaussing changes this polarization (magnetic alignment) by using a type of large magnet to bring it back to its original flux (magnetic alignment). For your exam you should know the information below: When media is to be reassigned (a form of object reuse), it is important that all residual data is carefully removed. Simply deleting files or formatting the media does not actually remove the information. File deletion and media formatting often simply remove the pointers to the information. Providing assurance for object reuse requires specialized tools and techniques according to the type of media on which the data resides. Specialized hardware devices known as degaussers can be used to erase data saved to magnetic media. The measure of the amount of energy needed to reduce the magnetic field on the media to zero is known as coercivity. It is important to make sure that the coercivity of the degausser is of sufficient strength to meet object reuse requirements when erasing data. If a degausser is used with insufficient coercivity, then a remanence of the data will exist.\n\nRemanence is the measure of the existing magnetic field on the media; it is the residue that remains after an object is degaussed or written over. Data is still recoverable even when the remanence is small. While data remanence exists, there is no assurance of safe object reuse. Some degaussers can destroy drives. The security professional should exercise caution when recommending or using degaussers on media for reuse. Software tools also exist that can provide object reuse assurance. These tools overwrite every sector of magnetic media with a random or predetermined bit pattern. Overwrite methods are effective for all forms of electronic media with the exception of read-only optical media. There is a drawback to using overwrite software. During normal write operations with magnetic media, the head of the drive moves back-and-forth across the media as data is written. The track of the head does not usually follow the exact path each time. The result is a miniscule amount of data remanence with each pass. With specialized equipment, it is possible to read data that has been overwritten. To provide higher assurance in this case, it is necessary to overwrite each sector multiple times. Security practitioners should keep in mind that a one-time pass may be acceptable for noncritical information, but sensitive data should be overwritten with multiple passes. Overwrite software can also be used to clear the sectors within solid-state media such as USB thumb drives. It is suggested that physical destruction methods such as incineration or secure recycling should be considered for solid-state media that is no longer used. The last form of preventing unauthorized access to sensitive data is media destruction. Shredding, burning, grinding, and pulverizing are common methods of physically destroying media. Degaussing can also be a form of media destruction. High-power degaussers are so strong in some cases that they can literally bend and warp the platters in a hard drive. Shredding and burning are effective destruction methods for non-rigid magnetic media. Indeed, some shredders are capable of shredding some rigid media such as an optical disk. This may be an effective alternative for any optical media containing nonsensitive information due to the residue size remaining after feeding the disk into the machine. However, the residue size might be too large for media containing sensitive information. Alternatively, grinding and pulverizing are acceptable choices for rigid and solid-state media. Specialized devices are available for grinding the face of optical media that either sufficiently scratches the surface to render the media unreadable or actually grinds off the data layer of the disk. Several services also exist which will collect drives, destroy them on site if requested and provide certification of completion. It will be the responsibility of the security professional to help, select, and maintain the most appropriate solutions for media cleansing and disposal.",
+      "managerMindsetTip": "From a governance lens in Protect Privacy & Sensitive Data, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review PII, PHI, Cardholder Data (2.3.1) focusing on Degaussing, and contrast why 'Degaussing' outperforms close distractors.",
+      "keyTakeaway": "PERMANENTLY is the keyword used in the question.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Common Body of Knowledge (CBK)",
+          "section": "Domain 2 — Sub-domain 2.3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.1-q005",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 69,
+    "conceptsTested": [
+      "Government vs. Commercial Classification Labels",
+      "FAR"
+    ],
+    "keyTerms": [
+      "FAR"
+    ],
+    "tags": [
+      "domain-2",
+      "sub-2.1",
+      "certkingdom-1373",
+      "book-q1357",
+      "think-like-a-manager"
+    ],
+    "stem": "What mechanism automatically causes an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Central station alarm",
+        "isCorrect": false,
+        "explanation": "Incorrect. Auxiliary station alarms automatically cause an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters. They are usually Municipal Fire Alarm Boxes are installed at your business or building, they are wired directly into the fire station.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Proprietary alarm",
+        "isCorrect": false,
+        "explanation": "Incorrect. Auxiliary station alarms automatically cause an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters. They are usually Municipal Fire Alarm Boxes are installed at your business or building, they are wired directly into the fire station.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "A remote station alarm",
+        "isCorrect": false,
+        "explanation": "Incorrect. Auxiliary station alarms automatically cause an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters. They are usually Municipal Fire Alarm Boxes are installed at your business or building, they are wired directly into the fire station.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "An auxiliary station alarm",
+        "isCorrect": true,
+        "explanation": "Correct. An auxiliary station alarm is right because auxiliary station alarms automatically cause an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters. They are usually Municipal Fire Alarm Boxes are installed at your business or building, they are wired directly into the fire station. Central station alarms are operated by private security organizations. It is very similar to a proprietary alarm system (see below). However, the biggest difference is the monitoring and receiving of alarm is done off site at a central location manned by non staff members. It is a third party. Proprietary alarms are similar to central stations alarms except that monitoring is performed directly on the protected property. This type of alarm is usually use to protect large industrials or commercial buildings. Each of the buildings in the same vincinity has their own alarm system, they are all wired together at a central location within one of the building acting as a common receiving point. This point is usually far away from the other building so it is not under the same danger. It is usually man 24 hours a day by a trained team who knows how to react under different conditions.\n\nA remote station alarm is a direct connection between the signal-initiating device at the protected property and the signal-receiving device located at a remote station, such as the fire station or usually a monitoring service. This is the most popular type of implementation and the owner of the premise must pay a monthly monitoring fee. This is what most people use in their home where they get a company like ADT to receive the alarms on their behalf. A remote system differs from an auxiliary system in that it does not use the municipal fire of police alarm circuits.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Auxiliary station alarms automatically cause an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters. They are usually Municipal Fire Alarm Boxes are installed at your business or building, they are wired directly into the fire station. Central station alarms are operated by private security organizations. It is very similar to a proprietary alarm system (see below). However, the biggest difference is the monitoring and receiving of alarm is done off site at a central location manned by non staff members. It is a third party. Proprietary alarms are similar to central stations alarms except that monitoring is performed directly on the protected property. This type of alarm is usually use to protect large industrials or commercial buildings. Each of the buildings in the same vincinity has their own alarm system, they are all wired together at a central location within one of the building acting as a common receiving point. This point is usually far away from the other building so it is not under the same danger. It is usually man 24 hours a day by a trained team who knows how to react under different conditions.\n\nA remote station alarm is a direct connection between the signal-initiating device at the protected property and the signal-receiving device located at a remote station, such as the fire station or usually a monitoring service. This is the most popular type of implementation and the owner of the premise must pay a monthly monitoring fee. This is what most people use in their home where they get a company like ADT to receive the alarms on their behalf. A remote system differs from an auxiliary system in that it does not use the municipal fire of police alarm circuits.",
+      "managerMindsetTip": "From a governance lens in Identify and Classify Information and Assets, prioritize policies, management accountability, and business-aligned controls over ad-hoc technical tweaks.",
+      "studyFocusDirective": "Review Government vs. Commercial Classification Labels (2.1.1) focusing on FAR, and contrast why 'An auxiliary station alarm' outperforms close distractors.",
+      "keyTakeaway": "Government vs. Commercial Classification Labels: An auxiliary station alarm — What mechanism automatically causes an alarm originating in a data center to be transmitted over the local municipal fire or police alarm circuits for relaying to both the local police/fire station and the appropriate headquarters.",
+      "references": [
+        {
+          "source": "ANDRESS, Mandy, Exam Cram CISSP, Coriolis, 2001",
+          "section": "Chapter 11: Physical Security (page 211)."
+        },
+        {
+          "source": "Great presentation J.T. A. Stone on SlideShare",
+          "section": "Cited in CertKingdom CISSP (1373 Q&A)"
+        }
+      ]
+    }
+  }
+]

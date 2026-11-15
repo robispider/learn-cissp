@@ -29,13 +29,63 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Stop iOS/Android from inflating text after orientation changes. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     transition: background-color 0.2s ease, color 0.2s ease;
+    /* Safety net: never let a stray wide element create sideways page scroll on phones.
+       `clip` (unlike `hidden`) does not create a scroll container, so sticky headers keep working. */
+    overflow-x: clip;
   }
+
+  /* Long unbroken tokens (URLs, IDs, NIST refs) wrap instead of widening the page. */
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  td {
+    overflow-wrap: break-word;
+  }
+
+  button,
+  a,
+  [role='button'],
+  label {
+    touch-action: manipulation;
+  }
+}
+
+/* iOS Safari zooms the page when focusing a field with a font-size below 16px. */
+@media (max-width: 639px) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Bottom padding that clears the mobile tab bar plus the iPhone home indicator. */
+@utility pb-mobile-nav {
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Custom subtle scrollbars */

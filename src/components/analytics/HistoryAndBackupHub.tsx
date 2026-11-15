@@ -80,7 +80,7 @@ export default function HistoryAndBackupHub() {
   return (
     <div className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6">
       {/* Header + Export / Import Toolbar */}
-      <div className="flex flex-col justify-between gap-4 rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70 sm:flex-row sm:items-center">
+      <div className="flex flex-col justify-between gap-4 rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70 sm:flex-row sm:items-center">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
             Analytics History & Local Data Backup
@@ -142,7 +142,7 @@ export default function HistoryAndBackupHub() {
       )}
 
       {/* Past Exam Sessions List */}
-      <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
+      <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70">
         <h2 className="text-base font-bold text-slate-900 dark:text-white">
           Exam Sessions ({sessions.length})
         </h2>
@@ -224,11 +224,11 @@ export default function HistoryAndBackupHub() {
 
       {/* Rolling Sub-Domain Mastery Table */}
       {mastery.length > 0 && (
-        <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/70">
+        <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/70">
           <h2 className="text-base font-bold text-slate-900 dark:text-white">
             Rolling Sub-Domain Mastery Memory
           </h2>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {mastery.map((m) => (
               <div
                 key={m.key}

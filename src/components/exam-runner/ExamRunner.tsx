@@ -446,7 +446,7 @@ export default function ExamRunner({ exam }: Props) {
     ).length;
     return (
       <div className="mx-auto flex min-h-[85vh] max-w-xl items-center px-4">
-        <div className="w-full rounded-3xl border border-slate-200/80 bg-white p-7 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+        <div className="w-full rounded-3xl border border-slate-200/80 bg-white p-5 shadow-xl sm:p-7 dark:border-slate-800 dark:bg-slate-900">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-500">
             <Clock className="h-3.5 w-3.5" />
             Saved Progress Found
@@ -570,7 +570,7 @@ export default function ExamRunner({ exam }: Props) {
       {/* 1. PERIPHERAL TOP PROGRESS LINE & AMBIENT TELEMETRY HEADER          */}
       {/*    Designed to inform at a glance without stealing focus            */}
       {/* =================================================================== */}
-      <header className="sticky top-0 z-30 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl dark:border-slate-800/80 dark:bg-[#090d16]/85">
+      <header className="sticky top-0 z-30 border-b pt-[env(safe-area-inset-top)] border-slate-200/70 bg-white/85 backdrop-blur-xl dark:border-slate-800/80 dark:bg-[#090d16]/85">
         {/* Hairline 2.5px Dual Progress Bar (Answered + Current Position) */}
         <div className="relative h-1 w-full bg-slate-200/70 dark:bg-slate-800/80">
           <div
@@ -583,33 +583,35 @@ export default function ExamRunner({ exam }: Props) {
           />
         </div>
 
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-3 gap-y-1.5 px-4 sm:h-14 sm:flex-nowrap sm:px-6">
           {/* Left: Back / Pause + Sub-domain Pill + Question Index */}
-          <div className="flex items-center gap-3">
+          <div className="flex h-14 min-w-0 items-center gap-3 sm:h-auto">
             <button
               type="button"
               onClick={handlePauseAndExit}
               title="Pause & return to dashboard (progress auto-saved)"
-              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200/80 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
+              aria-label="Pause and save"
+              className="inline-flex h-9 min-w-9 items-center justify-center gap-1.5 rounded-xl border border-slate-200/80 bg-white px-2.5 text-xs font-medium text-slate-600 transition hover:border-slate-300 hover:text-slate-900 sm:h-auto sm:py-1.5 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
             >
               <Pause className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Pause</span>
             </button>
 
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-bold text-slate-900 dark:text-white">
+            <div className="flex min-w-0 items-center gap-2">
+              <span className="shrink-0 whitespace-nowrap font-mono text-xs font-bold text-slate-900 dark:text-white">
                 Q {currentIndex + 1}
                 <span className="font-normal text-slate-400"> / {totalQuestions}</span>
               </span>
               <span className="hidden h-3.5 w-px bg-slate-200 dark:bg-slate-800 sm:inline-block" />
-              <span className="hidden rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:bg-slate-800/80 dark:text-slate-400 sm:inline-block">
+              <span className="hidden min-w-0 truncate rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600 dark:bg-slate-800/80 dark:text-slate-400 sm:inline-block">
                 {currentQuestion.subdomainId} • {currentQuestion.subdomainName}
               </span>
             </div>
           </div>
 
-          {/* Center: Quiet Visual Timing & Question Pace Metrics */}
-          <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          {/* Center: Quiet Visual Timing & Question Pace Metrics.
+              Phones: drops to its own full-width row below the controls. */}
+          <div className="order-last flex w-full items-center justify-between gap-4 pb-1 text-xs text-slate-500 sm:order-none sm:w-auto sm:shrink-0 sm:justify-start sm:pb-0 dark:text-slate-400">
             {/* Per-Question Visual Pacing Indicator */}
             <div
               className="flex items-center gap-2"
@@ -618,7 +620,7 @@ export default function ExamRunner({ exam }: Props) {
               <span className="hidden text-[11px] text-slate-400 md:inline">
                 Q Pace
               </span>
-              <div className="h-1.5 w-16 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800 sm:w-20">
+              <div className="h-1.5 w-20 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
                 <div
                   style={{ width: `${questionPacePercent}%` }}
                   className={`h-full rounded-full transition-all duration-500 ${
@@ -650,7 +652,7 @@ export default function ExamRunner({ exam }: Props) {
 
             {/* Overall Session Visual Ring + Time */}
             <div
-              className="hidden items-center gap-2 sm:flex"
+              className="flex items-center gap-2"
               title={`Session time remaining • Avg pace: ${avgTimePerAnswered}s/question`}
             >
               <svg className="h-4 w-4 -rotate-90" viewBox="0 0 36 36">
@@ -678,7 +680,7 @@ export default function ExamRunner({ exam }: Props) {
               {!calmTimer ? (
                 <span className="font-mono text-[11px] text-slate-500 dark:text-slate-400">
                   {formatSeconds(remainingSessionSec)}
-                  <span className="ml-1.5 text-slate-400 dark:text-slate-500">
+                  <span className="ml-1.5 hidden text-slate-400 min-[400px]:inline dark:text-slate-500">
                     ({avgTimePerAnswered}s avg)
                   </span>
                 </span>
@@ -699,7 +701,8 @@ export default function ExamRunner({ exam }: Props) {
                   ? 'Show numeric seconds'
                   : 'Calm mode: hide ticking seconds, keep visual bar only'
               }
-              className="rounded-lg p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200"
+              aria-label={calmTimer ? 'Show numeric timer' : 'Hide numeric timer'}
+              className="-my-1.5 rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 sm:my-0 sm:p-1 dark:hover:bg-slate-800 dark:hover:text-slate-200"
             >
               {calmTimer ? (
                 <EyeOff className="h-3.5 w-3.5" />
@@ -710,18 +713,26 @@ export default function ExamRunner({ exam }: Props) {
           </div>
 
           {/* Right: Mode Pill, Reader Comfort, Navigator Grid */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex shrink-0 items-center gap-1.5">
             <button
               type="button"
               onClick={handleToggleMode}
               title="Switch between Guided Study Mode (instant feedback) and Simulation Mode"
-              className={`rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
+              className={`h-9 rounded-lg px-2.5 text-[11px] font-semibold transition sm:h-auto sm:py-1 ${
                 session.mode === 'study'
                   ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'
                   : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
               }`}
             >
-              {session.mode === 'study' ? 'Study Mode' : 'Simulation'}
+              {session.mode === 'study' ? (
+                <>
+                  Study<span className="hidden sm:inline"> Mode</span>
+                </>
+              ) : (
+                <>
+                  Sim<span className="hidden sm:inline">ulation</span>
+                </>
+              )}
             </button>
 
             <button
@@ -732,7 +743,9 @@ export default function ExamRunner({ exam }: Props) {
                 saveUserPreferences({ fontSize: next ? 'large' : 'normal' });
               }}
               title="Toggle comfortable reading font size"
-              className={`hidden rounded-lg p-1.5 transition sm:inline-flex ${
+              aria-label="Toggle larger reading text"
+              aria-pressed={largeFont}
+              className={`inline-flex h-9 w-9 items-center justify-center rounded-lg transition sm:h-auto sm:w-auto sm:p-1.5 ${
                 largeFont
                   ? 'bg-emerald-500/15 text-emerald-500'
                   : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -744,7 +757,8 @@ export default function ExamRunner({ exam }: Props) {
             <button
               type="button"
               onClick={() => setShowPalette((prev) => !prev)}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200/80 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+              aria-label={`Question map, ${answeredCount} of ${totalQuestions} answered`}
+              className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200/80 bg-white px-2.5 text-xs font-medium sm:h-auto sm:py-1.5 text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
             >
               <Grid className="h-3.5 w-3.5" />
               <span className="font-mono text-[11px]">
@@ -757,7 +771,8 @@ export default function ExamRunner({ exam }: Props) {
         </div>
 
         {/* Subtle Segmented Question Progress Strip (1 click to jump to any question) */}
-        <div className="mx-auto flex max-w-3xl items-center gap-1 px-4 pb-2 pt-0.5">
+        {/* Segments are too thin to tap reliably on touch screens; phones use the Question Map instead. */}
+        <div className="pointer-events-none mx-auto flex max-w-3xl items-center gap-0.5 px-4 pb-2 pt-0.5 sm:pointer-events-auto sm:gap-1">
           {session.questionOrder.map((qId, idx) => {
             const r = session.responses[qId];
             const isCurrent = idx === currentIndex;
@@ -815,7 +830,7 @@ export default function ExamRunner({ exam }: Props) {
                   setHighlightWords(next);
                   saveUserPreferences({ highlightKeywords: next });
                 }}
-                className={`rounded-lg px-2 py-1 text-[11px] font-medium transition ${
+                className={`rounded-lg px-2 py-2 text-[11px] font-medium transition sm:py-1 ${
                   highlightWords
                     ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
                     : 'text-slate-400 hover:text-slate-600'
@@ -827,7 +842,7 @@ export default function ExamRunner({ exam }: Props) {
               <button
                 type="button"
                 onClick={handleToggleFlag}
-                className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium transition ${
+                className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-2 text-xs font-medium transition sm:py-1 ${
                   currentResponse?.isFlagged
                     ? 'bg-amber-500/15 text-amber-600 dark:text-amber-400'
                     : 'text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800'
@@ -908,11 +923,11 @@ export default function ExamRunner({ exam }: Props) {
                     isEliminated && !isSelected ? 'opacity-40' : ''
                   }`}
                 >
-                  <div className="flex items-start gap-3.5 p-4 sm:p-4.5">
+                  <div className="flex items-start gap-2 p-3.5 sm:gap-3.5 sm:p-4.5">
                     <button
                       type="button"
                       onClick={() => handleSelectOption(option.id)}
-                      className="flex flex-1 items-start gap-3.5 text-left"
+                      className="flex min-w-0 flex-1 items-start gap-3 text-left sm:gap-3.5"
                     >
                       {/* Option Badge */}
                       <span
@@ -935,7 +950,7 @@ export default function ExamRunner({ exam }: Props) {
                         )}
                       </span>
 
-                      <div className="flex-1">
+                      <div className="min-w-0 flex-1">
                         <p
                           className={`leading-relaxed ${
                             largeFont ? 'text-base sm:text-lg' : 'text-sm sm:text-base'
@@ -978,10 +993,13 @@ export default function ExamRunner({ exam }: Props) {
                           ? 'Restore option'
                           : 'Cross out / eliminate option (or right-click)'
                       }
-                      className={`mt-0.5 rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-200 ${
+                      aria-label={isEliminated ? `Restore option ${displayLetter}` : `Cross out option ${displayLetter}`}
+                      aria-pressed={isEliminated}
+                      className={`-my-1 -mr-1 shrink-0 rounded-lg p-2.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 sm:my-0 sm:mr-0 sm:mt-0.5 sm:p-1.5 dark:hover:bg-slate-800 dark:hover:text-slate-200 ${
                         isEliminated
                           ? 'text-rose-400 opacity-100'
-                          : 'opacity-0 group-hover:opacity-100 focus:opacity-100'
+                          : // Touch screens have no hover, so keep the control visible there.
+                            'opacity-60 focus:opacity-100 group-hover:opacity-100 [@media(hover:hover)]:opacity-0'
                       }`}
                     >
                       <Strikethrough className="h-3.5 w-3.5" />
@@ -996,8 +1014,8 @@ export default function ExamRunner({ exam }: Props) {
           {/* 3. GUIDED STUDY MODE TAKEAWAY CARD (Visually Encouraging)         */}
           {/* ================================================================= */}
           {isAnswerRevealed && (
-            <div className="mt-6 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 via-white to-sky-500/5 p-5 dark:from-emerald-950/30 dark:via-slate-900 dark:to-sky-950/20">
-              <div className="flex items-center justify-between gap-2">
+            <div className="mt-6 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 via-white to-sky-500/5 p-4 sm:p-5 dark:from-emerald-950/30 dark:via-slate-900 dark:to-sky-950/20">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                   <Lightbulb className="h-4 w-4" />
                   <span>Think Like a Manager Takeaway</span>
@@ -1025,7 +1043,7 @@ export default function ExamRunner({ exam }: Props) {
                   <strong>Next Study Focus:</strong>{' '}
                   {currentQuestion.explanation.studyFocusDirective}
                 </span>
-                <span className="font-mono text-[10px] text-slate-400">
+                <span className="break-words font-mono text-[10px] text-slate-400">
                   Ref: {currentQuestion.explanation.references[0]?.source}
                 </span>
               </div>
@@ -1036,11 +1054,12 @@ export default function ExamRunner({ exam }: Props) {
         {/* =================================================================== */}
         {/* 4. BOTTOM ERGONOMIC CONTROL BAR (Confidence + Navigation)           */}
         {/* =================================================================== */}
-        <div className="mt-8 flex flex-col justify-between gap-4 border-t border-slate-200/80 pt-5 sm:flex-row sm:items-center dark:border-slate-800/80">
+        {/* Phones: pinned to the bottom of the screen so answer/next stay under the thumb. */}
+        <div className="sticky bottom-0 z-20 -mx-4 mt-8 flex flex-col justify-between gap-3 border-t border-slate-200/80 bg-slate-50/90 px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl sm:static sm:mx-0 sm:flex-row sm:items-center sm:gap-4 sm:bg-transparent sm:px-0 sm:pb-0 sm:pt-5 sm:backdrop-blur-none dark:border-slate-800/80 dark:bg-[#090d16]/90 sm:dark:bg-transparent">
           {/* Confidence Selector Pills */}
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-slate-400">Confidence:</span>
-            <div className="inline-flex rounded-xl border border-slate-200/80 bg-white p-1 dark:border-slate-800 dark:bg-slate-900">
+            <span className="shrink-0 text-xs font-medium text-slate-400">Confidence:</span>
+            <div className="flex flex-1 rounded-xl border border-slate-200/80 bg-white p-1 sm:inline-flex sm:flex-none dark:border-slate-800 dark:bg-slate-900">
               {(
                 [
                   { id: 'low', label: 'Guess' },
@@ -1054,7 +1073,8 @@ export default function ExamRunner({ exam }: Props) {
                     key={c.id}
                     type="button"
                     onClick={() => handleSetConfidence(c.id)}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-medium transition ${
+                    aria-pressed={active}
+                    className={`flex-1 rounded-lg px-2.5 py-2 text-xs font-medium transition sm:flex-none sm:py-1 ${
                       active
                         ? c.id === 'high'
                           ? 'bg-emerald-500 text-slate-950 font-semibold'
@@ -1072,12 +1092,12 @@ export default function ExamRunner({ exam }: Props) {
           </div>
 
           {/* Previous / Next / Finish Exam */}
-          <div className="flex items-center justify-end gap-2.5">
+          <div className="flex items-center justify-end gap-2 sm:gap-2.5">
             <button
               type="button"
               disabled={currentIndex === 0}
               onClick={() => navigateToQuestion(currentIndex - 1)}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-xs font-semibold sm:px-4 sm:py-2.5 text-slate-700 transition hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               <ChevronLeft className="h-4 w-4" />
               Prev
@@ -1087,9 +1107,9 @@ export default function ExamRunner({ exam }: Props) {
               <button
                 type="button"
                 onClick={() => navigateToQuestion(currentIndex + 1)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-slate-900 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800 sm:flex-none sm:px-5 sm:py-2.5 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
               >
-                Next Question
+                Next<span className="hidden sm:inline"> Question</span>
                 <ChevronRight className="h-4 w-4" />
               </button>
             ) : null}
@@ -1100,10 +1120,16 @@ export default function ExamRunner({ exam }: Props) {
                 type="button"
                 disabled={isSubmitting}
                 onClick={handleCompleteExam}
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-md shadow-emerald-500/20 transition hover:bg-emerald-400"
+                className="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-emerald-500 px-4 py-3 text-xs font-bold text-slate-950 shadow-md shadow-emerald-500/20 transition hover:bg-emerald-400 sm:flex-none sm:px-5 sm:py-2.5"
               >
-                <CheckCircle2 className="h-4 w-4" />
-                {isSubmitting ? 'Scoring Diagnostics…' : 'Finish & View Diagnostics'}
+                <CheckCircle2 className="h-4 w-4 shrink-0" />
+                {isSubmitting ? (
+                  'Scoring…'
+                ) : (
+                  <>
+                    Finish<span className="hidden sm:inline"> &amp; View Diagnostics</span>
+                  </>
+                )}
               </button>
             )}
           </div>
@@ -1115,8 +1141,8 @@ export default function ExamRunner({ exam }: Props) {
       {/* =================================================================== */}
       {showPalette && (
         <div className="fixed inset-0 z-50 flex justify-end bg-slate-950/50 backdrop-blur-xs">
-          <div className="flex h-full w-full max-w-sm flex-col justify-between border-l border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
-            <div>
+          <div className="flex h-full w-full max-w-sm flex-col justify-between border-l border-slate-200 bg-white p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-[calc(1.25rem+env(safe-area-inset-top))] shadow-2xl sm:p-6 dark:border-slate-800 dark:bg-slate-900">
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4 dark:border-slate-800">
                 <div>
                   <h3 className="text-base font-bold text-slate-900 dark:text-white">
@@ -1129,7 +1155,8 @@ export default function ExamRunner({ exam }: Props) {
                 <button
                   type="button"
                   onClick={() => setShowPalette(false)}
-                  className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  aria-label="Close question map"
+                  className="rounded-lg p-2.5 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -1168,7 +1195,7 @@ export default function ExamRunner({ exam }: Props) {
               </div>
             </div>
 
-            <div className="space-y-2.5 border-t border-slate-200 pt-4 dark:border-slate-800">
+            <div className="mt-4 shrink-0 space-y-2.5 border-t border-slate-200 pt-4 dark:border-slate-800">
               <button
                 type="button"
                 onClick={handleCompleteExam}

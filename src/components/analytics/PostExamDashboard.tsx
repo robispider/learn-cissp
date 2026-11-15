@@ -169,9 +169,9 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
       {/* =================================================================== */}
       {/* 1. EXECUTIVE READINESS HEADER & FOCUSED STUDY PLAN                  */}
       {/* =================================================================== */}
-      <div className="grid gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Readiness Score Card (7 cols) */}
-        <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/80 sm:p-8 lg:col-span-7">
+        <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-4 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/80 sm:p-8 lg:col-span-7">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <a
               href="/exams"
@@ -254,7 +254,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
         </div>
 
         {/* Focused Study Plan Card (5 cols) */}
-        <div className="flex flex-col justify-between rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 via-white to-sky-500/5 p-6 dark:from-emerald-950/30 dark:via-slate-900 dark:to-sky-950/20 lg:col-span-5">
+        <div className="flex flex-col justify-between rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 via-white to-sky-500/5 p-4 sm:p-6 dark:from-emerald-950/30 dark:via-slate-900 dark:to-sky-950/20 lg:col-span-5">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
               <Target className="h-4 w-4" />
@@ -316,7 +316,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
       {/* =================================================================== */}
       {/* 2. THE 5 REQUIRED GRAPHICAL SUMMARY CHARTS                          */}
       {/* =================================================================== */}
-      <div className="grid gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <SubdomainGapChart
             nodes={report.subdomainBreakdown}
@@ -333,7 +333,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
 
       <TrapBreakdownChart report={report} />
 
-      <div className="grid gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <ConfidenceMatrix
             metacognition={metacognition}
@@ -424,7 +424,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
             return (
               <div
                 key={question.id}
-                className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/75"
+                className="rounded-3xl border border-slate-200/80 bg-white/95 p-4 shadow-xs sm:p-6 dark:border-slate-800/80 dark:bg-slate-900/75"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2">
@@ -451,7 +451,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
                   {question.stem}
                 </p>
 
-                <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                   {question.options.map((opt) => {
                     const userPicked = selectedId === opt.id;
                     return (

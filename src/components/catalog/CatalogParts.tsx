@@ -161,7 +161,8 @@ export function SubdomainRow({
           }
           aria-disabled={!has}
           title={has ? `Drill ${drillLen} questions from ${sub.subdomainId}` : 'No questions yet'}
-          className={`inline-flex shrink-0 items-center gap-1 rounded-lg bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-700 transition hover:bg-emerald-500 hover:text-slate-950 dark:text-emerald-400 ${
+          aria-label={has ? `Drill ${drillLen} questions from ${sub.subdomainId}` : undefined}
+          className={`inline-flex shrink-0 items-center gap-1 rounded-lg bg-emerald-500/10 p-2.5 text-xs sm:px-2.5 sm:py-1.5 font-semibold text-emerald-700 transition hover:bg-emerald-500 hover:text-slate-950 dark:text-emerald-400 ${
             has ? '' : 'pointer-events-none opacity-30'
           }`}
         >
@@ -173,7 +174,7 @@ export function SubdomainRow({
       {open && (
         <div className="px-4 pb-4 pl-[3.25rem] sm:pl-[5.75rem]">
           <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400">{sub.summary}</p>
-          <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
+          <ul className="mt-3 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
             {sub.topics.map((t) => (
               <li
                 key={t.topicId}
