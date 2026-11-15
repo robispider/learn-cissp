@@ -1,0 +1,42 @@
+{
+  "examId": "d1-full-01",
+  "title": "Domain 1 Mastery Exam: Security and Risk Management",
+  "description": "Comprehensive Domain 1 assessment spanning all 12 official ISC2 sub-domains (1.1 Ethics through 1.12 Due Care & Due Diligence). Designed to evaluate your 'Think Like a Manager' mindset, quantitative risk calculations, and BCP/BIA mastery.",
+  "examScope": "domain_full",
+  "domainId": "dom-1",
+  "subdomainId": null,
+  "timeLimitMinutes": 25,
+  "passingScorePercent": 70,
+  "masteryScorePercent": 85,
+  "blueprintWeights": {
+    "1.1": 0.06,
+    "1.2": 0.08,
+    "1.3": 0.10,
+    "1.4": 0.16,
+    "1.5": 0.08,
+    "1.6": 0.08,
+    "1.7": 0.10,
+    "1.8": 0.08,
+    "1.9": 0.10,
+    "1.10": 0.06,
+    "1.11": 0.04,
+    "1.12": 0.06
+  },
+  "questionIds": [
+    "cissp-d1-s1.1-q001",
+    "cissp-d1-s1.2-q001",
+    "cissp-d1-s1.3-q001",
+    "cissp-d1-s1.3-q002",
+    "cissp-d1-s1.4-q001",
+    "cissp-d1-s1.4-q002",
+    "cissp-d1-s1.5-q001",
+    "cissp-d1-s1.6-q001",
+    "cissp-d1-s1.7-q001",
+    "cissp-d1-s1.8-q001",
+    "cissp-d1-s1.9-q001",
+    "cissp-d1-s1.9-q002",
+    "cissp-d1-s1.10-q001",
+    "cissp-d1-s1.11-q001",
+    "cissp-d1-s1.12-q001"
+  ]
+}

@@ -1,0 +1,1047 @@
+[
+  {
+    "id": "cissp-d1-s1.1-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.1",
+    "subdomainName": "Professional Ethics & ISC2 Code of Ethics",
+    "topicId": "1.1.1",
+    "topicName": "ISC2 Canons & Priority Order",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "first_action",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "ISC2 Code of Ethics Canon Priority Order",
+      "Canon I: Protect society, the common good, and public trust",
+      "Canon III: Provide diligent and competent service to principals",
+      "Conflict Resolution Between Canons"
+    ],
+    "keyTerms": ["ISC2 Code of Ethics", "Canon Priority", "Public Safety", "Principal"],
+    "tags": ["ethics", "think-like-a-manager", "governance"],
+    "stem": "A CISSP-certified security director at a municipal water treatment utility discovers that a recently deployed industrial control patch introduces a logic flaw that could allow unauthorized chemical dosing under peak load. The Chief Operating Officer (COO) instructs the security director to delay rolling back the patch until after the quarterly municipal audit next week to avoid operational downtime penalties. According to the ISC2 Code of Ethics, what should the security director do FIRST?",
+    "scenarioContext": "Conflict: Employer directive (Canon III - Service to Principals) vs. Public physical safety (Canon I - Protect Society & Public Trust).",
+    "highlightKeywords": ["FIRST", "ISC2 Code of Ethics"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Escalate the public safety risk formally to executive leadership and insist on immediate mitigation, as Canon I (protecting society and public safety) supersedes obligations to principals.",
+        "isCorrect": true,
+        "explanation": "Correct. The four ISC2 Code of Ethics canons must be applied in strict hierarchical order: (1) Protect society, the common good, and the infrastructure; (2) Act honorably, honestly, justly, responsibly, and legally; (3) Provide diligent and competent service to principals; (4) Advance and protect the profession. When a principal's directive endangers public safety (Canon I), Canon I takes absolute precedence over Canon III.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Comply with the COO's instruction while documenting the objection in the internal risk register, because the COO is the principal with ultimate risk acceptance authority.",
+        "isCorrect": false,
+        "explanation": "Incorrect. While senior management normally owns business risk acceptance, no executive can accept a risk that violates Canon I (human life and public safety) or Canon II (lawfulness and honesty).",
+        "trapType": "ignores_human_safety"
+      },
+      {
+        "id": "C",
+        "text": "Immediately leak the vulnerability details to local media outlets and disconnect the utility's SCADA network without notifying internal leadership.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Unilaterally severing critical infrastructure or leaking to media before exhausting internal executive governance or lawful regulatory channels is reckless and may itself cause public harm.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "D",
+        "text": "Write a custom firewall rule to rate-limit SCADA traffic as a temporary technical workaround without informing the COO.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Secretly applying an unvalidated technical workaround neither resolves the governance conflict nor guarantees that the chemical dosing logic flaw is safely mitigated.",
+        "trapType": "technical_fix_over_process"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The ISC2 Code of Ethics canons are ordered strictly by priority: (1) Society & Public Safety, (2) Honorable & Legal Conduct, (3) Service to Principals, and (4) Protecting the Profession. Public safety always overrides an employer's convenience or financial interest.",
+      "managerMindsetTip": "Whenever a CISSP scenario pits an employer's order against human safety or the law, remember the Canon hierarchy: Canon I > Canon II > Canon III > Canon IV. Still follow professional internal escalation before external regulatory reporting unless imminent danger requires immediate emergency intervention.",
+      "studyFocusDirective": "Memorize the exact 1-to-4 order of the ISC2 Code of Ethics Canons and practice resolving conflicts between Canon I (Society) and Canon III (Principals).",
+      "keyTakeaway": "Canon I (Protect society and human life) always outranks Canon III (Service to principals/employers).",
+      "references": [
+        {
+          "source": "ISC2 Code of Ethics",
+          "section": "Preamble and Canons I–IV Priority Order"
+        },
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 1: Security Governance Through Principles and Policies"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.2-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.2",
+    "subdomainName": "Security Concepts (CIA, DAD, Non-Repudiation, 5 Pillars)",
+    "topicId": "1.2.2",
+    "topicName": "Authenticity & Non-repudiation",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "Non-Repudiation",
+      "Message Integrity vs. Origin Authenticity",
+      "Asymmetric Digital Signatures vs. Symmetric HMAC"
+    ],
+    "keyTerms": ["Non-repudiation", "Digital Signature", "HMAC", "CIA Triad"],
+    "tags": ["cia-triad", "non-repudiation", "security-concepts"],
+    "stem": "A healthcare clearinghouse exchanges high-value insurance settlement files with partner hospitals. Currently, both parties share a pre-shared symmetric secret key to generate a Hash-based Message Authentication Code (HMAC-SHA256) for each file. During a billing dispute, a partner hospital claims that the clearinghouse fabricated a settlement file itself using the shared key. Which security objective is currently MISSING, and what control BEST provides it?",
+    "scenarioContext": "Current Control: Shared symmetric secret + HMAC-SHA256 | Dispute: Sender denies transmitting the file and alleges receiver forged it using the same shared key.",
+    "highlightKeywords": ["MISSING", "BEST"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Non-repudiation is missing; require each sender to sign files using their own private key within a Public Key Infrastructure (PKI) digital signature scheme.",
+        "isCorrect": true,
+        "explanation": "Correct. An HMAC uses a shared symmetric secret known to both sender and receiver; therefore, either party could have generated the tag, so neither can prove to a third party that the other sent it. True cryptographic non-repudiation requires asymmetric digital signatures where only the sender possesses the private signing key.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Confidentiality is missing; encrypt the settlement files in transit using TLS 1.3 with Perfect Forward Secrecy (PFS).",
+        "isCorrect": false,
+        "explanation": "Incorrect. Encrypting the channel protects confidentiality against eavesdroppers in transit, but does not prevent a legitimate endpoint from denying they authored a specific settlement payload.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Integrity is missing; upgrade the hashing algorithm from HMAC-SHA256 to SHA3-512 without a key.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Unkeyed SHA3-512 actually provides less assurance than HMAC because anyone can recompute an unkeyed hash. Furthermore, HMAC-SHA256 already provides integrity—it only lacks non-repudiation between the two key-sharing parties.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Availability is missing; deploy redundant SFTP clusters across multiple availability zones.",
+        "isCorrect": false,
+        "explanation": "Incorrect. High-availability clustering ensures uptime and resilience, which has no bearing on proving message origin during a legal dispute.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Symmetric MACs/HMACs provide integrity and authentication between trusting peers, but cannot provide non-repudiation because both parties hold the identical secret key. Asymmetric digital signatures (signing a hash with the sender's unique private key) provide non-repudiation.",
+      "managerMindsetTip": "In legal, financial, or contractual disputes on the CISSP exam, look for 'Non-Repudiation'. Remember: Symmetric keys NEVER provide non-repudiation; only Asymmetric PKI Digital Signatures do.",
+      "studyFocusDirective": "Review the difference between Integrity (Hashing), Message Authentication (HMAC), and Non-Repudiation (PKI Digital Signatures).",
+      "keyTakeaway": "HMAC = Integrity + Shared Authenticity. Digital Signature (Asymmetric Private Key) = Integrity + Origin Authenticity + Non-Repudiation.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 1: Confidentiality, Integrity, Availability, and Non-Repudiation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.3-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.3",
+    "subdomainName": "Security Governance Principles & Alignment",
+    "topicId": "1.3.2",
+    "topicName": "Roles & Responsibilities (Owner, Custodian, User)",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Data Owner vs. Data Custodian Responsibilities",
+      "Access Authorization vs. Technical Implementation",
+      "Security Governance Accountability"
+    ],
+    "keyTerms": ["Data Owner", "Data Custodian", "Access Control", "Classification"],
+    "tags": ["governance", "roles-and-responsibilities", "think-like-a-manager"],
+    "stem": "A cloud infrastructure engineer receives an urgent ticket from a marketing contractor requesting read access to a production customer analytics bucket classified as 'Confidential'. The contractor's project manager has already approved the ticket in the helpdesk system. Under CISSP security governance principles, how should this request be handled?",
+    "scenarioContext": "Asset: 'Confidential' Customer Analytics Bucket | Requestor: Marketing Contractor | Approver so far: Project Manager | Executor: Cloud Engineer (Custodian).",
+    "highlightKeywords": ["governance principles"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Route the request to the designated Data Owner (such as the VP of Customer Data/Sales) for formal authorization before the Data Custodian provisions access.",
+        "isCorrect": true,
+        "explanation": "Correct. In CISSP governance, the Data Owner (typically a senior business unit leader) determines data classification and authorizes who may access the data. The Cloud Engineer is a Data Custodian responsible for implementing and maintaining technical access controls only after the Data Owner approves.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Have the cloud infrastructure engineer grant temporary 24-hour read access immediately since the project manager already approved the ticket.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A project manager is not automatically the Data Owner of a 'Confidential' production dataset, and a Data Custodian must never grant access without verified Data Owner authorization.",
+        "trapType": "technical_fix_over_process"
+      },
+      {
+        "id": "C",
+        "text": "Require the Chief Information Security Officer (CISO) to personally review and approve every individual folder access request across the enterprise.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The CISO establishes the governance framework and security policies, but business Data Owners—not the CISO—own the day-to-day classification and access authorization decisions for their business unit's data.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Permanently deny all third-party contractors from ever accessing any 'Confidential' data under any circumstances.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Business operations often require contractors to access confidential data under NDA, least privilege, and Data Owner approval; blanket refusal is an extreme absolutist trap.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Data Owners (senior business leaders) classify data and approve access requests. Data Custodians (IT/Cloud/Security engineers) enforce those decisions technically (applying ACLs, backups, encryption).",
+      "managerMindsetTip": "Never confuse the Data Owner with IT or Security! Business leaders are Data Owners (they decide 'who gets access' and 'what classification level'); IT/Cloud teams are Data Custodians (they configure the permissions and backups).",
+      "studyFocusDirective": "Compare the core duties of Executive Management, Data Owner, Data Controller, Data Processor, Data Custodian, and Auditor.",
+      "keyTakeaway": "Data Owner = Decides classification & approves access. Data Custodian = Implements ACLs, encryption, and backups.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 1: Security Roles and Responsibilities"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.3-q002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.3",
+    "subdomainName": "Security Governance Principles & Alignment",
+    "topicId": "1.3.3",
+    "topicName": "Security Frameworks (NIST, ISO 27001, COBIT, SABSA)",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "SABSA (Sherwood Applied Business Security Architecture)",
+      "ISO/IEC 27001 ISMS",
+      "COBIT Enterprise IT Governance",
+      "Business-Driven Security Architecture"
+    ],
+    "keyTerms": ["SABSA", "COBIT", "ISO 27001", "NIST CSF"],
+    "tags": ["frameworks", "sabsa", "governance"],
+    "stem": "An enterprise undergoing digital transformation wants to adopt a security architecture framework that starts explicitly from business requirements and risk opportunities, using a six-layer traceability matrix (Contextual, Conceptual, Logical, Physical, Component, and Service Management) to ensure every technical control traces back to a business attribute. Which framework BEST fits this requirement?",
+    "scenarioContext": null,
+    "highlightKeywords": ["BEST", "business requirements", "six-layer traceability matrix"],
+    "options": [
+      {
+        "id": "A",
+        "text": "SABSA (Sherwood Applied Business Security Architecture)",
+        "isCorrect": true,
+        "explanation": "Correct. SABSA is a business-driven security architecture methodology modeled on the Zachman framework. It uses a 6×6 matrix (Contextual, Conceptual, Logical, Physical, Component, and Operational/Service Management) to provide two-way traceability between business goals and technical controls.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "ISO/IEC 27001 Information Security Management System (ISMS)",
+        "isCorrect": false,
+        "explanation": "Incorrect. ISO/IEC 27001 specifies requirements for establishing, implementing, maintaining, and continually improving an ISMS (with Annex A controls), rather than a six-layer architectural matrix modeled on Zachman.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "PCI-DSS (Payment Card Industry Data Security Standard)",
+        "isCorrect": false,
+        "explanation": "Incorrect. PCI-DSS is a prescriptive compliance standard specifically scoped to protecting cardholder data environments, not an enterprise business-driven architecture methodology.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "ITIL (Information Technology Infrastructure Library)",
+        "isCorrect": false,
+        "explanation": "Incorrect. ITIL focuses on IT Service Management (ITSM) processes (such as incident, problem, and change management) rather than business-driven security architecture traceability.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "SABSA is the premier business-driven security architecture framework in the CISSP CBK, known for its 6-layer architecture matrix that ensures every security control is directly justified by a business requirement.",
+      "managerMindsetTip": "Map framework keywords quickly: 'ISMS certification' -> ISO 27001; 'IT Governance bridging Board to IT' -> COBIT; 'Business-driven 6-layer architecture matrix' -> SABSA; 'Federal RMF / Catalog of controls' -> NIST SP 800-37 / 800-53.",
+      "studyFocusDirective": "Create a comparison table of ISO 27001/27002, NIST CSF/800-53, COBIT, SABSA, and TOGAF focusing on the primary goal of each.",
+      "keyTakeaway": "SABSA = Business-driven security architecture with 6 layers (Contextual -> Conceptual -> Logical -> Physical -> Component -> Operational).",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 1: Security Governance Frameworks"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.4-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.2",
+    "topicName": "Quantitative Risk Analysis & Cost-Benefit Evaluation (ALE, SLE, ARO, ACS)",
+    "cognitiveLevel": "evaluate",
+    "perspective": "risk_advisor",
+    "questionStyle": "calculation",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 90,
+    "conceptsTested": [
+      "Annualized Loss Expectancy (ALE)",
+      "Single Loss Expectancy (SLE)",
+      "Exposure Factor (EF)",
+      "Countermeasure Value / Cost-Benefit Analysis",
+      "Residual Risk Acceptance"
+    ],
+    "keyTerms": ["AV", "EF", "SLE", "ARO", "ALE", "ACS"],
+    "tags": ["quantitative-risk", "think-like-a-manager", "calculation"],
+    "stem": "A financial services firm operates a proprietary trading cluster valued at $800,000. Historical threat intelligence indicates that a targeted DDoS event occurs once every 4 years and results in a 30% loss of asset value per occurrence. A security vendor proposes a cloud-based DDoS scrubbing control that costs $55,000 per year and reduces the Exposure Factor (EF) to 5% without changing the frequency of attacks. As the Information Security Risk Advisor reporting to senior management, what is the BEST recommendation?",
+    "scenarioContext": "Asset Value (AV) = $800,000 | Pre-control EF = 30% | ARO = 0.25 (once every 4 years) | Annual Control Cost (ACS) = $55,000 | Post-control EF = 5%",
+    "highlightKeywords": ["BEST", "Risk Advisor"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Reject the proposed control because its annual cost exceeds the net annual risk reduction by $5,000, and evaluate lower-cost alternatives or risk acceptance.",
+        "isCorrect": true,
+        "explanation": "Correct. Pre-control SLE = $800,000 × 0.30 = $240,000. With ARO = 0.25, pre-control ALE_1 = $240,000 × 0.25 = $60,000. Post-control SLE = $800,000 × 0.05 = $40,000, so post-control ALE_2 = $40,000 × 0.25 = $10,000. The annual risk reduction is ($60,000 - $10,000) = $50,000. Because the safeguard costs $55,000/year (ACS), its net value is $50,000 - $55,000 = -$5,000/year.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Approve the control immediately because reducing the Exposure Factor from 30% to 5% eliminates the majority of technical DDoS impact.",
+        "isCorrect": false,
+        "explanation": "Incorrect. While the EF drops from 30% to 5%, a CISSP Risk Advisor never recommends a control based purely on percentage technical reduction without first calculating the net financial benefit (ALE_1 - ALE_2 - ACS) and presenting the business case to senior management.",
+        "trapType": "technical_fix_over_process"
+      },
+      {
+        "id": "C",
+        "text": "Deploy an on-premises hardware scrubbing appliance immediately to bring the Exposure Factor to 0% regardless of annual maintenance cost.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Total risk elimination (0% EF) is unrealistic and violates cost-benefit proportionality in CISSP risk management.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "D",
+        "text": "Transfer 100% of the regulatory and reputational accountability to the cloud DDoS provider via a Service Level Agreement (SLA).",
+        "isCorrect": false,
+        "explanation": "Incorrect. While financial liability can be partially shared or insured, ultimate accountability for risk and regulatory compliance can NEVER be transferred away from senior management.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Quantitative cost-benefit analysis requires comparing the Annualized Loss Expectancy before the control (ALE_1 = $60,000) and after the control (ALE_2 = $10,000) against the Annualized Cost of the Safeguard (ACS = $55,000): Value = (ALE_1 - ALE_2) - ACS = -$5,000.",
+      "managerMindsetTip": "Never approve or reject a control on technical merit alone. Always calculate SLE = AV × EF, ALE = SLE × ARO, and Safeguard Value = (ALE_1 - ALE_2) - ACS. Also remember: financial risk can be transferred, but ultimate accountability always remains with executive management.",
+      "studyFocusDirective": "Practice multi-step quantitative risk formulas (SLE, ARO, ALE, and Safeguard Cost-Benefit) where a control reduces either EF or ARO, and verify whether (ALE_1 - ALE_2 - ACS) is positive or negative.",
+      "keyTakeaway": "Safeguard Value = (ALE_before - ALE_after) - Annual_Control_Cost. If the result is negative, the control costs more per year than the risk it mitigates.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 2: Personnel Security and Risk Management Concepts — Quantitative Risk Analysis"
+        },
+        {
+          "source": "NIST SP 800-30 Rev. 1",
+          "section": "Guide for Conducting Risk Assessments"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.4-q002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.4",
+    "topicName": "Risk Treatment (Mitigate, Transfer, Accept, Avoid)",
+    "cognitiveLevel": "evaluate",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Residual Risk vs. Inherent Risk",
+      "Risk Appetite and Tolerance",
+      "Executive Sign-off on Residual Risk"
+    ],
+    "keyTerms": ["Residual Risk", "Inherent Risk", "Risk Acceptance", "Risk Treatment"],
+    "tags": ["risk-management", "residual-risk", "think-like-a-manager"],
+    "stem": "After implementing multi-factor authentication and network micro-segmentation on a legacy manufacturing ERP system, the security team determines that an unpatchable kernel vulnerability still leaves a residual risk slightly above the organization's standard risk tolerance threshold. Replacing the ERP system will take 18 months. What is the MOST appropriate action for the Information Security Manager to take?",
+    "scenarioContext": "Control state: Compensating controls deployed | Remaining issue: Residual risk exceeds baseline tolerance for 18 months until ERP replacement.",
+    "highlightKeywords": ["MOST appropriate", "residual risk"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Document the residual risk, compensating controls, and 18-month migration timeline in a formal risk exception package and present it to senior management for signed risk acceptance.",
+        "isCorrect": true,
+        "explanation": "Correct. When residual risk remains after reasonable compensating controls are applied, the security manager's role is to quantify/document the residual risk and obtain formal, time-bound risk acceptance sign-off from senior business leadership.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Unilaterally shut down the manufacturing ERP system immediately until the new replacement platform is built in 18 months.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Security exists to support the business mission. Halting core manufacturing operations for 18 months without executive authorization would cause catastrophic business failure.",
+        "trapType": "cost_disproportionate"
+      },
+      {
+        "id": "C",
+        "text": "Sign off on the residual risk personally as the Information Security Manager so the business unit does not face audit delays.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Security managers advise on risk, but they do NOT own business risk. Only senior executive management / business owners have the authority to formally accept residual risk.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Write a custom binary hot-patch for the closed-source legacy kernel to eliminate the vulnerability before tomorrow's shift.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Attempting unsupported binary modifications on a production legacy kernel is a dangerous technical gamble that bypasses change and risk governance.",
+        "trapType": "technical_fix_over_process"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "In CISSP risk governance, the security professional identifies, analyzes, and recommends controls, while Senior Management holds sole authority to accept residual risk via a documented, time-bound exception.",
+      "managerMindsetTip": "Remember the golden rule of CISSP risk: Security Advises, Management Decides (and Accepts). Never sign the risk acceptance form yourself as the security manager!",
+      "studyFocusDirective": "Review the formula Inherent Risk - Controls = Residual Risk, and verify who owns formal sign-off for each risk treatment strategy.",
+      "keyTakeaway": "Only senior management / business owners can formally accept residual risk.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 2: Risk Treatment and Residual Risk"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.5-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.5",
+    "subdomainName": "Threat Modeling Concepts & Methodologies",
+    "topicId": "1.5.1",
+    "topicName": "STRIDE, PASTA, VAST, DREAD",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "STRIDE Threat Categorization",
+      "PASTA Risk-Centric Threat Modeling",
+      "Elevation of Privilege vs. Tampering vs. Repudiation"
+    ],
+    "keyTerms": ["STRIDE", "PASTA", "Threat Modeling", "Elevation of Privilege"],
+    "tags": ["threat-modeling", "stride", "pasta"],
+    "stem": "During an architectural design review of a multi-tenant SaaS billing portal, the security architect models a scenario in which an authenticated standard tenant user modifies a hidden role parameter in an API request to execute administrative refund functions. Within the Microsoft STRIDE threat model, which threat category does this scenario PRIMARILY represent?",
+    "scenarioContext": "Actor: Authenticated standard user | Action: Modifies role parameter to invoke admin-only refund function.",
+    "highlightKeywords": ["PRIMARILY", "STRIDE"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Elevation of Privilege",
+        "isCorrect": true,
+        "explanation": "Correct. While modifying a parameter involves request manipulation, the primary security boundary violated is authorization—allowing a standard user to gain higher privileges (administrative refund execution) than granted. In STRIDE, this maps directly to Elevation of Privilege (violating Authorization).",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Spoofing",
+        "isCorrect": false,
+        "explanation": "Incorrect. Spoofing violates Authentication (impersonating another user's identity, such as stealing credentials or session tokens). Here, the user is authenticated as themselves but escalating their authorization level.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Repudiation",
+        "isCorrect": false,
+        "explanation": "Incorrect. Repudiation occurs when an actor performs an action and can plausibly deny doing so due to insufficient audit logging or digital signatures.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Denial of Service",
+        "isCorrect": false,
+        "explanation": "Incorrect. Denial of Service targets system Availability by exhausting resources or crashing services, which is not the objective of unauthorized privilege escalation.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "STRIDE maps six threat categories to the exact security property they violate: Spoofing (Authentication), Tampering (Integrity), Repudiation (Non-repudiation), Information Disclosure (Confidentiality), Denial of Service (Availability), and Elevation of Privilege (Authorization).",
+      "managerMindsetTip": "Memorize the 1-to-1 pairing between each letter of STRIDE and its violated security property: S->Authentication, T->Integrity, R->Non-Repudiation, I->Confidentiality, D->Availability, E->Authorization.",
+      "studyFocusDirective": "Review the STRIDE mnemonic table and compare it with PASTA (7-stage risk-centric threat modeling) and VAST (Visual, Agile, and Simple Threat modeling).",
+      "keyTakeaway": "In STRIDE, Elevation of Privilege is the threat that violates Authorization.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 2: Threat Modeling Methodologies"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.6-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.6",
+    "subdomainName": "Supply Chain Risk Management (SCRM)",
+    "topicId": "1.6.2",
+    "topicName": "SLAs, NDAs, MOUs, ISAs, Right-to-Audit",
+    "cognitiveLevel": "evaluate",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Interconnection Security Agreement (ISA) vs. SLA vs. MOU",
+      "Right-to-Audit Clauses",
+      "Supply Chain Third-Party Governance"
+    ],
+    "keyTerms": ["ISA", "SLA", "MOU", "NDA", "Right-to-Audit"],
+    "tags": ["scrm", "contracts", "third-party-risk"],
+    "stem": "Two regional healthcare networks agree to establish a dedicated site-to-site IPsec VPN tunnel to exchange real-time electronic health records (EHR). Before activating the network link, the CISO wants a formal document that specifies the technical security requirements, encryption standards, incident notification timelines, and authorization boundaries for the direct system-to-system connection. Which agreement is MOST appropriate?",
+    "scenarioContext": "Scenario: Direct technical network interconnection between two distinct organizations sharing sensitive EHR data.",
+    "highlightKeywords": ["MOST appropriate", "technical security requirements", "direct system-to-system connection"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Interconnection Security Agreement (ISA)",
+        "isCorrect": true,
+        "explanation": "Correct. As defined in NIST SP 800-47, an Interconnection Security Agreement (ISA) is specifically designed to document the technical and security requirements for establishing, operating, and maintaining a direct connection between two organizations' IT systems.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Memorandum of Understanding (MOU)",
+        "isCorrect": false,
+        "explanation": "Incorrect. An MOU (or MOA) expresses high-level intent and shared business objectives between two parties, but lacks the detailed technical security controls and encryption parameters governed by an ISA.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Service Level Agreement (SLA)",
+        "isCorrect": false,
+        "explanation": "Incorrect. An SLA defines measurable performance metrics (such as 99.99% uptime, response times, and financial penalties) from a vendor, rather than bidirectional technical security requirements for a peer network interconnection.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Non-Disclosure Agreement (NDA)",
+        "isCorrect": false,
+        "explanation": "Incorrect. An NDA legally obligates parties to keep confidential information secret, but does not govern network architecture, encryption standards, or technical interconnection boundaries.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "An Interconnection Security Agreement (ISA) governs the technical and security parameters of a direct system-to-system link between two organizations, typically paired with a high-level MOU/MOA.",
+      "managerMindsetTip": "Distinguish the 4 core third-party agreements: MOU = high-level intent; ISA = technical security rules for connecting two networks (NIST SP 800-47); SLA = uptime/performance metrics; BPA = profit/risk sharing between business partners.",
+      "studyFocusDirective": "Review NIST SP 800-47 and compare MOU/MOA, ISA, SLA, NDA, and MSA in Supply Chain Risk Management.",
+      "keyTakeaway": "ISA = Technical security rules for connecting two organizations' networks.",
+      "references": [
+        {
+          "source": "NIST SP 800-47 Rev. 1",
+          "section": "Managing the Security of Information Exchanges"
+        },
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 2: Supply Chain Risk Management & Third-Party Agreements"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.7-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.7",
+    "subdomainName": "Legal, Regulatory, Compliance & Privacy",
+    "topicId": "1.7.1",
+    "topicName": "Cybercrime Laws & Intellectual Property (Copyright, Patent, Trade Secret)",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Trade Secret vs. Patent vs. Copyright vs. Trademark",
+      "Reasonable Measures / Due Care Requirement for Trade Secrets",
+      "Non-Disclosure Agreements (NDAs)"
+    ],
+    "keyTerms": ["Trade Secret", "Patent", "Copyright", "Intellectual Property"],
+    "tags": ["legal", "intellectual-property", "trade-secret"],
+    "stem": "An algorithmic logistics company has developed a proprietary route-optimization heuristic that gives it a major market advantage. Executive leadership wants to protect the underlying mathematical algorithm indefinitely without publicly disclosing how it works in a government filing. Which intellectual property mechanism and operational requirement MUST the company maintain?",
+    "scenarioContext": "Goal: Protect proprietary algorithm indefinitely WITHOUT public disclosure.",
+    "highlightKeywords": ["indefinitely", "without publicly disclosing", "MUST"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Protect it as a Trade Secret, and implement demonstrable access controls, confidentiality markings, and NDAs to prove the company takes reasonable steps to keep it secret.",
+        "isCorrect": true,
+        "explanation": "Correct. A Trade Secret protects confidential business formulas, heuristics, and processes indefinitely without public registration, provided the owner derives economic value from its secrecy and actively enforces 'reasonable security measures' (access controls, NDAs, need-to-know) to keep it confidential.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "File a utility Patent with the national patent office, which keeps the algorithm confidential for 20 years.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A patent requires full public disclosure of the invention in exchange for a temporary (typically 20-year) legal monopoly. Once published, competitors can read the specification.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Register a Copyright on the mathematical concept, which prevents any competitor from writing different source code that achieves the same route optimization.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Copyright protects only the specific expression (exact source code text), not the underlying mathematical idea, algorithm, or heuristic.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Register a Trademark on the algorithm's logic so competitors cannot reverse-engineer the binary.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Trademarks protect brand identifiers (names, logos, slogans) used to distinguish goods in commerce, not internal algorithms.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Trade secrets protect proprietary formulas, algorithms, and business processes indefinitely without public disclosure, but legal protection is immediately lost if the organization fails to exercise due care (access controls, NDAs) to maintain secrecy.",
+      "managerMindsetTip": "On the CISSP exam, Trade Secret questions almost always test two things: (1) No public disclosure required (unlike Patents), and (2) You MUST prove active security controls (NDAs, DLP, least privilege) or courts will rule it is no longer a trade secret.",
+      "studyFocusDirective": "Compare the 4 IP types (Copyright, Patent, Trade Secret, Trademark) by what they protect, duration, registration requirement, and public disclosure.",
+      "keyTakeaway": "Trade Secret = Indefinite protection + Zero public disclosure, contingent on active security controls (Due Care).",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 4: Laws, Regulations, and Compliance — Intellectual Property"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.8-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.8",
+    "subdomainName": "Security Policies, Standards, Procedures & Baselines",
+    "topicId": "1.8.1",
+    "topicName": "Policy Hierarchy (Policy vs. Standard vs. Guideline vs. Procedure)",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 55,
+    "conceptsTested": [
+      "Security Policy Hierarchy",
+      "Mandatory Standards vs. Discretionary Guidelines",
+      "Procedures vs. Baselines"
+    ],
+    "keyTerms": ["Policy", "Standard", "Procedure", "Guideline", "Baseline"],
+    "tags": ["policy-hierarchy", "governance", "documentation"],
+    "stem": "An organization's high-level Information Security Policy states: 'All sensitive corporate data must be protected against unauthorized disclosure during transmission and storage.' Which governance document should the security team publish NEXT to establish mandatory, organization-wide technical criteria—such as requiring AES-256 for storage and TLS 1.3 for transit—to make this policy enforceable and auditable?",
+    "scenarioContext": "Top-level Policy exists ('Protect sensitive data'). Need: Mandatory, uniform technical specification ('Use AES-256 and TLS 1.3').",
+    "highlightKeywords": ["NEXT", "mandatory", "technical criteria"],
+    "options": [
+      {
+        "id": "A",
+        "text": "A Security Standard",
+        "isCorrect": true,
+        "explanation": "Correct. In the CISSP policy hierarchy, a Policy states high-level management intent ('what and why'), while a Standard defines mandatory, uniform technical or operational requirements (such as specific cryptographic algorithms or key lengths) that make the policy measurable and auditable.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "A Security Guideline",
+        "isCorrect": false,
+        "explanation": "Incorrect. Guidelines are discretionary recommendations or best practices ('should'), not mandatory rules ('must/shall'), and therefore cannot be strictly enforced in a compliance audit.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "A Standard Operating Procedure (SOP)",
+        "isCorrect": false,
+        "explanation": "Incorrect. A Procedure provides step-by-step instructions on how to execute a specific task on a specific platform (e.g., how to click through a certificate renewal wizard), which comes after the Standard defines what is required.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "An Acceptable Use Policy (AUP)",
+        "isCorrect": false,
+        "explanation": "Incorrect. An AUP is an issue-specific policy governing employee behavior on corporate assets, not a technical specification of cryptographic controls.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Policies define high-level mandatory intent; Standards define mandatory uniform technical/operational rules (e.g., AES-256, TLS 1.3); Procedures define step-by-step execution; Guidelines offer non-mandatory advice.",
+      "managerMindsetTip": "Check whether the stem asks for 'Mandatory uniform rules/tech specs' (Standard), 'Step-by-step how-to instructions' (Procedure), 'Minimum security starting point across OS/devices' (Baseline), or 'Discretionary best-practice advice' (Guideline).",
+      "studyFocusDirective": "Review the 5-tier documentation hierarchy: Policy -> Standard -> Baseline -> Guideline -> Procedure.",
+      "keyTakeaway": "Policies, Standards, Baselines, and Procedures are mandatory; only Guidelines are discretionary.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 1: Security Policies, Standards, Baselines, Guidelines, and Procedures"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.9-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.9",
+    "subdomainName": "Business Continuity (BCP) Requirements",
+    "topicId": "1.9.2",
+    "topicName": "Business Impact Analysis (BIA: MTD, RTO, RPO, WRT)",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "calculation",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 85,
+    "conceptsTested": [
+      "Maximum Tolerable Downtime (MTD)",
+      "Recovery Time Objective (RTO)",
+      "Work Recovery Time (WRT)",
+      "Recovery Point Objective (RPO)"
+    ],
+    "keyTerms": ["BIA", "MTD", "RTO", "WRT", "RPO"],
+    "tags": ["bcp", "bia", "calculation", "think-like-a-manager"],
+    "stem": "During a Business Impact Analysis (BIA) for an automated order-fulfillment platform, business unit leaders determine that the company will suffer irreversible financial and regulatory harm if the business process is unavailable for more than 12 hours. The IT disaster recovery team estimates it takes 5 hours to restore the cloud database and application servers, plus an additional 4 hours for finance staff to reconcile unposted transaction logs and verify system integrity before reopening order processing. Which statement accurately evaluates this recovery posture?",
+    "scenarioContext": "Maximum Tolerable Downtime (MTD) = 12 hours | Infrastructure Restoration (RTO) = 5 hours | Data Verification & Catch-up (WRT) = 4 hours.",
+    "highlightKeywords": ["accurately evaluates", "BIA"],
+    "options": [
+      {
+        "id": "A",
+        "text": "The recovery design is compliant because RTO (5 hours) + WRT (4 hours) = 9 hours, which is safely within the 12-hour Maximum Tolerable Downtime (MTD).",
+        "isCorrect": true,
+        "explanation": "Correct. In CISSP Business Impact Analysis, the core time constraint is RTO + WRT ≤ MTD. Here, IT restoration (RTO = 5 hours) plus business verification/reconciliation (WRT = 4 hours) equals 9 hours total downtime, leaving a 3-hour safety buffer below the 12-hour MTD.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "The recovery design is non-compliant because the Recovery Point Objective (RPO) of 9 hours exceeds the 5-hour Recovery Time Objective (RTO).",
+        "isCorrect": false,
+        "explanation": "Incorrect. RPO measures the maximum acceptable age of lost data (measured backward in time from the disaster to the last good backup), not the forward restoration and verification duration (RTO + WRT).",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "The IT team must immediately purchase a mirrored zero-downtime hot site because Work Recovery Time (WRT) is never permitted to exceed 1 hour.",
+        "isCorrect": false,
+        "explanation": "Incorrect. There is no universal 1-hour limit on WRT; as long as RTO + WRT stays within the business-defined MTD, spending extra capital on a mirrored site is unnecessary.",
+        "trapType": "cost_disproportionate"
+      },
+      {
+        "id": "D",
+        "text": "The BIA should be halted until the IT team finishes configuring database replication scripts.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The BIA is an early business-discovery phase used to determine requirements (MTD, RTO, RPO) BEFORE technical recovery controls are engineered.",
+        "trapType": "wrong_lifecycle_phase"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The fundamental BIA timeline equation is RTO (IT infrastructure recovery time) + WRT (Work Recovery Time to verify data and resume business operations) <= MTD (Maximum Tolerable Downtime). Here, 5h + 4h = 9h <= 12h.",
+      "managerMindsetTip": "Draw the disaster timeline: RPO looks BACKWARD in time (how many hours of data can we afford to lose?). RTO + WRT looks FORWARD in time (how long to bring IT up + verify data?) and their sum MUST be less than or equal to MTD.",
+      "studyFocusDirective": "Practice the BIA recovery equation (RTO + WRT <= MTD) and distinguish backward-looking data loss (RPO) from forward-looking downtime (RTO, WRT, MTD).",
+      "keyTakeaway": "RTO + WRT <= MTD. Always include Work Recovery Time (WRT) when validating whether recovery meets Maximum Tolerable Downtime.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 3: Business Continuity Planning — Business Impact Analysis"
+        },
+        {
+          "source": "NIST SP 800-34 Rev. 1",
+          "section": "Contingency Planning Guide for Federal Information Systems"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.9-q002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.9",
+    "subdomainName": "Business Continuity (BCP) Requirements",
+    "topicId": "1.9.1",
+    "topicName": "BCP Project Initiation & Scope",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "first_action",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "BCP Lifecycle Phases",
+      "Executive Management Support & Project Initiation",
+      "BCP Scoping before BIA"
+    ],
+    "keyTerms": ["BCP Initiation", "Executive Sponsorship", "BCP Policy", "BIA"],
+    "tags": ["bcp", "lifecycle", "think-like-a-manager"],
+    "stem": "A newly hired Business Continuity Coordinator at a global logistics enterprise discovers that the company has never established a formal Business Continuity Plan (BCP). Before sending Business Impact Analysis (BIA) questionnaires to department heads or selecting alternate recovery sites, what MUST the coordinator accomplish FIRST?",
+    "scenarioContext": "Current state: No formal BCP exists | Coordinator is ready to begin Phase 1 (Project Management & Initiation).",
+    "highlightKeywords": ["FIRST", "Before"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Secure formal executive management sponsorship, define the BCP policy and scope, and obtain resource commitment.",
+        "isCorrect": true,
+        "explanation": "Correct. Phase 1 of the ISC2 BCP lifecycle is Project Management and Initiation. Securing visible senior management buy-in, defining scope, and allocating resources is prerequisite #1; without executive backing, business units will not prioritize the BIA or continuity exercises.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Conduct a quantitative Business Impact Analysis (BIA) across all global business units to calculate Maximum Tolerable Downtime (MTD).",
+        "isCorrect": false,
+        "explanation": "Incorrect. Conducting the BIA is Phase 2 of the BCP lifecycle. Attempting a BIA before securing executive sponsorship and project scope (Phase 1) leads to unaligned scope and lack of departmental cooperation.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Sign a reciprocal agreement with a partner logistics firm to serve as a warm recovery site.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Selecting recovery strategies (Phase 3) before completing Project Initiation (Phase 1) and the BIA (Phase 2) wastes budget on recovery capabilities that may not match actual business MTD/RTO requirements.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "Schedule an immediate full-interruption disaster recovery drill for the primary data center.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Testing and exercises occur in Phase 5 after plans are written and approved; running a full-interruption test first is dangerous and out of order.",
+        "trapType": "wrong_lifecycle_phase"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The ISC2 BCP Lifecycle follows a strict sequence: (1) Project Management & Initiation (Obtain Executive Support & Scope), (2) Business Impact Analysis (BIA), (3) Continuity Strategy Development, (4) Plan Approval & Implementation, and (5) Awareness, Training, Testing & Maintenance.",
+      "managerMindsetTip": "Whenever a CISSP question asks for the FIRST step in starting ANY enterprise program (BCP, Risk Management, Security Governance), the answer is almost always: Obtain Senior Management Support / Define Scope & Policy.",
+      "studyFocusDirective": "Memorize the 4–5 sequential phases of the ISC2 Business Continuity Planning lifecycle.",
+      "keyTakeaway": "Phase 1 of BCP is Project Initiation — securing executive sponsorship and defining scope comes BEFORE the BIA.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 3: Business Continuity Planning — Project Management and Initiation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.10-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.10",
+    "subdomainName": "Personnel Security Policies & Processes",
+    "topicId": "1.10.2",
+    "topicName": "Job Rotation, Mandatory Vacations, Separation of Duties",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "Separation of Duties vs. Mandatory Vacations vs. Job Rotation",
+      "Collusion Deterrence and Fraud Detection",
+      "Preventive vs. Detective Administrative Controls"
+    ],
+    "keyTerms": ["Separation of Duties", "Mandatory Vacation", "Job Rotation", "Collusion"],
+    "tags": ["personnel-security", "administrative-controls", "fraud"],
+    "stem": "An internal audit at a commercial bank reveals that a single senior wire-transfer specialist has the ability to both create a new vendor payee profile and approve outgoing international wire transfers up to $250,000. Which administrative personnel control PRIMARILY prevents a single insider from executing fraudulent wire transfers without colluding with another employee?",
+    "scenarioContext": "Vulnerability: One employee can both initiate (create vendor) and authorize (approve wire) high-value transactions.",
+    "highlightKeywords": ["PRIMARILY", "prevents", "without colluding"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Separation of Duties (SoD)",
+        "isCorrect": true,
+        "explanation": "Correct. Separation of Duties is a preventive administrative control that splits critical steps of a sensitive process (such as creating a vendor vs. approving payment) across two or more roles so no single individual can commit fraud without collusion.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Mandatory Two-Week Vacations",
+        "isCorrect": false,
+        "explanation": "Incorrect. Mandatory vacations are primarily a detective control designed to uncover ongoing fraud that requires continuous maintenance while the employee is away—they do not prevent a single one-off fraudulent wire transfer before the vacation.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Pre-employment Background Screening",
+        "isCorrect": false,
+        "explanation": "Incorrect. Background checks help assess candidate trustworthiness prior to hiring, but cannot prevent an already-hired insider with excessive privileges from abusing an unsegregated workflow.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "Non-Disclosure Agreements (NDAs)",
+        "isCorrect": false,
+        "explanation": "Incorrect. An NDA is a deterrent legal contract regarding confidentiality, not an operational control preventing unauthorized financial transactions.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Separation of Duties (SoD) prevents fraud by dividing critical tasks among multiple individuals so that no single person controls a high-risk transaction end-to-end. To bypass SoD, an attacker must resort to collusion.",
+      "managerMindsetTip": "Know the exact purpose of the 3 personnel controls: Separation of Duties = PREVENTS single-person fraud (requires collusion); Mandatory Vacations = DETECTS ongoing fraud while the person is away; Job Rotation = Reduces single points of failure & detects anomalies.",
+      "studyFocusDirective": "Compare Separation of Duties, Dual Control, Split Knowledge, Mandatory Vacations, and Job Rotation.",
+      "keyTakeaway": "Separation of Duties (Preventive) forces collusion; Mandatory Vacations (Detective) uncovers ongoing fraud.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 2: Personnel Security Policies and Processes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.11-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.11",
+    "subdomainName": "Security Awareness, Education, and Training",
+    "topicId": "1.11.2",
+    "topicName": "Phishing Simulations & Program Metrics",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Awareness vs. Training vs. Education",
+      "Measuring Behavioral Effectiveness of Security Awareness",
+      "Key Performance Indicators (KPIs) vs. Vanity Metrics"
+    ],
+    "keyTerms": ["Security Awareness", "Training", "Education", "Behavioral Metrics"],
+    "tags": ["awareness", "metrics", "think-like-a-manager"],
+    "stem": "A CISO is preparing an annual briefing for the Board of Directors to demonstrate whether the organization's revamped Security Awareness Program is genuinely changing employee security behavior. Which metric provides the MOST meaningful evidence of behavioral effectiveness?",
+    "scenarioContext": "Objective: Measure actual behavioral change from the Security Awareness Program rather than mere attendance.",
+    "highlightKeywords": ["MOST meaningful", "behavioral effectiveness"],
+    "options": [
+      {
+        "id": "A",
+        "text": "A sustained reduction in the phishing simulation click-through rate paired with a measurable increase in employee-reported suspicious emails to the SOC.",
+        "isCorrect": true,
+        "explanation": "Correct. The goal of Security Awareness is to modify human behavior and keep security top-of-mind. Tracking both reduced click rates and increased proactive reporting to the SOC directly measures real-world behavioral change.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "100% employee completion of the annual 45-minute compliance video module before the audit deadline.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Course completion rates measure compliance attendance (an output/vanity metric), not whether employees actually changed their behavior when confronted with real threats.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "The total number of firewall blocks and antivirus signatures updated automatically by the endpoint protection platform.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Automated firewall and antivirus blocks measure technical control activity, not human awareness or employee behavioral change.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Requiring every employee in the company to earn an external CISSP or CISM certification within 12 months.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Professional security certifications represent deep 'Education' for career security practitioners, which is disproportionate and inappropriate for general workforce awareness.",
+        "trapType": "cost_disproportionate"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Effective security awareness metrics measure actual behavioral outcomes (such as lower phishing click rates and higher timely reporting of suspicious activity) rather than passive attendance or slide completion percentages.",
+      "managerMindsetTip": "Distinguish NIST SP 800-50's three tiers: Awareness = 'What' (changing behavior for all staff); Training = 'How' (building job-specific skills for IT/Ops); Education = 'Why' (deep theoretical study & degrees/certifications for security leaders).",
+      "studyFocusDirective": "Review NIST SP 800-50 (Building an Information Technology Security Awareness and Training Program) and compare Awareness, Training, and Education.",
+      "keyTakeaway": "Awareness is measured by behavioral change (lower click rate + higher reporting rate), not slide completion.",
+      "references": [
+        {
+          "source": "NIST SP 800-50",
+          "section": "Building an Information Technology Security Awareness and Training Program"
+        },
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 2: Security Awareness, Training, and Education"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.12-q001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.12",
+    "subdomainName": "Due Care & Due Diligence",
+    "topicId": "1.12.2",
+    "topicName": "Distinguishing Due Diligence (Knowing) from Due Care (Doing)",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "Due Diligence vs. Due Care",
+      "Prudent Person Rule",
+      "Pre-Acquisition Third-Party Investigation"
+    ],
+    "keyTerms": ["Due Diligence", "Due Care", "Prudent Person Rule", "Negligence"],
+    "tags": ["due-diligence", "due-care", "think-like-a-manager"],
+    "stem": "Before acquiring a regional fintech startup, an enterprise's executive committee commissions an independent assessment of the startup's SOC 2 Type II audit reports, open vulnerability backlog, regulatory compliance history, and pending litigation. Commissioning this investigation to understand the target's risk posture BEFORE signing the acquisition contract is an example of:",
+    "scenarioContext": "Activity: Researching, investigating, and verifying risk posture prior to making a business decision.",
+    "highlightKeywords": ["BEFORE signing", "investigating"],
+    "options": [
+      {
+        "id": "A",
+        "text": "Due Diligence",
+        "isCorrect": true,
+        "explanation": "Correct. Due Diligence ('Do Detect / Know') is the act of investigating, researching, and gathering information to understand threats, vulnerabilities, and obligations so informed decisions can be made. Due Care ('Do Correct / Act') is taking the reasonable protective actions based on those findings.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Due Care",
+        "isCorrect": false,
+        "explanation": "Incorrect. Due Care refers to the implementation of reasonable safeguards and actions (doing what a prudent person would do to protect assets), whereas investigating and assessing risks beforehand is Due Diligence.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Risk Avoidance",
+        "isCorrect": false,
+        "explanation": "Incorrect. Risk Avoidance means canceling the acquisition or exiting the business activity entirely; conducting an audit prior to acquisition is an assessment/diligence step.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Subrogation",
+        "isCorrect": false,
+        "explanation": "Incorrect. Subrogation is an insurance legal right allowing an insurer who paid a claim to pursue recovery from the third party that caused the loss.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Due Diligence is researching, investigating, and assessing risks ('knowing/detecting'). Due Care is implementing and maintaining reasonable security controls to protect the organization ('doing/acting').",
+      "managerMindsetTip": "Use the classic memory hook: Due Diligence = 'Do Detect' (Research, Audit, Assess, Investigate). Due Care = 'Do Correct' (Patch, Encrypt, Train, Enforce Policy). Failing to exercise Due Care makes leadership liable for negligence under the Prudent Person Rule.",
+      "studyFocusDirective": "Practice distinguishing Due Diligence (research/assessment) from Due Care (action/control implementation) across M&A, vendor onboarding, and vulnerability management scenarios.",
+      "keyTakeaway": "Due Diligence = Investigating/Knowing ('Do Detect'). Due Care = Acting/Protecting ('Do Correct').",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 1: Due Care and Due Diligence"
+        }
+      ]
+    }
+  }
+]

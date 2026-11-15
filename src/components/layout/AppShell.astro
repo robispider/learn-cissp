@@ -1,0 +1,145 @@
+---
+import '../../styles/global.css';
+import ResumeExamBanner from './ResumeExamBanner';
+import ThemeToggle from './ThemeToggle';
+
+interface Props {
+  title?: string;
+  description?: string;
+  minimalChrome?: boolean;
+}
+
+const {
+  title = 'Learn CISSP — Human-Centered Exam & Diagnostic Studio',
+  description = 'Master the CISSP Common Body of Knowledge with self-indicating diagnostic exams, calm visual pacing, and deep mindset analytics.',
+  minimalChrome = false,
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      try {
+        const raw = localStorage.getItem('cissp:user_preferences');
+        const theme = raw ? JSON.parse(raw).theme : 'dark';
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased selection:bg-emerald-500/20 selection:text-emerald-400 dark:bg-[#090d16] dark:text-slate-100">
+    {!minimalChrome && (
+      <>
+        <ResumeExamBanner client:load />
+        <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-slate-800/80 dark:bg-[#090d16]/80">
+          <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+            <div class="flex items-center gap-8">
+              <a href="/" class="group flex items-center gap-2.5">
+                <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 shadow-sm shadow-emerald-500/20 transition group-hover:scale-105">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-base font-bold tracking-tight text-slate-900 dark:text-white">
+                    Learn<span class="text-emerald-500">CISSP</span>
+                  </span>
+                  <span class="ml-2 hidden rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 sm:inline-block">
+                    CBK Studio
+                  </span>
+                </div>
+              </a>
+
+              <nav class="hidden items-center gap-1 md:flex">
+                <a
+                  href="/"
+                  class:list={[
+                    'rounded-lg px-3 py-1.5 text-sm font-medium transition',
+                    pathname === '/'
+                      ? 'bg-slate-900/5 text-slate-900 dark:bg-white/10 dark:text-white'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-200',
+                  ]}
+                >
+                  Explore Exams
+                </a>
+                <a
+                  href="/domains/dom-1"
+                  class:list={[
+                    'rounded-lg px-3 py-1.5 text-sm font-medium transition',
+                    pathname.startsWith('/domains/dom-1')
+                      ? 'bg-slate-900/5 text-slate-900 dark:bg-white/10 dark:text-white'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-200',
+                  ]}
+                >
+                  Domain 1 Studio
+                </a>
+                <a
+                  href="/history"
+                  class:list={[
+                    'rounded-lg px-3 py-1.5 text-sm font-medium transition',
+                    pathname.startsWith('/history')
+                      ? 'bg-slate-900/5 text-slate-900 dark:bg-white/10 dark:text-white'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-200',
+                  ]}
+                >
+                  Analytics & Backup
+                </a>
+              </nav>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <a
+                href="/exam/d1-full-01"
+                class="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-semibold text-slate-950 shadow-sm shadow-emerald-500/20 transition hover:bg-emerald-400"
+              >
+                <span>Practice Domain 1</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-3.5 w-3.5">
+                  <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <ThemeToggle client:load />
+            </div>
+          </div>
+        </header>
+      </>
+    )}
+
+    <main>
+      <slot />
+    </main>
+
+    {!minimalChrome && (
+      <footer class="mt-20 border-t border-slate-200/70 py-8 text-center text-xs text-slate-500 dark:border-slate-800/60 dark:text-slate-500">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6">
+          <p>
+            <strong>LearnCISSP</strong> • 100% Local Browser Persistence (IndexedDB + LocalStorage)
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="/" class="hover:text-slate-800 dark:hover:text-slate-300">All Domains</a>
+            <a href="/domains/dom-1" class="hover:text-slate-800 dark:hover:text-slate-300">Domain 1 Exam</a>
+            <a href="/history" class="hover:text-slate-800 dark:hover:text-slate-300">Export / Restore Data</a>
+          </div>
+        </div>
+      </footer>
+    )}
+  </body>
+</html>

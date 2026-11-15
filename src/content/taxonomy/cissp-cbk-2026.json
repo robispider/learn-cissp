@@ -1,0 +1,701 @@
+{
+  "version": "2026.1",
+  "title": "ISC2 CISSP Common Body of Knowledge (CBK) Taxonomy",
+  "passingScorePercent": 70,
+  "masteryScorePercent": 85,
+  "domains": [
+    {
+      "domainId": "dom-1",
+      "number": 1,
+      "name": "Security and Risk Management",
+      "shortName": "Risk & Governance",
+      "weightPercent": 16,
+      "color": "emerald",
+      "tagline": "Ethics, CIA triad, security governance, quantitative/qualitative risk analysis, BCP/BIA, legal compliance, and personnel security.",
+      "subdomains": [
+        {
+          "subdomainId": "1.1",
+          "name": "Professional Ethics & ISC2 Code of Ethics",
+          "weight": 0.06,
+          "summary": "Applying the four mandatory ISC2 Code of Ethics canons in strict priority order and navigating organizational conflicts.",
+          "topics": [
+            { "topicId": "1.1.1", "name": "ISC2 Canons & Priority Order" },
+            { "topicId": "1.1.2", "name": "Organizational Ethics & Conflicts" }
+          ]
+        },
+        {
+          "subdomainId": "1.2",
+          "name": "Security Concepts (CIA, DAD, Non-Repudiation, 5 Pillars)",
+          "weight": 0.08,
+          "summary": "Core security objectives: Confidentiality, Integrity, Availability, Authenticity, Non-repudiation, and the Parkerian Hexad.",
+          "topics": [
+            { "topicId": "1.2.1", "name": "CIA Triad & Parkerian Hexad" },
+            { "topicId": "1.2.2", "name": "Authenticity & Non-repudiation" }
+          ]
+        },
+        {
+          "subdomainId": "1.3",
+          "name": "Security Governance Principles & Alignment",
+          "weight": 0.10,
+          "summary": "Aligning security strategy with business mission, governance vs. management, data roles, and enterprise frameworks.",
+          "topics": [
+            { "topicId": "1.3.1", "name": "Governance vs. Management" },
+            { "topicId": "1.3.2", "name": "Roles & Responsibilities (Owner, Custodian, User)" },
+            { "topicId": "1.3.3", "name": "Security Frameworks (NIST, ISO 27001, COBIT, SABSA)" }
+          ]
+        },
+        {
+          "subdomainId": "1.4",
+          "name": "Risk Management Concepts & Risk Analysis",
+          "weight": 0.16,
+          "summary": "Quantitative risk calculations (AV, EF, SLE, ARO, ALE, Safeguard Value), qualitative matrices, and risk response options.",
+          "topics": [
+            { "topicId": "1.4.1", "name": "Risk Terminology (Asset, Threat, Vulnerability, Exposure)" },
+            { "topicId": "1.4.2", "name": "Quantitative Risk Analysis & Cost-Benefit Evaluation (ALE, SLE, ARO, ACS)" },
+            { "topicId": "1.4.3", "name": "Qualitative Risk & Risk Matrices" },
+            { "topicId": "1.4.4", "name": "Risk Treatment (Mitigate, Transfer, Accept, Avoid)" }
+          ]
+        },
+        {
+          "subdomainId": "1.5",
+          "name": "Threat Modeling Concepts & Methodologies",
+          "weight": 0.08,
+          "summary": "Proactive threat identification using STRIDE, PASTA, DREAD, VAST, and attack tree decomposition.",
+          "topics": [
+            { "topicId": "1.5.1", "name": "STRIDE, PASTA, VAST, DREAD" },
+            { "topicId": "1.5.2", "name": "Attack Trees & Reduction Analysis" }
+          ]
+        },
+        {
+          "subdomainId": "1.6",
+          "name": "Supply Chain Risk Management (SCRM)",
+          "weight": 0.08,
+          "summary": "Third-party vendor due diligence, contractual vehicles (SLA, NDA, MOU, ISA), and right-to-audit clauses.",
+          "topics": [
+            { "topicId": "1.6.1", "name": "Third-Party & Vendor Risk" },
+            { "topicId": "1.6.2", "name": "SLAs, NDAs, MOUs, ISAs, Right-to-Audit" }
+          ]
+        },
+        {
+          "subdomainId": "1.7",
+          "name": "Legal, Regulatory, Compliance & Privacy",
+          "weight": 0.10,
+          "summary": "Intellectual property protections, global privacy mandates (GDPR, HIPAA, CCPA), and transborder data flow rules.",
+          "topics": [
+            { "topicId": "1.7.1", "name": "Cybercrime Laws & Intellectual Property (Copyright, Patent, Trade Secret)" },
+            { "topicId": "1.7.2", "name": "Privacy Regulations (GDPR, CCPA, HIPAA, PCI-DSS)" },
+            { "topicId": "1.7.3", "name": "Cross-Border Data Flows" }
+          ]
+        },
+        {
+          "subdomainId": "1.8",
+          "name": "Security Policies, Standards, Procedures & Baselines",
+          "weight": 0.08,
+          "summary": "Understanding mandatory vs. discretionary documentation hierarchy, scoping, and tailoring controls.",
+          "topics": [
+            { "topicId": "1.8.1", "name": "Policy Hierarchy (Policy vs. Standard vs. Guideline vs. Procedure)" },
+            { "topicId": "1.8.2", "name": "Baselines & Scoping/Tailoring" }
+          ]
+        },
+        {
+          "subdomainId": "1.9",
+          "name": "Business Continuity (BCP) Requirements",
+          "weight": 0.10,
+          "summary": "BCP project initiation, Business Impact Analysis (BIA), and recovery time/point metrics (RPO, RTO, WRT, MTD).",
+          "topics": [
+            { "topicId": "1.9.1", "name": "BCP Project Initiation & Scope" },
+            { "topicId": "1.9.2", "name": "Business Impact Analysis (BIA: MTD, RTO, RPO, WRT)" }
+          ]
+        },
+        {
+          "subdomainId": "1.10",
+          "name": "Personnel Security Policies & Processes",
+          "weight": 0.06,
+          "summary": "Candidate screening, separation of duties, job rotation, mandatory vacations, and secure termination workflows.",
+          "topics": [
+            { "topicId": "1.10.1", "name": "Hiring, Background Checks & Onboarding" },
+            { "topicId": "1.10.2", "name": "Job Rotation, Mandatory Vacations, Separation of Duties" },
+            { "topicId": "1.10.3", "name": "Termination & Offboarding" }
+          ]
+        },
+        {
+          "subdomainId": "1.11",
+          "name": "Security Awareness, Education, and Training",
+          "weight": 0.04,
+          "summary": "Distinguishing awareness, training, and education programs, behavioral metrics, and phishing resilience.",
+          "topics": [
+            { "topicId": "1.11.1", "name": "Awareness vs. Training vs. Education" },
+            { "topicId": "1.11.2", "name": "Phishing Simulations & Program Metrics" }
+          ]
+        },
+        {
+          "subdomainId": "1.12",
+          "name": "Due Care & Due Diligence",
+          "weight": 0.06,
+          "summary": "Applying the Prudent Person Rule and differentiating Due Diligence (research/knowing) from Due Care (action/doing).",
+          "topics": [
+            { "topicId": "1.12.1", "name": "Prudent Person Rule" },
+            { "topicId": "1.12.2", "name": "Distinguishing Due Diligence (Knowing) from Due Care (Doing)" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-2",
+      "number": 2,
+      "name": "Asset Security",
+      "shortName": "Asset Security",
+      "weightPercent": 10,
+      "color": "sky",
+      "tagline": "Data classification, ownership roles, privacy protection, NIST 800-88 media sanitization, and data states.",
+      "subdomains": [
+        {
+          "subdomainId": "2.1",
+          "name": "Identify and Classify Information and Assets",
+          "weight": 0.20,
+          "summary": "Government vs. commercial classification labels, asset inventories, and FIPS 199 categorization.",
+          "topics": [
+            { "topicId": "2.1.1", "name": "Government vs. Commercial Classification Labels" },
+            { "topicId": "2.1.2", "name": "Asset Inventory & Categorization (FIPS 199)" }
+          ]
+        },
+        {
+          "subdomainId": "2.2",
+          "name": "Information and Asset Ownership",
+          "weight": 0.18,
+          "summary": "Accountability and duties of Data Owners, Controllers, Processors, and Custodians.",
+          "topics": [
+            { "topicId": "2.2.1", "name": "Data Owner vs. Data Controller vs. Data Processor" },
+            { "topicId": "2.2.2", "name": "Custodian Duties" }
+          ]
+        },
+        {
+          "subdomainId": "2.3",
+          "name": "Protect Privacy & Sensitive Data",
+          "weight": 0.18,
+          "summary": "Protecting PII/PHI/CHD via anonymization, pseudonymization, tokenization, and masking.",
+          "topics": [
+            { "topicId": "2.3.1", "name": "PII, PHI, Cardholder Data" },
+            { "topicId": "2.3.2", "name": "Data Anonymization, Pseudonymization, Tokenization, Masking" }
+          ]
+        },
+        {
+          "subdomainId": "2.4",
+          "name": "Asset Retention & End-of-Life Media Sanitization",
+          "weight": 0.18,
+          "summary": "Record retention schedules and NIST SP 800-88 media sanitization (Clear, Purge, Destroy, Crypto Erase).",
+          "topics": [
+            { "topicId": "2.4.1", "name": "Record Retention Schedules" },
+            { "topicId": "2.4.2", "name": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)" }
+          ]
+        },
+        {
+          "subdomainId": "2.5",
+          "name": "Data Security Controls & States of Data",
+          "weight": 0.14,
+          "summary": "Securing data at rest, in transit, and in use with encryption, DLP, and CASB.",
+          "topics": [
+            { "topicId": "2.5.1", "name": "Data at Rest, Data in Transit, Data in Use" },
+            { "topicId": "2.5.2", "name": "DLP (Network vs. Endpoint) & CASB" }
+          ]
+        },
+        {
+          "subdomainId": "2.6",
+          "name": "Data Handling Requirements",
+          "weight": 0.12,
+          "summary": "Marking, labeling, secure storage, and chain-of-custody transport for sensitive media.",
+          "topics": [
+            { "topicId": "2.6.1", "name": "Marking, Labeling, Storage, and Secure Transport of Sensitive Media" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-3",
+      "number": 3,
+      "name": "Security Architecture and Engineering",
+      "shortName": "Architecture & Crypto",
+      "weightPercent": 13,
+      "color": "indigo",
+      "tagline": "Secure design principles, Bell-LaPadula/Biba models, TPM/HSM hardware security, cryptography, PKI, and physical facility design.",
+      "subdomains": [
+        {
+          "subdomainId": "3.1",
+          "name": "Secure Design Principles",
+          "weight": 0.12,
+          "summary": "Saltzer & Schroeder principles, Defense in Depth, and Zero Trust architecture.",
+          "topics": [
+            { "topicId": "3.1.1", "name": "Saltzer & Schroeder Principles" },
+            { "topicId": "3.1.2", "name": "Defense in Depth & Zero Trust" }
+          ]
+        },
+        {
+          "subdomainId": "3.2",
+          "name": "Fundamental Concepts of Security Models",
+          "weight": 0.10,
+          "summary": "State machine models: Bell-LaPadula, Biba, Clark-Wilson, Brewer-Nash, and Take-Grant.",
+          "topics": [
+            { "topicId": "3.2.1", "name": "Confidentiality Models (Bell-LaPadula)" },
+            { "topicId": "3.2.2", "name": "Integrity Models (Biba, Clark-Wilson)" },
+            { "topicId": "3.2.3", "name": "Brewer-Nash (Chinese Wall), Graham-Denning, Take-Grant" }
+          ]
+        },
+        {
+          "subdomainId": "3.3",
+          "name": "Select Controls Based Upon Systems Security Requirements",
+          "weight": 0.08,
+          "summary": "Common Criteria (ISO 15408) evaluation assurance and NIST RMF authorization.",
+          "topics": [
+            { "topicId": "3.3.1", "name": "Common Criteria (ISO 15408: TOE, PP, ST, EALs)" },
+            { "topicId": "3.3.2", "name": "System Certification vs. Accreditation / Authorization (RMF)" }
+          ]
+        },
+        {
+          "subdomainId": "3.4",
+          "name": "Security Capabilities of Information Systems",
+          "weight": 0.10,
+          "summary": "Protection rings, memory protection, TPM, HSM, Reference Monitor, and Security Kernel.",
+          "topics": [
+            { "topicId": "3.4.1", "name": "Memory Protection, Protection Rings, TPM, HSM, Reference Monitor" }
+          ]
+        },
+        {
+          "subdomainId": "3.5",
+          "name": "Cloud, Virtualization, IoT & Embedded Systems Security",
+          "weight": 0.10,
+          "summary": "Hypervisor security, container isolation, Cloud Shared Responsibility, and ICS/SCADA.",
+          "topics": [
+            { "topicId": "3.5.1", "name": "Hypervisors (Type 1 vs. Type 2), VM Escape, Containers" },
+            { "topicId": "3.5.2", "name": "Cloud Shared Responsibility (IaaS, PaaS, SaaS)" },
+            { "topicId": "3.5.3", "name": "ICS/SCADA, IoT, Edge Computing" }
+          ]
+        },
+        {
+          "subdomainId": "3.6",
+          "name": "Cryptography & Symmetric/Asymmetric Algorithms",
+          "weight": 0.14,
+          "summary": "AES, ChaCha20, block cipher modes, RSA, ECC, Diffie-Hellman, and Post-Quantum Cryptography.",
+          "topics": [
+            { "topicId": "3.6.1", "name": "Symmetric Ciphers (AES, ChaCha20, Block Modes: GCM, CBC, ECB)" },
+            { "topicId": "3.6.2", "name": "Asymmetric Cryptography (RSA, ECC, Diffie-Hellman) & Post-Quantum Crypto" }
+          ]
+        },
+        {
+          "subdomainId": "3.7",
+          "name": "PKI, Digital Signatures, Hashing & Key Management",
+          "weight": 0.12,
+          "summary": "SHA-2/3, HMAC, X.509 certificates, CA hierarchies, OCSP/CRL, and key lifecycle.",
+          "topics": [
+            { "topicId": "3.7.1", "name": "Hashing & MACs (SHA-2/3, HMAC)" },
+            { "topicId": "3.7.2", "name": "Digital Signatures & Certificates (X.509, CA, CRL, OCSP, Pinning)" },
+            { "topicId": "3.7.3", "name": "Key Lifecycle & Escrow" }
+          ]
+        },
+        {
+          "subdomainId": "3.8",
+          "name": "Cryptanalytic Attacks",
+          "weight": 0.08,
+          "summary": "Known-plaintext, chosen-plaintext, side-channel, birthday, replay, and downgrade attacks.",
+          "topics": [
+            { "topicId": "3.8.1", "name": "Ciphertext-Only, Known-Plaintext, Chosen-Plaintext, Side-Channel, Birthday" }
+          ]
+        },
+        {
+          "subdomainId": "3.9",
+          "name": "Site and Facility Design Secure Principles",
+          "weight": 0.08,
+          "summary": "CPTED environmental design and resilient site selection.",
+          "topics": [
+            { "topicId": "3.9.1", "name": "CPTED (Crime Prevention Through Environmental Design), Site Selection" }
+          ]
+        },
+        {
+          "subdomainId": "3.10",
+          "name": "Physical Security & Environmental Controls",
+          "weight": 0.08,
+          "summary": "Perimeter defenses, mantraps, HVAC, UPS/generators, and fire suppression classes.",
+          "topics": [
+            { "topicId": "3.10.1", "name": "Perimeter Controls, Mantraps, Bollards, Locks" },
+            { "topicId": "3.10.2", "name": "HVAC, Power (UPS, Generators), Fire Suppression" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-4",
+      "number": 4,
+      "name": "Communication and Network Security",
+      "shortName": "Network Security",
+      "weightPercent": 13,
+      "color": "cyan",
+      "tagline": "OSI/TCP-IP stack, IPsec, TLS 1.3, wireless WPA3/802.1X, firewalls, micro-segmentation, SASE, and secure channels.",
+      "subdomains": [
+        {
+          "subdomainId": "4.1",
+          "name": "Secure Design Principles in Network Architecture",
+          "weight": 0.36,
+          "summary": "OSI/TCP-IP encapsulation, IPsec (AH/ESP), TLS 1.3, WPA3, and 802.1X/EAP.",
+          "topics": [
+            { "topicId": "4.1.1", "name": "OSI & TCP/IP Models & Encapsulation" },
+            { "topicId": "4.1.2", "name": "IPsec (AH vs. ESP, Tunnel vs. Transport, IKE), TLS 1.3, SSH" },
+            { "topicId": "4.1.3", "name": "Wireless Security (WPA2/WPA3, 802.1X/EAP), Cellular (4G/5G)" }
+          ]
+        },
+        {
+          "subdomainId": "4.2",
+          "name": "Secure Network Components",
+          "weight": 0.34,
+          "summary": "NGFW, WAF, NAC, VLANs, DMZ, micro-segmentation, SDN, SD-WAN, and SASE.",
+          "topics": [
+            { "topicId": "4.2.1", "name": "Firewalls (Stateful, NGFW, WAF), Proxies, NAC" },
+            { "topicId": "4.2.2", "name": "Network Segmentation (VLANs, DMZ, Micro-segmentation, SDN, SD-WAN, SASE)" }
+          ]
+        },
+        {
+          "subdomainId": "4.3",
+          "name": "Secure Communication Channels",
+          "weight": 0.30,
+          "summary": "VoIP security, email authentication (SPF, DKIM, DMARC), VPN tunneling, and DNSSEC.",
+          "topics": [
+            { "topicId": "4.3.1", "name": "Voice/VoIP Security, Email Security (SPF, DKIM, DMARC, S/MIME)" },
+            { "topicId": "4.3.2", "name": "VPNs (Split vs. Full Tunnel, Always-On), Remote Access, CDN & DNSSEC" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-5",
+      "number": 5,
+      "name": "Identity and Access Management (IAM)",
+      "shortName": "Identity & Access",
+      "weightPercent": 13,
+      "color": "violet",
+      "tagline": "MFA, biometrics (CER/FAR/FRR), Federated Identity (SAML, OIDC, OAuth), Kerberos, DAC/MAC/RBAC/ABAC, and PAM.",
+      "subdomains": [
+        {
+          "subdomainId": "5.1",
+          "name": "Control Physical and Logical Access to Assets",
+          "weight": 0.15,
+          "summary": "Subject/object access control matrices, smart cards, and physical access logs.",
+          "topics": [
+            { "topicId": "5.1.1", "name": "Subject/Object Access Control Matrix" },
+            { "topicId": "5.1.2", "name": "Smart Cards, Badges, Physical Access Logs" }
+          ]
+        },
+        {
+          "subdomainId": "5.2",
+          "name": "Identification and Authentication of People, Devices, and Services",
+          "weight": 0.20,
+          "summary": "MFA factors, biometric accuracy metrics (FAR, FRR, CER), and FIDO2/Passkeys.",
+          "topics": [
+            { "topicId": "5.2.1", "name": "MFA Factors (Something You Know, Have, Are, Somewhere You Are)" },
+            { "topicId": "5.2.2", "name": "Biometrics (FAR/CER/FRR, Crossover Error Rate)" },
+            { "topicId": "5.2.3", "name": "Passkeys/FIDO2 & Passwordless" }
+          ]
+        },
+        {
+          "subdomainId": "5.3",
+          "name": "Federated Identity with a Third-Party Service",
+          "weight": 0.20,
+          "summary": "SAML 2.0, OAuth 2.0, OIDC, Kerberos ticket exchange, RADIUS, and TACACS+.",
+          "topics": [
+            { "topicId": "5.3.1", "name": "SAML 2.0, OAuth 2.0, OpenID Connect (OIDC)" },
+            { "topicId": "5.3.2", "name": "Kerberos (AS, TGS, KDC, Tickets), RADIUS, TACACS+, LDAP" }
+          ]
+        },
+        {
+          "subdomainId": "5.4",
+          "name": "Implement and Manage Authorization Mechanisms",
+          "weight": 0.15,
+          "summary": "DAC, MAC, RBAC, ABAC, Rule-Based, and Risk-Based authorization models.",
+          "topics": [
+            { "topicId": "5.4.1", "name": "DAC, MAC, RBAC, ABAC, Rule-Based, Risk-Based Access Control" }
+          ]
+        },
+        {
+          "subdomainId": "5.5",
+          "name": "Manage the Identity and Access Provisioning Lifecycle",
+          "weight": 0.15,
+          "summary": "Onboarding, role changes, preventing privilege creep, deprovisioning, and access reviews.",
+          "topics": [
+            { "topicId": "5.5.1", "name": "Provisioning, Onboarding, Role Changes, Deprovisioning, Access Reviews" }
+          ]
+        },
+        {
+          "subdomainId": "5.6",
+          "name": "Implement Authentication Systems & PAM",
+          "weight": 0.15,
+          "summary": "Privileged Access Management (PAM), Just-in-Time (JIT) access, and credential vaulting.",
+          "topics": [
+            { "topicId": "5.6.1", "name": "Privileged Access Management (PAM), Just-in-Time (JIT) Access, Vaulting" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-6",
+      "number": 6,
+      "name": "Security Assessment and Testing",
+      "shortName": "Assessment & Audit",
+      "weightPercent": 12,
+      "color": "amber",
+      "tagline": "Assessment strategies, penetration testing, SAST/DAST/IAST, CVSS prioritization, and SOC 1/2/3 & ISO 27001 audits.",
+      "subdomains": [
+        {
+          "subdomainId": "6.1",
+          "name": "Design and Validate Assessment, Test, and Audit Strategies",
+          "weight": 0.20,
+          "summary": "Internal, external, and third-party assessments, Rules of Engagement (RoE), and scoping.",
+          "topics": [
+            { "topicId": "6.1.1", "name": "Internal vs. External vs. Third-Party Assessments" },
+            { "topicId": "6.1.2", "name": "Rules of Engagement (RoE) & Scope" }
+          ]
+        },
+        {
+          "subdomainId": "6.2",
+          "name": "Conduct Security Control Testing",
+          "weight": 0.25,
+          "summary": "Vulnerability scanning, penetration testing, SAST, DAST, IAST, SCA, and fuzzing.",
+          "topics": [
+            { "topicId": "6.2.1", "name": "Vulnerability Scanning vs. Penetration Testing" },
+            { "topicId": "6.2.2", "name": "SAST, DAST, IAST, SCA, Fuzzing, Code Review" }
+          ]
+        },
+        {
+          "subdomainId": "6.3",
+          "name": "Collect Security Process Data",
+          "weight": 0.18,
+          "summary": "Account management reviews, KPIs/KRIs, backup verification, and DR test metrics.",
+          "topics": [
+            { "topicId": "6.3.1", "name": "Account Management Reviews, KPIs/KRIs, Backup Verification" }
+          ]
+        },
+        {
+          "subdomainId": "6.4",
+          "name": "Analyze Test Output and Generate Report",
+          "weight": 0.17,
+          "summary": "False positives vs. false negatives, CVSS prioritization, and exception handling.",
+          "topics": [
+            { "topicId": "6.4.1", "name": "False Positives vs. False Negatives, CVSS Prioritization" }
+          ]
+        },
+        {
+          "subdomainId": "6.5",
+          "name": "Conduct or Facilitate Security Audits",
+          "weight": 0.20,
+          "summary": "SOC 1, SOC 2 (Type I vs. Type II), SOC 3, and ISO 27001 certification audits.",
+          "topics": [
+            { "topicId": "6.5.1", "name": "SOC 1 (Type I/II), SOC 2 (Type I/II), SOC 3, ISO 27001 Audits" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-7",
+      "number": 7,
+      "name": "Security Operations",
+      "shortName": "Security Operations",
+      "weightPercent": 13,
+      "color": "rose",
+      "tagline": "Digital forensics, SIEM/SOAR/EDR, incident response lifecycle, change management, backups, DR sites, and personnel safety.",
+      "subdomains": [
+        {
+          "subdomainId": "7.1",
+          "name": "Understand and Comply with Investigations",
+          "weight": 0.08,
+          "summary": "Order of Volatility (RFC 3227), Chain of Custody, evidence admissibility, and eDiscovery.",
+          "topics": [
+            { "topicId": "7.1.1", "name": "Digital Forensics Order of Volatility (RFC 3227), Chain of Custody" },
+            { "topicId": "7.1.2", "name": "Evidence Types & eDiscovery" }
+          ]
+        },
+        {
+          "subdomainId": "7.2",
+          "name": "Conduct Logging and Monitoring Activities",
+          "weight": 0.08,
+          "summary": "SIEM, SOAR, UEBA, EDR/XDR, log integrity, and NTP time synchronization.",
+          "topics": [
+            { "topicId": "7.2.1", "name": "SIEM, SOAR, UEBA, NDR, EDR/XDR" },
+            { "topicId": "7.2.2", "name": "Log Integrity, NTP Synchronization, Egress Monitoring" }
+          ]
+        },
+        {
+          "subdomainId": "7.3",
+          "name": "Configuration Management (CM) & Hardening",
+          "weight": 0.06,
+          "summary": "Baseline golden images, drift detection, and configuration inventory.",
+          "topics": [
+            { "topicId": "7.3.1", "name": "Baseline Images, Drift Detection, Asset Inventory" }
+          ]
+        },
+        {
+          "subdomainId": "7.4",
+          "name": "Apply Foundational Security Operations Concepts",
+          "weight": 0.07,
+          "summary": "Need-to-know, least privilege, separation of duties, dual control, and split knowledge.",
+          "topics": [
+            { "topicId": "7.4.1", "name": "Need-to-Know, Least Privilege, Separation of Duties, Dual Control, Split Knowledge" }
+          ]
+        },
+        {
+          "subdomainId": "7.5",
+          "name": "Apply Resource Protection",
+          "weight": 0.05,
+          "summary": "Media management and hardware/software asset protection.",
+          "topics": [
+            { "topicId": "7.5.1", "name": "Media Management, Hardware/Software Asset Protection" }
+          ]
+        },
+        {
+          "subdomainId": "7.6",
+          "name": "Conduct Incident Management",
+          "weight": 0.10,
+          "summary": "End-to-end Incident Response lifecycle from detection and containment to lessons learned.",
+          "topics": [
+            { "topicId": "7.6.1", "name": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)" }
+          ]
+        },
+        {
+          "subdomainId": "7.7",
+          "name": "Operate and Maintain Detective and Preventative Measures",
+          "weight": 0.07,
+          "summary": "IDS/IPS, honeypots, sandboxing, and anti-malware controls.",
+          "topics": [
+            { "topicId": "7.7.1", "name": "IDS/IPS (Signature vs. Anomaly), Honeypots, Sandboxing" }
+          ]
+        },
+        {
+          "subdomainId": "7.8",
+          "name": "Implement and Support Patch and Vulnerability Management",
+          "weight": 0.06,
+          "summary": "Patch testing, emergency out-of-band patching, and virtual patching.",
+          "topics": [
+            { "topicId": "7.8.1", "name": "Patch Testing, Emergency Out-of-Band Patching, Virtual Patching" }
+          ]
+        },
+        {
+          "subdomainId": "7.9",
+          "name": "Understand and Participate in Change Management Processes",
+          "weight": 0.06,
+          "summary": "CAB review, rollback plans, and emergency change governance.",
+          "topics": [
+            { "topicId": "7.9.1", "name": "CAB Approval, Rollback Plans, Emergency Change Procedures" }
+          ]
+        },
+        {
+          "subdomainId": "7.10",
+          "name": "Implement Recovery Strategies",
+          "weight": 0.09,
+          "summary": "Full/incremental/differential backups, immutable 3-2-1 rule, Cold/Warm/Hot sites, and RAID.",
+          "topics": [
+            { "topicId": "7.10.1", "name": "Backup Types (Full, Incremental, Differential), 3-2-1 Rule, Immutable Backups" },
+            { "topicId": "7.10.2", "name": "Recovery Sites (Cold, Warm, Hot, Mirrored), RAID Levels" }
+          ]
+        },
+        {
+          "subdomainId": "7.11",
+          "name": "Implement Disaster Recovery (DR) Processes",
+          "weight": 0.06,
+          "summary": "DRP activation criteria, emergency communications, and restoration vs. salvage.",
+          "topics": [
+            { "topicId": "7.11.1", "name": "DRP Activation, Emergency Communications, Restoration vs. Salvage" }
+          ]
+        },
+        {
+          "subdomainId": "7.12",
+          "name": "Test Disaster Recovery Plans",
+          "weight": 0.07,
+          "summary": "Read-through, walkthrough, simulation, parallel, and full-interruption DR tests.",
+          "topics": [
+            { "topicId": "7.12.1", "name": "DR Test Types: Read-Through, Walkthrough, Simulation, Parallel, Full-Interruption" }
+          ]
+        },
+        {
+          "subdomainId": "7.13",
+          "name": "Participate in Business Continuity (BC) Planning and Exercises",
+          "weight": 0.05,
+          "summary": "Cross-functional BC exercises and executive tabletop drills.",
+          "topics": [
+            { "topicId": "7.13.1", "name": "Cross-Functional BC Exercises & Executive Tabletop Drills" }
+          ]
+        },
+        {
+          "subdomainId": "7.14",
+          "name": "Implement and Manage Physical Security",
+          "weight": 0.05,
+          "summary": "Visitor logs, escorts, tailgating/piggybacking prevention, and guard operations.",
+          "topics": [
+            { "topicId": "7.14.1", "name": "Visitor Logs, Escorts, Tailgating Prevention, Guard Operations" }
+          ]
+        },
+        {
+          "subdomainId": "7.15",
+          "name": "Address Personnel Safety and Security Concerns",
+          "weight": 0.05,
+          "summary": "Human life safety first rule, duress alarms, travel security, and emergency assembly.",
+          "topics": [
+            { "topicId": "7.15.1", "name": "Duress Alarms, Travel Security, Emergency Assembly Points (Human Safety First)" }
+          ]
+        }
+      ]
+    },
+    {
+      "domainId": "dom-8",
+      "number": 8,
+      "name": "Software Development Security",
+      "shortName": "Software Security",
+      "weightPercent": 10,
+      "color": "teal",
+      "tagline": "Secure SDLC, DevSecOps CI/CD security, SAMM/BSIMM maturity, SBOM supply chain, and OWASP Top 10 secure coding.",
+      "subdomains": [
+        {
+          "subdomainId": "8.1",
+          "name": "Understand and Integrate Security in the SDLC",
+          "weight": 0.22,
+          "summary": "SDLC models (Agile, DevSecOps, Waterfall) and security gates across lifecycle phases.",
+          "topics": [
+            { "topicId": "8.1.1", "name": "SDLC Models (Agile, DevSecOps, Waterfall, Spiral)" },
+            { "topicId": "8.1.2", "name": "Security Gates at Requirements, Design, Coding, Testing, Deployment" }
+          ]
+        },
+        {
+          "subdomainId": "8.2",
+          "name": "Identify and Apply Security Controls in Development Environments",
+          "weight": 0.20,
+          "summary": "CI/CD pipeline security, secrets management, and environment separation (Dev/Test/Prod).",
+          "topics": [
+            { "topicId": "8.2.1", "name": "CI/CD Pipeline Security, Secrets Management, Environment Separation" }
+          ]
+        },
+        {
+          "subdomainId": "8.3",
+          "name": "Assess the Effectiveness of Software Security",
+          "weight": 0.18,
+          "summary": "Software Assurance Maturity Model (SAMM / BSIMM) and security acceptance testing.",
+          "topics": [
+            { "topicId": "8.3.1", "name": "Software Assurance Maturity Model (SAMM / BSIMM), Acceptance Testing" }
+          ]
+        },
+        {
+          "subdomainId": "8.4",
+          "name": "Assess Security Impact of Acquired Software",
+          "weight": 0.18,
+          "summary": "COTS, SaaS, open-source risk, Software Bill of Materials (SBOM), and supply chain integrity.",
+          "topics": [
+            { "topicId": "8.4.1", "name": "COTS, SaaS, Open-Source Libraries, SBOM, Supply Chain Tampering" }
+          ]
+        },
+        {
+          "subdomainId": "8.5",
+          "name": "Define and Apply Secure Coding Guidelines and Standards",
+          "weight": 0.22,
+          "summary": "OWASP Top 10, injection prevention, broken access control, buffer overflows, and race conditions (TOCTOU).",
+          "topics": [
+            { "topicId": "8.5.1", "name": "OWASP Top 10 (Injection, Broken Access Control, SSRF, XSS, CSRF)" },
+            { "topicId": "8.5.2", "name": "Buffer Overflows, Race Conditions (TOCTOU), Input Validation, API Security" }
+          ]
+        }
+      ]
+    }
+  ]
+}

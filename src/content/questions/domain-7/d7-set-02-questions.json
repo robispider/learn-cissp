@@ -1,0 +1,2000 @@
+[
+  {
+    "id": "cissp-d7-s7.1-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.1",
+    "subdomainName": "Understand and Comply with Investigations",
+    "topicId": "7.1.1",
+    "topicName": "Digital Forensics Order of Volatility (RFC 3227), Chain of Custody",
+    "cognitiveLevel": "apply",
+    "perspective": "incident_responder",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Hardware Write Blockers",
+      "Bit-Stream Forensic Imaging",
+      "Evidence Integrity"
+    ],
+    "keyTerms": [
+      "Write Blocker",
+      "Bit-Stream Image",
+      "Forensic Copy",
+      "Integrity"
+    ],
+    "tags": [
+      "forensics",
+      "write-blocker",
+      "imaging"
+    ],
+    "stem": "A forensic investigator is tasked with acquiring persistent disk evidence from a seized workstation suspected of insider data staging. Before connecting the suspect's SATA drive to a forensic imaging workstation, which safeguard MUST be placed between the suspect drive and the imaging host?",
+    "scenarioContext": "Task: Acquire persistent SATA disk image from seized suspect workstation without altering metadata or unallocated blocks.",
+    "highlightKeywords": [
+      "MUST",
+      "Before connecting"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "An antivirus USB scanning bridge to clean malware before copying files.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Running antivirus quarantine or cleaning modifies files and timestamps on the original evidence drive, destroying forensic integrity.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "B",
+        "text": "A validated hardware write blocker to prevent any OS mount or metadata write operations against the suspect drive.",
+        "isCorrect": true,
+        "explanation": "Correct. Connecting a suspect drive directly to a forensic workstation can trigger automatic OS writes (journal replays, Last Accessed timestamps, spotlight/indexing metadata). A hardware write blocker permits read commands while blocking all write commands during bit-stream imaging.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "A RAID-0 striping controller to double disk-imaging throughput.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A RAID-0 controller does not block writes and would initialize or corrupt single-drive forensic evidence.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A standard file-level robocopy script configured to skip hidden system directories.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Logical file copying skips slack space, deleted files, and unallocated clusters where critical forensic evidence frequently resides.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "A validated hardware write blocker prevents the host OS from writing timestamps, journal updates, or indexing data to suspect storage during bit-stream acquisition.",
+      "managerMindsetTip": "Forensic acquisition requires zero alteration of original media: write-blocker + bit-stream image + cryptographic hash verification.",
+      "studyFocusDirective": "Review forensic acquisition hardware/software tools, write blockers, and bit-stream vs. logical backups.",
+      "keyTakeaway": "Always connect suspect drives through a validated write blocker before capturing a bit-stream forensic image.",
+      "references": [
+        {
+          "source": "NIST SP 800-86",
+          "section": "Section 3.2: Data Collection and Write Protection"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.1-q004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.1",
+    "subdomainName": "Understand and Comply with Investigations",
+    "topicId": "7.1.2",
+    "topicName": "Evidence Types & eDiscovery",
+    "cognitiveLevel": "evaluate",
+    "perspective": "compliance_auditor",
+    "questionStyle": "first_action",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Legal Hold / Litigation Hold",
+      "eDiscovery Preservation",
+      "Spoliation Prevention"
+    ],
+    "keyTerms": [
+      "Legal Hold",
+      "eDiscovery",
+      "Spoliation",
+      "Retention Policy"
+    ],
+    "tags": [
+      "ediscovery",
+      "legal-hold",
+      "compliance"
+    ],
+    "stem": "Corporate General Counsel notifies Security Operations that a former vendor has threatened a breach-of-contract lawsuit over disputed API access logs and emails. Routine automated retention policies are scheduled to purge 90-day-old email archives and SIEM logs tonight at midnight. What MUST Security Operations do FIRST upon receiving counsel's notice?",
+    "scenarioContext": "Trigger: Threatened lawsuit | Conflict: Automated 90-day log and email purge runs tonight at midnight.",
+    "highlightKeywords": [
+      "FIRST",
+      "threatened a breach-of-contract lawsuit"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Allow the automated purge to run as scheduled because normal business retention policies excuse data deletion before a court subpoena arrives.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Once litigation is reasonably anticipated, failing to halt routine destruction exposes the organization to severe judicial sanctions for spoliation of evidence.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "B",
+        "text": "Immediately send all raw SIEM logs directly to the vendor's outside attorneys to demonstrate good faith.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Unreviewed disclosure of raw enterprise logs risks leaking privileged communications and unrelated customer PII/secrets; discovery production is managed by Legal.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "C",
+        "text": "Execute an immediate Legal Hold suspending automated deletion, archiving, and overwriting of all relevant emails, logs, and custodian devices.",
+        "isCorrect": true,
+        "explanation": "Correct. Under eDiscovery rules (e.g., FRCP), the duty to preserve electronically stored information (ESI) begins as soon as litigation is reasonably anticipated. Implementing a Legal Hold suspends routine auto-purge policies to prevent spoliation.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Reformat the former account manager's laptop using NIST SP 800-88 Purge so it can be reissued to a new hire.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Sanitizing a relevant custodian's laptop after a litigation notice constitutes spoliation of potential evidence.",
+        "trapType": "wrong_lifecycle_phase"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Reasonable anticipation of litigation triggers an immediate Legal Hold to pause automated retention purges and preserve relevant ESI against spoliation.",
+      "managerMindsetTip": "Legal Hold ALWAYS overrides routine data retention/destruction schedules. Suspending auto-purge immediately prevents spoliation sanctions.",
+      "studyFocusDirective": "Review eDiscovery lifecycle stages (Identification, Preservation/Legal Hold, Collection, Processing, Review, Production).",
+      "keyTakeaway": "Issue a Legal Hold immediately upon reasonably anticipating litigation to override automated retention purges.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 18: Electronic Discovery (eDiscovery) and Legal Hold"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.2-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.2",
+    "subdomainName": "Conduct Logging and Monitoring Activities",
+    "topicId": "7.2.1",
+    "topicName": "SIEM, SOAR, UEBA, NDR, EDR/XDR",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Living off the Land (LotL)",
+      "EDR/XDR Process Telemetry",
+      "Perimeter Blind Spots"
+    ],
+    "keyTerms": [
+      "EDR",
+      "XDR",
+      "Living off the Land",
+      "PowerShell",
+      "WMI"
+    ],
+    "tags": [
+      "edr",
+      "xdr",
+      "monitoring"
+    ],
+    "stem": "Threat actors increasingly bypass traditional file-hash antivirus and perimeter firewalls by abusing legitimate native OS utilities such as PowerShell, WMI, and PsExec ('Living off the Land') to move laterally inside an enterprise network. Which monitoring control provides the DEEPEST visibility into parent-child process trees and command-line execution on endpoints?",
+    "scenarioContext": "Threat: Fileless / Living-off-the-Land (PowerShell, WMI, PsExec) lateral movement inside LAN.",
+    "highlightKeywords": [
+      "DEEPEST visibility",
+      "parent-child process trees"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Perimeter stateless packet-filtering routers.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Perimeter routers only see north-south Layer 3/4 traffic and have zero visibility into internal endpoint process execution.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Signature-only legacy antivirus scanning files solely on disk write.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Legacy signature antivirus checks static file hashes on disk and misses legitimate signed binaries (like powershell.exe) running malicious in-memory scripts.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "External DNS registrar WHOIS change monitoring.",
+        "isCorrect": false,
+        "explanation": "Incorrect. External domain monitoring tracks public DNS/domain hijacking, not internal endpoint command execution.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Endpoint Detection and Response (EDR/XDR) agents streaming process lineage, command-line arguments, and memory telemetry.",
+        "isCorrect": true,
+        "explanation": "Correct. EDR/XDR continuously records endpoint behavioral telemetry—including process creation lineage (e.g., winword.exe spawning powershell.exe), full command-line parameters, WMI events, and registry/memory actions—making Living-off-the-Land attacks visible.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "EDR/XDR captures granular host-level process trees, command-line arguments, and behavioral indicators needed to detect fileless Living-off-the-Land attacks.",
+      "managerMindsetTip": "Match telemetry to attack layer: fileless host execution (PowerShell/WMI) requires EDR/XDR; east-west encrypted flow anomalies require NDR.",
+      "studyFocusDirective": "Understand how EDR, NDR, and XDR complement SIEM by providing deep host process lineage and east-west network visibility.",
+      "keyTakeaway": "EDR/XDR provides the process-lineage and command-line visibility required to catch Living-off-the-Land techniques.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16 & 17: Endpoint Detection and Response"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.2-q004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.2",
+    "subdomainName": "Conduct Logging and Monitoring Activities",
+    "topicId": "7.2.2",
+    "topicName": "Log Integrity, NTP Synchronization, Egress Monitoring",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Log Integrity Protection",
+      "Centralized Write-Once Forwarding",
+      "Anti-Tampering Controls"
+    ],
+    "keyTerms": [
+      "WORM",
+      "Syslog",
+      "Log Integrity",
+      "Off-Box Forwarding"
+    ],
+    "tags": [
+      "logging",
+      "log-integrity",
+      "monitoring"
+    ],
+    "stem": "During a root-cause investigation of a compromised Linux jump host, responders discover that `/var/log/auth.log` and `/var/log/secure` were wiped clean by the attacker using root privileges. Which logging architecture control BEST prevents an attacker who compromises a local host from erasing historical audit evidence?",
+    "scenarioContext": "Failure: Attacker with local root wiped local `/var/log` files on compromised jump host.",
+    "highlightKeywords": [
+      "BEST prevents",
+      "erasing historical audit evidence"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Real-time encrypted log forwarding to a hardened central log server / SIEM backed by Write-Once-Read-Many (WORM) immutable storage with separate administrative credentials.",
+        "isCorrect": true,
+        "explanation": "Correct. Shipping logs in real time off the local host over TLS to a segregated central log collector/SIEM with WORM/append-only storage and separate IAM privileges ensures a compromised host root account cannot erase previously emitted audit records.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Changing local `/var/log` permissions to `chmod 600` owned by root on the jump host.",
+        "isCorrect": false,
+        "explanation": "Incorrect. An attacker who already obtained root privileges on the jump host bypasses local UNIX file permissions trivially.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Scheduling a daily cron job at midnight to copy `/var/log` into `/root/backup-logs` on the same disk.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A daily local copy leaves up to 24 hours of logs unshipped and remains trivial for a local root attacker to delete on the same host.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "Disabling verbose authentication logging so log files stay smaller and harder to notice.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Disabling audit logging blinds the SOC completely and violates compliance and forensic readiness.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Real-time remote log forwarding to an access-segregated SIEM with WORM/immutable retention protects historical audit trails even if an endpoint root account is compromised.",
+      "managerMindsetTip": "Local logs belong to whoever owns the box; trusted audit trails require real-time off-host shipping, separate admin roles, and immutable (WORM) storage.",
+      "studyFocusDirective": "Review NIST SP 800-92 recommendations for securing log confidentiality, integrity, and availability.",
+      "keyTakeaway": "Ship logs in real time to a segregated WORM-backed collector so local root compromise cannot erase past activity.",
+      "references": [
+        {
+          "source": "NIST SP 800-92",
+          "section": "Section 3: Protecting Log Data Integrity"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.3-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.3",
+    "subdomainName": "Configuration Management (CM) & Hardening",
+    "topicId": "7.3.1",
+    "topicName": "Baseline Images, Drift Detection, Asset Inventory",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "System Hardening Practices",
+      "Attack Surface Reduction",
+      "Least Functionality"
+    ],
+    "keyTerms": [
+      "Hardening",
+      "Attack Surface",
+      "Least Functionality",
+      "Baseline"
+    ],
+    "tags": [
+      "hardening",
+      "configuration-management",
+      "least-functionality"
+    ],
+    "stem": "A systems engineer is creating a hardened Windows Server baseline for public-facing web tiers in accordance with CIS Benchmarks and NIST CM-7 (Least Functionality). Which of the following actions is LEAST consistent with secure system hardening?",
+    "scenarioContext": "Task: Build hardened Windows Server web-tier baseline following CIS Benchmarks & NIST CM-7.",
+    "highlightKeywords": [
+      "LEAST consistent"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Disabling unused network protocols such as SMBv1 and LLMNR.",
+        "isCorrect": false,
+        "explanation": "Incorrect (this IS a valid hardening step). Removing legacy, vulnerable protocols like SMBv1 and LLMNR directly shrinks the attack surface.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Pre-installing full database administration IDEs and network packet sniffers on every web server for developer convenience.",
+        "isCorrect": true,
+        "explanation": "Correct (least consistent). Pre-installing unnecessary developer IDEs, database tools, and packet sniffers on production web servers violates Least Functionality, expands the attack surface, and arms attackers with ready-made post-exploitation utilities.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Enabling host-based firewall rules allowing only required HTTP/HTTPS and management bastion ports.",
+        "isCorrect": false,
+        "explanation": "Incorrect (this IS a valid hardening step). Restricting inbound/outbound host ports implements defense in depth.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Removing or disabling unneeded OS services, compilers, and administrative utilities.",
+        "isCorrect": false,
+        "explanation": "Incorrect (this IS a valid hardening step). Removing non-essential services and compilers enforces Least Functionality and impedes post-exploitation.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "System hardening enforces Least Functionality by removing unnecessary ports, services, accounts, and tools; installing extra developer/debugging utilities on production hosts expands risk.",
+      "managerMindsetTip": "On 'LEAST likely / NOT consistent' questions, verify each option individually against the principle (here: Least Functionality / Attack Surface Reduction).",
+      "studyFocusDirective": "Review core system hardening checklists: disable unused ports/services, remove default credentials, enforce host firewalls, and restrict admin tools.",
+      "keyTakeaway": "Hardening reduces attack surface via Least Functionality—never pre-stage unneeded diagnostic or developer tools on production servers.",
+      "references": [
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CM-7 Least Functionality"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.4-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.4",
+    "subdomainName": "Apply Foundational Security Operations Concepts",
+    "topicId": "7.4.1",
+    "topicName": "Need-to-Know, Least Privilege, Separation of Duties, Dual Control, Split Knowledge",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Need-to-Know vs. Least Privilege",
+      "Operational Access Scoping",
+      "Data Confidentiality"
+    ],
+    "keyTerms": [
+      "Need-to-Know",
+      "Least Privilege",
+      "Helpdesk Operations"
+    ],
+    "tags": [
+      "operations-concepts",
+      "need-to-know",
+      "least-privilege"
+    ],
+    "stem": "Tier-1 IT service desk technicians frequently assist employees with password resets and MFA token re-enrollment. Currently, their administrative role also grants permission to open and read any employee's mailbox and HR personnel folder to 'speed up troubleshooting.' Which operational principle is MOST directly violated by granting mailbox and HR folder read access?",
+    "scenarioContext": "Role: Tier-1 Helpdesk | Duties: Password resets & MFA enrollment | Excess permission: Reading all employee mailboxes & HR folders.",
+    "highlightKeywords": [
+      "MOST directly violated"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Defense in breadth, because too few administrators have access to HR records.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Restricting access to sensitive HR records reduces risk; granting broad access creates exposure.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Split knowledge, because every password should be broken into two halves.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Split knowledge applies to dividing sensitive secrets (like master keys) across multiple custodians, not routine user password resets.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Need-to-know and least privilege, because helpdesk technicians do not require access to confidential email or HR contents to reset passwords.",
+        "isCorrect": true,
+        "explanation": "Correct. Least privilege restricts system permissions/capabilities to only what a role requires (password reset + MFA enrollment), while need-to-know restricts access to specific confidential data objects (HR files, executive emails) unless required for a specific task.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Fail-open security defaults, because the mailbox system allows read access only after authentication.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Fail-open describes defaulting to permissive access upon a system error, not over-provisioned role permissions.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Tier-1 support should have scoped administrative rights for password/MFA resets without access to confidential email or HR data—enforcing both least privilege and need-to-know.",
+      "managerMindsetTip": "Distinguish Least Privilege (minimum system rights/actions needed for a job) from Need-to-Know (minimum specific data/information needed even if cleared).",
+      "studyFocusDirective": "Review how Least Privilege and Need-to-Know work together in day-to-day IT and security operations.",
+      "keyTakeaway": "Scope operational admin roles strictly to required actions (least privilege) and block viewing sensitive data unrelated to the task (need-to-know).",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16: Need-to-Know and Least Privilege"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.4-q004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.4",
+    "subdomainName": "Apply Foundational Security Operations Concepts",
+    "topicId": "7.4.1",
+    "topicName": "Need-to-Know, Least Privilege, Separation of Duties, Dual Control, Split Knowledge",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "calculation",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 80,
+    "conceptsTested": [
+      "Availability Calculation (MTBF / MTTR)",
+      "Service Level Agreements (SLAs)",
+      "Operational Resilience Metrics"
+    ],
+    "keyTerms": [
+      "MTBF",
+      "MTTR",
+      "Availability",
+      "SLA"
+    ],
+    "tags": [
+      "availability",
+      "mtbf",
+      "mttr",
+      "calculation"
+    ],
+    "stem": "A critical payment gateway cluster demonstrates a Mean Time Between Failures (MTBF) of 1,990 hours and a Mean Time to Repair (MTTR) of 10 hours. Based strictly on these operational metrics, what is the cluster's expected availability percentage?",
+    "scenarioContext": "Metrics: MTBF = 1,990 hours | MTTR = 10 hours | Formula: Availability = MTBF / (MTBF + MTTR).",
+    "highlightKeywords": [
+      "MTBF",
+      "MTTR",
+      "availability percentage"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "99.00%",
+        "isCorrect": false,
+        "explanation": "Incorrect. 99.00% would correspond to 20 hours of downtime out of 2,000 total hours, whereas MTTR here is 10 hours.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "95.00%",
+        "isCorrect": false,
+        "explanation": "Incorrect. 95.00% corresponds to 100 hours of downtime out of 2,000 hours, misplacing the decimal by a factor of 10.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "99.95%",
+        "isCorrect": false,
+        "explanation": "Incorrect. 99.95% would mean only 1 hour of downtime per 2,000 hours, whereas 10 / 2,000 = 0.50% unavailability.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "99.50%",
+        "isCorrect": true,
+        "explanation": "Correct. Availability = MTBF / (MTBF + MTTR) = 1,990 / (1,990 + 10) = 1,990 / 2,000 = 0.995 = 99.50%.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "System availability equals MTBF / (MTBF + MTTR). Substituting 1,990 / (1,990 + 10) yields 1,990 / 2,000 = 0.995, or 99.50%.",
+      "managerMindsetTip": "Memorize Availability = MTBF / (MTBF + MTTR). Improving either component reliability (higher MTBF) or recovery automation (lower MTTR) raises availability.",
+      "studyFocusDirective": "Practice MTBF/MTTR availability calculations and understand how SLAs define acceptable downtime windows (e.g., 99.9% vs. 99.99%).",
+      "keyTakeaway": "Availability = MTBF / (MTBF + MTTR) = 1,990 / 2,000 = 99.50%.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16: Service Level Agreements, MTBF, and MTTR"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.5-q002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.5",
+    "subdomainName": "Apply Resource Protection",
+    "topicId": "7.5.1",
+    "topicName": "Media Management, Hardware/Software Asset Protection",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Software License Management",
+      "Software Asset Protection",
+      "Compliance & Malware Risk"
+    ],
+    "keyTerms": [
+      "Software Asset Management",
+      "Licensing",
+      "Shadow Software",
+      "Audit"
+    ],
+    "tags": [
+      "resource-protection",
+      "software-licensing",
+      "asset-management"
+    ],
+    "stem": "An internal audit discovers that engineering teams downloaded unlicensed commercial analytics software onto 40 workstations using shared serial keys found online. Beyond civil copyright penalties, what is the PRIMARY operational security reason to enforce formal Software Asset Management (SAM) and application allowlisting?",
+    "scenarioContext": "Finding: 40 workstations running pirated/unlicensed commercial analytics tools with shared online keys.",
+    "highlightKeywords": [
+      "PRIMARY",
+      "operational security reason"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Unlicensed software often lacks vendor security patches and frequently bundles trojans or backdoors, increasing enterprise malware and vulnerability exposure.",
+        "isCorrect": true,
+        "explanation": "Correct. From a security operations standpoint, unapproved/pirated software bypasses security vetting, misses official vendor vulnerability updates, and commonly contains embedded malware or backdoors—while also exposing the enterprise to copyright infringement liability.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Licensed software automatically encrypts all local hard drives using FIPS 140-3 validated modules.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Commercial application licensing does not automatically provide OS-level full-disk encryption.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Using shared serial keys disables hardware TPM chips on the workstations.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Software serial keys do not disable motherboard TPM hardware.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "SAM eliminates the need for network firewalls and endpoint EDR controls.",
+        "isCorrect": false,
+        "explanation": "Incorrect. SAM is one layer of resource protection and never replaces network or endpoint security controls.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Software Asset Management (SAM) and allowlisting prevent unvetted, unpatched, and potentially trojanized software from introducing vulnerabilities while maintaining legal license compliance.",
+      "managerMindsetTip": "Asset protection covers both legal compliance (license limits) and operational integrity (only vetted, patchable software runs in production).",
+      "studyFocusDirective": "Review software asset protection controls: centralized software repositories, license metering, and application allowlisting.",
+      "keyTakeaway": "Software Asset Management protects operations against unpatched, unvetted, and trojanized unauthorized binaries as well as license non-compliance.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16: Managing Hardware and Software Assets"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.6-q004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.6",
+    "subdomainName": "Conduct Incident Management",
+    "topicId": "7.6.1",
+    "topicName": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "first_action",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Incident Validation & Triage",
+      "Avoiding Premature External Escalation",
+      "Incident Response Governance"
+    ],
+    "keyTerms": [
+      "Triage",
+      "Validation",
+      "Premature Escalation",
+      "Incident Commander"
+    ],
+    "tags": [
+      "incident-response",
+      "triage",
+      "governance"
+    ],
+    "stem": "A junior SOC analyst notices an automated SIEM alert claiming 50,000 customer records were uploaded to an unknown external IP address at 02:15. The analyst has not yet verified whether the traffic is a legitimate scheduled SFTP partner feed or an actual exfiltration event. What should the analyst do FIRST?",
+    "scenarioContext": "Alert: Unverified SIEM alert for 50,000-record outbound transfer at 02:15 | Analyst has not checked partner feed schedules.",
+    "highlightKeywords": [
+      "FIRST",
+      "has not yet verified"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Immediately notify state data-protection regulators and issue a public breach press release.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Reporting an unverified false positive to regulators or the public causes needless legal, reputational, and stock-market harm.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "B",
+        "text": "Triage and validate the alert using proxy/netflow logs, change tickets, and authorized SFTP partner whitelists, escalating internally if suspicious activity is confirmed.",
+        "isCorrect": true,
+        "explanation": "Correct. During Detection & Analysis, responders must validate whether an alert is a true positive or benign scheduled job before triggering major containment or external notifications. If suspicious indicators are confirmed, they escalate immediately per the internal IR communication plan.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Call the FBI cyber division before checking internal logs or alerting the SOC lead.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Contacting external law enforcement is an executive/legal decision made only after internal validation confirms an actual incident.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "D",
+        "text": "Delete the SIEM alert rule immediately so overnight analysts are not woken up by noisy alerts.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Suppressing a critical data-exfiltration rule without investigation could blind the organization to a real breach.",
+        "trapType": "technical_fix_over_process"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Detection and Triage require rapid internal validation of alerts against context (netflow, change records, authorized feeds) before internal escalation or any external regulatory/law-enforcement reporting.",
+      "managerMindsetTip": "CISSP heavily penalizes 'premature escalation': never notify regulators, media, or law enforcement until internal triage validates the incident and Legal/Executive leadership authorizes disclosure.",
+      "studyFocusDirective": "Practice distinguishing Detection/Triage validation steps from formal executive/regulatory escalation gates.",
+      "keyTakeaway": "Validate alerts internally during Triage before triggering disruptive shutdowns or external regulatory/law-enforcement escalation.",
+      "references": [
+        {
+          "source": "NIST SP 800-61 Rev. 2",
+          "section": "Section 3.2: Detection and Analysis"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.6-q005",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.6",
+    "subdomainName": "Conduct Incident Management",
+    "topicId": "7.6.1",
+    "topicName": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)",
+    "cognitiveLevel": "analyze",
+    "perspective": "incident_responder",
+    "questionStyle": "best_answer",
+    "difficulty": 5,
+    "difficultyLabel": "cat_stretch",
+    "estimatedTimeSeconds": 85,
+    "conceptsTested": [
+      "Eradication of Active Directory Persistence",
+      "Golden Ticket / KRBTGT Rotation",
+      "Verified Clean Recovery"
+    ],
+    "keyTerms": [
+      "Eradication",
+      "KRBTGT",
+      "Golden Ticket",
+      "Active Directory"
+    ],
+    "tags": [
+      "incident-response",
+      "eradication",
+      "active-directory"
+    ],
+    "stem": "During a severe Active Directory compromise, attackers obtained Domain Admin credentials and dumped the `ntds.dit` database, enabling them to forge Kerberos Golden Tickets. The CSIRT has patched the initial VPN zero-day vulnerability. Before declaring Eradication complete and restoring normal operations, which action is ESSENTIAL to evict the attackers' cryptographic persistence?",
+    "scenarioContext": "Compromise: Attackers dumped `ntds.dit` (including `krbtgt` hash) and forged Golden Tickets | VPN zero-day patched.",
+    "highlightKeywords": [
+      "ESSENTIAL",
+      "evict the attackers' cryptographic persistence"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Force every standard domain user to change their password once while leaving the `krbtgt` service account untouched.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Kerberos Golden Tickets are signed with the `krbtgt` account's NTLM/AES keys, so resetting regular user passwords does not invalidate forged Golden Tickets.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "Restore the domain controllers from a snapshot taken 2 hours after the attackers dumped `ntds.dit`.",
+        "isCorrect": false,
+        "explanation": "Incorrect. A snapshot taken after compromise still contains the attackers' backdoors and compromised `krbtgt` keys.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Reset the `krbtgt` account password twice (allowing replication between resets), rotate all privileged/service credentials, and rebuild compromised domain controllers from known-good media.",
+        "isCorrect": true,
+        "explanation": "Correct. Active Directory keeps both the current and previous `krbtgt` password hash to avoid breaking active TGTs; therefore, `krbtgt` MUST be reset twice (spaced by replication latency) to invalidate all forged Golden Tickets, alongside full credential rotation and clean DC rebuilds.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Simply block TCP port 88 on the external perimeter firewall.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Kerberos (port 88) operates internally across the LAN; blocking it externally does not remove forged Golden Tickets or internal persistence.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "True eradication after an Active Directory `ntds.dit` compromise requires resetting `krbtgt` twice (to purge both current and prior key history), rotating privileged accounts, and rebuilding compromised DCs from clean media.",
+      "managerMindsetTip": "Eradication means removing EVERY persistence mechanism—patching the initial entry point alone fails if attackers still hold `krbtgt` or backdoor accounts.",
+      "studyFocusDirective": "Review Eradication vs. Recovery requirements when identity infrastructure (Active Directory / IdP) is compromised.",
+      "keyTakeaway": "Reset `krbtgt` twice (after replication) and rotate privileged credentials to fully eradicate Kerberos Golden Ticket persistence.",
+      "references": [
+        {
+          "source": "NIST SP 800-61 Rev. 2",
+          "section": "Section 3.3.3: Eradication and Recovery"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.6-q006",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.6",
+    "subdomainName": "Conduct Incident Management",
+    "topicId": "7.6.1",
+    "topicName": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Out-of-Band Incident Communications",
+      "IR Plan Preparation",
+      "Operational Security (OPSEC)"
+    ],
+    "keyTerms": [
+      "Out-of-Band",
+      "Incident Communications",
+      "CSIRT",
+      "OPSEC"
+    ],
+    "tags": [
+      "incident-response",
+      "communications",
+      "preparation"
+    ],
+    "stem": "During a sophisticated nation-state intrusion, the incident commander discovers the adversary has full read/write access to the company's Microsoft 365 email and Teams tenant. How should the CSIRT, executives, and external legal/forensics retainer coordinate containment actions?",
+    "scenarioContext": "Compromise: Adversary has active access to corporate M365 email and Teams | Need: Secure CSIRT coordination.",
+    "highlightKeywords": [
+      "coordinate containment actions"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Halt all incident response meetings until physical letters can be mailed to external counsel.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Waiting days for physical mail destroys response agility during an active intrusion.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "B",
+        "text": "Create a private Teams channel marked 'Confidential - Incident Response' inside the same compromised M365 tenant.",
+        "isCorrect": false,
+        "explanation": "Incorrect. An attacker with compromised tenant admin privileges can read private channels inside the same tenant.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Send plain-text SMS updates via a public corporate status page so everyone sees the containment schedule.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Posting internal containment schedules publicly informs the adversary of upcoming defensive actions.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "D",
+        "text": "Switch immediately to pre-established out-of-band communication channels (such as encrypted mobile messaging or dedicated emergency bridge lines) outside the compromised tenant.",
+        "isCorrect": true,
+        "explanation": "Correct. When corporate email/chat is compromised, discussing containment timelines or evidence on those channels tips off the attacker to destroy logs or accelerate exfiltration. Pre-staged out-of-band communications protect IR operational security.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Pre-planned out-of-band communications prevent adversaries inside a compromised email/chat environment from intercepting CSIRT containment plans.",
+      "managerMindsetTip": "IR Preparation includes printed contact cards and out-of-band communication channels precisely for scenarios where corporate email, VoIP, or chat is down or compromised.",
+      "studyFocusDirective": "Review IR Preparation prerequisites: out-of-band comms, hardcopy jump kits, pre-negotiated forensic/legal retainers, and escalation matrices.",
+      "keyTakeaway": "Never coordinate containment inside a compromised messaging tenant—use pre-established out-of-band channels.",
+      "references": [
+        {
+          "source": "NIST SP 800-61 Rev. 2",
+          "section": "Section 3.1: Preparation — Incident Handling Communications"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.7-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.7",
+    "subdomainName": "Operate and Maintain Detective and Preventative Measures",
+    "topicId": "7.7.1",
+    "topicName": "IDS/IPS (Signature vs. Anomaly), Honeypots, Sandboxing",
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "Malware Sandboxing / Detonation",
+      "Zero-Day Attachment Analysis",
+      "Preventative Email Controls"
+    ],
+    "keyTerms": [
+      "Sandboxing",
+      "Detonation",
+      "Zero-Day",
+      "Dynamic Analysis"
+    ],
+    "tags": [
+      "sandboxing",
+      "anti-malware",
+      "detective-preventative"
+    ],
+    "stem": "A financial firm sees targeted spear-phishing emails carrying freshly compiled macro-enabled documents whose SHA-256 hashes do not match any known antivirus signature. Which email gateway capability BEST detects and blocks these previously unseen payloads before delivery to user inboxes?",
+    "scenarioContext": "Threat: Novel zero-day phishing attachments evading static hash/signature antivirus.",
+    "highlightKeywords": [
+      "BEST detects and blocks",
+      "previously unseen"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Automated sandbox detonation (dynamic behavioral analysis) in an isolated virtual environment prior to inbox delivery.",
+        "isCorrect": true,
+        "explanation": "Correct. Email sandboxing opens suspicious attachments in an isolated detonation VM to observe runtime behaviors (macro spawning PowerShell, suspicious DNS lookups, process injection), catching novel zero-day payloads that evade static signatures.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Increasing SMTP TLS certificate key sizes from 2048-bit to 4096-bit.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Stronger TLS protects transport confidentiality, not malicious payload content sent over valid encrypted connections.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Disabling SPF and DMARC checks so email gateways deliver messages faster.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Disabling SPF/DMARC weakens spoofing defense and does nothing to inspect malicious attachments.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Relying solely on a static blocklist of last year's MD5 malware hashes.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Static hashes fail completely against newly compiled or polymorphic payloads.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Sandbox detonation executes suspicious attachments in an isolated virtual guest to detect malicious runtime behavior even when static signatures do not yet exist.",
+      "managerMindsetTip": "Know when dynamic sandboxing wins over static signatures: novel, polymorphic, or obfuscated payloads with no prior signature.",
+      "studyFocusDirective": "Review how sandboxing, application allowlisting, and behavioral EDR address zero-day malware gaps.",
+      "keyTakeaway": "Dynamic sandboxing uncovers zero-day attachment behavior before payload delivery to end users.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 17: Sandboxing and Anti-Malware Controls"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.7-q004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.7",
+    "subdomainName": "Operate and Maintain Detective and Preventative Measures",
+    "topicId": "7.7.1",
+    "topicName": "IDS/IPS (Signature vs. Anomaly), Honeypots, Sandboxing",
+    "cognitiveLevel": "analyze",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "False Positives vs. False Negatives",
+      "IDS Tuning Trade-Offs",
+      "Alert Fatigue vs. Blindness"
+    ],
+    "keyTerms": [
+      "False Negative",
+      "False Positive",
+      "IDS Tuning",
+      "Alert Fatigue"
+    ],
+    "tags": [
+      "ids-ips",
+      "tuning",
+      "risk"
+    ],
+    "stem": "To stop SOC analysts from complaining about noisy alerts, a network administrator blindly disables 60% of an IDS sensor's exploit signatures without compensating controls. From a security risk perspective, what is the PRIMARY danger of this action?",
+    "scenarioContext": "Action: 60% of IDS signatures blindly disabled to reduce alert volume without tuning or compensating controls.",
+    "highlightKeywords": [
+      "PRIMARY danger"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "A spike in false positives that shuts down legitimate internet banking.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Disabling signatures decreases alerts (fewer false positives), whereas the acute security danger is missing real attacks (false negatives).",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "An increase in false negatives, leaving real intrusions completely undetected by the SOC.",
+        "isCorrect": true,
+        "explanation": "Correct. A False Negative occurs when an actual attack happens and the IDS fails to alert. Blindly deleting signatures creates dangerous detection blindness (false negatives), which poses far greater security risk than benign false positives.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Increased CPU utilization on the IDS sensor from evaluating too many rules.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Evaluating fewer signatures reduces CPU load rather than increasing it.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Violation of RFC 3227 Order of Volatility during tape backups.",
+        "isCorrect": false,
+        "explanation": "Incorrect. IDS signature tuning is unrelated to RFC 3227 forensic volatility order.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Blindly disabling IDS signatures trades noisy false positives for dangerous false negatives—allowing real attacks to go unalerted.",
+      "managerMindsetTip": "Proper IDS tuning suppresses known benign traffic through context-aware exceptions rather than deleting broad exploit coverage.",
+      "studyFocusDirective": "Review True Positive, False Positive, True Negative, and False Negative definitions in detection engineering.",
+      "keyTakeaway": "False negatives mean real attacks go unnoticed; tune detection rules precisely instead of blindly disabling signatures.",
+      "references": [
+        {
+          "source": "NIST SP 800-94",
+          "section": "IDPS Tuning and Accuracy Metrics"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.8-q002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.8",
+    "subdomainName": "Implement and Support Patch and Vulnerability Management",
+    "topicId": "7.8.1",
+    "topicName": "Patch Testing, Emergency Out-of-Band Patching, Virtual Patching",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Patch Staging and Testing",
+      "Operational Stability vs. Speed",
+      "Patch Management Lifecycle"
+    ],
+    "keyTerms": [
+      "Patch Testing",
+      "Staging Environment",
+      "Regression",
+      "Rollback"
+    ],
+    "tags": [
+      "patch-management",
+      "testing",
+      "operations"
+    ],
+    "stem": "Last month, pushing an unverified OS kernel patch directly to all 500 production hospital workstations caused a boot loop that halted outpatient check-in for six hours. To prevent a repeat outage while still meeting monthly patch SLAs, which change should management enforce in the standard patch workflow?",
+    "scenarioContext": "Past failure: Direct-to-production kernel patch caused 6-hour outpatient boot-loop outage.",
+    "highlightKeywords": [
+      "prevent a repeat outage",
+      "standard patch workflow"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Push every vendor patch immediately to 100% of production hosts within 15 minutes of release with no testing.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Zero-test immediate global deployment repeats the exact operational failure described in the scenario.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "B",
+        "text": "Suspend all OS and application patching indefinitely unless a regulator issues a fine.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Stopping patching leaves known critical vulnerabilities open to widespread exploitation.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "C",
+        "text": "Test patches in a representative non-production staging ring first, followed by phased pilot-group rollout and verified rollback readiness before broad production deployment.",
+        "isCorrect": true,
+        "explanation": "Correct. Staged validation in a representative test environment followed by canary/pilot ring rollout catches driver conflicts and boot regressions early, protecting enterprise availability while maintaining predictable monthly patching.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Disable Windows Update and Linux package repositories permanently and rely on annual manual OS reinstalls.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Annual reinstalls leave systems unpatched for months and create massive operational overhead.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Representative staging tests plus phased pilot rings and tested rollback plans balance vulnerability remediation speed against production stability.",
+      "managerMindsetTip": "Patching is part of Change Management: Assess -> Test in Staging -> Pilot Ring -> Broad Rollout -> Verify.",
+      "studyFocusDirective": "Review NIST SP 800-40 enterprise patch management phases and emergency vs. standard testing expectations.",
+      "keyTakeaway": "Validate patches in representative staging and pilot rings before broad production rollout.",
+      "references": [
+        {
+          "source": "NIST SP 800-40 Rev. 4",
+          "section": "Patch Testing and Phased Deployment"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.8-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.8",
+    "subdomainName": "Implement and Support Patch and Vulnerability Management",
+    "topicId": "7.8.1",
+    "topicName": "Patch Testing, Emergency Out-of-Band Patching, Virtual Patching",
+    "cognitiveLevel": "evaluate",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 80,
+    "conceptsTested": [
+      "Risk-Based Vulnerability Prioritization",
+      "CVSS vs. Threat Context & Exposure",
+      "Operational Triage"
+    ],
+    "keyTerms": [
+      "Vulnerability Prioritization",
+      "CVSS",
+      "Active Exploitation",
+      "Asset Criticality"
+    ],
+    "tags": [
+      "vulnerability-management",
+      "prioritization",
+      "risk"
+    ],
+    "stem": "A weekly vulnerability scan flags two vulnerabilities: Finding 1 is CVSS 9.8 on an isolated air-gapped lab printer with no sensitive data; Finding 2 is CVSS 8.1 on an internet-facing SSO portal with a publicly available exploit actively leveraged by ransomware crews (listed in CISA KEV). Operations has capacity to patch only one today. Which should be prioritized FIRST and WHY?",
+    "scenarioContext": "Choice: CVSS 9.8 on air-gapped lab printer vs. CVSS 8.1 actively exploited on internet-facing SSO portal.",
+    "highlightKeywords": [
+      "FIRST",
+      "WHY"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Finding 1, because CVSS base score 9.8 is mathematically higher than 8.1 regardless of network exposure.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Relying blindly on raw CVSS base scores ignores environmental exposure, asset criticality, and active exploitation in the wild.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "B",
+        "text": "Finding 1, because printers have lower RAM and crash more easily when scanned.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Printer RAM capacity does not make an air-gapped lab printer higher business risk than an internet-facing SSO gateway.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Neither; defer both until the next quarterly maintenance window so CVSS scores can stabilize.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Deferring an actively exploited internet-facing SSO vulnerability invites imminent enterprise compromise.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "Finding 2, because real-world risk combines internet exposure, critical asset impact (SSO identity plane), and active threat exploitation.",
+        "isCorrect": true,
+        "explanation": "Correct. Risk-based vulnerability management evaluates threat likelihood (active exploitation in the wild), exposure (internet-facing), and business impact (central SSO identity plane)—making Finding 2 vastly higher operational risk than an isolated air-gapped printer.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Effective vulnerability prioritization weighs environmental exposure, asset criticality, and active exploitation intelligence alongside CVSS base scores.",
+      "managerMindsetTip": "CVSS Base Score measures technical severity in a vacuum—CISSP Risk Advisors ALWAYS factor in Exposure + Asset Value + Active Threat Intelligence.",
+      "studyFocusDirective": "Understand CVSS Base vs. Temporal vs. Environmental metrics and risk-based remediation prioritization.",
+      "keyTakeaway": "Prioritize vulnerabilities by real risk (internet exposure + asset criticality + active exploitability), not raw CVSS score alone.",
+      "references": [
+        {
+          "source": "NIST SP 800-40 Rev. 4",
+          "section": "Risk-Based Vulnerability Remediation Prioritization"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.9-q002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.9",
+    "subdomainName": "Understand and Participate in Change Management Processes",
+    "topicId": "7.9.1",
+    "topicName": "CAB Approval, Rollback Plans, Emergency Change Procedures",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Emergency Change Management",
+      "Expedited CAB (eCAB)",
+      "Post-Implementation Documentation & Review"
+    ],
+    "keyTerms": [
+      "Emergency Change",
+      "eCAB",
+      "Audit Trail",
+      "Change Management"
+    ],
+    "tags": [
+      "change-management",
+      "emergency-change",
+      "governance"
+    ],
+    "stem": "At 01:30 AM, an actively exploited firewall zero-day requires an immediate configuration change to halt inbound exploitation before the next scheduled weekly CAB meeting. Which action BEST aligns with proper Emergency Change Management governance?",
+    "scenarioContext": "Time: 01:30 AM | Urgency: Active exploitation halted only by immediate firewall change; regular CAB meets in 4 days.",
+    "highlightKeywords": [
+      "BEST aligns",
+      "Emergency Change Management"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Obtain expedited Emergency CAB (eCAB) or designated emergency manager approval, deploy the change with a snapshot/rollback plan, and complete full formal RFC documentation and retrospective CAB review afterward.",
+        "isCorrect": true,
+        "explanation": "Correct. Emergency Change procedures exist for urgent security/outage threats: they streamline pre-change authorization via an eCAB or delegated authority so risk is halted immediately, while mandating complete post-implementation RFC documentation, testing verification, and CAB review to preserve auditability.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Wait four days until the standard Tuesday afternoon CAB meeting regardless of ongoing exploitation.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Waiting four days during active exploitation turns process rigidity into a preventable breach.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Allow any on-call engineer to edit production firewalls silently without tickets, approvals, or post-change documentation.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Undocumented 'cowboy' changes destroy CMDB accuracy, create configuration drift, and violate audit accountability.",
+        "trapType": "technical_fix_over_process"
+      },
+      {
+        "id": "D",
+        "text": "Permanently disband the CAB so all future production changes execute ad hoc.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Disbanding change governance altogether causes outages and unauthorized security regressions.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Emergency changes use expedited authorization (eCAB) to act rapidly while requiring full retrospective documentation, rollback readiness, and formal CAB review.",
+      "managerMindsetTip": "Emergency Change Management means *accelerated* governance, never *zero* governance. Always close the loop with formal post-implementation documentation.",
+      "studyFocusDirective": "Compare Standard (pre-approved), Normal (full CAB), and Emergency (expedited eCAB + post-implementation review) change workflows.",
+      "keyTakeaway": "Emergency changes require expedited eCAB approval plus mandatory post-implementation RFC documentation and review.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16: Emergency Change Procedures"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.9-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.9",
+    "subdomainName": "Understand and Participate in Change Management Processes",
+    "topicId": "7.9.1",
+    "topicName": "CAB Approval, Rollback Plans, Emergency Change Procedures",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Separation of Duties in Change Management",
+      "Code Promotion Controls",
+      "Unauthorized Modification Prevention"
+    ],
+    "keyTerms": [
+      "Separation of Duties",
+      "Change Management",
+      "Production Promotion",
+      "SOX"
+    ],
+    "tags": [
+      "change-management",
+      "separation-of-duties",
+      "audit"
+    ],
+    "stem": "During a SOX IT General Controls (ITGC) audit, an external auditor flags a critical deficiency because lead developers who write financial application code also possess administrative access to approve their own pull requests and deploy builds directly onto production servers. Which control BEST remediates this audit finding?",
+    "scenarioContext": "Audit finding: Same developer writes code, approves change, and deploys directly to production.",
+    "highlightKeywords": [
+      "BEST remediates",
+      "audit finding"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Require developers to store their production SSH keys inside a shared password spreadsheet.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Shared credentials worsen accountability and fail access control requirements.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Enforce separation of duties so developers cannot approve or deploy their own code to production, requiring independent peer review, CAB/release approval, and automated pipeline or separate ops deployment.",
+        "isCorrect": true,
+        "explanation": "Correct. Separation of Duties in Change Management prohibits a single person from authoring, approving, and promoting code into production—preventing both accidental bugs and malicious backdoors/fraud.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Ask developers to email themselves a confirmation before pushing directly to production.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Self-notification provides no independent check or enforcement.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "Move the production financial servers into the development environment VLAN.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Merging production and development environments destroys environment isolation and increases compromise risk.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Enforcing Separation of Duties between code authors, change approvers, and production deployers prevents unauthorized or fraudulent production code changes.",
+      "managerMindsetTip": "Auditors consistently enforce the rule: the person who builds/requests a change must NEVER be the sole approver or deployer into production.",
+      "studyFocusDirective": "Review SOX/ITGC change management separation of duties across dev, test, approval, and production release.",
+      "keyTakeaway": "Separate code authoring, independent change approval, and production deployment to prevent fraud and untested changes.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16: Change Management and Separation of Duties"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.10-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.1",
+    "topicName": "Backup Types (Full, Incremental, Differential), 3-2-1 Rule, Immutable Backups",
+    "cognitiveLevel": "evaluate",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Immutable / Air-Gapped Backups",
+      "3-2-1-1-0 Backup Strategy",
+      "Ransomware Backup Resilience"
+    ],
+    "keyTerms": [
+      "Immutable Backups",
+      "3-2-1 Rule",
+      "Air-Gap",
+      "WORM",
+      "Ransomware"
+    ],
+    "tags": [
+      "backups",
+      "immutable",
+      "ransomware"
+    ],
+    "stem": "A company already stores backups on a dedicated network-attached storage (NAS) appliance joined to the corporate Active Directory domain. During a recent ransomware attack, adversaries compromised Domain Admin credentials and deleted both the Volume Shadow Copies (VSS) and all backups on the NAS before encrypting production servers. Which backup architectural enhancement BEST defends against this attack vector?",
+    "scenarioContext": "Failure: Domain Admin compromise allowed attackers to delete AD-joined NAS backups and local VSS snapshots.",
+    "highlightKeywords": [
+      "BEST defends"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase local VSS snapshot frequency from daily to hourly on the production file servers.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Local VSS snapshots reside on the same compromised host/OS and are routinely wiped first by ransomware.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Keep the NAS joined to Active Directory, but rename the backup share with a leading `$` to hide it.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Hidden administrative shares (`$`) are trivial security-through-obscurity and offer zero resistance to Domain Admin attackers.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Enforce the 3-2-1-1-0 rule with off-domain, logically air-gapped, WORM-locked immutable backups using separate authentication.",
+        "isCorrect": true,
+        "explanation": "Correct. Removing the backup control plane from corporate Active Directory and storing at least one off-site copy in immutable WORM (Object Lock) or offline/air-gapped storage prevents even a Domain Admin from deleting or encrypting backup snapshots prior to expiration.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Switch from Incremental backups to Full backups every night on the same AD-joined NAS.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Changing backup schedule types on the same AD-joined NAS still leaves every backup vulnerable to deletion by compromised Domain Admins.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Ransomware-resilient recovery requires separating backup authentication from corporate Active Directory and maintaining at least one off-site immutable (WORM) or offline copy (3-2-1-1-0).",
+      "managerMindsetTip": "If your backup repository trusts the same Active Directory you're backing up, Domain Admin compromise destroys both production and backups.",
+      "studyFocusDirective": "Master the 3-2-1-1-0 rule: 3 copies, 2 media types, 1 offsite, 1 immutable/offline, 0 restore errors.",
+      "keyTakeaway": "Isolate backup credentials from corporate AD and enforce immutable (WORM) or air-gapped copies to survive ransomware.",
+      "references": [
+        {
+          "source": "NIST SP 800-34 / NIST SP 1800-25",
+          "section": "Data Integrity: Recovering from Ransomware and Destructive Attacks"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.10-q004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.2",
+    "topicName": "Recovery Sites (Cold, Warm, Hot, Mirrored), RAID Levels",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "calculation",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 85,
+    "conceptsTested": [
+      "RAID Fault Tolerance",
+      "RAID 6 vs. RAID 5 vs. RAID 10",
+      "Usable Storage Capacity Calculation"
+    ],
+    "keyTerms": [
+      "RAID 6",
+      "RAID 5",
+      "RAID 10",
+      "Parity",
+      "Fault Tolerance"
+    ],
+    "tags": [
+      "raid",
+      "storage-resilience",
+      "calculation"
+    ],
+    "stem": "A storage engineer provisions an array using 8 identical 4 TB enterprise drives. Management requires the array to survive ANY two simultaneous drive failures without data loss while maximizing usable storage capacity. Which RAID level should be chosen, and what is the resulting usable capacity?",
+    "scenarioContext": "Drives: 8 × 4 TB = 32 TB raw | Requirement: Survive ANY 2 simultaneous drive failures + maximize usable capacity.",
+    "highlightKeywords": [
+      "ANY two simultaneous drive failures",
+      "maximizing usable storage capacity"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "RAID 5, providing 28 TB of usable capacity.",
+        "isCorrect": false,
+        "explanation": "Incorrect. RAID 5 uses single distributed parity (`N - 1` = 28 TB) and can survive only ONE drive failure; a second simultaneous failure destroys the array.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "RAID 10, providing 16 TB of usable capacity.",
+        "isCorrect": false,
+        "explanation": "Incorrect. While RAID 10 (16 TB usable) can survive multiple failures across *different* mirrored pairs, two simultaneous failures within the *same* mirrored pair will lose data—so it does not survive ANY two simultaneous drive failures, and yields less capacity than RAID 6.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "RAID 0, providing 32 TB of usable capacity.",
+        "isCorrect": false,
+        "explanation": "Incorrect. RAID 0 offers pure striping with zero redundancy; any single drive failure loses the entire array.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "RAID 6, providing 24 TB of usable capacity.",
+        "isCorrect": true,
+        "explanation": "Correct. RAID 6 uses dual distributed parity (`(N - 2) × Drive Size` = `(8 - 2) × 4 TB` = 24 TB), guaranteeing survival against ANY two simultaneous drive failures while maximizing usable capacity (24 TB vs. 16 TB in RAID 10).",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "RAID 6 provides dual distributed parity (`N - 2` usable drives = 6 × 4 TB = 24 TB), surviving any two simultaneous disk failures.",
+      "managerMindsetTip": "Know the RAID math cold: RAID 0 = N; RAID 1 = N/2; RAID 5 = N-1 (1 failure); RAID 6 = N-2 (any 2 failures); RAID 10 = N/2 (1 per mirror pair, NOT guaranteed for any 2 arbitrary drives).",
+      "studyFocusDirective": "Compare RAID 0, 1, 5, 6, and 10 fault tolerance and usable capacity formulas.",
+      "keyTakeaway": "RAID 6 guarantees survival from any two simultaneous drive failures with `(N - 2)` usable capacity (24 TB on eight 4 TB drives).",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 18: Redundant Array of Independent Disks (RAID)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.11-q002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.11",
+    "subdomainName": "Implement Disaster Recovery (DR) Processes",
+    "topicId": "7.11.1",
+    "topicName": "DRP Activation, Emergency Communications, Restoration vs. Salvage",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Primary Site Restoration & Failback",
+      "Salvage vs. Restoration Teams",
+      "Reverse Cutover Sequencing"
+    ],
+    "keyTerms": [
+      "Failback",
+      "Restoration",
+      "Salvage Team",
+      "Primary Site"
+    ],
+    "tags": [
+      "disaster-recovery",
+      "restoration",
+      "failback"
+    ],
+    "stem": "After operating out of an alternate Hot Site for three weeks following a fire, the organization's repaired primary data center passes environmental, power, and physical security inspections. During the failback (return-to-home) phase, how should the DR team sequence migrating workloads back from the Hot Site to the restored primary site?",
+    "scenarioContext": "Phase: Rebuilt primary site cleared after 3 weeks at Hot Site | Task: Failback migration sequencing.",
+    "highlightKeywords": [
+      "failback",
+      "sequence migrating workloads"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Migrate the least critical systems back first to validate primary-site stability under real load before cutting over mission-critical Tier-1 applications.",
+        "isCorrect": true,
+        "explanation": "Correct. During initial disaster failover, Tier-1 (most critical) applications recover first. During failback to the repaired primary site, however, standard CISSP DR best practice reverses the order (least critical first, most critical last) so any lingering primary-site issues are caught on low-impact workloads before touching mission-critical production.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Power down the Hot Site immediately and move the core revenue payment cluster first with no parallel validation.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Moving Tier-1 systems first onto a newly rebuilt facility without shakedown testing risks causing a second outage if hidden infrastructure flaws remain.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Send the Salvage Team to power on smoke-damaged servers inside the primary data center without vendor recertification.",
+        "isCorrect": false,
+        "explanation": "Incorrect. The Salvage Team recovers/assesses damaged equipment for insurance or safe disposal; smoke- and moisture-damaged electronics must never be rushed back into production without certified inspection.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Delete all transaction logs generated at the Hot Site so primary databases match pre-disaster state.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Deleting three weeks of live transactions generated at the Hot Site causes catastrophic data loss.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Failover prioritizes critical workloads first, whereas failback to a repaired primary site moves least-critical workloads first to prove stability before returning Tier-1 systems.",
+      "managerMindsetTip": "Classic CISSP symmetry rule: Failover = Most Critical First (shortest RTO/MTD). Failback = Least Critical First (prove the repaired site works safely before moving crown jewels).",
+      "studyFocusDirective": "Review Restoration vs. Salvage teams and the exact ordering of disaster failover vs. primary-site failback.",
+      "keyTakeaway": "During failback to a rebuilt primary site, migrate least-critical workloads first to verify stability before cutting over Tier-1 systems.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 18: Recovery, Restoration, and Return to Primary Operations"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.12-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.12",
+    "subdomainName": "Test Disaster Recovery Plans",
+    "topicId": "7.12.1",
+    "topicName": "DR Test Types: Read-Through, Walkthrough, Simulation, Parallel, Full-Interruption",
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "Simulation Test",
+      "Walkthrough vs. Simulation vs. Parallel",
+      "Scenario-Based Exercises"
+    ],
+    "keyTerms": [
+      "Simulation Test",
+      "Injects",
+      "DR Exercise",
+      "Walkthrough"
+    ],
+    "tags": [
+      "dr-testing",
+      "simulation",
+      "continuity"
+    ],
+    "stem": "A DR coordinator organizes a multi-team exercise in which participants are presented with a realistic unfolding ransomware-and-power-outage scenario containing timed injects, forcing teams to locate call trees, execute mock failover tickets, and practice crisis escalation—all without powering down production systems or spinning up live workloads at the alternate site. Which DR test type is this?",
+    "scenarioContext": "Format: Timed scenario injects + practicing mock failover tickets/call trees | No live alternate-site processing or primary shutdown.",
+    "highlightKeywords": [
+      "timed injects",
+      "without powering down production"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Checklist / Read-through test",
+        "isCorrect": false,
+        "explanation": "Incorrect. A Read-Through test is an individual review of the plan document for completeness, without interactive timed scenario injects.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Simulation test",
+        "isCorrect": true,
+        "explanation": "Correct. A Simulation test walks teams through a realistic disaster scenario with timed injects and role-played operational steps (mock tickets, call trees, backup media verification) without actually activating live production processing at the recovery site or interrupting primary production.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Parallel test",
+        "isCorrect": false,
+        "explanation": "Incorrect. A Parallel test actually stands up live systems and processes workloads at the alternate recovery site alongside the primary site.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Full-interruption test",
+        "isCorrect": false,
+        "explanation": "Incorrect. A Full-Interruption test shuts down primary operations completely and transfers live production to the alternate site.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "A Simulation test challenges teams with realistic, time-driven disaster injects and mock response actions without bringing up live alternate-site production or disrupting the primary site.",
+      "managerMindsetTip": "Remember the progression: Checklist (individual read) -> Walkthrough (group step-by-step review) -> Simulation (timed scenario role-play) -> Parallel (live alt site) -> Full-Interruption (shut down primary).",
+      "studyFocusDirective": "Memorize the exact distinguishing boundaries between Walkthrough, Simulation, and Parallel DR exercises.",
+      "keyTakeaway": "Simulation tests use realistic, timed disaster injects to exercise team coordination without live failover or production downtime.",
+      "references": [
+        {
+          "source": "NIST SP 800-84",
+          "section": "Tabletop and Functional Simulation Exercises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.13-q002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.13",
+    "subdomainName": "Participate in Business Continuity (BC) Planning and Exercises",
+    "topicId": "7.13.1",
+    "topicName": "Cross-Functional BC Exercises & Executive Tabletop Drills",
+    "cognitiveLevel": "analyze",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Key-Person Single Point of Failure",
+      "BC Succession & Cross-Training",
+      "People Resilience"
+    ],
+    "keyTerms": [
+      "Succession Planning",
+      "Cross-Training",
+      "Single Point of Failure",
+      "BCP"
+    ],
+    "tags": [
+      "bcp",
+      "succession-planning",
+      "resilience"
+    ],
+    "stem": "During a Business Continuity tabletop exercise simulating an airline disruption, executives discover that only one senior engineer knows how to manually re-key the legacy payroll settlement batch interface and that no documented runbook exists. Which BC remediation action should management prioritize FIRST?",
+    "scenarioContext": "Exercise finding: Only 1 engineer knows undocumented manual payroll batch recovery step (key-person SPOF).",
+    "highlightKeywords": [
+      "prioritize FIRST",
+      "key-person"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Exclude the payroll batch scenario from future tabletop exercises so the BC report shows 100% pass rates.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Hiding known gaps to inflate test metrics undermines organizational resilience and violates executive due care.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Prohibit the senior engineer from ever taking vacation or traveling on weekends.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Restricting an employee's leave creates burnout, violates mandatory-vacation security principles, and fails completely in a genuine medical emergency.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "C",
+        "text": "Document step-by-step recovery procedures and cross-train designated backup personnel with formal succession coverage.",
+        "isCorrect": true,
+        "explanation": "Correct. Business Continuity exercises exist to expose single points of failure—including human ones. Documenting the tacit procedure in an accessible runbook and cross-training qualified backups eliminates the single-point-of-failure risk if that engineer is unavailable or incapacitated.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Buy a second identical legacy server for the hot site without documenting how to operate it.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Duplicate hardware does not fix undocumented human knowledge silos.",
+        "trapType": "technical_fix_over_process"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "BC exercises reveal single points of failure in people and processes; documenting tacit procedures and cross-training backups establishes true human resilience.",
+      "managerMindsetTip": "Technology redundancy fails if only one human holds the recovery procedure in their head—always eliminate key-person dependencies.",
+      "studyFocusDirective": "Review people-focused continuity controls: cross-training, succession charts, documented runbooks, and backup contact trees.",
+      "keyTakeaway": "Eliminate single-person operational dependencies with documented runbooks, cross-training, and succession plans.",
+      "references": [
+        {
+          "source": "NIST SP 800-34 Rev. 1",
+          "section": "Contingency Personnel Succession and Cross-Training"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.13-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.13",
+    "subdomainName": "Participate in Business Continuity (BC) Planning and Exercises",
+    "topicId": "7.13.1",
+    "topicName": "Cross-Functional BC Exercises & Executive Tabletop Drills",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Crisis Communications Governance",
+      "Designated Spokesperson",
+      "External Stakeholder Messaging"
+    ],
+    "keyTerms": [
+      "Crisis Communications",
+      "Spokesperson",
+      "BCP",
+      "Stakeholder"
+    ],
+    "tags": [
+      "bcp",
+      "crisis-communications",
+      "governance"
+    ],
+    "stem": "During a major service disruption caused by a data center cooling failure, customers receive conflicting status updates from sales account managers on LinkedIn, support engineers on email, and a VP on a podcast. What is the BEST corrective action to incorporate into the Business Continuity communications plan?",
+    "scenarioContext": "Failure: Multiple employees issuing conflicting public updates during a major outage.",
+    "highlightKeywords": [
+      "BEST corrective action",
+      "conflicting status updates"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Allow every department head to post independent real-time technical theories on social media for maximum speed.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Uncoordinated public statements create contradictions, legal liability, and customer panic.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Ask the HVAC contractor to field all customer and media inquiries directly.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Third-party contractors are never authorized to speak publicly on behalf of the enterprise during a crisis.",
+        "trapType": "premature_escalation"
+      },
+      {
+        "id": "C",
+        "text": "Permanently block all employee access to corporate Slack and email during any outage.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Shutting down internal operational communications prevents recovery teams from coordinating restoration.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "D",
+        "text": "Establish a single designated spokesperson/communications lead with pre-approved messaging templates and strict internal-only update channels until vetted external statements are authorized.",
+        "isCorrect": true,
+        "explanation": "Correct. A disciplined crisis communications plan channels all external statements through a trained, designated spokesperson backed by Legal, PR, and Executive sign-off using pre-drafted templates—preventing rumors, contradictions, and inadvertent regulatory missteps.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Crisis communications require a single authorized spokesperson, pre-approved templates, and clear employee guidelines prohibiting unauthorized external commentary.",
+      "managerMindsetTip": "In every crisis or breach scenario, external communication is centrally controlled through designated Legal/PR/Executive spokespeople—never ad hoc by engineers or sales reps.",
+      "studyFocusDirective": "Review Crisis Communications components in BCP: internal notification, customer/regulator/media templates, and designated spokespersons.",
+      "keyTakeaway": "Centralize external crisis messaging through a designated spokesperson with pre-approved templates to prevent conflicting claims.",
+      "references": [
+        {
+          "source": "ISO 22301",
+          "section": "Section 8.4.3: Warning and Communication Procedures"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.14-q002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.14",
+    "subdomainName": "Implement and Manage Physical Security",
+    "topicId": "7.14.1",
+    "topicName": "Visitor Logs, Escorts, Tailgating Prevention, Guard Operations",
+    "cognitiveLevel": "apply",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 65,
+    "conceptsTested": [
+      "Visitor Management Operations",
+      "Government ID & Escort Controls",
+      "Auditability of Physical Access"
+    ],
+    "keyTerms": [
+      "Visitor Logs",
+      "Escort Policy",
+      "Color-Coded Badges",
+      "Physical Security"
+    ],
+    "tags": [
+      "physical-security",
+      "visitor-management",
+      "operations"
+    ],
+    "stem": "An auditor inspects a high-security colocation facility and finds contractors wandering unescorted inside server aisles wearing generic temporary badges with no expiration dates and no entry/exit timestamps recorded. Which set of operational visitor controls should be implemented FIRST?",
+    "scenarioContext": "Audit findings: Unescorted contractors in server aisles, non-expiring generic badges, missing entry/exit logs.",
+    "highlightKeywords": [
+      "implemented FIRST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Require government-issued photo ID verification, logged arrival/departure timestamps, visually distinct time-limited visitor badges, and mandatory continuous authorized escort inside restricted zones.",
+        "isCorrect": true,
+        "explanation": "Correct. Effective physical visitor governance combines identity proofing (government photo ID), accountable audit trails (sign-in/sign-out times and host sponsor), high-visibility expiring badges (color-coded for escort required), and continuous escorting within restricted areas.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Issue permanent employee RFID proximity cards to all recurring third-party HVAC contractors so they never need to stop at reception.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Giving contractors permanent unescorted employee credentials destroys visitor accountability and increases insider/contractor exposure.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Paint the server rack doors black so visitors cannot tell which racks belong to which customer.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Visual rack paint does not stop unescorted unauthorized physical tampering or verify visitor identity.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Install a motion-sensing water sprinkler inside the reception lobby.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Motion-activated water sprinklers are neither valid fire suppression nor a visitor access control.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Physical visitor security requires ID verification, complete entry/exit logging, expiring visually distinct badges, and continuous escorting in sensitive zones.",
+      "managerMindsetTip": "Think end-to-end physical accountability: Who entered (ID check), Who authorized them (sponsor), When they entered/left (logs), and Who watched them (escort + visual badge).",
+      "studyFocusDirective": "Review guard operations, visitor check-in/out logs, escort policies, and badge revocation controls.",
+      "keyTakeaway": "Enforce photo ID verification, timestamped visitor logs, distinct expiring badges, and mandatory escorts in restricted areas.",
+      "references": [
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "PE-6 Monitoring Physical Access & PE-8 Visitor Access Records"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.15-q003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.15",
+    "subdomainName": "Address Personnel Safety and Security Concerns",
+    "topicId": "7.15.1",
+    "topicName": "Duress Alarms, Travel Security, Emergency Assembly Points (Human Safety First)",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 70,
+    "conceptsTested": [
+      "Executive & Employee Travel Security",
+      "Loaner Devices & Pre/Post-Travel Hygiene",
+      "Physical Safety Planning"
+    ],
+    "keyTerms": [
+      "Travel Security",
+      "Loaner Laptop",
+      "Personnel Safety",
+      "Border Inspection"
+    ],
+    "tags": [
+      "personnel-safety",
+      "travel-security",
+      "operations"
+    ],
+    "stem": "Senior researchers must travel to a high-risk foreign jurisdiction for an industry conference where border device inspections and hotel room tampering are well-documented risks. Which operational protocol BEST protects both personnel safety and corporate intellectual property?",
+    "scenarioContext": "Trip: High-risk foreign jurisdiction | Threats: Border inspection seizure, hotel tampering, personal safety.",
+    "highlightKeywords": [
+      "BEST protects",
+      "personnel safety and corporate intellectual property"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Instruct travelers to carry their primary R&D laptops containing full source code, but hide files inside password-protected ZIP archives.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Taking sensitive corporate IP across high-risk borders exposes data to legal seizure or covert imaging, and weak ZIP passwords or compelled decryption defeat confidentiality.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "Provide clean, sanitized loaner devices with minimal data, establish pre-travel safety/medical/embassy check-in protocols, prohibit leaving devices unattended, and wipe/retire loaners upon return.",
+        "isCorrect": true,
+        "explanation": "Correct. High-risk travel security pairs personnel safety preparation (embassy contacts, emergency evacuation/check-in plan, situational awareness) with clean loaner hardware carrying only essential presentation data, encrypted VPN/VDI access where lawful, and post-travel sanitization.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Require researchers to resist border customs agents physically if asked to unlock any laptop.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Physically resisting foreign border authorities endangers employee safety and risks arrest or detention.",
+        "trapType": "ignores_human_safety"
+      },
+      {
+        "id": "D",
+        "text": "Connect freely to hotel lobby public Wi-Fi without VPN so encrypted traffic does not look suspicious.",
+        "isCorrect": false,
+        "explanation": "Incorrect. Operating unencrypted over untrusted foreign Wi-Fi exposes credentials and communications to trivial interception.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "High-risk travel security combines personnel safety briefings and check-in/emergency plans with clean loaner devices that are wiped after return.",
+      "managerMindsetTip": "Travel security spans both human safety (check-ins, emergency evacuation contacts, compliance with local authorities) and device hygiene (clean loaners, zero sensitive IP at rest, post-trip wipe).",
+      "studyFocusDirective": "Review pre-travel, in-transit, and post-travel security procedures for high-risk travel.",
+      "keyTakeaway": "Use clean loaner devices, minimal local data, formal travel safety check-ins, and post-return wiping for high-risk travel.",
+      "references": [
+        {
+          "source": "ISC2 CISSP Official Study Guide (10th Edition)",
+          "section": "Chapter 16: Travel Security and Personnel Safety"
+        }
+      ]
+    }
+  }
+]

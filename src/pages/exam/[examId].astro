@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import AppShell from '../../components/layout/AppShell.astro';
+import ExamRunner from '../../components/exam-runner/ExamRunner';
+import type { HydratedExamPayload } from '../../lib/types/question';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const exams = await getCollection('exams');
+  const allQuestions = await getCollection('questions');
+  const questionMap = new Map(allQuestions.map((q) => [q.data.id, q.data]));
+
+  return exams.map((examEntry) => {
+    const exam = examEntry.data;
+    const questions = exam.questionIds
+      .map((id) => questionMap.get(id))
+      .filter((q): q is NonNullable<typeof q> => Boolean(q));
+
+    const payload: HydratedExamPayload = {
+      ...exam,
+      questions,
+    };
+
+    return {
+      params: { examId: exam.examId },
+      props: { payload },
+    };
+  });
+};
+
+interface Props {
+  payload: HydratedExamPayload;
+}
+
+const { payload } = Astro.props;
+---
+
+<AppShell
+  title={`${payload.title} — Active Session`}
+  minimalChrome={true}
+>
+  <ExamRunner client:only="react" exam={payload} />
+</AppShell>
