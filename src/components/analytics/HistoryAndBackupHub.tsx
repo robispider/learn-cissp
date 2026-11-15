@@ -15,6 +15,7 @@ import {
 } from '../../lib/storage/backup';
 import type { ExamSessionRecord, TopicMasteryRecord } from '../../lib/types/session';
 import { resumeExamHref } from '../../lib/exam-engine/assembler';
+import { withBase } from '../../lib/paths';
 
 export default function HistoryAndBackupHub() {
   const [sessions, setSessions] = useState<ExamSessionRecord[]>([]);
@@ -149,7 +150,7 @@ export default function HistoryAndBackupHub() {
 
         {sessions.length === 0 ? (
           <div className="py-10 text-center text-sm text-slate-500">
-            No exam sessions recorded yet. <a href="/exams" className="font-semibold text-emerald-600 hover:underline dark:text-emerald-400">Start any exam</a> to track your progress.
+            No exam sessions recorded yet. <a href={withBase('/exams')} className="font-semibold text-emerald-600 hover:underline dark:text-emerald-400">Start any exam</a> to track your progress.
           </div>
         ) : (
           <div className="mt-4 divide-y divide-slate-200/60 dark:divide-slate-800/60">
@@ -199,7 +200,7 @@ export default function HistoryAndBackupHub() {
 
                     {isCompleted ? (
                       <a
-                        href={`/results?sessionId=${s.sessionId}`}
+                        href={withBase(`/results?sessionId=${s.sessionId}`)}
                         className="inline-flex items-center gap-1 rounded-xl bg-slate-100 px-3.5 py-2 text-xs font-semibold text-slate-800 hover:bg-emerald-500 hover:text-slate-950 dark:bg-slate-800 dark:text-slate-200"
                       >
                         Diagnostic Report

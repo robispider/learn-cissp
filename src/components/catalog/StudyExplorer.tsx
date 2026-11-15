@@ -5,6 +5,7 @@ import { buildGeneratedExamHref } from '../../lib/exam-engine/assembler';
 import { useLearnerProgress } from '../../lib/storage/use-progress';
 import { domainTheme } from '../../lib/ui/domain-theme';
 import { MasteryPill, card, useExamMode } from '../ui/primitives';
+import { withBase } from '../../lib/paths';
 
 export interface StudyTakeaway {
   subdomainId: string;
@@ -90,7 +91,7 @@ export default function StudyExplorer({
             return (
               <section key={d.domainId} id={d.domainId} className="scroll-mt-24">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <a href={`/domains/${d.domainId}`} className="group flex items-center gap-2.5">
+                  <a href={withBase(`/domains/${d.domainId}`)} className="group flex items-center gap-2.5">
                     <span className={`inline-flex h-7 w-7 items-center justify-center rounded-lg font-mono text-xs font-bold ${theme.soft} ${theme.text}`}>
                       {d.number}
                     </span>

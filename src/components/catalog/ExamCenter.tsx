@@ -6,6 +6,7 @@ import { domainTheme } from '../../lib/ui/domain-theme';
 import ExamBuilder from './ExamBuilder';
 import { DomainCard, PresetExamCard, SubdomainRow } from './CatalogParts';
 import { ModeToggle, card } from '../ui/primitives';
+import { withBase } from '../../lib/paths';
 
 type Tab = 'full' | 'domain' | 'subdomain';
 
@@ -251,7 +252,7 @@ export default function ExamCenter({ catalog }: { catalog: CatalogData }) {
               return (
                 <section key={d.domainId} className={`${card} overflow-hidden`}>
                   <header className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-3 dark:border-slate-800/70">
-                    <a href={`/domains/${d.domainId}`} className="flex min-w-0 items-center gap-2.5 hover:underline">
+                    <a href={withBase(`/domains/${d.domainId}`)} className="flex min-w-0 items-center gap-2.5 hover:underline">
                       <span className={`h-2 w-2 shrink-0 rounded-full ${theme.dot}`} />
                       <span className="truncate text-sm font-semibold text-slate-900 dark:text-white">
                         Domain {d.number} · {d.name}

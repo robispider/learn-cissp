@@ -18,14 +18,16 @@ import {
   X,
 } from 'lucide-react';
 import {
+  applyResponseUpdate,
   completeExamSession,
   createExamSession,
   findExistingActiveSession,
+  flushSessionSaves,
   getSessionById,
   pauseExamSession,
-  syncSessionTimerAndIndex,
-  updateQuestionResponse,
+  scheduleSessionSave,
 } from '../../lib/storage/session-store';
+import { withBase } from '../../lib/paths';
 import { getUserPreferences, saveUserPreferences } from '../../lib/storage/db';
 import {
   COGNITIVE_LABELS,
@@ -39,6 +41,7 @@ import type {
   ConfidenceLevel,
   ExamMode,
   ExamSessionRecord,
+  QuestionResponseState,
 } from '../../lib/types/session';
 import ThemeToggle from '../layout/ThemeToggle';
 
@@ -167,221 +170,225 @@ export default function ExamRunner({ exam }: Props) {
   const dwellRef = useRef(currentQuestionDwell);
   dwellRef.current = currentQuestionDwell;
 
-  // 1-second tick for visual timing + 5-second auto-flush to IndexedDB
+  // Regex highlighting is relatively costly and the stem only changes per question,
+  // so don't redo it on every 1-second timer re-render.
+  const highlightedStem = useMemo(
+    () =>
+      currentQuestion
+        ? highlightStemText(
+            currentQuestion.stem,
+            currentQuestion.highlightKeywords,
+            highlightWords
+          )
+        : null,
+    [currentQuestion, highlightWords]
+  );
+
+  // Set once the session is being paused/completed so late timer ticks can't
+  // overwrite the final record.
+  const finishedRef = useRef(false);
+
+  /**
+   * Optimistic update: apply the change to in-memory state immediately (so the UI
+   * responds on the same frame) and persist to IndexedDB in the background.
+   * `sessionRef` is the source of truth so rapid successive actions compose.
+   */
+  const commitResponse = useCallback(
+    (
+      questionId: string,
+      updater: (prev: QuestionResponseState) => QuestionResponseState,
+      nextIndex?: number
+    ): ExamSessionRecord | undefined => {
+      const cur = sessionRef.current;
+      if (!cur || finishedRef.current) return undefined;
+      const activeId = cur.questionOrder[cur.currentQuestionIndex];
+      const dwell = dwellRef.current;
+      const next = applyResponseUpdate(
+        cur,
+        questionId,
+        (prev) => {
+          const r = updater(prev);
+          return questionId === activeId
+            ? { ...r, timeSpentSeconds: Math.max(r.timeSpentSeconds, dwell) }
+            : r;
+        },
+        nextIndex ?? cur.currentQuestionIndex,
+        elapsedRef.current
+      );
+      sessionRef.current = next;
+      setSession(next);
+      void scheduleSessionSave(next);
+      return next;
+    },
+    []
+  );
+
+  // 1-second tick for visual timing + 5-second background snapshot to IndexedDB
   useEffect(() => {
     if (!session || session.status === 'completed' || isPausedOverlay) return;
 
-    let unsavedDelta = 0;
+    const saveSnapshot = () => {
+      const s = sessionRef.current;
+      if (!s || finishedRef.current) return;
+      const qId = s.questionOrder[s.currentQuestionIndex];
+      const r = s.responses[qId];
+      void scheduleSessionSave({
+        ...s,
+        status: 'in_progress',
+        elapsedSeconds: elapsedRef.current,
+        updatedAt: new Date().toISOString(),
+        responses: r
+          ? {
+              ...s.responses,
+              [qId]: {
+                ...r,
+                timeSpentSeconds: Math.max(r.timeSpentSeconds, dwellRef.current),
+              },
+            }
+          : s.responses,
+      });
+    };
+
+    let ticks = 0;
     const interval = window.setInterval(() => {
       if (document.hidden) return;
-      unsavedDelta += 1;
+      ticks += 1;
       setElapsedSeconds((prev) => prev + 1);
       setCurrentQuestionDwell((prev) => prev + 1);
-
-      if (unsavedDelta >= 5 && sessionRef.current) {
-        const s = sessionRef.current;
-        const qId = s.questionOrder[s.currentQuestionIndex];
-        syncSessionTimerAndIndex(
-          s.sessionId,
-          elapsedRef.current + 1,
-          s.currentQuestionIndex,
-          qId,
-          unsavedDelta
-        );
-        unsavedDelta = 0;
+      if (ticks >= 5) {
+        ticks = 0;
+        saveSnapshot();
       }
     }, 1000);
 
     const handleVisibilityChange = () => {
-      if (document.hidden && sessionRef.current && unsavedDelta > 0) {
-        const s = sessionRef.current;
-        const qId = s.questionOrder[s.currentQuestionIndex];
-        syncSessionTimerAndIndex(
-          s.sessionId,
-          elapsedRef.current,
-          s.currentQuestionIndex,
-          qId,
-          unsavedDelta
-        );
-        unsavedDelta = 0;
-      }
+      if (document.hidden) saveSnapshot();
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('pagehide', saveSnapshot);
     return () => {
       window.clearInterval(interval);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('pagehide', saveSnapshot);
     };
-  }, [session?.sessionId, session?.currentQuestionIndex, isPausedOverlay]);
+  }, [session?.sessionId, isPausedOverlay]);
 
   const navigateToQuestion = useCallback(
-    async (nextIdx: number) => {
-      if (!session) return;
-      const bounded = Math.max(
-        0,
-        Math.min(session.questionOrder.length - 1, nextIdx)
-      );
-      if (bounded === session.currentQuestionIndex) return;
+    (nextIdx: number) => {
+      const cur = sessionRef.current;
+      if (!cur) return;
+      const bounded = Math.max(0, Math.min(cur.questionOrder.length - 1, nextIdx));
+      if (bounded === cur.currentQuestionIndex) return;
 
-      const curQId = session.questionOrder[session.currentQuestionIndex];
-      const updated = await updateQuestionResponse(
-        session.sessionId,
-        curQId,
-        (prev) => ({
-          ...prev,
-          timeSpentSeconds: Math.max(prev.timeSpentSeconds, currentQuestionDwell),
-        }),
-        bounded,
-        elapsedSeconds
-      );
-
+      const curQId = cur.questionOrder[cur.currentQuestionIndex];
+      const updated = commitResponse(curQId, (prev) => prev, bounded);
       if (updated) {
-        setSession(updated);
         const nextQId = updated.questionOrder[bounded];
         setCurrentQuestionDwell(updated.responses[nextQId]?.timeSpentSeconds ?? 0);
       }
     },
-    [session, currentQuestionDwell, elapsedSeconds]
+    [commitResponse]
   );
 
   const handleSelectOption = useCallback(
-    async (optId: OptionId) => {
-      if (!session || !currentQuestion) return;
-      const updated = await updateQuestionResponse(
-        session.sessionId,
-        currentQuestion.id,
-        (prev) => ({
-          ...prev,
-          selectedOptionId: optId,
-          confidence: prev.confidence ?? 'medium',
-          eliminatedOptionIds: prev.eliminatedOptionIds.filter((id) => id !== optId),
-          timeSpentSeconds: Math.max(prev.timeSpentSeconds, currentQuestionDwell),
-          answeredAt: new Date().toISOString(),
-          revealedInStudyMode:
-            session.mode === 'study' ? true : prev.revealedInStudyMode,
-        }),
-        session.currentQuestionIndex,
-        elapsedSeconds
-      );
-      if (updated) setSession(updated);
+    (optId: OptionId) => {
+      const cur = sessionRef.current;
+      if (!cur) return;
+      const qId = cur.questionOrder[cur.currentQuestionIndex];
+      commitResponse(qId, (prev) => ({
+        ...prev,
+        selectedOptionId: optId,
+        confidence: prev.confidence ?? 'medium',
+        eliminatedOptionIds: prev.eliminatedOptionIds.filter((id) => id !== optId),
+        answeredAt: new Date().toISOString(),
+        revealedInStudyMode: cur.mode === 'study' ? true : prev.revealedInStudyMode,
+      }));
     },
-    [session, currentQuestion, currentQuestionDwell, elapsedSeconds]
+    [commitResponse]
   );
 
   const handleToggleEliminate = useCallback(
-    async (optId: OptionId, e?: React.MouseEvent) => {
+    (optId: OptionId, e?: React.MouseEvent) => {
       if (e) {
         e.preventDefault();
         e.stopPropagation();
       }
-      if (!session || !currentQuestion) return;
-      const updated = await updateQuestionResponse(
-        session.sessionId,
-        currentQuestion.id,
-        (prev) => {
-          const exists = prev.eliminatedOptionIds.includes(optId);
-          const nextElim = exists
+      const cur = sessionRef.current;
+      if (!cur) return;
+      const qId = cur.questionOrder[cur.currentQuestionIndex];
+      commitResponse(qId, (prev) => {
+        const exists = prev.eliminatedOptionIds.includes(optId);
+        return {
+          ...prev,
+          eliminatedOptionIds: exists
             ? prev.eliminatedOptionIds.filter((id) => id !== optId)
-            : [...prev.eliminatedOptionIds, optId];
-          return {
-            ...prev,
-            eliminatedOptionIds: nextElim,
-            selectedOptionId:
-              !exists && prev.selectedOptionId === optId
-                ? null
-                : prev.selectedOptionId,
-          };
-        },
-        session.currentQuestionIndex,
-        elapsedSeconds
-      );
-      if (updated) setSession(updated);
+            : [...prev.eliminatedOptionIds, optId],
+          selectedOptionId:
+            !exists && prev.selectedOptionId === optId ? null : prev.selectedOptionId,
+        };
+      });
     },
-    [session, currentQuestion, elapsedSeconds]
+    [commitResponse]
   );
 
   const handleSetConfidence = useCallback(
-    async (level: ConfidenceLevel) => {
-      if (!session || !currentQuestion) return;
-      const updated = await updateQuestionResponse(
-        session.sessionId,
-        currentQuestion.id,
-        (prev) => ({
-          ...prev,
-          confidence: level,
-          timeSpentSeconds: Math.max(prev.timeSpentSeconds, currentQuestionDwell),
-        }),
-        session.currentQuestionIndex,
-        elapsedSeconds
-      );
-      if (updated) setSession(updated);
+    (level: ConfidenceLevel) => {
+      const cur = sessionRef.current;
+      if (!cur) return;
+      const qId = cur.questionOrder[cur.currentQuestionIndex];
+      commitResponse(qId, (prev) => ({ ...prev, confidence: level }));
     },
-    [session, currentQuestion, currentQuestionDwell, elapsedSeconds]
+    [commitResponse]
   );
 
-  const handleToggleFlag = useCallback(async () => {
-    if (!session || !currentQuestion) return;
-    const updated = await updateQuestionResponse(
-      session.sessionId,
-      currentQuestion.id,
-      (prev) => ({
-        ...prev,
-        isFlagged: !prev.isFlagged,
-        timeSpentSeconds: Math.max(prev.timeSpentSeconds, currentQuestionDwell),
-      }),
-      session.currentQuestionIndex,
-      elapsedSeconds
-    );
-    if (updated) setSession(updated);
-  }, [session, currentQuestion, currentQuestionDwell, elapsedSeconds]);
+  const handleToggleFlag = useCallback(() => {
+    const cur = sessionRef.current;
+    if (!cur) return;
+    const qId = cur.questionOrder[cur.currentQuestionIndex];
+    commitResponse(qId, (prev) => ({ ...prev, isFlagged: !prev.isFlagged }));
+  }, [commitResponse]);
 
-  const handleToggleMode = async () => {
-    if (!session) return;
-    const nextMode: ExamMode = session.mode === 'study' ? 'simulation' : 'study';
-    const nextSession: ExamSessionRecord = {
-      ...session,
+  const handleToggleMode = () => {
+    const cur = sessionRef.current;
+    if (!cur) return;
+    const nextMode: ExamMode = cur.mode === 'study' ? 'simulation' : 'study';
+    const next: ExamSessionRecord = {
+      ...cur,
       mode: nextMode,
       updatedAt: new Date().toISOString(),
     };
-    setSession(nextSession);
+    sessionRef.current = next;
+    setSession(next);
+    void scheduleSessionSave(next);
     saveUserPreferences({ defaultExamMode: nextMode });
   };
 
   const handlePauseAndExit = async () => {
-    if (!session) return;
-    await updateQuestionResponse(
-      session.sessionId,
-      currentQuestionId,
-      (prev) => ({
-        ...prev,
-        timeSpentSeconds: Math.max(prev.timeSpentSeconds, currentQuestionDwell),
-      }),
-      session.currentQuestionIndex,
-      elapsedSeconds
-    );
-    await pauseExamSession(session.sessionId);
-    window.location.href = '/';
+    const cur = sessionRef.current;
+    if (!cur || finishedRef.current) return;
+    commitResponse(cur.questionOrder[cur.currentQuestionIndex], (prev) => prev);
+    finishedRef.current = true;
+    await flushSessionSaves();
+    await pauseExamSession(cur.sessionId);
+    window.location.href = withBase('/');
   };
 
   const handleCompleteExam = async () => {
-    if (!session || isSubmitting) return;
+    const cur = sessionRef.current;
+    if (!cur || isSubmitting || finishedRef.current) return;
     setIsSubmitting(true);
-    await updateQuestionResponse(
-      session.sessionId,
-      currentQuestionId,
-      (prev) => ({
-        ...prev,
-        timeSpentSeconds: Math.max(prev.timeSpentSeconds, currentQuestionDwell),
-      }),
-      session.currentQuestionIndex,
-      elapsedSeconds
-    );
-    await completeExamSession(
-      session.sessionId,
-      exam.questions,
-      exam.blueprintWeights
-    );
-    window.location.href = `/results?sessionId=${session.sessionId}`;
+    try {
+      commitResponse(cur.questionOrder[cur.currentQuestionIndex], (prev) => prev);
+      finishedRef.current = true;
+      await flushSessionSaves();
+      await completeExamSession(cur.sessionId, exam.questions, exam.blueprintWeights);
+      window.location.href = withBase(`/results?sessionId=${cur.sessionId}`);
+    } catch (err) {
+      console.error('Failed to complete exam', err);
+      finishedRef.current = false;
+      setIsSubmitting(false);
+    }
   };
 
   // Keyboard shortcuts (1-4 / A-D, Left/Right, F to flag, C to cycle confidence)
@@ -883,11 +890,7 @@ export default function ExamRunner({ exam }: Props) {
                 : 'text-lg sm:text-[21px] sm:leading-[1.65]'
             }`}
           >
-            {highlightStemText(
-              currentQuestion.stem,
-              currentQuestion.highlightKeywords,
-              highlightWords
-            )}
+            {highlightedStem}
           </h1>
 
           {/* Answer Options (A, B, C, D) */}
@@ -919,7 +922,7 @@ export default function ExamRunner({ exam }: Props) {
                 <div
                   key={option.id}
                   onContextMenu={(e) => handleToggleEliminate(option.id, e)}
-                  className={`group relative rounded-2xl border transition-all duration-150 ${cardStyle} ${
+                  className={`group relative rounded-2xl border transition-colors duration-150 ${cardStyle} ${
                     isEliminated && !isSelected ? 'opacity-40' : ''
                   }`}
                 >

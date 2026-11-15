@@ -22,6 +22,7 @@ import TrapBreakdownChart from './TrapBreakdownChart';
 import ConfidenceMatrix from './ConfidenceMatrix';
 import PacingTimeline from './PacingTimeline';
 import StrengthWeaknessTable from './StrengthWeaknessTable';
+import { withBase } from '../../lib/paths';
 
 interface Props {
   initialSessionId?: string;
@@ -110,7 +111,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
           Finish any exam to unlock your diagnostic charts and personalised study plan.
         </p>
         <a
-          href="/exams"
+          href={withBase('/exams')}
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-400"
         >
           <Play className="h-4 w-4 fill-current" />
@@ -174,7 +175,7 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
         <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-4 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/80 sm:p-8 lg:col-span-7">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <a
-              href="/exams"
+              href={withBase('/exams')}
               className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 dark:hover:text-white"
             >
               <ArrowLeft className="h-3.5 w-3.5" />

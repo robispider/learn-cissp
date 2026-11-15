@@ -4,6 +4,7 @@ import { buildGeneratedExamHref, resumeExamHref } from '../../lib/exam-engine/as
 import { useLearnerProgress, weakSubdomainWeights } from '../../lib/storage/use-progress';
 import { DomainCard } from './CatalogParts';
 import { ProgressRing, SectionHeader, btnPrimary, btnSecondary, card, useExamMode } from '../ui/primitives';
+import { withBase } from '../../lib/paths';
 
 export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
   const progress = useLearnerProgress();
@@ -36,21 +37,21 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
 
   const entries = [
     {
-      href: '/exams?tab=full',
+      href: withBase('/exams?tab=full'),
       Icon: Globe2,
       title: 'Full CISSP exam',
       body: 'All 8 domains, weighted like the real exam. 25 to 150 questions.',
       meta: 'Blueprint-balanced',
     },
     {
-      href: '/exams?tab=domain',
+      href: withBase('/exams?tab=domain'),
       Icon: Shield,
       title: 'Domain exams',
       body: 'Focus on one domain with fixed sets or a fresh random draw.',
       meta: `8 domains · ${presetCount} fixed sets`,
     },
     {
-      href: '/exams?tab=subdomain',
+      href: withBase('/exams?tab=subdomain'),
       Icon: Layers,
       title: 'Sub-domain drills',
       body: 'Short, targeted drills on a single sub-domain and its topics.',
@@ -78,7 +79,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
               <Play className="h-4 w-4 fill-current" />
               Quick 25-question exam
             </a>
-            <a href="/exams" className={btnSecondary}>
+            <a href={withBase('/exams')} className={btnSecondary}>
               All exams <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -127,7 +128,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
               </a>
             ) : (
               <a
-                href="/study"
+                href={withBase('/study')}
                 className="flex items-center justify-between gap-2 rounded-xl bg-slate-100 px-3 py-2.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
               >
                 <span className="inline-flex items-center gap-1.5">
@@ -170,7 +171,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
           title="The 8 domains"
           subtitle={`${catalog.totalQuestions} questions in the bank so far`}
           action={
-            <a href="/study" className="text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400">
+            <a href={withBase('/study')} className="text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400">
               Study map →
             </a>
           }
@@ -193,7 +194,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
           <SectionHeader
             title="Recent results"
             action={
-              <a href="/history" className="text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400">
+              <a href={withBase('/history')} className="text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400">
                 All history →
               </a>
             }
@@ -204,7 +205,7 @@ export default function HomeDashboard({ catalog }: { catalog: CatalogData }) {
               return (
                 <li key={s.sessionId}>
                   <a
-                    href={`/results?sessionId=${s.sessionId}`}
+                    href={withBase(`/results?sessionId=${s.sessionId}`)}
                     className="flex items-center gap-4 px-4 py-3 transition hover:bg-slate-50 dark:hover:bg-slate-800/40"
                   >
                     <span

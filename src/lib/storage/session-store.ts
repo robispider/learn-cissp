@@ -146,9 +146,36 @@ export async function updateQuestionResponse(
   currentQuestionIndex?: number,
   elapsedSeconds?: number
 ): Promise<ExamSessionRecord | undefined> {
+  await flushSessionSaves();
   const session = await db.exam_sessions.get(sessionId);
   if (!session) return undefined;
 
+  const updated = applyResponseUpdate(
+    session,
+    questionId,
+    updater,
+    currentQuestionIndex,
+    elapsedSeconds
+  );
+
+  await db.exam_sessions.put(updated);
+  if (updated.status !== 'completed') {
+    setActiveSessionPointer(toPointer(updated));
+  }
+  return updated;
+}
+
+/**
+ * Pure (synchronous) response update. The exam runner applies this to its in-memory
+ * session so the UI reacts instantly, then persists the result in the background.
+ */
+export function applyResponseUpdate(
+  session: ExamSessionRecord,
+  questionId: string,
+  updater: (prev: QuestionResponseState) => QuestionResponseState,
+  currentQuestionIndex?: number,
+  elapsedSeconds?: number
+): ExamSessionRecord {
   const prevResp = session.responses[questionId] ?? {
     questionId,
     selectedOptionId: null,
@@ -160,8 +187,7 @@ export async function updateQuestionResponse(
     revealedInStudyMode: false,
   };
 
-  const nextResp = updater(prevResp);
-  const updated: ExamSessionRecord = {
+  return {
     ...session,
     status: session.status === 'completed' ? 'completed' : 'in_progress',
     updatedAt: new Date().toISOString(),
@@ -173,15 +199,51 @@ export async function updateQuestionResponse(
       elapsedSeconds !== undefined ? elapsedSeconds : session.elapsedSeconds,
     responses: {
       ...session.responses,
-      [questionId]: nextResp,
+      [questionId]: updater(prevResp),
     },
   };
+}
 
-  await db.exam_sessions.put(updated);
-  if (updated.status !== 'completed') {
-    setActiveSessionPointer(toPointer(updated));
+// ---------------------------------------------------------------------------
+// Background save queue: full-snapshot writes, serialized and coalesced so rapid
+// interactions never pile up IndexedDB transactions or overwrite each other
+// out of order. Only the most recent snapshot per session is ever written.
+// ---------------------------------------------------------------------------
+const pendingSaves = new Map<string, ExamSessionRecord>();
+let activeFlush: Promise<void> | null = null;
+
+async function runFlush(): Promise<void> {
+  try {
+    while (pendingSaves.size > 0) {
+      const [id, snapshot] = pendingSaves.entries().next().value as [
+        string,
+        ExamSessionRecord,
+      ];
+      pendingSaves.delete(id);
+      try {
+        await db.exam_sessions.put(snapshot);
+        if (snapshot.status !== 'completed') {
+          setActiveSessionPointer(toPointer(snapshot));
+        }
+      } catch (err) {
+        console.error('Failed to save exam session', err);
+      }
+    }
+  } finally {
+    activeFlush = null;
   }
-  return updated;
+}
+
+/** Queue a session snapshot for persistence without blocking the caller. */
+export function scheduleSessionSave(session: ExamSessionRecord): Promise<void> {
+  pendingSaves.set(session.sessionId, session);
+  activeFlush ??= runFlush();
+  return activeFlush;
+}
+
+/** Resolves once every queued snapshot has been written to IndexedDB. */
+export async function flushSessionSaves(): Promise<void> {
+  while (activeFlush) await activeFlush;
 }
 
 export async function syncSessionTimerAndIndex(
@@ -216,6 +278,7 @@ export async function syncSessionTimerAndIndex(
 }
 
 export async function pauseExamSession(sessionId: string): Promise<void> {
+  await flushSessionSaves();
   const session = await db.exam_sessions.get(sessionId);
   if (!session || session.status === 'completed') return;
 
@@ -233,6 +296,7 @@ export async function completeExamSession(
   questions: Question[],
   blueprintWeights?: Record<string, number>
 ): Promise<ExamSessionRecord | undefined> {
+  await flushSessionSaves();
   const session = await db.exam_sessions.get(sessionId);
   if (!session) return undefined;
 

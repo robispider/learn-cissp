@@ -1,12 +1,13 @@
 import type { HydratedExamPayload, Question } from '../types/question';
 import type { ExamSessionRecord } from '../types/session';
 import { isGeneratedExamId } from './assembler';
+import { withBase } from '../paths';
 
 let bankPromise: Promise<Question[]> | null = null;
 
 /** Full question bank, emitted at build time by /api/bank.json. */
 export function fetchQuestionBank(): Promise<Question[]> {
-  bankPromise ??= fetch('/api/bank.json').then((res) => {
+  bankPromise ??= fetch(withBase('/api/bank.json')).then((res) => {
     if (!res.ok) throw new Error(`Question bank unavailable (${res.status})`);
     return res.json() as Promise<Question[]>;
   });
@@ -20,7 +21,7 @@ export function fetchQuestionBank(): Promise<Question[]> {
 export async function resolveSessionExam(session: ExamSessionRecord): Promise<HydratedExamPayload> {
   if (!isGeneratedExamId(session.examId)) {
     try {
-      const res = await fetch(`/api/exams/${encodeURIComponent(session.examId)}.json`);
+      const res = await fetch(withBase(`/api/exams/${encodeURIComponent(session.examId)}.json`));
       if (res.ok) return (await res.json()) as HydratedExamPayload;
     } catch {
       // fall through to the bank

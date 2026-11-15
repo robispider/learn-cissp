@@ -2,6 +2,8 @@
 
 A zero-backend, static-first **CISSP Exam Practice & Diagnostic Learning System** built with **Astro 5**, **React 19 Islands**, **Tailwind CSS v4**, and **Browser-Based Storage (`IndexedDB` + `localStorage`)**.
 
+**🌐 Live site: <https://robispider.github.io/learn-cissp/>**
+
 ## Quick Start
 
 ```bash
@@ -42,3 +44,15 @@ npm run build
 - **[AGENTS.md](./AGENTS.md)** — Quick-start rules and guardrails for AI agents working in this repository.
 - **[docs/VISION_AND_AGENT_PLAYBOOK.md](./docs/VISION_AND_AGENT_PLAYBOOK.md)** — Full product vision, Astro technical architecture, IndexedDB browser persistence engine, diagnostic gap formulas, and graphical summary specifications.
 - **[docs/QUESTION_DATA_SPEC.md](./docs/QUESTION_DATA_SPEC.md)** — Canonical 8-Domain CISSP taxonomy, self-indicating JSON question schema, distractor trap taxonomy, and per-option explanation standards.
+
+## Deployment (GitHub Pages)
+
+The site deploys automatically via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) every time `main` is updated (direct push or merged pull request). It can also be run manually from the **Actions** tab.
+
+One-time setup: in the repository go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+
+The workflow sets `SITE_URL` and `BASE_PATH` so the site works under `/learn-cissp/`. Local `npm run dev` / `npm run build` use the root path. To test the Pages build locally:
+
+```bash
+SITE_URL=https://robispider.github.io BASE_PATH=/learn-cissp npm run build && npm run preview
+```

@@ -5,6 +5,7 @@ import { domainTheme } from '../../lib/ui/domain-theme';
 import ExamBuilder from './ExamBuilder';
 import { PresetExamCard, SubdomainRow } from './CatalogParts';
 import { ModeToggle, ProgressRing, SectionHeader, card } from '../ui/primitives';
+import { withBase } from '../../lib/paths';
 
 const DOMAIN_EXAM_LENGTHS = [
   { value: 15, label: 'Short' },
@@ -28,17 +29,17 @@ export default function DomainHub({ catalog, domainId }: { catalog: CatalogData;
   return (
     <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
       <nav className="flex items-center justify-between text-sm">
-        <a href="/exams?tab=domain" className="inline-flex items-center gap-1.5 text-slate-500 hover:text-slate-900 dark:hover:text-white">
+        <a href={withBase('/exams?tab=domain')} className="inline-flex items-center gap-1.5 text-slate-500 hover:text-slate-900 dark:hover:text-white">
           <ArrowLeft className="h-4 w-4" /> All domains
         </a>
         <div className="flex gap-1">
           {prev && (
-            <a href={`/domains/${prev.domainId}`} className="rounded-lg px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+            <a href={withBase(`/domains/${prev.domainId}`)} className="rounded-lg px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
               ← D{prev.number}
             </a>
           )}
           {next && (
-            <a href={`/domains/${next.domainId}`} className="rounded-lg px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+            <a href={withBase(`/domains/${next.domainId}`)} className="rounded-lg px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
               D{next.number} →
             </a>
           )}
@@ -118,7 +119,7 @@ export default function DomainHub({ catalog, domainId }: { catalog: CatalogData;
 
       {next && (
         <a
-          href={`/domains/${next.domainId}`}
+          href={withBase(`/domains/${next.domainId}`)}
           className={`${card} mt-10 flex items-center justify-between p-4 transition hover:border-emerald-500/50`}
         >
           <span className="text-sm text-slate-500">

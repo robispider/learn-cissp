@@ -14,6 +14,7 @@ import { getAllMasteryRecords } from '../../lib/storage/mastery-store';
 import { loadExposureMap, weakSubdomainWeights } from '../../lib/storage/use-progress';
 import type { HydratedExamPayload } from '../../lib/types/question';
 import type { TopicMasteryRecord } from '../../lib/types/session';
+import { withBase } from '../../lib/paths';
 
 type State =
   | { status: 'loading' }
@@ -34,7 +35,7 @@ export default function GeneratedExamLauncher({ domains }: { domains: CatalogDom
           const session = await getSessionById(sessionId);
           if (!session) throw new Error('That saved session no longer exists in this browser.');
           if (session.status === 'completed') {
-            window.location.replace(`/results?sessionId=${session.sessionId}`);
+            window.location.replace(withBase(`/results?sessionId=${session.sessionId}`));
             return;
           }
           setState({ status: 'ready', payload: await resolveSessionExam(session) });
@@ -138,7 +139,7 @@ export default function GeneratedExamLauncher({ domains }: { domains: CatalogDom
         <h1 className="text-lg font-semibold text-slate-900 dark:text-white">Can’t start this exam</h1>
         <p className="mt-2 text-sm text-slate-500">{state.message}</p>
         <a
-          href="/exams"
+          href={withBase('/exams')}
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
         >
           <ArrowLeft className="h-4 w-4" /> Back to exams

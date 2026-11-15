@@ -763,7 +763,7 @@ DOMAIN_BOOST_RULES: dict[str, list[str]] = {
         "honeynet", "darknet", "pseudoflaw", "patch management", "configuration management",
         "change management", "syslog", "ntp", "event log", "bsod", "iptables",
     ],
-    "dom-8": [
+    "8.5": [
         "sdlc", "agile", "waterfall", "spiral", "rad", "devops", "devsecops", "ci/cd",
         "cmm", "capability maturity", "sql injection", "xss", "cross-site scripting",
         "csrf", "xsrf", "cross-site request forgery", "buffer overflow", "parameterized",
@@ -774,6 +774,81 @@ DOMAIN_BOOST_RULES: dict[str, list[str]] = {
         "coupling", "malware", "ransomware", "trojan", "worm", "rootkit", "botnet",
         "static analysis", "dynamic analysis", "gantt", "work breakdown structure", "wbs",
     ],
+}
+
+# Supplementary topic patterns to sharpen classification of Sybex Official Practice Tests
+EXTRA_TOPIC_RULES: dict[str, list[tuple[str, int]]] = {
+    "1.1.1": [(r"\b(code of ethics|canon|protect society|act honorably|isc\s*2)\b", 5)],
+    "1.3.1": [(r"\b(strategic plan|three- to five-year|tactical|operational plan|senior management)\b", 5)],
+    "1.3.2": [(r"\b(organizational owner|data owner|system owner|steering committee)\b", 5)],
+    "1.3.3": [(r"\b(cobit|coso|itil|sab[sa]|iso\s*2700[12]|nist cyber|rmf)\b", 6)],
+    "1.4.4": [(r"\b(change management|risk acceptance|risk avoidance|risk transference|insurance|residual risk)\b", 5)],
+    "1.5.1": [(r"\b(threat modeling|stride|pasta|dread|vast)\b", 6)],
+    "1.5.2": [(r"\b(reduction analysis|attack tree|trust boundary|data flow path)\b", 6)],
+    "1.7.1": [(r"\b(patent|patentable|copyright|trademark|trade secret|computer security act|cfaa|dmca|ecpa|tort)\b", 6)],
+    "1.7.2": [(r"\b(hipaa|ferpa|glba|coppa|sox|sarbanes|pci dss|gdpr|privacy breach|notification law)\b", 6)],
+    "1.8.1": [(r"\b(minimum standard|security baseline|policy|procedure|guideline|standard)\b", 5)],
+    "1.8.2": [(r"\b(scoping|tailoring|cis benchmark)\b", 6)],
+    "1.9.1": [(r"\b(emergency response|alternate .* facility|cold site|warm site|hot site|bcp|business continuity|fault tolerant|raid)\b", 6)],
+    "1.9.2": [(r"\b(business impact analysis|bia|mtd|rto|rpo|maximum tolerable)\b", 6)],
+    "1.10.2": [(r"\b(job rotation|mandatory vacation|separation of duties|dual control|traveler)\b", 5)],
+    "1.11.1": [(r"\b(security awareness|security training|security education|phishing)\b", 5)],
+    "2.1.1": [(r"\b(top secret|secret|confidential|unclassified|classification level|proprietary|public|sensitive)\b", 6)],
+    "2.1.2": [(r"\b(asset inventory|categoriz|fips 199|nist sp 800-60|nist sp 800-53|scoping|tailoring|cis benchmark|cobit|baseline)\b", 6)],
+    "2.2.1": [(r"\b(data owner|system owner|data controller|data processor|business owner|steward)\b", 6)],
+    "2.2.2": [(r"\b(custodian|system administrator|day-to-day|operational task|backup operator)\b", 6)],
+    "2.3.1": [(r"\b(pii|personally identifiable|phi|medical record|cardholder|pci dss|privacy shield|gdpr|credit card)\b", 6)],
+    "2.4.2": [(r"\b(800-88|sanitiz|declassif|degauss|purg|clear|destroy|media reuse|shred|incinerat|wipe)\b", 7)],
+    "2.5.1": [(r"\b(data at rest|data in transit|data in motion|data in use|bitlocker|efs|ipsec|tls|ssl|sftp|ssh|ftp|telnet|encrypting file system|vpn)\b", 6)],
+    "2.5.2": [(r"\b(dlp|data loss prevention|casb|watermark|steganography)\b", 6)],
+    "2.6.1": [(r"\b(label|marking|handling|retention|certificate of sanitization|validation|surplus)\b", 5)],
+    "3.2.1": [(r"\b(bell-lapadula|simple security|no read up|no write down|\*-security)\b", 7)],
+    "3.2.2": [(r"\b(biba|clark-wilson|simple integrity|\*-integrity|no read down|no write up)\b", 7)],
+    "3.2.3": [(r"\b(brewer-nash|chinese wall|graham-denning|sutherland|take-grant)\b", 7)],
+    "3.3.1": [(r"\b(common criteria|eal[1-7]|protection profile|security target|toe|tcsec|itsec)\b", 7)],
+    "3.4.1": [(r"\b(ring [0-3]|protection ring|kernel|tcb|reference monitor|privileged mode|race condition|time of check|time of use|covert channel|parameter checking|maintenance hook)\b", 6)],
+    "3.6.1": [(r"\b(aes|des|3des|idea|blowfish|rc4|symmetric|block cipher|stream cipher|otp|one-time pad|xor|truth table)\b", 6)],
+    "3.6.2": [(r"\b(rsa|diffie-hellman|ecc|elliptic curve|asymmetric|public key|private key|key exchange)\b", 6)],
+    "3.7.1": [(r"\b(hash|sha-|md5|hmac|collision|message digest|one-way)\b", 6)],
+    "3.7.2": [(r"\b(digital signature|certificate|x\.509|pki|nonrepudiation|non-repudiation|crl|ocsp|magic door|zero-knowledge)\b", 6)],
+    "3.9.1": [(r"\b(cpted|site selection|earthquake|seismic|flood|natural disaster|fema|usgs)\b", 6)],
+    "3.10.1": [(r"\b(mantrap|turnstile|bollard|fence|wiring closet|badge|smart card|cac|door|physical)\b", 6)],
+    "3.10.2": [(r"\b(fire|incipient|smoke|flame|heat|halon|fm-200|sprinkler|hvac|humidity|ups|generator|blackout|sag|brownout|surge)\b", 6)],
+    "4.1.1": [(r"\b(osi|layer [1-7]|tcp|udp|port \d+|subnet|class [a-c]|ipv[46]|mac address|arp|icmp|cat 5|coaxial|rg-58|fiber|frame relay|x\.25|isdn|dsl|cable modem)\b", 6)],
+    "4.1.2": [(r"\b(ipsec|ah|esp|ike|tls|ssl|ssh|sftp|https|http|three-way handshake|syn|ack|fin|urg|psh|xmas)\b", 6)],
+    "4.1.3": [(r"\b(wpa[23]?|wep|802\.1x|eap|peap|leap|wireless|ssid|evil twin|rogue access|war driving)\b", 6)],
+    "4.2.1": [(r"\b(firewall|rulebase|stateful|packet filter|proxy|nac|waf|single-tier|two-tier)\b", 6)],
+    "4.2.2": [(r"\b(topology|star|ring|bus|mesh|dmz|vlan|switch|router|sdn|micro-segmentation)\b", 6)],
+    "4.3.2": [(r"\b(vpn|remote access|cdn|dns|dnssec|smtp|imap|lpd|messaging|telnet|rlogin|rdp)\b", 5)],
+    "5.1.2": [(r"\b(magnetic stripe|proximity|rfid|smart card|badge|id card)\b", 6)],
+    "5.2.1": [(r"\b(password|passphrase|pin|token|smart card|type [123]|something you|mfa|multifactor|retinal|fingerprint|salted hash)\b", 6)],
+    "5.2.2": [(r"\b(biometric|cer|far|frr|crossover|false acceptance|false rejection|sensitivity)\b", 7)],
+    "5.3.1": [(r"\b(saml|oauth|oidc|openid|sso|single sign-on|federat|assertion|hybrid|state token)\b", 7)],
+    "5.3.2": [(r"\b(kerberos|kdc|tgt|ticket|tgs|radius|tacacs|ldap|active directory|group policy)\b", 7)],
+    "5.4.1": [(r"\b(rbac|abac|mac|dac|discretionary|mandatory|lattice|role-based|rule-based|chmod|rwx|send message|task manager|access control model)\b", 6)],
+    "5.5.1": [(r"\b(provision|deprovision|privilege creep|excessive privilege|access review|role change|onboarding|workflow-based|discretionary account)\b", 6)],
+    "6.1.1": [(r"\b(internal audit|external audit|third-party|independent|assessment|nist sp 800-115)\b", 6)],
+    "6.1.2": [(r"\b(scope|rules of engagement|planning phase|discovery|attack phase|reporting phase|remediation|methodology)\b", 6)],
+    "6.2.1": [(r"\b(nmap|qualys|nessus|nikto|metasploit|aircrack|wireshark|port scan|vulnerability scan|penetration test|black box|white box|gray box)\b", 7)],
+    "6.2.2": [(r"\b(fagan|code review|fuzzing|static|dynamic|unit test|integration test|regression test|system test|xst|trace|directory indexing)\b", 7)],
+    "6.3.1": [(r"\b(kpi|kri|key performance|syslog|siem|group policy|time to remediate|event log|archive|overwrite|account review|metric|coverage)\b", 6)],
+    "6.5.1": [(r"\b(soc [123]|type [12]|ssae|sas 70|auditor|service organization|attestation)\b", 7)],
+    "7.1.1": [(r"\b(forensic|chain of custody|order of volatility|volatile|evidentiary|rfc 3227|admissib)\b", 7)],
+    "7.2.1": [(r"\b(siem|syslog|firewall log|event log|ntp|timestamp|time synchron|drop tcp|apache.*log|access log)\b", 6)],
+    "7.3.1": [(r"\b(configuration|hardening|baseline|ipconfig|apipa|169\.254|page_fault|bsod)\b", 5)],
+    "7.4.1": [(r"\b(segregation of duties|separation of duties|least privilege|need to know|privileged access|aggregation|two-person)\b", 6)],
+    "7.6.1": [(r"\b(incident|csirt|containment|eradication|botnet|ddos|dos|syn flood|smurf|cryptolocker|ransomware|duress)\b", 6)],
+    "7.7.1": [(r"\b(honeypot|honeynet|darknet|pseudoflaw|ids|ips|intrusion)\b", 7)],
+    "7.8.1": [(r"\b(patch|virtual patching|vulnerability|unpatched|vendor)\b", 5)],
+    "7.9.1": [(r"\b(change management|cab|rollback|approval)\b", 6)],
+    "7.10.1": [(r"\b(full backup|differential|incremental|file modifications|backup schedule|raid|fault tolerance)\b", 7)],
+    "7.10.2": [(r"\b(hot site|warm site|cold site|service bureau|reciprocal|recovery site)\b", 7)],
+    "7.12.1": [(r"\b(checklist review|tabletop|parallel test|full interruption|simulation|walkthrough)\b", 7)],
+    "8.1.1": [(r"\b(sdlc|agile|waterfall|spiral|rad|rapid application|gantt|work breakdown|wbs|project plan|requirement|maintenance)\b", 6)],
+    "8.3.1": [(r"\b(regression|unit test|integration test|system test|acceptance test|code review|fagan|cmm|maturity)\b", 6)],
+    "8.4.1": [(r"\b(database|primary key|foreign key|acid|atomicity|commit|rollback|transaction|attribute|method|class|object-oriented|polyinstantiation|inference|aggregation)\b", 6)],
+    "8.5.1": [(r"\b(sql injection|xss|cross-site scripting|csrf|xsrf|cross-site request|prepared statement|parameterized|input validation|ruby|<script>|ewaf|waf)\b", 7)],
+    "8.5.2": [(r"\b(buffer overflow|race condition|toctou|cryptolocker|ransomware|malware|trojan|worm|botnet|session hijacking)\b", 6)],
 }
 
 
@@ -1061,6 +1136,7 @@ def convert_ordering_to_mcq(
     assert len(distractor_strs) == 3, f"Could not generate 3 sequence distractors for {sr}"
 
     stem_clean = normalize_book_prose(q["stem"], vocab)
+    stem_clean = re.sub(r"\bshown here\b", "listed below", stem_clean, flags=re.I)
     stem_clean = re.sub(
         r"\b(Rearrange|Place)\s+the\s+following\b",
         "Which option lists the following",
@@ -1070,7 +1146,10 @@ def convert_ordering_to_mcq(
     if stem_clean == normalize_book_prose(q["stem"], vocab):
         stem_clean = re.sub(r"\b(Place|Put|Order)\s+the\b", "Which option correctly places the", stem_clean, flags=re.I)
     if "?" not in stem_clean:
-        stem_clean = stem_clean.rstrip(".") + " in the correct order?"
+        if re.search(r"\b(order|sequence)\b", stem_clean, re.I):
+            stem_clean = stem_clean.rstrip(".") + "?"
+        else:
+            stem_clean = stem_clean.rstrip(".") + " in the correct order?"
 
     # Mention decoy items in scenarioContext if unused options existed
     scen_note = None
@@ -1100,11 +1179,18 @@ def convert_ordering_to_mcq(
             )
         elif any(opts_map[uk] in opt["text"] for uk in unused):
             per_opt_notes[oid] = (
-                f"Incorrect sequence: includes a decoy/non-standard option instead of valid lifecycle stages ({correct_str})."
+                "Incorrect sequence: includes a decoy or non-standard tier instead of only the valid items."
             )
         else:
+            # Point out the first out-of-position step without dumping the entire answer key
+            opt_steps = opt["text"].split(" -> ")
+            corr_steps = correct_str.split(" -> ")
+            mismatch = next(
+                (f"'{a}' should not be at position {idx + 1}" for idx, (a, b) in enumerate(zip(opt_steps, corr_steps)) if a != b),
+                "the sequence order is transposed",
+            )
             per_opt_notes[oid] = (
-                f"Out-of-order sequence: transposes stages compared to the proper progression ({correct_str})."
+                f"Incorrect sequence: {mismatch}; verify the proper step-by-step progression."
             )
 
     return stem_clean, scen_note, new_opts, correct_letter, per_opt_notes
@@ -1250,7 +1336,7 @@ def classify_isc2_question(
             continue
 
         score = 0
-        for pat, weight in eq.TOPIC_RULES.get(tid, []):
+        for pat, weight in list(eq.TOPIC_RULES.get(tid, [])) + EXTRA_TOPIC_RULES.get(tid, []):
             stem_hits = len(re.findall(pat, stem_l)) + len(re.findall(pat, scen_l))
             corr_hits = len(re.findall(pat, corr_l))
             opt_hits = len(re.findall(pat, opts_l))

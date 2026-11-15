@@ -3,6 +3,7 @@ import { Play, Clock, X, Layers } from 'lucide-react';
 import { getActiveSessionPointer, setActiveSessionPointer, db } from '../../lib/storage/db';
 import type { ActiveSessionPointer } from '../../lib/types/session';
 import { resumeExamHref } from '../../lib/exam-engine/assembler';
+import { stripBase } from '../../lib/paths';
 
 export default function ResumeExamBanner() {
   const [pointer, setPointer] = useState<ActiveSessionPointer | null>(null);
@@ -14,7 +15,7 @@ export default function ResumeExamBanner() {
       return;
     }
     // Hide banner if user is already on the exam runner for this session
-    if (typeof window !== 'undefined' && window.location.pathname.startsWith('/exam/')) {
+    if (typeof window !== 'undefined' && stripBase(window.location.pathname).startsWith('/exam/')) {
       setPointer(null);
       return;
     }

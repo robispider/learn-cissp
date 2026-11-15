@@ -5,6 +5,7 @@ import type { CatalogDomain, CatalogExam, CatalogSubdomain } from '../../lib/cat
 import { domainTheme } from '../../lib/ui/domain-theme';
 import type { TopicMasteryRecord } from '../../lib/types/session';
 import { MasteryBar, MasteryPill, card, useExamMode } from '../ui/primitives';
+import { withBase } from '../../lib/paths';
 
 /* ------------------------------------------------------------------------- */
 /* Domain card                                                                */
@@ -30,7 +31,7 @@ export function DomainCard({
     <div
       className={`group relative flex flex-col rounded-2xl border border-slate-200/80 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/5 dark:border-slate-800/80 dark:bg-slate-900/60 dark:hover:shadow-black/30 ${theme.hoverBorder}`}
     >
-      <a href={`/domains/${domain.domainId}`} className="absolute inset-0 rounded-2xl" aria-label={`Open ${domain.name}`} />
+      <a href={withBase(`/domains/${domain.domainId}`)} className="absolute inset-0 rounded-2xl" aria-label={`Open ${domain.name}`} />
       <div className="flex items-center justify-between gap-2">
         <span className={`inline-flex h-8 w-8 items-center justify-center rounded-lg font-mono text-sm font-bold ${theme.soft} ${theme.text}`}>
           {domain.number}
@@ -64,7 +65,7 @@ export function DomainCard({
               {quickLength > 0 ? `Quick ${quickLength}` : 'Start'}
             </a>
             <a
-              href={`/domains/${domain.domainId}`}
+              href={withBase(`/domains/${domain.domainId}`)}
               className="inline-flex items-center justify-center rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               Options
@@ -84,7 +85,7 @@ export function PresetExamCard({ exam, index }: { exam: CatalogExam; index?: num
   const [mode] = useExamMode();
   return (
     <a
-      href={`/exam/${exam.examId}?mode=${mode}`}
+      href={withBase(`/exam/${exam.examId}?mode=${mode}`)}
       className={`${card} group flex flex-col p-4 transition hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-slate-900/5`}
     >
       <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
@@ -197,7 +198,7 @@ export function SubdomainRow({
               {presetSets.map((e) => (
                 <a
                   key={e.examId}
-                  href={`/exam/${e.examId}?mode=${mode}`}
+                  href={withBase(`/exam/${e.examId}?mode=${mode}`)}
                   className="inline-flex items-center gap-1 rounded-lg border border-slate-200 px-2.5 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
                 >
                   <Play className="h-3 w-3" /> {e.title} ({e.questionCount})

@@ -20,6 +20,7 @@
  * live previews (catalog pages) and for real exam generation (exam launcher).
  */
 import { shuffleArray } from './shuffler';
+import { withBase } from '../paths';
 
 export interface QuestionMeta {
   id: string;
@@ -425,20 +426,20 @@ export function buildGeneratedExamHref(req: GeneratedExamRequest): string {
   if (req.subdomainId) p.set('s', req.subdomainId);
   p.set('n', String(req.length));
   if (req.mode) p.set('mode', req.mode);
-  return `/exam/custom?${p.toString()}`;
+  return withBase(`/exam/custom?${p.toString()}`);
 }
 
 /** Link that resumes a session, whether it came from a manifest or the generator. */
 export function resumeExamHref(examId: string, sessionId: string): string {
   return isGeneratedExamId(examId)
-    ? `/exam/custom?sessionId=${encodeURIComponent(sessionId)}`
-    : `/exam/${examId}?sessionId=${encodeURIComponent(sessionId)}`;
+    ? withBase(`/exam/custom?sessionId=${encodeURIComponent(sessionId)}`)
+    : withBase(`/exam/${examId}?sessionId=${encodeURIComponent(sessionId)}`);
 }
 
 /** Link that starts a brand-new attempt of the same exam. */
 export function retakeExamHref(examId: string, length: number, mode?: 'study' | 'simulation'): string {
   if (!isGeneratedExamId(examId)) {
-    return mode ? `/exam/${examId}?mode=${mode}` : `/exam/${examId}`;
+    return mode ? withBase(`/exam/${examId}?mode=${mode}`) : withBase(`/exam/${examId}`);
   }
   const key = examId.slice(GENERATED_EXAM_PREFIX.length);
   if (key === 'overall') return buildGeneratedExamHref({ scope: 'overall', length, mode });
