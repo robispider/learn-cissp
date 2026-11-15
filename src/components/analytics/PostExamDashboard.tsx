@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { getAllSessions, getSessionById } from '../../lib/storage/session-store';
 import { computeDiagnosticReport } from '../../lib/analytics/gap-calculator';
+import { resolveSessionExam } from '../../lib/exam-engine/payload';
+import { buildGeneratedExamHref, retakeExamHref } from '../../lib/exam-engine/assembler';
 import {
   TRAP_TYPE_METADATA,
   type HydratedExamPayload,
@@ -22,7 +24,6 @@ import PacingTimeline from './PacingTimeline';
 import StrengthWeaknessTable from './StrengthWeaknessTable';
 
 interface Props {
-  exam: HydratedExamPayload;
   initialSessionId?: string;
 }
 
@@ -36,9 +37,9 @@ type ReviewFilter =
   | 'flagged'
   | 'slow';
 
-export default function PostExamDashboard({ exam, initialSessionId }: Props) {
+export default function PostExamDashboard({ initialSessionId }: Props) {
   const [session, setSession] = useState<ExamSessionRecord | null>(null);
-  const [activeExam, setActiveExam] = useState<HydratedExamPayload>(exam);
+  const [activeExam, setActiveExam] = useState<HydratedExamPayload | null>(null);
   const [loading, setLoading] = useState(true);
   const [reviewFilter, setReviewFilter] = useState<ReviewFilter>('all');
   const [subdomainFilter, setSubdomainFilter] = useState<string>('all');
@@ -56,23 +57,19 @@ export default function PostExamDashboard({ exam, initialSessionId }: Props) {
 
       if (!loaded) {
         const all = await getAllSessions();
-        loaded =
-          all.find((s) => s.status === 'completed') ?? all[0];
+        loaded = all.find((s) => s.status === 'completed');
       }
 
-      let resolvedExam = exam;
-      if (loaded && loaded.examId !== exam.examId) {
+      let resolvedExam: HydratedExamPayload | null = null;
+      if (loaded) {
         try {
-          const res = await fetch(`/api/exams/${encodeURIComponent(loaded.examId)}.json`);
-          if (res.ok) {
-            resolvedExam = (await res.json()) as HydratedExamPayload;
-          }
+          resolvedExam = await resolveSessionExam(loaded);
         } catch {
-          // Fall back to default exam payload if offline or unavailable
+          resolvedExam = null;
         }
       }
 
-      if (loaded && !loaded.diagnosticReport) {
+      if (loaded && resolvedExam && !loaded.diagnosticReport) {
         loaded.diagnosticReport = computeDiagnosticReport(
           loaded,
           resolvedExam.questions,
@@ -85,11 +82,11 @@ export default function PostExamDashboard({ exam, initialSessionId }: Props) {
       setLoading(false);
     }
     load();
-  }, [exam, initialSessionId]);
+  }, [initialSessionId]);
 
   const questionMap = useMemo(
-    () => new Map<string, Question>(activeExam.questions.map((q) => [q.id, q])),
-    [activeExam.questions]
+    () => new Map<string, Question>((activeExam?.questions ?? []).map((q) => [q.id, q])),
+    [activeExam]
   );
 
   if (loading) {
@@ -103,26 +100,26 @@ export default function PostExamDashboard({ exam, initialSessionId }: Props) {
     );
   }
 
-  if (!session || !session.diagnosticReport) {
+  if (!session || !session.diagnosticReport || !activeExam) {
     return (
       <div className="mx-auto max-w-xl px-4 py-20 text-center">
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-          No Completed Exam Session Found
+          No completed exam yet
         </h2>
         <p className="mt-2 text-sm text-slate-500">
-          Complete the Domain 1 exam to unlock your 5-chart diagnostic gap profile and
-          personalized study plan.
+          Finish any exam to unlock your diagnostic charts and personalised study plan.
         </p>
         <a
-          href={`/exam/${exam.examId}`}
+          href="/exams"
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-400"
         >
           <Play className="h-4 w-4 fill-current" />
-          Start Domain 1 Exam
+          Browse exams
         </a>
       </div>
     );
   }
+
 
   const report = session.diagnosticReport;
   const { overall, metacognition, pacing } = report;
@@ -177,11 +174,11 @@ export default function PostExamDashboard({ exam, initialSessionId }: Props) {
         <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-xs dark:border-slate-800/80 dark:bg-slate-900/80 sm:p-8 lg:col-span-7">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <a
-              href="/"
+              href="/exams"
               className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 dark:hover:text-white"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
-              Back to Exam Studio
+              Back to exams
             </a>
             <span
               className={`rounded-full px-3 py-1 text-xs font-bold ${
@@ -298,7 +295,7 @@ export default function PostExamDashboard({ exam, initialSessionId }: Props) {
           <div className="mt-5 flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-200/60 dark:border-slate-800">
             {report.topWeaknesses[0] && (
               <a
-                href={`/exam/${activeExam.examId}?subdomain=${report.topWeaknesses[0].id}&mode=study`}
+                href={buildGeneratedExamHref({ scope: 'subdomain', subdomainId: report.topWeaknesses[0].id, length: 10, mode: 'study' })}
                 className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-bold text-slate-950 transition hover:bg-emerald-400"
               >
                 <Sparkles className="h-3.5 w-3.5" />
@@ -306,7 +303,7 @@ export default function PostExamDashboard({ exam, initialSessionId }: Props) {
               </a>
             )}
             <a
-              href={`/exam/${activeExam.examId}?mode=study`}
+              href={retakeExamHref(session.examId, session.questionOrder.length, session.mode)}
               className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
             >
               <RotateCcw className="h-3.5 w-3.5" />

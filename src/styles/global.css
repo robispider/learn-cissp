@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+/* Theme is driven by the `.dark` class on <html> (ThemeToggle), not the OS setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    --bg-canvas: #f8fafc;
+    --bg-canvas: #f7f8fa;
     --bg-surface: #ffffff;
     --bg-elevated: #f1f5f9;
     --text-primary: #0f172a;
@@ -12,7 +15,7 @@
   }
 
   .dark {
-    --bg-canvas: #090d16;
+    --bg-canvas: #0a0d14;
     --bg-surface: #111827;
     --bg-elevated: #1e293b;
     --text-primary: #f8fafc;

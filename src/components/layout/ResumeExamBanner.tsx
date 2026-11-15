@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Play, Clock, X, Layers } from 'lucide-react';
 import { getActiveSessionPointer, setActiveSessionPointer, db } from '../../lib/storage/db';
 import type { ActiveSessionPointer } from '../../lib/types/session';
+import { resumeExamHref } from '../../lib/exam-engine/assembler';
 
 export default function ResumeExamBanner() {
   const [pointer, setPointer] = useState<ActiveSessionPointer | null>(null);
@@ -84,7 +85,7 @@ export default function ResumeExamBanner() {
 
         <div className="flex items-center gap-2">
           <a
-            href={`/exam/${pointer.examId}?sessionId=${pointer.sessionId}`}
+            href={resumeExamHref(pointer.examId, pointer.sessionId)}
             className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-3.5 py-1.5 text-xs font-semibold text-slate-950 shadow-sm transition hover:bg-emerald-400"
           >
             <Play className="h-3.5 w-3.5 fill-current" />

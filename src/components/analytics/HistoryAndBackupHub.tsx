@@ -14,6 +14,7 @@ import {
   importProgressBackup,
 } from '../../lib/storage/backup';
 import type { ExamSessionRecord, TopicMasteryRecord } from '../../lib/types/session';
+import { resumeExamHref } from '../../lib/exam-engine/assembler';
 
 export default function HistoryAndBackupHub() {
   const [sessions, setSessions] = useState<ExamSessionRecord[]>([]);
@@ -148,7 +149,7 @@ export default function HistoryAndBackupHub() {
 
         {sessions.length === 0 ? (
           <div className="py-10 text-center text-sm text-slate-500">
-            No exam sessions recorded yet. Start the Domain 1 exam to track your progress!
+            No exam sessions recorded yet. <a href="/exams" className="font-semibold text-emerald-600 hover:underline dark:text-emerald-400">Start any exam</a> to track your progress.
           </div>
         ) : (
           <div className="mt-4 divide-y divide-slate-200/60 dark:divide-slate-800/60">
@@ -206,7 +207,7 @@ export default function HistoryAndBackupHub() {
                       </a>
                     ) : s.status !== 'abandoned' ? (
                       <a
-                        href={`/exam/${s.examId}?sessionId=${s.sessionId}`}
+                        href={resumeExamHref(s.examId, s.sessionId)}
                         className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-bold text-slate-950"
                       >
                         <Play className="h-3.5 w-3.5 fill-current" />

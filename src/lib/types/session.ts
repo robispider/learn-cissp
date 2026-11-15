@@ -20,7 +20,7 @@ export interface ExamSessionRecord {
   sessionId: string;
   examId: string;
   examTitle: string;
-  examScope: 'subdomain' | 'domain_full' | 'remediation';
+  examScope: 'subdomain' | 'domain_full' | 'overall' | 'remediation';
   domainId: string;
   subdomainId: string | null;
   mode: ExamMode;

@@ -1,24 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import AppShell from '../../components/layout/AppShell.astro';
 import PostExamDashboard from '../../components/analytics/PostExamDashboard';
-import type { HydratedExamPayload } from '../../lib/types/question';
-
-const exams = await getCollection('exams');
-const allQuestions = await getCollection('questions');
-const questionMap = new Map(allQuestions.map((q) => [q.data.id, q.data]));
-
-const exam = exams.find((e) => e.data.examId === 'd1-full-01')!.data;
-const questions = exam.questionIds
-  .map((id) => questionMap.get(id))
-  .filter((q): q is NonNullable<typeof q> => Boolean(q));
-
-const payload: HydratedExamPayload = {
-  ...exam,
-  questions,
-};
 ---
 
-<AppShell title="Post-Exam Diagnostic & Graphical Gap Summary — Learn CISSP">
-  <PostExamDashboard client:only="react" exam={payload} />
+<AppShell title="Results — Learn CISSP">
+  <PostExamDashboard client:only="react" />
 </AppShell>

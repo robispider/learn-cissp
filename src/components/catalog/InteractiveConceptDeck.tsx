@@ -178,7 +178,7 @@ export default function InteractiveConceptDeck() {
           </span>
           <div>
             <h3 className="text-base font-semibold text-slate-900 dark:text-white">
-              Interactive Domain 1 Learning Studio
+              Concept cards &amp; formula practice
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Visual mindset cards & live CISSP formula simulators

@@ -1,43 +1,17 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { getCollection } from 'astro:content';
 import AppShell from '../../components/layout/AppShell.astro';
-import ExamBrowserHub from '../../components/catalog/ExamBrowserHub';
-import taxonomy from '../../content/taxonomy/cissp-cbk-2026.json';
+import DomainHub from '../../components/catalog/DomainHub';
+import { loadCatalog, taxonomy } from '../../lib/load-catalog';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return taxonomy.domains.map((dom) => ({
-    params: { domainId: dom.domainId },
-    props: { domain: dom },
-  }));
-};
+export const getStaticPaths: GetStaticPaths = async () =>
+  taxonomy.domains.map((dom) => ({ params: { domainId: dom.domainId } }));
 
-interface Props {
-  domain: (typeof taxonomy.domains)[number];
-}
-
-const { domain } = Astro.props;
-const exams = await getCollection('exams');
-const questions = await getCollection('questions');
-
-const allExams = exams.map((e) => e.data).sort((a, b) => a.examId.localeCompare(b.examId));
-const allQuestions = questions.map((q) => q.data);
-const domain1Exam = allExams.find((e) => e.examId === 'd1-full-01')!;
-const domain1Questions = allQuestions.filter((q) => q.domainId === 'dom-1');
+const { domainId } = Astro.params;
+const catalog = await loadCatalog();
+const domain = catalog.domains.find((d) => d.domainId === domainId)!;
 ---
 
-<AppShell
-  title={`Domain ${domain.number}: ${domain.name} — Learn CISSP`}
-  description={domain.tagline}
->
-  <ExamBrowserHub
-    client:load
-    domains={taxonomy.domains}
-    domain1Exam={domain1Exam}
-    domain1Questions={domain1Questions}
-    allExams={allExams}
-    allQuestions={allQuestions}
-    initialTab="subdomain"
-    initialDomainFilter={domain.domainId}
-  />
+<AppShell title={`Domain ${domain.number}: ${domain.name} — Learn CISSP`} description={domain.tagline}>
+  <DomainHub client:load catalog={catalog} domainId={domain.domainId} />
 </AppShell>

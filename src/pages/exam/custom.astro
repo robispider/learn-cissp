@@ -1,0 +1,11 @@
+---
+import AppShell from '../../components/layout/AppShell.astro';
+import GeneratedExamLauncher from '../../components/exam-runner/GeneratedExamLauncher';
+import { loadCatalog } from '../../lib/load-catalog';
+
+const catalog = await loadCatalog();
+---
+
+<AppShell title="Exam — Learn CISSP" minimalChrome={true}>
+  <GeneratedExamLauncher client:only="react" domains={catalog.domains} />
+</AppShell>

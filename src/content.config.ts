@@ -103,14 +103,16 @@ export const ExamManifestSchema = z.object({
   examId: z.string(),
   title: z.string(),
   description: z.string(),
-  examScope: z.enum(['subdomain', 'domain_full']),
-  domainId: z.enum(['dom-1', 'dom-2', 'dom-3', 'dom-4', 'dom-5', 'dom-6', 'dom-7', 'dom-8']),
-  subdomainId: z.string().nullable(), // Non-null for "subdomain" exams, null for "domain_full" exams
+  examScope: z.enum(['subdomain', 'domain_full', 'overall']), // 'overall' = predefined full-CISSP set spanning all 8 domains
+  domainId: z.enum(['dom-1', 'dom-2', 'dom-3', 'dom-4', 'dom-5', 'dom-6', 'dom-7', 'dom-8', 'all']), // 'all' only for overall exams
+  subdomainId: z.string().nullable(), // Non-null for "subdomain" exams, null for "domain_full" / "overall" exams
   timeLimitMinutes: z.number().int().positive(),
   passingScorePercent: z.number().min(50).max(100).default(70),
   masteryScorePercent: z.number().min(70).max(100).default(85),
   questionIds: z.array(z.string()).min(10),
   blueprintWeights: z.record(z.string(), z.number()).optional(), // Subdomain ID -> target percentage for full domain exams
+}).refine((e) => (e.examScope === 'overall') === (e.domainId === 'all'), {
+  message: 'Overall exams must use domainId "all", and only overall exams may use it',
 });
 
 const questionModules = import.meta.glob<{ default: Record<string, unknown>[] }>(

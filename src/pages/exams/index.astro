@@ -1,0 +1,11 @@
+---
+import AppShell from '../../components/layout/AppShell.astro';
+import ExamCenter from '../../components/catalog/ExamCenter';
+import { loadCatalog } from '../../lib/load-catalog';
+
+const catalog = await loadCatalog();
+---
+
+<AppShell title="Exams — Learn CISSP">
+  <ExamCenter client:load catalog={catalog} />
+</AppShell>

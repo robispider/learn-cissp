@@ -282,6 +282,36 @@ Every question file in `src/content/questions/domain-*/` is a JSON array of obje
 }
 ```
 
+### 4.3 Full CISSP (Overall) Exam Manifest (`src/content/exams/overall/full-01.json`)
+
+Predefined sets spanning all 8 domains use `examScope: "overall"` with `domainId: "all"` and `subdomainId: null` (the schema rejects `"all"` on any other scope).
+
+```json
+{
+  "examId": "full-01",
+  "title": "Full CISSP Set 1",
+  "description": "Fixed 100-question set weighted across all 8 domains.",
+  "examScope": "overall",
+  "domainId": "all",
+  "subdomainId": null,
+  "timeLimitMinutes": 120,
+  "questionIds": ["cissp-d1-s1.4-q001", "cissp-d7-s7.6-q001", "..."]
+}
+```
+
+### 4.4 Content Is Picked Up Automatically (No Code Changes)
+
+Adding content never requires touching application code:
+
+| You add… | Where | What appears automatically |
+|---|---|---|
+| Question JSON array | `src/content/questions/<any-folder>/<any-name>.json` | Question counts on Home / Exams / Domain / Study pages; the questions become eligible for every auto-generated exam (full CISSP, domain, sub-domain drill, weak-area review); `keyTakeaway` text shows on the Study map. Domains/sub-domains with zero questions switch from "coming soon" to playable. |
+| Exam manifest JSON | `src/content/exams/<any-folder>/<any-name>.json` | A **fixed set** card: `overall` → Exams › Full exam; `domain_full` → the domain page and Exams › Domains; `subdomain` → inside that sub-domain's row. |
+
+Auto-generated exams are assembled in the browser by `src/lib/exam-engine/assembler.ts`, which mirrors CISSP item selection: blueprint-weighted apportionment (domain `weightPercent` → sub-domain `weight` → topics), redistribution of quota from areas with no items, a difficulty mix centred on exam-level items (`DIFFICULTY_TARGET`), exposure control (unseen → previously missed → previously correct), and a randomised interleaved order. Time limits follow CAT pacing (1.2 min per item).
+
+Run `npm run build` after adding files — schema violations fail the build.
+
 ---
 
 ## 5. Diagnostic Output Contract (`DiagnosticReport`)

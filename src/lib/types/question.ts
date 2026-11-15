@@ -93,8 +93,10 @@ export interface ExamManifest {
   examId: string;
   title: string;
   description: string;
-  examScope: 'subdomain' | 'domain_full';
-  domainId: DomainId;
+  /** 'overall' = all 8 domains (full CISSP); 'remediation' = generated weak-area exam. */
+  examScope: 'subdomain' | 'domain_full' | 'overall' | 'remediation';
+  /** 'all' is used by overall (multi-domain) exams. */
+  domainId: DomainId | 'all';
   subdomainId: string | null;
   timeLimitMinutes: number;
   passingScorePercent: number;
