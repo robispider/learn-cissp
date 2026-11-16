@@ -213,7 +213,17 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
       }
-    ]
+    ],
+    "presentation": {
+      "plugin": {
+        "id": "blp-biba-lab",
+        "props": {
+          "rounds": 8
+        }
+      },
+      "hook": "Two models, one mirror: Bell-LaPadula stops secrets leaking down, Biba stops dirty data climbing up.",
+      "elaborate": "Why would a military system allow a Secret user to write UP into a Top Secret file but not read it?"
+    }
   },
   {
     "id": "cissp-mem-d3-s3.2-c002",

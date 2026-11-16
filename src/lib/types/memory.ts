@@ -14,6 +14,29 @@ export type MemoryCardType =
 
 export type ExamPriority = 'must_know' | 'high_yield' | 'deep_detail';
 
+/**
+ * How a card is presented while learning:
+ * - `text`     plain text card (JSON only, self-recall or typed recall)
+ * - `visual`   text + a static visual (diagram, aligned contrast, matrix grid)
+ * - `animated` text + visual + a staged animation (timelines, flows, encapsulation)
+ */
+export type CardModality = 'text' | 'visual' | 'animated';
+
+/** Optional presentation layer. Every field is optional so plain JSON cards keep working. */
+export interface CardPresentation {
+  /** Override the modality derived from the archetype / plugin. `text` forces a plain card. */
+  modality?: CardModality;
+  /** A custom, hand-built React card registered in src/components/memorize/cards/registry.ts. */
+  plugin?: {
+    id: string;
+    props?: Record<string, unknown>;
+  };
+  /** One-line story or "why this matters" shown at the top of the Learn step. */
+  hook?: string;
+  /** Elaborative-interrogation prompt ("Why…?") shown after recall to deepen encoding. */
+  elaborate?: string;
+}
+
 export interface ContrastColumn {
   label: string;
   badge?: string;
@@ -99,6 +122,9 @@ export interface MemoryCard {
     source: string;
     section: string;
   }>;
+
+  // 6. Optional presentation layer (visual / animated / plugin cards)
+  presentation?: CardPresentation;
 }
 
 export type FsrsCardState = 0 | 1 | 2 | 3; // 0=New, 1=Learning, 2=Review, 3=Relearning

@@ -499,7 +499,14 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 2: Personnel Security and Risk Management Concepts"
       }
-    ]
+    ],
+    "presentation": {
+      "plugin": {
+        "id": "risk-calculator"
+      },
+      "hook": "Management asks \"how much should we spend on this?\" — ALE is the number that answers it.",
+      "elaborate": "Why is \"once every 10 years\" an ARO of 0.1 and not 10? What would happen to ALE if you got it backwards?"
+    }
   },
   {
     "id": "cissp-mem-d1-s1.4-c002",
@@ -556,7 +563,22 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 2: Personnel Security and Risk Management Concepts"
       }
-    ]
+    ],
+    "presentation": {
+      "plugin": {
+        "id": "risk-calculator",
+        "props": {
+          "safeguard": true,
+          "av": 400000,
+          "ef": 0.5,
+          "aro": 0.1,
+          "aleAfterPct": 0.75,
+          "acs": 8000
+        }
+      },
+      "hook": "A control is only worth buying if it saves more each year than it costs each year.",
+      "elaborate": "Why must you subtract ALE after the safeguard, not just compare the cost with the original ALE?"
+    }
   },
   {
     "id": "cissp-mem-d1-s1.4-c003",
@@ -1386,7 +1408,11 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 1: Security Governance Through Principles and Policies"
       }
-    ]
+    ],
+    "presentation": {
+      "hook": "Diligence is doing your homework; care is acting on it. Courts ask whether you did both.",
+      "elaborate": "Which comes first in time, due diligence or due care — and why does the order matter for negligence?"
+    }
   },
   {
     "id": "cissp-mem-d1-s1.10-c002",

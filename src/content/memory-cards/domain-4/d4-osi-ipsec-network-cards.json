@@ -79,7 +79,17 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 11: Secure Network Architecture and Components"
       }
-    ]
+    ],
+    "presentation": {
+      "plugin": {
+        "id": "osi-stack",
+        "props": {
+          "rounds": 6
+        }
+      },
+      "hook": "Every network question secretly asks \"which layer?\". Firewalls, switches, IPsec and TLS all make sense once you can place them on this stack.",
+      "elaborate": "Why does a router need to look at Layer 3 but a switch only at Layer 2? What would break if a switch had to read IP addresses?"
+    }
   },
   {
     "id": "cissp-mem-d4-s4.1-c002",

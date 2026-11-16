@@ -231,6 +231,53 @@ Plain two-sided text flashcards fail on the CISSP exam because ISC2 rarely tests
   - **Front**: Presents a classic CISSP "knee-jerk technical reflex" scenario (*"You discover an active exploit on a production server / a VP asks you to skip risk assessment..."*).
   - **Back**: Contrasts **"The Technician Trap (Wrong)"** vs. **"The CISSP Risk Advisor / Manager Action (Right)"** and links to the underlying governance principle.
 
+### 4.7 Presentation Layer: Text, Visual, Animated & Custom (Plugin) Cards
+
+Cards are not plain question/answer flips. Every card runs through three steps in `src/components/memorize/cards/CardStage.tsx`:
+
+| Step | When | What the learner does | Learning-science basis |
+|---|---|---|---|
+| **1. Learn** | New cards, and cards just graded *Again* (re-study) | Watches a staged visual / animation with a story hook and the mnemonic | Dual coding (words + picture), segmenting, encode before you test |
+| **2. Recall** | Every time | Plays a short game or answers from memory | Retrieval practice / testing effect, generation effect |
+| **3. Check & rate** | Every time | Sees score, what was missed, the full visual answer, the exam trap and a *"why?"* prompt; accepts or overrides the **suggested** FSRS grade | Immediate corrective feedback, elaborative interrogation, successive relearning |
+
+**Modality** (`presentation.modality`, otherwise derived): `text` (plain card — forcing it gives a classic self-recall flip), `visual` (text + diagram), `animated` (text + diagram + step-by-step animation). Defaults: `sequence_order` → animated; `concept_contrast`, `reference_fact`, `formula_drill` → visual; `cloze_deletion`, `manager_heuristic` → text (but they still get typed / choice games).
+
+**Built-in visuals and games** are generated from the archetype payload, so every JSON-only card gets them with no code:
+
+| Archetype | Learn visual | Recall game |
+|---|---|---|
+| `sequence_order` | Timeline that fills step by step | *Build the chain* — tap steps in order; two wrong taps and the right one glows |
+| `concept_contrast` | Aligned "vs" rows (2 columns) or staggered columns, then rule of thumb | *Sort it* — drop each statement into the right concept (max 8) |
+| `reference_fact` | Row-by-row matrix (cards on phones, table on desktop) | *Fill the grid* — restore hidden cells from same-column options |
+| `formula_drill` | Colour-coded formula tokens + variable legend, worked example, decision rule | *Match the symbols* — pair each variable with its meaning |
+| `cloze_deletion` | Statement with facts popping in | *Type it* — type each blank; typo-tolerant; hints cost half a point |
+| `manager_heuristic` | Reflex stamped **TRAP**, then the manager action and principle | *Think like a manager* — pick the right response, then the principle |
+
+**Grade suggestion** (`suggestGrade` in `cards/types.ts`): effective score = (right first time − 0.5 × hints) / items. Below 60% → *Again*; below 90% or any hint → *Hard*; perfect and under 4 s per item on a review → *Easy*; otherwise *Good*. Straight after the Learn step *Easy* is never suggested (immediate recall is short-term memory and would inflate the first interval). Self-recall cards get no suggestion; the learner always has the final say.
+
+**Optional JSON fields** (all optional — existing cards need no change):
+
+```json
+"presentation": {
+  "modality": "animated",
+  "plugin": { "id": "osi-stack", "props": { "rounds": 6 } },
+  "hook": "Every network question secretly asks \"which layer?\"…",
+  "elaborate": "Why does a router need Layer 3 but a switch only Layer 2?"
+}
+```
+
+**Custom (pluggable) cards** live in `src/components/memorize/cards/plugins/` and are registered in `cards/registry.ts` (lazy-loaded). A plugin exports a `View` (`{ card, props, mode: 'learn' | 'review' }`) and optionally a `Recall` game (`{ card, props, pool, onComplete(result) }`). If a plugin has no `Recall`, the archetype's built-in game is used; if a plugin crashes, the built-in visual/game is shown instead. Shipped samples:
+
+| Plugin id | Card | Modality | Game |
+|---|---|---|---|
+| `osi-stack` | OSI layers in order | animated | Build the stack, then place protocols/devices/PDUs on their layer |
+| `risk-calculator` | SLE/ALE, safeguard value (`props.safeguard: true`) | visual + sliders | Generated scenarios; wrong options are the classic mistakes (ARO inverted, forgot ACS…) |
+| `kerberos-flow` | Kerberos authentication flow | animated | Predict the next message on the sequence diagram |
+| `blp-biba-lab` | Bell-LaPadula vs. Biba | animated | Rapid "allowed or blocked?" decisions across both models |
+
+`npm run validate:cards` rejects a card whose `presentation.plugin.id` is not registered. Preview any card (and every plugin) without touching the schedule at **`/memorize/lab`** (*Card Lab*).
+
 ---
 
 ## 5. Self-Indicating Memory Card JSON & Zod Schema
@@ -754,14 +801,14 @@ This blueprint defines **the highest-yield facts, contrasts, sequences, formulas
    - **Sub-Domain Deck Browser**: Filter by Domain, Sub-Domain, Card Type (`concept_contrast`, `sequence_order`, `formula_drill`, etc.), or Priority (`must_know`), and launch a custom deck session.
 2. **`FlashcardRunner.tsx` (`/memorize/session`)**:
    - **Minimal Chrome Distraction-Free Layout**: Progress bar, Domain/Sub-Domain breadcrumb, Card Archetype badge, and **Gap-Triggered badge** (if unlocked by an exam error).
-   - **Interactive Front Controls**:
-     - For `sequence_order`: Optional drag/tap ordering before flipping so the learner tests active sequence recall.
-     - For `cloze_deletion`: Tap individual blanks or press `Space` to unmask.
-     - Optional **Mnemonic Hint Peek (`M`)** before full answer reveal.
+   - **Learn → Recall → Check & rate** per card (see §4.7). Recall games can be switched off (top-bar *Games on/off*, or the hub setting) to fall back to self-recall flips.
+     - Optional **Memory-hook peek (`M`)** during recall (counts as a hint).
    - **Back Reveal & 4-Grade FSRS Bar**:
      - Shows the structured comparison grid / formula / sequence / heuristic plus the **Exam Trap Warning** box.
      - Displays the 4 grading buttons with **live computed FSRS next-interval previews** (e.g., `1 Again (<10m)` · `2 Hard (1d)` · `3 Good (4d)` · `4 Easy (9d)`).
-     - Full keyboard workflow: `Space` / `Enter` (Reveal) $\to$ `1` / `2` / `3` / `4` (Grade) $\to$ `M` (Toggle Mnemonic) $\to$ `P` (Pin) $\to$ `S` (Suspend).
+     - The grade matching the recall score is marked **Suggested**; `Space` / `Enter` accepts it.
+     - Full keyboard workflow: `Space` / `Enter` (Continue / reveal / accept suggestion) $\to$ `1` / `2` / `3` / `4` (Grade) $\to$ `M` (Hint) $\to$ `P` (Pin) $\to$ `S` (Suspend).
+4. **`CardLab.tsx` (`/memorize/lab`)**: Browse cards by modality or plugin, step through Learn / Recall / Check, and view the card JSON. Never writes review state.
 3. **`ForgettingCurveChart.tsx` & `RetentionForecastChart.tsx`**:
    - **`ForgettingCurveChart.tsx`**: Plots $R(t, S) = (1 + \text{FACTOR} \cdot t/S)^{\text{DECAY}}$ from $t=0$ to $t = 2 \times I$, marking the $R_{\text{req}} = 90\%$ threshold line and showing how each successful review flattens the forgetting curve (increasing Stability $S$).
    - **`RetentionForecastChart.tsx`**: 30-day bar chart projecting scheduled due cards so the learner can adjust `dailyNewLimit` or Target Retention without causing a review spike before exam day.

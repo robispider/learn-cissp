@@ -5,6 +5,7 @@ import {
   Clock,
   Cpu,
   Filter,
+  FlaskConical,
   Flame,
   Layers,
   PauseCircle,
@@ -335,6 +336,9 @@ export default function MemorizeHub({ domains }: Props) {
               <Zap className="h-4 w-4" /> Extra practice (20 weakest)
             </a>
           )}
+          <a href={withBase('/memorize/lab')} className={btnSecondary} title="Preview visual, animated and custom cards">
+            <FlaskConical className="h-4 w-4 text-violet-500" /> Card Lab
+          </a>
         </div>
       </section>
 
@@ -420,7 +424,7 @@ export default function MemorizeHub({ domains }: Props) {
               className="mt-0.5 h-4 w-4 accent-emerald-500"
             />
             <span className="text-xs text-slate-600 dark:text-slate-300">
-              <span className="font-semibold">Tap-to-order sequences</span> before revealing the answer
+              <span className="font-semibold">Interactive recall games</span> (sort, order, fill-in, match) instead of plain flip cards
             </span>
           </label>
         </div>

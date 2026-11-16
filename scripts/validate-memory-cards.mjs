@@ -11,6 +11,7 @@
  *   - relatedQuestionIds reference real questions in the bank
  *   - sequenceData orders are exactly 1..N; matrix rows match header width
  *   - cloze templates are well-formed ({{cN::answer}} or {{cN::answer::hint}})
+ *   - presentation.plugin.id names a plugin registered in cards/registry.ts
  *
  * Usage: node scripts/validate-memory-cards.mjs [--domain dom-3]
  */
@@ -61,6 +62,13 @@ const CARD_TYPES = {
   cloze_deletion: 'clozeTemplate',
   manager_heuristic: 'heuristicData',
 };
+
+// Plugin ids registered in the card plugin registry (presentation.plugin.id must match one).
+const registrySrc = readFileSync(
+  join(root, 'src', 'components', 'memorize', 'cards', 'registry.ts'),
+  'utf8'
+);
+const pluginIds = new Set([...registrySrc.matchAll(/^\s{4}id: '([a-z0-9-]+)',$/gm)].map((m) => m[1]));
 
 const errors = [];
 const warnings = [];
@@ -121,6 +129,14 @@ for (const file of walk(cardsDir)) {
       if (type !== c.cardType && c[key] !== undefined)
         warnings.push(`${where}: has ${key} but cardType is ${c.cardType} (ignored by renderer)`);
     }
+
+    if (c.presentation?.plugin) {
+      const pid = c.presentation.plugin.id;
+      if (!pluginIds.has(pid))
+        errors.push(`${where}: presentation.plugin.id "${pid}" is not registered (known: ${[...pluginIds].join(', ')})`);
+    }
+    if (c.presentation?.modality && !['text', 'visual', 'animated'].includes(c.presentation.modality))
+      errors.push(`${where}: presentation.modality must be text | visual | animated`);
 
     if (c.sequenceData?.steps) {
       const orders = c.sequenceData.steps.map((s) => s.order);

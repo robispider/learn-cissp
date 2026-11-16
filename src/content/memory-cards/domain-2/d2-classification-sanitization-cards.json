@@ -648,7 +648,10 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 5: Protecting Security of Assets"
       }
-    ]
+    ],
+    "presentation": {
+      "modality": "text"
+    }
   },
   {
     "id": "cissp-mem-d2-s2.6-c002",

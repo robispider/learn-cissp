@@ -228,6 +228,21 @@ export const MemoryCardSchema = z
         })
       )
       .min(1),
+
+    // 6. Optional presentation layer (see MEMORIZATION_AND_SRS_SPEC.md §4.7)
+    presentation: z
+      .object({
+        modality: z.enum(['text', 'visual', 'animated']).optional(),
+        plugin: z
+          .object({
+            id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'Plugin ids are kebab-case'),
+            props: z.record(z.string(), z.unknown()).optional(),
+          })
+          .optional(),
+        hook: z.string().min(10).optional(),
+        elaborate: z.string().min(10).optional(),
+      })
+      .optional(),
   })
   .superRefine((card, ctx) => {
     if (card.cardType === 'concept_contrast' && !card.contrastData) {
