@@ -1,0 +1,835 @@
+[
+  {
+    "id": "cissp-mem-d6-s6.1-c001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "First-party audit",
+      "Second-party audit",
+      "Third-party audit",
+      "Independence"
+    ],
+    "tags": [
+      "audit"
+    ],
+    "title": "First-, second- and third-party assessments",
+    "prompt": "Contrast first-, second- and third-party assessments by who performs them and how independent they are.",
+    "answerSummary": "First-party: internal staff assess their own organization. Second-party: a customer or partner assesses a supplier. Third-party: an independent external auditor; most objective and used for certifications and regulatory attestations.",
+    "mnemonic": null,
+    "examTrapWarning": "When a question asks for the most objective or credible assurance for external stakeholders, choose the independent third-party audit.",
+    "contrastData": {
+      "ruleOfThumb": "Independence rises from first to third party.",
+      "columns": [
+        {
+          "label": "First-party",
+          "badge": "Internal",
+          "points": [
+            "Own staff / internal audit",
+            "Cheapest, least independent",
+            "Good for self-improvement"
+          ]
+        },
+        {
+          "label": "Second-party",
+          "badge": "Customer audits supplier",
+          "points": [
+            "Performed by a customer or partner",
+            "Checks contractual requirements",
+            "Right-to-audit clause needed"
+          ]
+        },
+        {
+          "label": "Third-party",
+          "badge": "Independent",
+          "points": [
+            "External, independent auditor",
+            "Most objective",
+            "Certifications (ISO 27001), SOC reports"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.1-c002",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.2",
+    "topicName": "Rules of Engagement (RoE) & Scope",
+    "cardType": "manager_heuristic",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "premature_escalation"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Rules of engagement",
+      "Written authorization",
+      "Scope"
+    ],
+    "tags": [
+      "pen-test"
+    ],
+    "title": "Before any penetration test starts",
+    "prompt": "A team lead wants to start scanning and exploiting production systems tonight to \"see what we find\". What must happen first?",
+    "answerSummary": "Get written authorization from senior management (the system owner) and agree rules of engagement: scope, timing, allowed techniques, contacts, data handling and how to stop the test.",
+    "mnemonic": null,
+    "examTrapWarning": "Without written permission, a penetration test is indistinguishable from an attack and may be illegal. Verbal approval from IT is not enough.",
+    "heuristicData": {
+      "technicalReflexTrap": "Start the scan right away because the team has admin credentials and good intentions.",
+      "managerAction": "Obtain signed management authorization and a rules-of-engagement document defining scope, schedule, methods, contacts and emergency stop procedures before any active testing.",
+      "governingPrinciple": "Testing requires documented management approval; scope and rules of engagement protect the organization and the testers."
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-115",
+        "section": "Technical Guide to Information Security Testing and Assessment"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.2-c001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Vulnerability scan",
+      "Penetration test",
+      "Exploitation"
+    ],
+    "tags": [
+      "testing"
+    ],
+    "title": "Vulnerability scan vs. penetration test",
+    "prompt": "Contrast a vulnerability scan with a penetration test.",
+    "answerSummary": "A vulnerability scan is automated and broad; it identifies potential weaknesses with low impact and can run often. A penetration test is human-driven; it tries to exploit weaknesses to prove real business impact, needs explicit authorization and carries operational risk.",
+    "mnemonic": null,
+    "examTrapWarning": "A scan only reports possible vulnerabilities (with false positives). Proving exploitability and impact requires a pen test.",
+    "contrastData": {
+      "ruleOfThumb": "Scan finds; pen test proves.",
+      "columns": [
+        {
+          "label": "Vulnerability scan",
+          "badge": "Automated, broad",
+          "points": [
+            "Finds known weaknesses",
+            "Low impact, frequent",
+            "Can produce false positives"
+          ]
+        },
+        {
+          "label": "Penetration test",
+          "badge": "Human, deep",
+          "points": [
+            "Exploits weaknesses to show impact",
+            "Higher risk; needs written authorization",
+            "Periodic and scoped"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.2-c002",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Black box",
+      "Gray box",
+      "White box",
+      "Zero knowledge",
+      "Full knowledge"
+    ],
+    "tags": [
+      "pen-test"
+    ],
+    "title": "Black-box vs. gray-box vs. white-box testing",
+    "prompt": "Contrast tester knowledge in black-, gray- and white-box tests.",
+    "answerSummary": "Black box (zero knowledge): tester starts like an outsider; most realistic for external attackers, slowest. Gray box (partial knowledge): some details such as user credentials; simulates an insider or compromised user. White box (full knowledge): tester has source code, diagrams and credentials; most thorough per hour.",
+    "mnemonic": null,
+    "examTrapWarning": "For thorough coverage within limited time, white box. For realism of an external attacker, black box.",
+    "contrastData": {
+      "ruleOfThumb": "More knowledge = more coverage, less realism.",
+      "columns": [
+        {
+          "label": "Black box",
+          "badge": "Zero knowledge",
+          "points": [
+            "No prior information",
+            "Simulates external attacker",
+            "Time spent on reconnaissance"
+          ]
+        },
+        {
+          "label": "Gray box",
+          "badge": "Partial knowledge",
+          "points": [
+            "Some info or user credentials",
+            "Simulates insider / compromised account",
+            "Balanced cost and coverage"
+          ]
+        },
+        {
+          "label": "White box",
+          "badge": "Full knowledge",
+          "points": [
+            "Source code, architecture, credentials",
+            "Most thorough",
+            "Least realistic for outsiders"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.2-c003",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cardType": "sequence_order",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Planning",
+      "Discovery",
+      "Attack",
+      "Reporting"
+    ],
+    "tags": [
+      "pen-test"
+    ],
+    "title": "Penetration test phases (NIST SP 800-115)",
+    "prompt": "Put the four penetration testing phases in order.",
+    "answerSummary": "Planning → Discovery → Attack → Reporting. Discovery and attack loop as new access reveals more targets.",
+    "mnemonic": null,
+    "examTrapWarning": "Planning (including authorization and rules of engagement) always comes first; reporting includes clean-up and remediation guidance.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Planning",
+          "detail": "Set scope, rules of engagement, authorization and goals."
+        },
+        {
+          "order": 2,
+          "label": "Discovery",
+          "detail": "Reconnaissance, scanning and vulnerability analysis."
+        },
+        {
+          "order": 3,
+          "label": "Attack",
+          "detail": "Gain access, escalate privileges, pivot; loops back to discovery."
+        },
+        {
+          "order": 4,
+          "label": "Reporting",
+          "detail": "Document findings, risk and remediation; clean up artifacts."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-115",
+        "section": "Technical Guide to Information Security Testing and Assessment"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.2-c004",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SAST",
+      "DAST",
+      "IAST",
+      "SCA",
+      "Fuzzing"
+    ],
+    "tags": [
+      "appsec-testing"
+    ],
+    "title": "SAST vs. DAST vs. IAST vs. SCA vs. fuzzing",
+    "prompt": "Match each application testing technique to what it examines and when.",
+    "answerSummary": "SAST: static analysis of source or binaries without running them (white box, early). DAST: tests a running application from outside (black box). IAST: instruments the running app to watch code paths during tests. SCA: inventories open-source components and known CVEs. Fuzzing: feeds malformed or random input to find crashes.",
+    "mnemonic": null,
+    "examTrapWarning": "SAST cannot find runtime configuration issues; DAST cannot point to the exact line of code. Vulnerable third-party libraries are found with SCA.",
+    "matrixData": {
+      "headers": [
+        "Technique",
+        "Examines",
+        "Typical stage"
+      ],
+      "rows": [
+        [
+          "SAST",
+          "Source / bytecode, not running",
+          "Coding / commit"
+        ],
+        [
+          "DAST",
+          "Running app from the outside",
+          "Test / staging"
+        ],
+        [
+          "IAST",
+          "Running app via internal agent",
+          "QA / integration testing"
+        ],
+        [
+          "SCA",
+          "Third-party and open-source dependencies",
+          "Build / CI"
+        ],
+        [
+          "Fuzzing",
+          "Behavior under malformed input (mutation or generation)",
+          "Test"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.2-c005",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cardType": "sequence_order",
+    "examPriority": "deep_detail",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Fagan inspection",
+      "Code review"
+    ],
+    "tags": [
+      "code-review"
+    ],
+    "title": "Fagan inspection steps",
+    "prompt": "Put the six steps of a Fagan code inspection in order.",
+    "answerSummary": "Planning → Overview → Preparation → Inspection → Rework → Follow-up.",
+    "mnemonic": "Please Order Pizza In Real Fast.",
+    "examTrapWarning": "Fagan inspection is the most formal code review; defects found in inspection are fixed in rework and verified in follow-up.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Planning",
+          "detail": "Prepare materials, select participants, schedule."
+        },
+        {
+          "order": 2,
+          "label": "Overview",
+          "detail": "Author explains the code and its context."
+        },
+        {
+          "order": 3,
+          "label": "Preparation",
+          "detail": "Reviewers study the code individually."
+        },
+        {
+          "order": 4,
+          "label": "Inspection",
+          "detail": "Group meeting to find defects."
+        },
+        {
+          "order": 5,
+          "label": "Rework",
+          "detail": "Author fixes the defects."
+        },
+        {
+          "order": 6,
+          "label": "Follow-up",
+          "detail": "Moderator verifies fixes are complete."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.3-c001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.3",
+    "subdomainName": "Collect Security Process Data",
+    "topicId": "6.3.1",
+    "topicName": "Account Management Reviews, KPIs/KRIs, Backup Verification",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "KPI",
+      "KRI",
+      "Metrics"
+    ],
+    "tags": [
+      "metrics"
+    ],
+    "title": "KPI vs. KRI",
+    "prompt": "Distinguish key performance indicators from key risk indicators.",
+    "answerSummary": "KPIs measure how well a process or control is performing (for example patch compliance rate). KRIs are forward-looking signals that risk is rising toward appetite thresholds (for example number of unpatched critical systems exposed to the internet).",
+    "mnemonic": null,
+    "examTrapWarning": "A metric with a threshold that triggers escalation when risk exceeds appetite is a KRI.",
+    "contrastData": {
+      "ruleOfThumb": "KPI looks back at performance; KRI warns of rising risk.",
+      "columns": [
+        {
+          "label": "KPI",
+          "badge": "Performance",
+          "points": [
+            "How well a process meets its goal",
+            "Backward-looking",
+            "Example: % of systems patched within SLA"
+          ]
+        },
+        {
+          "label": "KRI",
+          "badge": "Risk",
+          "points": [
+            "Early warning that risk is increasing",
+            "Forward-looking, tied to risk appetite thresholds",
+            "Example: count of critical vulns past due"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.3-c002",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.3",
+    "subdomainName": "Collect Security Process Data",
+    "topicId": "6.3.1",
+    "topicName": "Account Management Reviews, KPIs/KRIs, Backup Verification",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Synthetic monitoring",
+      "Real user monitoring",
+      "Passive monitoring"
+    ],
+    "tags": [
+      "monitoring"
+    ],
+    "title": "Synthetic transactions vs. real user monitoring",
+    "prompt": "Contrast synthetic (active) monitoring and real user (passive) monitoring.",
+    "answerSummary": "Synthetic monitoring runs scripted transactions on a schedule to test availability and function, even with no users online. Real user monitoring passively records actual user sessions to show real performance and errors.",
+    "mnemonic": null,
+    "examTrapWarning": "To detect a failure before customers notice (for example at 3 a.m.), use synthetic transactions.",
+    "contrastData": {
+      "ruleOfThumb": "Synthetic = scripted probes; RUM = real traffic.",
+      "columns": [
+        {
+          "label": "Synthetic / active",
+          "badge": "Scripted",
+          "points": [
+            "Simulated transactions on a schedule",
+            "Works with zero real users",
+            "Catches outages early"
+          ]
+        },
+        {
+          "label": "Real user / passive",
+          "badge": "Observed",
+          "points": [
+            "Captures actual user activity",
+            "Shows true user experience",
+            "Needs real traffic to report"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.4-c001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.4",
+    "subdomainName": "Analyze Test Output and Generate Report",
+    "topicId": "6.4.1",
+    "topicName": "False Positives vs. False Negatives, CVSS Prioritization",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "False positive",
+      "False negative",
+      "Type I error",
+      "Type II error"
+    ],
+    "tags": [
+      "analysis"
+    ],
+    "title": "False positives vs. false negatives",
+    "prompt": "Contrast false positives and false negatives in scanning and detection, and say which is more dangerous.",
+    "answerSummary": "A false positive is an alert for something that is not a real issue; it wastes time and causes alert fatigue. A false negative is a real vulnerability or attack that goes undetected; it is more dangerous because nobody responds.",
+    "mnemonic": null,
+    "examTrapWarning": "Tuning to remove all false positives can raise false negatives. The dangerous error is the silent one.",
+    "contrastData": {
+      "ruleOfThumb": "False negatives are the dangerous silence.",
+      "columns": [
+        {
+          "label": "False positive",
+          "badge": "False alarm",
+          "points": [
+            "Reports an issue that is not real",
+            "Wastes analyst time",
+            "Leads to alert fatigue"
+          ]
+        },
+        {
+          "label": "False negative",
+          "badge": "Missed detection",
+          "points": [
+            "Real issue not reported",
+            "No response happens",
+            "Most dangerous outcome"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.4-c002",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.4",
+    "subdomainName": "Analyze Test Output and Generate Report",
+    "topicId": "6.4.1",
+    "topicName": "False Positives vs. False Negatives, CVSS Prioritization",
+    "cardType": "reference_fact",
+    "examPriority": "deep_detail",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "CVSS",
+      "Base",
+      "Temporal",
+      "Threat",
+      "Environmental"
+    ],
+    "tags": [
+      "cvss",
+      "prioritization"
+    ],
+    "title": "CVSS metric groups",
+    "prompt": "List the CVSS metric groups and what each captures.",
+    "answerSummary": "Base: intrinsic severity that does not change. Temporal (v3.1) / Threat (v4.0): factors that change over time such as exploit maturity. Environmental: adjusts for the organization's own system importance and controls. CVSS v4.0 also adds optional Supplemental metrics.",
+    "mnemonic": null,
+    "examTrapWarning": "Prioritize with environmental context: a CVSS 9.8 on an isolated lab box may matter less than a 7.5 on an internet-facing payment server.",
+    "matrixData": {
+      "headers": [
+        "Group",
+        "Captures"
+      ],
+      "rows": [
+        [
+          "Base",
+          "Intrinsic characteristics: attack vector, complexity, privileges, user interaction, impact"
+        ],
+        [
+          "Temporal (v3.1) / Threat (v4.0)",
+          "Changes over time, e.g., exploit code maturity"
+        ],
+        [
+          "Environmental",
+          "Your environment: asset criticality and mitigating controls"
+        ],
+        [
+          "Supplemental (v4.0)",
+          "Extra context such as safety and automatable; does not change the score"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "FIRST CVSS v3.1 and v4.0 Specifications",
+        "section": "Metric groups"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.5-c001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.5",
+    "subdomainName": "Conduct or Facilitate Security Audits",
+    "topicId": "6.5.1",
+    "topicName": "SOC 1 (Type I/II), SOC 2 (Type I/II), SOC 3, ISO 27001 Audits",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SOC 1",
+      "SOC 2",
+      "SOC 3",
+      "Trust Services Criteria"
+    ],
+    "tags": [
+      "soc"
+    ],
+    "title": "SOC 1 vs. SOC 2 vs. SOC 3",
+    "prompt": "Compare SOC 1, SOC 2 and SOC 3 reports by focus and audience.",
+    "answerSummary": "SOC 1: controls relevant to financial reporting (ICFR), for the customer's auditors. SOC 2: controls against the Trust Services Criteria (security required; availability, processing integrity, confidentiality, privacy optional), detailed and shared under NDA. SOC 3: a general-use summary of SOC 2 suitable for the public.",
+    "mnemonic": null,
+    "examTrapWarning": "To evaluate a cloud provider's security controls in detail, ask for a SOC 2 Type II, not SOC 1 (financial) or SOC 3 (public summary).",
+    "matrixData": {
+      "headers": [
+        "Report",
+        "Focus",
+        "Audience"
+      ],
+      "rows": [
+        [
+          "SOC 1",
+          "Internal control over financial reporting",
+          "User entities and their financial auditors"
+        ],
+        [
+          "SOC 2",
+          "Trust Services Criteria: security (required), availability, processing integrity, confidentiality, privacy",
+          "Restricted: customers and prospects under NDA"
+        ],
+        [
+          "SOC 3",
+          "Summary of SOC 2 results without control details",
+          "General public (website seal)"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "AICPA SOC suite",
+        "section": "SOC 1, SOC 2, SOC 3 guidance"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 15: Security Assessment and Testing"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d6-s6.5-c002",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.5",
+    "subdomainName": "Conduct or Facilitate Security Audits",
+    "topicId": "6.5.1",
+    "topicName": "SOC 1 (Type I/II), SOC 2 (Type I/II), SOC 3, ISO 27001 Audits",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Type I",
+      "Type II",
+      "Operating effectiveness"
+    ],
+    "tags": [
+      "soc"
+    ],
+    "title": "SOC Type I vs. Type II",
+    "prompt": "Contrast SOC Type I and Type II reports.",
+    "answerSummary": "Type I evaluates the design of controls at a single point in time. Type II evaluates design and operating effectiveness over a period, typically 6–12 months, so it gives more assurance.",
+    "mnemonic": "Type I = one Instant. Type II = over Time.",
+    "examTrapWarning": "A Type I says controls look right on paper on one day; only Type II shows they actually worked over time.",
+    "contrastData": {
+      "ruleOfThumb": "Type II is the one that proves controls operated.",
+      "columns": [
+        {
+          "label": "Type I",
+          "badge": "Point in time",
+          "points": [
+            "Design of controls",
+            "Single date",
+            "Less assurance"
+          ]
+        },
+        {
+          "label": "Type II",
+          "badge": "Period of time",
+          "points": [
+            "Design + operating effectiveness",
+            "Usually 6–12 months",
+            "Higher assurance; preferred for vendors"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "AICPA SOC suite",
+        "section": "Type 1 and Type 2 reports"
+      }
+    ]
+  }
+]

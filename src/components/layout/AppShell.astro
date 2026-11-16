@@ -1,6 +1,6 @@
 ---
 import '../../styles/global.css';
-import { BarChart3, BookOpenText, ClipboardList, House } from 'lucide-react';
+import { BarChart3, BookOpenText, BrainCircuit, ClipboardList, House } from 'lucide-react';
 import ResumeExamBanner from './ResumeExamBanner';
 import ThemeToggle from './ThemeToggle';
 import { stripBase, withBase } from '../../lib/paths';
@@ -27,6 +27,12 @@ const nav = [
     active: pathname.startsWith('/exams') || pathname.startsWith('/domains'),
   },
   { href: withBase('/study'), label: 'Study', Icon: BookOpenText, active: pathname.startsWith('/study') },
+  {
+    href: withBase('/memorize'),
+    label: 'Memorize',
+    Icon: BrainCircuit,
+    active: pathname.startsWith('/memorize'),
+  },
   {
     href: withBase('/history'),
     label: 'Progress',
@@ -144,7 +150,7 @@ const nav = [
             aria-label="Main"
             class="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-slate-200/70 bg-[var(--bg-canvas)]/90 backdrop-blur-xl sm:hidden dark:border-slate-800/70"
           >
-            <ul class="grid h-16 grid-cols-4">
+            <ul class="grid h-16 grid-cols-5">
               {nav.map(({ href, label, Icon, active }) => (
                 <li>
                   <a

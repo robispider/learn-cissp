@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { ChevronDown, Lightbulb, Search, Zap } from 'lucide-react';
+import { BrainCircuit, ChevronDown, Lightbulb, Search, Zap } from 'lucide-react';
+import { useSubdomainMemoryCounts } from '../../lib/memorization/use-memory-data';
 import type { CatalogData } from '../../lib/catalog';
 import { buildGeneratedExamHref } from '../../lib/exam-engine/assembler';
 import { useLearnerProgress } from '../../lib/storage/use-progress';
@@ -22,6 +23,7 @@ export default function StudyExplorer({
 }) {
   const progress = useLearnerProgress();
   const [mode] = useExamMode();
+  const memoryCounts = useSubdomainMemoryCounts();
   const [query, setQuery] = useState('');
   const [openSub, setOpenSub] = useState<string | null>(null);
 
@@ -158,6 +160,19 @@ export default function StudyExplorer({
 
                         <div className="mt-auto flex items-center justify-between pt-4 text-[11px] text-slate-400">
                           <span>{s.questionCount > 0 ? `${s.questionCount} questions` : 'No questions yet'}</span>
+                          <span className="flex items-center gap-1.5">
+                          {memoryCounts[s.subdomainId]?.total > 0 && (
+                            <a
+                              href={withBase(`/memorize/session?mode=${memoryCounts[s.subdomainId].due > 0 ? 'smart' : 'cram'}&domain=${d.domainId}&subdomain=${s.subdomainId}`)}
+                              title={`${memoryCounts[s.subdomainId].total} memory cards`}
+                              className="inline-flex items-center gap-1 rounded-lg bg-violet-500/10 px-3 py-2 text-xs font-semibold text-violet-700 transition hover:bg-violet-500 hover:text-white sm:px-2.5 sm:py-1.5 dark:text-violet-400"
+                            >
+                              <BrainCircuit className="h-3.5 w-3.5" />
+                              {memoryCounts[s.subdomainId].due > 0
+                                ? `Memorize (${memoryCounts[s.subdomainId].due} due)`
+                                : `Memorize (${memoryCounts[s.subdomainId].total})`}
+                            </a>
+                          )}
                           {s.questionCount > 0 && (
                             <a
                               href={buildGeneratedExamHref({ scope: 'subdomain', subdomainId: s.subdomainId, length: drillLen, mode })}
@@ -166,6 +181,7 @@ export default function StudyExplorer({
                               <Zap className="h-3.5 w-3.5" /> Drill {drillLen}
                             </a>
                           )}
+                          </span>
                         </div>
                       </article>
                     );

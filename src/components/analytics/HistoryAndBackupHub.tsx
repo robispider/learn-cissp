@@ -55,7 +55,11 @@ export default function HistoryAndBackupHub() {
       const raw = await file.text();
       const res = await importProgressBackup(raw);
       setStatusMsg(
-        `Restored ${res.sessionsImported} session(s) and ${res.masteryImported} mastery record(s).`
+        `Restored ${res.sessionsImported} session(s), ${res.masteryImported} mastery record(s)${
+          res.memoryCardsImported > 0
+            ? `, and ${res.memoryCardsImported} memory card state(s)`
+            : ''
+        }.`
       );
       await loadData();
     } catch (err) {

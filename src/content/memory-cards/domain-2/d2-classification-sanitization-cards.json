@@ -1,0 +1,701 @@
+[
+  {
+    "id": "cissp-mem-d2-s2.1-c001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Top Secret",
+      "Secret",
+      "Confidential",
+      "Unclassified"
+    ],
+    "tags": [
+      "classification"
+    ],
+    "title": "Government classification levels and damage criteria",
+    "prompt": "Order the US government classification levels from highest to lowest and state the damage each one implies if disclosed.",
+    "answerSummary": "Top Secret: exceptionally grave damage. Secret: serious damage. Confidential: damage. Unclassified: no damage to national security (CUI is a separate unclassified category that still needs safeguarding).",
+    "mnemonic": "Grave → Serious → Damage → None. Top Secret is the only one with \"exceptionally grave\".",
+    "examTrapWarning": "Confidential is the lowest classified level, not the highest. \"Serious damage\" is Secret, not Top Secret.",
+    "sequenceData": {
+      "directionLabel": "Highest → lowest",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Top Secret",
+          "detail": "Unauthorized disclosure could cause exceptionally grave damage to national security."
+        },
+        {
+          "order": 2,
+          "label": "Secret",
+          "detail": "Unauthorized disclosure could cause serious damage."
+        },
+        {
+          "order": 3,
+          "label": "Confidential",
+          "detail": "Unauthorized disclosure could cause damage."
+        },
+        {
+          "order": 4,
+          "label": "Unclassified",
+          "detail": "Not classified; Controlled Unclassified Information (CUI) still requires handling controls."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.1-c002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Confidential/Proprietary",
+      "Private",
+      "Sensitive",
+      "Public"
+    ],
+    "tags": [
+      "classification"
+    ],
+    "title": "Commercial vs. government classification equivalents",
+    "prompt": "Map the common commercial classification labels to their approximate government equivalents.",
+    "answerSummary": "Confidential/Proprietary ≈ Top Secret, Private ≈ Secret, Sensitive ≈ Confidential, Public ≈ Unclassified.",
+    "mnemonic": null,
+    "examTrapWarning": "\"Confidential\" means different things: in commercial schemes it is the highest level, in the government scheme it is the lowest classified level.",
+    "matrixData": {
+      "headers": [
+        "Commercial label",
+        "Government equivalent",
+        "Example data"
+      ],
+      "rows": [
+        [
+          "Confidential / Proprietary",
+          "Top Secret",
+          "Trade secrets, merger plans"
+        ],
+        [
+          "Private",
+          "Secret",
+          "Employee PII, HR and salary records"
+        ],
+        [
+          "Sensitive",
+          "Confidential",
+          "Internal financials, project plans"
+        ],
+        [
+          "Public",
+          "Unclassified",
+          "Marketing material, press releases"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.1-c003",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.2",
+    "topicName": "Asset Inventory & Categorization (FIPS 199)",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "FIPS 199",
+      "High-water mark",
+      "Security categorization"
+    ],
+    "tags": [
+      "fips-199",
+      "categorization"
+    ],
+    "title": "FIPS 199 high-water mark",
+    "prompt": "Fill in how FIPS 199 sets a system's overall impact level.",
+    "answerSummary": "FIPS 199 rates confidentiality, integrity and availability impact as Low, Moderate or High; the system's overall category takes the highest rating (high-water mark).",
+    "mnemonic": null,
+    "examTrapWarning": "Do not average the three ratings. One High rating makes the whole system High.",
+    "clozeTemplate": "FIPS 199 rates each of confidentiality, integrity and availability as {{c1::Low, Moderate or High::three levels}}. The system's overall impact level follows the {{c2::high-water mark::rule}}: the {{c3::highest::which rating}} of the three.",
+    "references": [
+      {
+        "source": "FIPS 199",
+        "section": "Standards for Security Categorization of Federal Information and Information Systems"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.2-c001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Data controller",
+      "Data processor",
+      "Data subject",
+      "Data custodian"
+    ],
+    "tags": [
+      "gdpr",
+      "roles"
+    ],
+    "title": "Data controller vs. processor vs. custodian",
+    "prompt": "Contrast the GDPR data controller and data processor with the internal data custodian role.",
+    "answerSummary": "The controller decides why and how personal data is processed and carries primary accountability. The processor handles data only on the controller's documented instructions (for example a cloud payroll provider). The custodian is an internal technical role that implements protections the owner requires.",
+    "mnemonic": null,
+    "examTrapWarning": "A cloud provider following your instructions is a processor; you remain the controller and stay accountable for the breach notification.",
+    "contrastData": {
+      "ruleOfThumb": "Controller decides purpose and means; processor follows instructions; custodian implements controls.",
+      "columns": [
+        {
+          "label": "Data controller",
+          "badge": "Decides why and how",
+          "points": [
+            "Determines purposes and means of processing",
+            "Primary GDPR accountability",
+            "Notifies the authority of breaches"
+          ]
+        },
+        {
+          "label": "Data processor",
+          "badge": "Acts on instructions",
+          "points": [
+            "Processes on the controller's behalf",
+            "Bound by a data processing agreement",
+            "Must notify the controller of breaches"
+          ]
+        },
+        {
+          "label": "Data custodian",
+          "badge": "Implements",
+          "points": [
+            "Internal role, usually IT",
+            "Backups, access controls, storage",
+            "Follows owner's requirements"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "EU General Data Protection Regulation (GDPR)",
+        "section": "Article 4 definitions; Articles 24 and 28"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.3-c001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.3",
+    "subdomainName": "Protect Privacy & Sensitive Data",
+    "topicId": "2.3.2",
+    "topicName": "Data Anonymization, Pseudonymization, Tokenization, Masking",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Anonymization",
+      "Pseudonymization",
+      "Tokenization",
+      "Data masking"
+    ],
+    "tags": [
+      "privacy"
+    ],
+    "title": "Anonymization vs. pseudonymization vs. tokenization vs. masking",
+    "prompt": "Contrast the four data de-identification techniques: reversible or not, and their regulatory effect.",
+    "answerSummary": "Anonymization is irreversible, so the data falls outside GDPR. Pseudonymization replaces identifiers with aliases that can be re-linked using separately held data, so it is still personal data. Tokenization swaps sensitive values for random tokens stored in a vault, reducing PCI DSS scope. Masking hides part of a value (e.g., ****1234) for display or testing.",
+    "mnemonic": null,
+    "examTrapWarning": "Pseudonymized data is still personal data under GDPR. Only true anonymization removes it from scope.",
+    "contrastData": {
+      "ruleOfThumb": "Only anonymization is irreversible; the other three can be reversed or still identify someone.",
+      "columns": [
+        {
+          "label": "Anonymization",
+          "badge": "Irreversible",
+          "points": [
+            "Identity cannot be recovered",
+            "Outside GDPR scope",
+            "Hard to do well (re-identification risk)"
+          ]
+        },
+        {
+          "label": "Pseudonymization",
+          "badge": "Reversible with key",
+          "points": [
+            "Identifiers replaced by aliases",
+            "Mapping kept separately",
+            "Still personal data under GDPR"
+          ]
+        },
+        {
+          "label": "Tokenization",
+          "badge": "Vault lookup",
+          "points": [
+            "Random token replaces value",
+            "Original stored in a secure token vault",
+            "Shrinks PCI DSS scope"
+          ]
+        },
+        {
+          "label": "Masking",
+          "badge": "Partial hide",
+          "points": [
+            "Obscures part of a value",
+            "Display, test and dev data",
+            "Example: ****-****-****-1234"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.4-c001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Clear",
+      "Purge",
+      "Destroy",
+      "Cryptographic erase",
+      "Degaussing"
+    ],
+    "tags": [
+      "sanitization"
+    ],
+    "title": "NIST SP 800-88: Clear vs. Purge vs. Destroy",
+    "prompt": "Define the three NIST SP 800-88 sanitization levels, the techniques for each, and the recovery they defeat.",
+    "answerSummary": "Clear: logical techniques (overwrite) that defeat simple, non-invasive recovery. Purge: physical or logical techniques (degauss, block erase, cryptographic erase) that defeat state-of-the-art lab recovery. Destroy: shred, disintegrate, pulverize, melt or incinerate so the media cannot be reused.",
+    "mnemonic": "C-P-D grows in strength: Clean the surface, Purge the lab-recoverable, Destroy the media.",
+    "examTrapWarning": "Purged media can be reused; destroyed media cannot. Leaving the organization or a lower classification usually requires purge or destroy, not clear.",
+    "matrixData": {
+      "headers": [
+        "Level",
+        "Techniques",
+        "Protects against",
+        "Media reusable?"
+      ],
+      "rows": [
+        [
+          "Clear",
+          "Overwrite with non-sensitive data, factory reset",
+          "Simple keyboard / software recovery",
+          "Yes"
+        ],
+        [
+          "Purge",
+          "Degaussing (magnetic), block erase, cryptographic erase",
+          "State-of-the-art laboratory recovery",
+          "Yes (except degaussed HDDs)"
+        ],
+        [
+          "Destroy",
+          "Shred, disintegrate, pulverize, melt, incinerate",
+          "Any recovery",
+          "No"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-88 Rev. 1",
+        "section": "Guidelines for Media Sanitization"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.4-c002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cardType": "manager_heuristic",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "solves_wrong_problem"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SSD",
+      "Degaussing",
+      "Cryptographic erase",
+      "Wear leveling"
+    ],
+    "tags": [
+      "sanitization",
+      "ssd"
+    ],
+    "title": "Retiring SSDs that held sensitive data",
+    "prompt": "A technician plans to degauss a pallet of laptops with SSDs before donating them. What should happen instead?",
+    "answerSummary": "Degaussing does nothing to flash storage. Use cryptographic erase or the vendor's sanitize command (purge) and verify, or physically destroy drives that held highly sensitive data, in line with the media sanitization policy.",
+    "mnemonic": null,
+    "examTrapWarning": "Overwriting an SSD also fails because wear leveling leaves stale blocks behind. Degaussing is only for magnetic media such as HDDs and tapes.",
+    "heuristicData": {
+      "technicalReflexTrap": "Degauss the SSDs or run a multi-pass overwrite and assume the data is gone.",
+      "managerAction": "Follow the sanitization policy: use cryptographic erase or firmware sanitize (purge) with verification and a certificate, or destroy the drives if data sensitivity requires it.",
+      "governingPrinciple": "Sanitization must match the media type and data sensitivity (NIST SP 800-88), and be documented."
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-88 Rev. 1",
+        "section": "Guidelines for Media Sanitization"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.4-c003",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.1",
+    "topicName": "Record Retention Schedules",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "extreme_absolutist",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Retention schedule",
+      "Legal hold",
+      "Liability"
+    ],
+    "tags": [
+      "retention"
+    ],
+    "title": "How long to keep records",
+    "prompt": "Fill in the principle that sets record retention periods.",
+    "answerSummary": "Keep data only as long as laws, regulations or business needs require, then dispose of it securely. Keeping it longer adds cost, breach exposure and eDiscovery liability. A legal hold suspends normal destruction.",
+    "mnemonic": null,
+    "examTrapWarning": "\"Keep everything forever\" is wrong: excess data increases liability and discovery costs.",
+    "clozeTemplate": "Records should be kept only as long as required by {{c1::law, regulation or business need::drivers}}, then securely destroyed. Over-retention increases {{c2::liability and eDiscovery exposure::risk}}, and a {{c3::legal hold::litigation mechanism}} overrides the normal destruction schedule.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.5-c001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.5",
+    "subdomainName": "Data Security Controls & States of Data",
+    "topicId": "2.5.1",
+    "topicName": "Data at Rest, Data in Transit, Data in Use",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Data at rest",
+      "Data in transit",
+      "Data in use",
+      "Confidential computing"
+    ],
+    "tags": [
+      "data-states"
+    ],
+    "title": "The three states of data and their controls",
+    "prompt": "Name the three data states and the main protections for each.",
+    "answerSummary": "At rest: storage encryption (full-disk, database TDE) and access control. In transit: TLS, IPsec, SSH. In use: memory protections, trusted execution environments (confidential computing) and homomorphic encryption.",
+    "mnemonic": null,
+    "examTrapWarning": "Data in use is the hardest to protect because it is normally decrypted in memory. TLS does nothing for data sitting on a disk.",
+    "matrixData": {
+      "headers": [
+        "State",
+        "Where it lives",
+        "Typical controls"
+      ],
+      "rows": [
+        [
+          "At rest",
+          "Disks, databases, backups, cloud storage",
+          "AES full-disk encryption, TDE, access control"
+        ],
+        [
+          "In transit / motion",
+          "Moving across networks",
+          "TLS 1.3, IPsec VPN, SSH, SFTP"
+        ],
+        [
+          "In use",
+          "Memory and CPU during processing",
+          "TEEs / secure enclaves, memory encryption, homomorphic encryption"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.5-c002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.5",
+    "subdomainName": "Data Security Controls & States of Data",
+    "topicId": "2.5.2",
+    "topicName": "DLP (Network vs. Endpoint) & CASB",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Network DLP",
+      "Endpoint DLP",
+      "CASB"
+    ],
+    "tags": [
+      "dlp"
+    ],
+    "title": "Network DLP vs. endpoint DLP vs. CASB",
+    "prompt": "Contrast where network DLP, endpoint DLP and a CASB inspect data and what each can stop.",
+    "answerSummary": "Network DLP inspects traffic at the egress point (email, web) but cannot see encrypted traffic without TLS inspection or USB copies. Endpoint DLP runs on the device and can block USB, printing and clipboard copies. A CASB sits between users and cloud services to enforce policy on SaaS use, including shadow IT.",
+    "mnemonic": null,
+    "examTrapWarning": "Network DLP cannot stop a user copying files to a USB stick; that needs endpoint DLP.",
+    "contrastData": {
+      "ruleOfThumb": "Pick the DLP placement that sees the channel the data leaves through.",
+      "columns": [
+        {
+          "label": "Network DLP",
+          "badge": "Egress traffic",
+          "points": [
+            "Inspects email, web and file transfers",
+            "Blind to encrypted traffic without TLS inspection",
+            "Cannot see USB or print"
+          ]
+        },
+        {
+          "label": "Endpoint DLP",
+          "badge": "On the device",
+          "points": [
+            "Agent on laptops and servers",
+            "Controls USB, print, clipboard, uploads",
+            "Works off-network"
+          ]
+        },
+        {
+          "label": "CASB",
+          "badge": "Cloud services",
+          "points": [
+            "Between users and SaaS / cloud apps",
+            "Visibility into shadow IT",
+            "Enforces cloud data policies"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.6-c001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.6",
+    "subdomainName": "Data Handling Requirements",
+    "topicId": "2.6.1",
+    "topicName": "Marking, Labeling, Storage, and Secure Transport of Sensitive Media",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Marking",
+      "Labeling",
+      "Aggregation",
+      "Highest classification"
+    ],
+    "tags": [
+      "handling"
+    ],
+    "title": "Labeling combined information",
+    "prompt": "Fill in the labeling rule for media containing information of several classification levels.",
+    "answerSummary": "Media or documents holding mixed data are labeled at the highest classification present, and the label must be visible to humans (marking) and readable by systems (labels/metadata).",
+    "mnemonic": null,
+    "examTrapWarning": "Aggregated low-level data can itself become more sensitive than any single item; review the combined set's classification.",
+    "clozeTemplate": "When a document or drive holds information of several classifications, it is marked at the {{c1::highest::level}} classification it contains. Combining many lower-level items can raise sensitivity, a problem called {{c2::aggregation::term}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d2-s2.6-c002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.6",
+    "subdomainName": "Data Handling Requirements",
+    "topicId": "2.6.1",
+    "topicName": "Marking, Labeling, Storage, and Secure Transport of Sensitive Media",
+    "cardType": "manager_heuristic",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "premature_escalation"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Legal hold",
+      "Retention",
+      "Spoliation"
+    ],
+    "tags": [
+      "legal-hold",
+      "retention"
+    ],
+    "title": "Scheduled destruction vs. a pending lawsuit",
+    "prompt": "Backups are due for routine destruction next week, but legal counsel has just warned of pending litigation involving that data. What do you do?",
+    "answerSummary": "Suspend destruction of the relevant data under a legal hold as directed by counsel. Destroying it could be spoliation of evidence, even if it follows the normal schedule.",
+    "mnemonic": null,
+    "examTrapWarning": "Following the retention schedule \"because it is policy\" is wrong once a legal hold applies.",
+    "heuristicData": {
+      "technicalReflexTrap": "Destroy the backups on schedule because the retention policy says so.",
+      "managerAction": "Work with legal counsel to place a legal hold, preserve the relevant data and pause the destruction schedule for it until counsel releases the hold.",
+      "governingPrinciple": "Legal holds override retention schedules; destroying relevant data during litigation is spoliation."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 4: Laws, Regulations, and Compliance"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  }
+]

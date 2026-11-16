@@ -1,0 +1,1422 @@
+[
+  {
+    "id": "cissp-mem-d7-s7.1-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.1",
+    "subdomainName": "Understand and Comply with Investigations",
+    "topicId": "7.1.1",
+    "topicName": "Digital Forensics Order of Volatility (RFC 3227), Chain of Custody",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Order of volatility",
+      "RFC 3227",
+      "Registers",
+      "Cache",
+      "RAM",
+      "Archival media"
+    ],
+    "tags": [
+      "forensics"
+    ],
+    "title": "Order of volatility (RFC 3227)",
+    "prompt": "Order evidence sources from most volatile (collect first) to least volatile.",
+    "answerSummary": "Registers and cache → routing table, ARP cache, process table, kernel statistics, memory → temporary file systems → disk → remote logging and monitoring data → physical configuration and network topology → archival media.",
+    "mnemonic": null,
+    "examTrapWarning": "Pulling the power cord first destroys RAM evidence such as running processes, network connections and encryption keys.",
+    "sequenceData": {
+      "directionLabel": "Most volatile → least volatile",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Registers, cache",
+          "detail": "CPU registers and cache contents, lost almost instantly."
+        },
+        {
+          "order": 2,
+          "label": "Memory and system tables",
+          "detail": "Routing table, ARP cache, process table, kernel statistics, RAM."
+        },
+        {
+          "order": 3,
+          "label": "Temporary file systems",
+          "detail": "Swap and temp files that are overwritten quickly."
+        },
+        {
+          "order": 4,
+          "label": "Disk",
+          "detail": "Persistent storage on the system."
+        },
+        {
+          "order": 5,
+          "label": "Remote logging and monitoring",
+          "detail": "Log and monitoring data held on other systems."
+        },
+        {
+          "order": 6,
+          "label": "Physical configuration, topology",
+          "detail": "How systems are cabled and configured."
+        },
+        {
+          "order": 7,
+          "label": "Archival media",
+          "detail": "Backups and archive tapes."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "RFC 3227",
+        "section": "Guidelines for Evidence Collection and Archiving"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 19: Investigations and Ethics"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.1-c002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.1",
+    "subdomainName": "Understand and Comply with Investigations",
+    "topicId": "7.1.1",
+    "topicName": "Digital Forensics Order of Volatility (RFC 3227), Chain of Custody",
+    "cardType": "cloze_deletion",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Chain of custody",
+      "Hash",
+      "Write blocker",
+      "Bit-stream image"
+    ],
+    "tags": [
+      "forensics"
+    ],
+    "title": "Preserving digital evidence",
+    "prompt": "Complete the evidence handling rules.",
+    "answerSummary": "Image the drive bit for bit through a write blocker, hash the original and the image to prove they match, analyze only the copy, and record every hand-off in the chain of custody (who, what, when, where, why).",
+    "mnemonic": null,
+    "examTrapWarning": "Analyzing the original drive, or a gap in the chain-of-custody record, can make evidence inadmissible.",
+    "clozeTemplate": "Investigators connect the original drive through a {{c1::write blocker::device}}, make a {{c2::bit-stream image::copy type}}, and compute a {{c3::cryptographic hash::integrity check}} of both. Every transfer of the evidence is documented in the {{c4::chain of custody::record}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 19: Investigations and Ethics"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.1-c003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.1",
+    "subdomainName": "Understand and Comply with Investigations",
+    "topicId": "7.1.2",
+    "topicName": "Evidence Types & eDiscovery",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Real evidence",
+      "Documentary evidence",
+      "Testimonial evidence",
+      "Best evidence rule",
+      "Parol evidence rule",
+      "Hearsay"
+    ],
+    "tags": [
+      "evidence"
+    ],
+    "title": "Evidence types and admissibility rules",
+    "prompt": "Describe the main evidence types and the best evidence and parol evidence rules.",
+    "answerSummary": "Real evidence: physical objects (a hard drive). Documentary: written items, including logs; subject to the best evidence rule (original preferred) and parol evidence rule (a written agreement is the whole agreement). Testimonial: witness statements. Demonstrative: charts or models that explain other evidence. Hearsay is second-hand and usually inadmissible, though business records made in the regular course of business are an exception.",
+    "mnemonic": null,
+    "examTrapWarning": "Computer logs are documentary evidence, generally admissible under the business-records exception when generated routinely.",
+    "matrixData": {
+      "headers": [
+        "Type / rule",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Real (object)",
+          "Physical items brought into court, e.g., the seized laptop"
+        ],
+        [
+          "Documentary",
+          "Written items including logs, emails, contracts"
+        ],
+        [
+          "Testimonial",
+          "Witness statements, including expert opinion"
+        ],
+        [
+          "Demonstrative",
+          "Visual aids that explain other evidence"
+        ],
+        [
+          "Best evidence rule",
+          "Original document preferred over copies"
+        ],
+        [
+          "Parol evidence rule",
+          "A written agreement is assumed to be the entire agreement"
+        ],
+        [
+          "Hearsay",
+          "Second-hand statements; generally inadmissible with exceptions"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 19: Investigations and Ethics"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.2-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.2",
+    "subdomainName": "Conduct Logging and Monitoring Activities",
+    "topicId": "7.2.1",
+    "topicName": "SIEM, SOAR, UEBA, NDR, EDR/XDR",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SIEM",
+      "SOAR",
+      "UEBA",
+      "EDR",
+      "XDR"
+    ],
+    "tags": [
+      "monitoring"
+    ],
+    "title": "SIEM vs. SOAR vs. UEBA vs. EDR/XDR",
+    "prompt": "Contrast what SIEM, SOAR, UEBA and EDR/XDR each do.",
+    "answerSummary": "SIEM collects, normalizes and correlates logs to generate alerts. SOAR automates response with playbooks and orchestration across tools. UEBA baselines normal user and entity behavior with analytics to spot anomalies. EDR monitors and responds on endpoints; XDR extends detection and response across endpoints, network, cloud and email.",
+    "mnemonic": null,
+    "examTrapWarning": "\"Automatically isolate a host and open a ticket when an alert fires\" describes SOAR, not SIEM.",
+    "contrastData": {
+      "ruleOfThumb": "SIEM detects, SOAR acts, UEBA spots odd behavior, EDR/XDR watches endpoints and beyond.",
+      "columns": [
+        {
+          "label": "SIEM",
+          "badge": "Correlate",
+          "points": [
+            "Aggregates and normalizes logs",
+            "Correlation rules and alerts",
+            "Retention for investigations"
+          ]
+        },
+        {
+          "label": "SOAR",
+          "badge": "Automate",
+          "points": [
+            "Playbooks and orchestration",
+            "Automated response steps",
+            "Case management"
+          ]
+        },
+        {
+          "label": "UEBA",
+          "badge": "Behavior",
+          "points": [
+            "Baselines users and entities",
+            "Machine learning anomaly detection",
+            "Insider threat, compromised accounts"
+          ]
+        },
+        {
+          "label": "EDR / XDR",
+          "badge": "Endpoints and beyond",
+          "points": [
+            "Endpoint telemetry and response",
+            "XDR spans network, cloud, email",
+            "Host isolation, threat hunting"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.2-c002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.2",
+    "subdomainName": "Conduct Logging and Monitoring Activities",
+    "topicId": "7.2.2",
+    "topicName": "Log Integrity, NTP Synchronization, Egress Monitoring",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "NTP",
+      "Time synchronization",
+      "Log integrity",
+      "Central log server"
+    ],
+    "tags": [
+      "logging"
+    ],
+    "title": "Keeping logs trustworthy",
+    "prompt": "Complete the log integrity requirements.",
+    "answerSummary": "Synchronize all clocks with NTP so events correlate across systems, forward logs to a central server the admins of the source systems cannot alter, and protect them with write-once storage or hashing.",
+    "mnemonic": null,
+    "examTrapWarning": "Unsynchronized clocks make correlation and court timelines unreliable; local logs can be erased by an attacker with admin rights.",
+    "clozeTemplate": "All systems should sync time using {{c1::NTP::protocol}} so events can be {{c2::correlated::analysis}} across sources. Logs should be sent to a {{c3::central log server (SIEM)::destination}} and stored as {{c4::write-once / tamper-evident::storage property}} records.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.3-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.3",
+    "subdomainName": "Configuration Management (CM) & Hardening",
+    "topicId": "7.3.1",
+    "topicName": "Baseline Images, Drift Detection, Asset Inventory",
+    "cardType": "sequence_order",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Configuration identification",
+      "Configuration control",
+      "Status accounting",
+      "Configuration audit",
+      "Baseline"
+    ],
+    "tags": [
+      "configuration-management"
+    ],
+    "title": "Configuration management activities",
+    "prompt": "Order the four configuration management activities.",
+    "answerSummary": "Configuration identification (define and baseline configuration items) → configuration control (manage changes) → configuration status accounting (record and report state) → configuration audit (verify actual matches documented).",
+    "mnemonic": null,
+    "examTrapWarning": "Drift detection is part of auditing: compare the live system against the approved baseline.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Configuration identification",
+          "detail": "Identify configuration items and capture the approved baseline."
+        },
+        {
+          "order": 2,
+          "label": "Configuration control",
+          "detail": "Changes go through change management before being applied."
+        },
+        {
+          "order": 3,
+          "label": "Status accounting",
+          "detail": "Record the current configuration and the history of changes."
+        },
+        {
+          "order": 4,
+          "label": "Configuration audit",
+          "detail": "Periodically verify systems match the baseline; detect drift."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.4-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.4",
+    "subdomainName": "Apply Foundational Security Operations Concepts",
+    "topicId": "7.4.1",
+    "topicName": "Need-to-Know, Least Privilege, Separation of Duties, Dual Control, Split Knowledge",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Need to know",
+      "Least privilege"
+    ],
+    "tags": [
+      "secops-concepts"
+    ],
+    "title": "Need to know vs. least privilege",
+    "prompt": "Distinguish need to know from least privilege.",
+    "answerSummary": "Need to know limits which information a person may access, even if they have the clearance, to what their current work requires. Least privilege limits the rights and permissions (actions) a subject has to the minimum needed.",
+    "mnemonic": null,
+    "examTrapWarning": "A Top Secret-cleared analyst still cannot read a Top Secret file outside their project: that is need to know.",
+    "contrastData": {
+      "ruleOfThumb": "Need to know = which data; least privilege = which actions.",
+      "columns": [
+        {
+          "label": "Need to know",
+          "badge": "Information",
+          "points": [
+            "Access only to data required for the task",
+            "Applies even with sufficient clearance",
+            "Often enforced by compartments"
+          ]
+        },
+        {
+          "label": "Least privilege",
+          "badge": "Rights",
+          "points": [
+            "Minimum permissions and actions",
+            "Applies to users, services and processes",
+            "Limits damage from compromise"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.4-c002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.4",
+    "subdomainName": "Apply Foundational Security Operations Concepts",
+    "topicId": "7.4.1",
+    "topicName": "Need-to-Know, Least Privilege, Separation of Duties, Dual Control, Split Knowledge",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Dual control",
+      "Split knowledge",
+      "Two-person integrity"
+    ],
+    "tags": [
+      "secops-concepts"
+    ],
+    "title": "Dual control vs. split knowledge",
+    "prompt": "Contrast dual control and split knowledge with an example of each.",
+    "answerSummary": "Dual control requires two people to act together to complete an operation (two keys to open a vault or launch a system). Split knowledge gives each person only part of a secret so no one knows the whole thing (key custodians each holding a key fragment).",
+    "mnemonic": null,
+    "examTrapWarning": "Both are often used together for master key recovery; the question will say whether people act together (dual control) or each hold a piece (split knowledge).",
+    "contrastData": {
+      "ruleOfThumb": "Dual control = two people act; split knowledge = no one knows it all.",
+      "columns": [
+        {
+          "label": "Dual control",
+          "badge": "Two people act",
+          "points": [
+            "Both must participate at the same time",
+            "Example: two keys for a safe",
+            "Prevents one person acting alone"
+          ]
+        },
+        {
+          "label": "Split knowledge",
+          "badge": "Secret divided",
+          "points": [
+            "Each person holds part of the secret",
+            "Example: key fragments for a master key",
+            "Nobody knows the full value"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.6-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.6",
+    "subdomainName": "Conduct Incident Management",
+    "topicId": "7.6.1",
+    "topicName": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Incident response",
+      "Detection",
+      "Response",
+      "Mitigation",
+      "Reporting",
+      "Recovery",
+      "Remediation",
+      "Lessons learned"
+    ],
+    "tags": [
+      "incident-response"
+    ],
+    "title": "Incident management steps (CISSP CBK)",
+    "prompt": "Order the seven incident management steps used in the CISSP CBK.",
+    "answerSummary": "Detection → Response → Mitigation → Reporting → Recovery → Remediation → Lessons learned.",
+    "mnemonic": "DRMRRRL: \"Don't Run, Mitigate; Report, Recover, Remediate, Learn.\"",
+    "examTrapWarning": "Mitigation (containment) comes before recovery, and remediation (root cause fix) comes after recovery. Reporting starts early and continues throughout.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Detection",
+          "detail": "Identify a possible incident from alerts, logs or reports."
+        },
+        {
+          "order": 2,
+          "label": "Response",
+          "detail": "Activate the incident response team and begin investigation."
+        },
+        {
+          "order": 3,
+          "label": "Mitigation",
+          "detail": "Contain the incident to limit damage."
+        },
+        {
+          "order": 4,
+          "label": "Reporting",
+          "detail": "Report to management and, where required, regulators and affected parties."
+        },
+        {
+          "order": 5,
+          "label": "Recovery",
+          "detail": "Return systems to normal operation."
+        },
+        {
+          "order": 6,
+          "label": "Remediation",
+          "detail": "Find the root cause and fix it to prevent recurrence."
+        },
+        {
+          "order": 7,
+          "label": "Lessons learned",
+          "detail": "Review what happened and improve the process."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.6-c002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.6",
+    "subdomainName": "Conduct Incident Management",
+    "topicId": "7.6.1",
+    "topicName": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)",
+    "cardType": "sequence_order",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "NIST SP 800-61",
+      "Preparation",
+      "Detection and analysis",
+      "Containment, eradication and recovery",
+      "Post-incident activity"
+    ],
+    "tags": [
+      "incident-response",
+      "nist"
+    ],
+    "title": "NIST SP 800-61 incident response lifecycle",
+    "prompt": "Order the four phases of the NIST SP 800-61 Rev. 2 lifecycle.",
+    "answerSummary": "Preparation → Detection and analysis → Containment, eradication and recovery → Post-incident activity (lessons learned), with a feedback loop back to preparation.",
+    "mnemonic": null,
+    "examTrapWarning": "Rev. 3 (2025) reorganized guidance around the CSF 2.0 functions, but the four-phase lifecycle is still the classic exam answer.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Preparation",
+          "detail": "Policies, team, tools, training and prevention."
+        },
+        {
+          "order": 2,
+          "label": "Detection and analysis",
+          "detail": "Identify, validate, prioritize and document incidents."
+        },
+        {
+          "order": 3,
+          "label": "Containment, eradication and recovery",
+          "detail": "Limit damage, remove the cause, restore systems."
+        },
+        {
+          "order": 4,
+          "label": "Post-incident activity",
+          "detail": "Lessons learned, evidence retention, process improvement."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-61 Rev. 2",
+        "section": "Computer Security Incident Handling Guide"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.6-c003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.6",
+    "subdomainName": "Conduct Incident Management",
+    "topicId": "7.6.1",
+    "topicName": "Incident Response Lifecycle (Detection, Triage, Containment, Eradication, Recovery, Lessons Learned)",
+    "cardType": "manager_heuristic",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase",
+      "technical_fix_over_process"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Containment",
+      "Eradication",
+      "Evidence preservation"
+    ],
+    "tags": [
+      "incident-response"
+    ],
+    "title": "Ransomware on a file server: what first?",
+    "prompt": "A file server is encrypting shares and beaconing to an unknown IP. An engineer wants to wipe and rebuild it immediately. What is the right move?",
+    "answerSummary": "Contain first: isolate the server from the network (without powering it off) to stop the spread while preserving volatile evidence. Then follow the IR plan: notify the team and management, collect evidence, eradicate the cause, recover from clean backups, and remediate.",
+    "mnemonic": null,
+    "examTrapWarning": "Wiping or rebuilding first destroys evidence and may miss other infected hosts. Pulling the power loses memory artifacts.",
+    "heuristicData": {
+      "technicalReflexTrap": "Immediately reformat and rebuild the server, or pull the power cord.",
+      "managerAction": "Invoke the incident response plan: isolate the host from the network, preserve evidence, inform stakeholders, then eradicate and recover from known-good backups.",
+      "governingPrinciple": "Containment precedes eradication and recovery; evidence must be preserved for root cause analysis and possible legal action."
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-61 Rev. 2",
+        "section": "Computer Security Incident Handling Guide"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.7-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.7",
+    "subdomainName": "Operate and Maintain Detective and Preventative Measures",
+    "topicId": "7.7.1",
+    "topicName": "IDS/IPS (Signature vs. Anomaly), Honeypots, Sandboxing",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Signature-based detection",
+      "Anomaly-based detection",
+      "Zero-day",
+      "IDS",
+      "IPS"
+    ],
+    "tags": [
+      "ids-ips"
+    ],
+    "title": "Signature-based vs. anomaly-based detection",
+    "prompt": "Contrast signature-based and anomaly (behavior)-based detection.",
+    "answerSummary": "Signature-based detection matches known attack patterns: few false positives but misses zero-days and needs constant updates. Anomaly-based detection compares activity to a learned baseline: can catch zero-days but has more false positives and needs a clean baseline.",
+    "mnemonic": null,
+    "examTrapWarning": "To detect a never-seen-before attack, choose anomaly/behavior-based detection.",
+    "contrastData": {
+      "ruleOfThumb": "Known attacks → signature. Unknown attacks → anomaly.",
+      "columns": [
+        {
+          "label": "Signature-based",
+          "badge": "Knowledge-based",
+          "points": [
+            "Matches known patterns",
+            "Low false positives",
+            "Misses zero-days; needs updates"
+          ]
+        },
+        {
+          "label": "Anomaly-based",
+          "badge": "Behavior-based",
+          "points": [
+            "Compares to a normal baseline",
+            "Can detect zero-days",
+            "Higher false positives"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.7-c002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.7",
+    "subdomainName": "Operate and Maintain Detective and Preventative Measures",
+    "topicId": "7.7.1",
+    "topicName": "IDS/IPS (Signature vs. Anomaly), Honeypots, Sandboxing",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "IDS",
+      "IPS",
+      "Inline",
+      "Passive"
+    ],
+    "tags": [
+      "ids-ips"
+    ],
+    "title": "IDS vs. IPS placement",
+    "prompt": "Complete the IDS and IPS distinction.",
+    "answerSummary": "An IDS is passive: it monitors a copy of traffic (SPAN or tap) and alerts. An IPS sits inline and can block traffic in real time, so a failure or false positive can disrupt legitimate traffic.",
+    "mnemonic": null,
+    "examTrapWarning": "Only an inline IPS can stop an attack in progress; an IDS can only alert (or trigger other devices).",
+    "clozeTemplate": "An {{c1::IDS::system}} monitors a copy of traffic and only alerts, while an {{c2::IPS::system}} is placed {{c3::inline::placement}} and can block malicious traffic, at the risk of dropping legitimate traffic on a {{c4::false positive::error type}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.7-c003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.7",
+    "subdomainName": "Operate and Maintain Detective and Preventative Measures",
+    "topicId": "7.7.1",
+    "topicName": "IDS/IPS (Signature vs. Anomaly), Honeypots, Sandboxing",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "premature_escalation"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Enticement",
+      "Entrapment",
+      "Honeypot"
+    ],
+    "tags": [
+      "honeypot",
+      "legal"
+    ],
+    "title": "Enticement vs. entrapment",
+    "prompt": "Distinguish enticement from entrapment in the context of honeypots.",
+    "answerSummary": "Enticement makes an attractive target available to someone who already intends to attack (a honeypot on the network); it is legal and ethical. Entrapment persuades someone who had no intent to commit a crime; it is illegal and evidence gathered this way is unusable.",
+    "mnemonic": null,
+    "examTrapWarning": "Advertising \"free hacking target, come break in\" in an online forum moves from enticement toward entrapment.",
+    "contrastData": {
+      "ruleOfThumb": "Enticement lures the already-willing; entrapment creates the intent.",
+      "columns": [
+        {
+          "label": "Enticement",
+          "badge": "Legal",
+          "points": [
+            "Passive lure, e.g., honeypot or honeynet",
+            "Attacker already intends to attack",
+            "Evidence can be used"
+          ]
+        },
+        {
+          "label": "Entrapment",
+          "badge": "Illegal",
+          "points": [
+            "Induces someone to commit a crime",
+            "No prior intent",
+            "Evidence inadmissible"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 17: Preventing and Responding to Incidents"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.9-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.9",
+    "subdomainName": "Understand and Participate in Change Management Processes",
+    "topicId": "7.9.1",
+    "topicName": "CAB Approval, Rollback Plans, Emergency Change Procedures",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Change management",
+      "CAB",
+      "Rollback plan",
+      "Change request"
+    ],
+    "tags": [
+      "change-management"
+    ],
+    "title": "Change management process",
+    "prompt": "Order the steps of a standard change management process.",
+    "answerSummary": "Request the change → review impact and risk → approve (CAB) → test in a non-production environment → schedule and implement with a rollback plan → verify and document.",
+    "mnemonic": null,
+    "examTrapWarning": "Testing happens before deployment and after approval to test; documentation updates are part of closing the change, not optional.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Request",
+          "detail": "Submit a change request describing the change and its reason."
+        },
+        {
+          "order": 2,
+          "label": "Review impact and risk",
+          "detail": "Assess security, operational and business impact."
+        },
+        {
+          "order": 3,
+          "label": "Approve",
+          "detail": "Change advisory board approves, rejects or requests changes."
+        },
+        {
+          "order": 4,
+          "label": "Test",
+          "detail": "Validate in a lab or staging environment."
+        },
+        {
+          "order": 5,
+          "label": "Implement with rollback plan",
+          "detail": "Deploy in a scheduled window with a tested back-out plan."
+        },
+        {
+          "order": 6,
+          "label": "Verify and document",
+          "detail": "Confirm success and update configuration records."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.8-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.8",
+    "subdomainName": "Implement and Support Patch and Vulnerability Management",
+    "topicId": "7.8.1",
+    "topicName": "Patch Testing, Emergency Out-of-Band Patching, Virtual Patching",
+    "cardType": "manager_heuristic",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Emergency change",
+      "Out-of-band patch",
+      "Virtual patching",
+      "CAB"
+    ],
+    "tags": [
+      "patching",
+      "change-management"
+    ],
+    "title": "Emergency patch for an actively exploited flaw",
+    "prompt": "A critical vulnerability is being exploited in the wild and the CAB does not meet until next week. How do you handle the patch?",
+    "answerSummary": "Use the emergency change procedure: get approval from the designated emergency authority, apply a virtual patch (WAF/IPS rule) if the fix cannot be tested quickly, test the patch as much as time allows, deploy with a rollback plan, and submit it for retroactive CAB review and documentation.",
+    "mnemonic": null,
+    "examTrapWarning": "Bypassing change management entirely is wrong, and so is waiting a week. Emergency changes still get documented and reviewed.",
+    "heuristicData": {
+      "technicalReflexTrap": "Push the patch straight to all production servers tonight without telling anyone, or wait for next week's CAB.",
+      "managerAction": "Follow the documented emergency change process: expedited approval, compensating controls such as virtual patching, limited testing, rollback plan, then retroactive CAB review.",
+      "governingPrinciple": "Change management applies to emergencies too, through a faster documented path."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.10-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.1",
+    "topicName": "Backup Types (Full, Incremental, Differential), 3-2-1 Rule, Immutable Backups",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Full backup",
+      "Incremental backup",
+      "Differential backup",
+      "Archive bit"
+    ],
+    "tags": [
+      "backups"
+    ],
+    "title": "Full vs. incremental vs. differential backups",
+    "prompt": "Compare full, incremental and differential backups: what they copy, the archive bit, and what a restore needs.",
+    "answerSummary": "Full: copies everything and clears the archive bit; slowest backup, fastest restore. Incremental: copies changes since the last backup of any kind and clears the bit; fastest backup, restore needs the last full plus every incremental. Differential: copies changes since the last full and leaves the bit set; restore needs the last full plus the latest differential.",
+    "mnemonic": "Incremental = since the last of anything; Differential = Difference from the full.",
+    "examTrapWarning": "If a question asks for the fewest tapes to restore after a crash, full + latest differential (two sets) beats full + all incrementals.",
+    "matrixData": {
+      "headers": [
+        "Type",
+        "Copies",
+        "Archive bit",
+        "Restore needs"
+      ],
+      "rows": [
+        [
+          "Full",
+          "All selected data",
+          "Cleared",
+          "Last full only"
+        ],
+        [
+          "Incremental",
+          "Changes since last backup of any type",
+          "Cleared",
+          "Last full + every incremental since"
+        ],
+        [
+          "Differential",
+          "Changes since last full",
+          "Not cleared",
+          "Last full + latest differential"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 18: Disaster Recovery Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.10-c002",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.1",
+    "topicName": "Backup Types (Full, Incremental, Differential), 3-2-1 Rule, Immutable Backups",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "3-2-1 rule",
+      "Immutable backup",
+      "Offsite",
+      "Air gap"
+    ],
+    "tags": [
+      "backups",
+      "ransomware"
+    ],
+    "title": "The 3-2-1 backup rule",
+    "prompt": "Complete the 3-2-1 rule and its modern ransomware extension.",
+    "answerSummary": "Keep 3 copies of data on 2 different media types, with 1 copy offsite. The 3-2-1-1-0 extension adds 1 immutable or air-gapped copy and 0 errors after restore verification.",
+    "mnemonic": null,
+    "examTrapWarning": "Backups that are always online and writable by domain admins will be encrypted by ransomware too. You need an immutable or offline copy, and restores must be tested.",
+    "clozeTemplate": "The 3-2-1 rule: keep {{c1::3::copies}} copies of data on {{c2::2::media types}} different media, with {{c3::1::offsite}} copy offsite. Ransomware resilience adds one {{c4::immutable or air-gapped::protection}} copy and verified restores with zero errors.",
+    "references": [
+      {
+        "source": "CISA #StopRansomware Guide",
+        "section": "Backups"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 18: Disaster Recovery Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.10-c003",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.2",
+    "topicName": "Recovery Sites (Cold, Warm, Hot, Mirrored), RAID Levels",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "cost_disproportionate",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Mirrored site",
+      "Hot site",
+      "Warm site",
+      "Cold site",
+      "Mobile site"
+    ],
+    "tags": [
+      "recovery-sites"
+    ],
+    "title": "Recovery site options",
+    "prompt": "Compare mirrored, hot, warm and cold sites by readiness, recovery time and cost.",
+    "answerSummary": "Mirrored: fully redundant live site, seconds to minutes, highest cost. Hot: equipped with current data, hours. Warm: hardware and connectivity but data must be restored, roughly a day or more. Cold: space, power and HVAC only, weeks, cheapest.",
+    "mnemonic": null,
+    "examTrapWarning": "Choose the cheapest site whose recovery time still meets the RTO; a hot site for an RTO of two weeks is cost-disproportionate.",
+    "matrixData": {
+      "headers": [
+        "Site",
+        "Ready with",
+        "Typical recovery time",
+        "Cost"
+      ],
+      "rows": [
+        [
+          "Mirrored / redundant",
+          "Live duplicate processing",
+          "Seconds to minutes",
+          "Highest"
+        ],
+        [
+          "Hot",
+          "Equipment + current data",
+          "Hours",
+          "High"
+        ],
+        [
+          "Warm",
+          "Equipment + connectivity, no current data",
+          "About 1–3 days",
+          "Medium"
+        ],
+        [
+          "Cold",
+          "Space, power, HVAC only",
+          "Weeks",
+          "Lowest"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 18: Disaster Recovery Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.10-c004",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.2",
+    "topicName": "Recovery Sites (Cold, Warm, Hot, Mirrored), RAID Levels",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "apply",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "RAID 0",
+      "RAID 1",
+      "RAID 5",
+      "RAID 6",
+      "RAID 10",
+      "Parity"
+    ],
+    "tags": [
+      "raid"
+    ],
+    "title": "RAID levels",
+    "prompt": "For RAID 0, 1, 5, 6 and 10, give the technique, minimum disks and number of disk failures survived.",
+    "answerSummary": "RAID 0: striping, 2 disks, no fault tolerance. RAID 1: mirroring, 2 disks, survives 1. RAID 5: striping with distributed parity, 3 disks, survives 1. RAID 6: dual parity, 4 disks, survives 2. RAID 10: mirrored stripes, 4 disks, survives at least 1 (one per mirror pair).",
+    "mnemonic": null,
+    "examTrapWarning": "RAID 0 adds performance only, no redundancy. RAID is fault tolerance, not a backup: deletion or ransomware is replicated instantly.",
+    "matrixData": {
+      "headers": [
+        "Level",
+        "Technique",
+        "Min disks",
+        "Failures tolerated"
+      ],
+      "rows": [
+        [
+          "RAID 0",
+          "Striping",
+          "2",
+          "0"
+        ],
+        [
+          "RAID 1",
+          "Mirroring",
+          "2",
+          "1"
+        ],
+        [
+          "RAID 5",
+          "Striping + single distributed parity",
+          "3",
+          "1"
+        ],
+        [
+          "RAID 6",
+          "Striping + dual parity",
+          "4",
+          "2"
+        ],
+        [
+          "RAID 10 (1+0)",
+          "Stripe of mirrors",
+          "4",
+          "1 per mirror pair"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 18: Disaster Recovery Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.12-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.12",
+    "subdomainName": "Test Disaster Recovery Plans",
+    "topicId": "7.12.1",
+    "topicName": "DR Test Types: Read-Through, Walkthrough, Simulation, Parallel, Full-Interruption",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase",
+      "cost_disproportionate"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Read-through",
+      "Walkthrough",
+      "Simulation",
+      "Parallel test",
+      "Full-interruption test"
+    ],
+    "tags": [
+      "dr-testing"
+    ],
+    "title": "DR test types from least to most disruptive",
+    "prompt": "Order the five disaster recovery test types from least to most disruptive.",
+    "answerSummary": "Read-through (checklist) → structured walkthrough (tabletop) → simulation → parallel test → full-interruption test.",
+    "mnemonic": null,
+    "examTrapWarning": "A parallel test runs the backup site without shutting down the primary. Full interruption actually shuts the primary down and needs senior management approval.",
+    "sequenceData": {
+      "directionLabel": "Least → most disruptive",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Read-through / checklist",
+          "detail": "Team members review the plan on their own."
+        },
+        {
+          "order": 2,
+          "label": "Structured walkthrough / tabletop",
+          "detail": "Team discusses a scenario together around a table."
+        },
+        {
+          "order": 3,
+          "label": "Simulation",
+          "detail": "Practice responding to a scenario without activating the alternate site."
+        },
+        {
+          "order": 4,
+          "label": "Parallel test",
+          "detail": "Activate the recovery site and process alongside the primary, which keeps running."
+        },
+        {
+          "order": 5,
+          "label": "Full interruption",
+          "detail": "Shut down the primary and run entirely from the recovery site."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 18: Disaster Recovery Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.15-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.15",
+    "subdomainName": "Address Personnel Safety and Security Concerns",
+    "topicId": "7.15.1",
+    "topicName": "Duress Alarms, Travel Security, Emergency Assembly Points (Human Safety First)",
+    "cardType": "manager_heuristic",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "ignores_human_safety"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Life safety",
+      "Evacuation",
+      "Duress"
+    ],
+    "tags": [
+      "personnel-safety"
+    ],
+    "title": "Fire alarm during a server migration",
+    "prompt": "The fire alarm sounds while you are halfway through migrating the production database. What do you do?",
+    "answerSummary": "Evacuate immediately and account for people at the assembly point. Human life always comes before systems, data or finishing the task.",
+    "mnemonic": null,
+    "examTrapWarning": "Any answer that delays evacuation to save data, shut down servers gracefully or grab backup tapes is wrong.",
+    "heuristicData": {
+      "technicalReflexTrap": "Stay a few minutes to finish the migration or gracefully shut down the servers before leaving.",
+      "managerAction": "Leave immediately using the evacuation plan, help others out, report to the assembly point; recovery of systems happens later under the DR plan.",
+      "governingPrinciple": "Human safety is always the first priority in every CISSP scenario."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d7-s7.14-c001",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.14",
+    "subdomainName": "Implement and Manage Physical Security",
+    "topicId": "7.14.1",
+    "topicName": "Visitor Logs, Escorts, Tailgating Prevention, Guard Operations",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "understand",
+    "perspective": "incident_responder",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Tailgating",
+      "Piggybacking",
+      "Mantrap",
+      "Access control vestibule"
+    ],
+    "tags": [
+      "physical"
+    ],
+    "title": "Tailgating vs. piggybacking",
+    "prompt": "Distinguish tailgating from piggybacking and name a control.",
+    "answerSummary": "Tailgating: an unauthorized person slips in behind an authorized person without their knowledge. Piggybacking: the authorized person knowingly lets them in (holding the door). Access control vestibules (mantraps), turnstiles, guards and awareness training counter both.",
+    "mnemonic": null,
+    "examTrapWarning": "Some sources use the terms interchangeably; CISSP distinguishes them by whether the authorized person consented.",
+    "contrastData": {
+      "ruleOfThumb": "Consent is the difference.",
+      "columns": [
+        {
+          "label": "Tailgating",
+          "badge": "Without consent",
+          "points": [
+            "Follows closely through a door",
+            "Authorized person unaware",
+            "Countered by mantraps and turnstiles"
+          ]
+        },
+        {
+          "label": "Piggybacking",
+          "badge": "With consent",
+          "points": [
+            "Authorized person holds the door",
+            "Often social engineering (\"forgot my badge\")",
+            "Countered by policy and awareness training"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      }
+    ]
+  }
+]
