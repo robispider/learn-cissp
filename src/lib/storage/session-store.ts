@@ -2,6 +2,7 @@ import { db, setActiveSessionPointer } from './db';
 import { buildOptionOrders, shuffleArray } from '../exam-engine/shuffler';
 import { computeDiagnosticReport } from '../analytics/gap-calculator';
 import { recordQuestionAttemptsAndMastery } from './mastery-store';
+import { syncExamGapsToMemoryCards } from '../memorization/exam-bridge';
 import type { HydratedExamPayload, Question } from '../types/question';
 import type {
   ActiveSessionPointer,
@@ -317,6 +318,7 @@ export async function completeExamSession(
 
   await db.exam_sessions.put(completed);
   await recordQuestionAttemptsAndMastery(completed, questions);
+  await syncExamGapsToMemoryCards(completed, questions);
   setActiveSessionPointer(null);
 
   return completed;

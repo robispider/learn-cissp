@@ -1,11 +1,13 @@
 # Agent Instructions — `learn-cissp`
 
-Welcome, Agent. Before writing code, creating exams, or authoring CISSP question JSON files in this repository, **you must read and follow the two canonical specification documents**:
+Welcome, Agent. Before writing code, creating exams, or authoring CISSP question or memory card JSON files in this repository, **you must read and follow the canonical specification documents**:
 
 1. **[Vision & Agent Playbook (`docs/VISION_AND_AGENT_PLAYBOOK.md`)](file:///D:/git/learn-cissp/docs/VISION_AND_AGENT_PLAYBOOK.md)**
    - Defines the Astro 5 static architecture, React 19 interactive islands, IndexedDB + `localStorage` browser persistence engine (resume/pause/review), diagnostic scoring formulas, and the 5 required post-exam graphical summary charts.
 2. **[Question & Exam Data Specification (`docs/QUESTION_DATA_SPEC.md`)](file:///D:/git/learn-cissp/docs/QUESTION_DATA_SPEC.md)**
    - Defines the official 8 ISC2 CISSP Domains (`dom-1`..`dom-8`), Sub-domains (`1.1`..`8.5`), Micro-Topics, the self-indicating JSON question schema, distractor `trapType` tags, per-option answer explanations, and `DiagnosticReport` output contract.
+3. **[Memorization & Spaced Repetition Specification (`docs/MEMORIZATION_AND_SRS_SPEC.md`)](file:///D:/git/learn-cissp/docs/MEMORIZATION_AND_SRS_SPEC.md)**
+   - Defines the hybrid FSRS-6 (`ts-fsrs`) + DASH exam-coupling spaced repetition architecture, IndexedDB v2 schema (`memory_cards_state` & `memory_review_logs`), the 6 CISSP memory card archetypes + `MemoryCardSchema`, and the complete 8-domain / 58-subdomain memorization content blueprint.
 
 ---
 

@@ -6,11 +6,17 @@ import type {
   TopicMasteryRecord,
   UserPreferences,
 } from '../types/session';
+import type {
+  MemoryCardStateRecord,
+  MemoryReviewLogRecord,
+} from '../types/memory';
 
 export class CisspLearningDB extends Dexie {
   exam_sessions!: Table<ExamSessionRecord, string>;
   question_attempts!: Table<QuestionAttemptRecord, string>;
   topic_mastery!: Table<TopicMasteryRecord, string>;
+  memory_cards_state!: Table<MemoryCardStateRecord, string>;
+  memory_review_logs!: Table<MemoryReviewLogRecord, string>;
 
   constructor() {
     super('cissp_learning_db');
@@ -20,6 +26,17 @@ export class CisspLearningDB extends Dexie {
       question_attempts:
         'attemptId, sessionId, examId, questionId, domainId, subdomainId, topicId, timestamp, isCorrect',
       topic_mastery: 'key, level, domainId, subdomainId, masteryTier',
+    });
+    this.version(2).stores({
+      exam_sessions:
+        'sessionId, examId, domainId, subdomainId, status, startedAt, updatedAt',
+      question_attempts:
+        'attemptId, sessionId, examId, questionId, domainId, subdomainId, topicId, timestamp, isCorrect',
+      topic_mastery: 'key, level, domainId, subdomainId, masteryTier',
+      memory_cards_state:
+        'cardId, domainId, subdomainId, topicId, state, dueAt, unlockedByExamGap, [domainId+state]',
+      memory_review_logs:
+        'logId, cardId, domainId, subdomainId, reviewedAt',
     });
   }
 }
