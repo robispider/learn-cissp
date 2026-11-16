@@ -1,0 +1,11 @@
+---
+import AppShell from '../../components/layout/AppShell.astro';
+import CardLab from '../../components/memorize/CardLab';
+---
+
+<AppShell
+  title="Card Lab — Learn CISSP"
+  description="Preview visual, animated and custom memory cards through the learn, recall and check steps without changing your review schedule."
+>
+  <CardLab client:only="react" />
+</AppShell>

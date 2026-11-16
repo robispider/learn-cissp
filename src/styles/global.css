@@ -106,3 +106,59 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.45);
 }
+
+/* ------------------------------------------------------------------------- */
+/* Memorize: card learning animations (src/components/memorize/cards)          */
+/* ------------------------------------------------------------------------- */
+@keyframes mem-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes mem-pop {
+  0% { opacity: 0; transform: scale(0.85); }
+  60% { opacity: 1; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes mem-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+@keyframes mem-draw {
+  from { stroke-dashoffset: var(--mem-len, 400); }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes mem-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(139 92 246 / 0); }
+  50% { box-shadow: 0 0 0 6px rgb(139 92 246 / 0.18); }
+}
+@keyframes mem-stamp {
+  0% { opacity: 0; transform: scale(2.2) rotate(-14deg); }
+  70% { opacity: 1; transform: scale(0.95) rotate(-14deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-14deg); }
+}
+@keyframes mem-grow-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes mem-drop {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.mem-fade-up { animation: mem-fade-up 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.mem-pop { animation: mem-pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.mem-shake { animation: mem-shake 0.4s ease-in-out; }
+.mem-draw { stroke-dasharray: var(--mem-len, 400); animation: mem-draw 0.7s ease-out both; }
+.mem-glow { animation: mem-glow 1.6s ease-in-out infinite; }
+.mem-stamp { animation: mem-stamp 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.mem-drop { animation: mem-drop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mem-fade-up, .mem-pop, .mem-shake, .mem-draw, .mem-glow, .mem-stamp, .mem-drop {
+    animation: none !important;
+  }
+  .mem-draw { stroke-dasharray: none; }
+}

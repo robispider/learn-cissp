@@ -4,7 +4,7 @@ import {
   ArrowLeft,
   CheckCircle2,
   Clock,
-  Eye,
+  Gamepad2,
   PauseCircle,
   Pin,
   RotateCcw,
@@ -15,6 +15,7 @@ import {
   computeCurrentRetrievability,
   formatIntervalDiff,
   previewCardRatings,
+  saveFsrsPreferences,
 } from '../../lib/memorization/fsrs-engine';
 import { buildStudyQueue, type QueueFilterOptions } from '../../lib/memorization/queue-builder';
 import { buildMemorySessionQuery, useMemoryData } from '../../lib/memorization/use-memory-data';
@@ -37,7 +38,8 @@ import {
 import { domainTheme } from '../../lib/ui/domain-theme';
 import { withBase } from '../../lib/paths';
 import { btnPrimary, btnSecondary } from '../ui/primitives';
-import CardArchetypeRenderer from './CardArchetypeRenderer';
+import CardStage, { recallModeFor, type StagePhase } from './cards/CardStage';
+import { resultPercent, suggestGrade, type RecallResult } from './cards/types';
 
 interface Props {
   domains: MemoryDomainMeta[];
@@ -60,6 +62,14 @@ interface QueueItem {
   bucket: QueueBucket;
   /** Re-shown in this session after an Again/Hard on a learning step. */
   repeat: boolean;
+  /** Forgotten (graded Again): re-study the visual before testing again (successive relearning). */
+  relearn?: boolean;
+}
+
+/** New cards and just-forgotten cards start on the Learn step; reviews go straight to recall. */
+function initialPhase(item: QueueItem, st: MemoryCardStateRecord | undefined): StagePhase {
+  const isNew = !st || st.state === 0;
+  return isNew || item.relearn ? 'learn' : 'recall';
 }
 
 /** Learning-step cards due within this window are shown again before the session ends. */
@@ -134,7 +144,9 @@ export default function FlashcardRunner({ domains }: Props) {
   const [params, setParams] = useState<SessionParams | null>(null);
   const [queue, setQueue] = useState<QueueItem[] | null>(null);
   const [idx, setIdx] = useState(0);
-  const [revealed, setRevealed] = useState(false);
+  const [phaseState, setPhaseState] = useState<{ idx: number; phase: StagePhase; learned: boolean } | null>(null);
+  const [result, setResult] = useState<RecallResult | null>(null);
+  const [gameScores, setGameScores] = useState<number[]>([]);
   const [showMnemonic, setShowMnemonic] = useState(false);
   const [liveStates, setLiveStates] = useState<Map<string, MemoryCardStateRecord>>(new Map());
   const [gradeCounts, setGradeCounts] = useState<Record<FsrsGrade, number>>({ 1: 0, 2: 0, 3: 0, 4: 0 });
@@ -167,6 +179,15 @@ export default function FlashcardRunner({ domains }: Props) {
 
   const current = queue && idx < queue.length ? queue[idx] : null;
   const currentState = current ? liveStates.get(current.card.id) : undefined;
+  const gamesEnabled = prefs.interactiveOrderMode;
+
+  // Phase is derived for a freshly shown card, then owned by state once the learner acts.
+  const defaultPhase: StagePhase = current ? initialPhase(current, currentState) : 'recall';
+  const phase: StagePhase = phaseState && phaseState.idx === idx ? phaseState.phase : defaultPhase;
+  const learnedNow = phaseState && phaseState.idx === idx ? phaseState.learned : defaultPhase === 'learn';
+  const revealed = phase === 'feedback';
+  const recallMode = current ? recallModeFor(current.card, gamesEnabled) : null;
+  const suggested = revealed ? suggestGrade(result, learnedNow) : null;
   const finished = Boolean(queue && queue.length > 0 && idx >= queue.length);
 
   useEffect(() => {
@@ -180,17 +201,35 @@ export default function FlashcardRunner({ domains }: Props) {
 
   const advance = useCallback(() => {
     setIdx((i) => i + 1);
-    setRevealed(false);
+    setResult(null);
     setShowMnemonic(false);
     setSaveError(null);
     shownAtRef.current = Date.now();
     window.scrollTo({ top: 0 });
   }, []);
 
+  const beginRecall = useCallback(() => {
+    if (!current || phase !== 'learn') return;
+    setPhaseState({ idx, phase: 'recall', learned: true });
+    setShowMnemonic(false);
+  }, [current, phase, idx]);
+
+  const completeRecall = useCallback(
+    (r: RecallResult) => {
+      if (!current || phase !== 'recall') return;
+      // Peeking at the memory hook during recall counts as a hint.
+      const final = showMnemonic && !r.selfRated ? { ...r, hintsUsed: r.hintsUsed + 1 } : r;
+      setResult(final);
+      if (!final.selfRated && final.total > 0) setGameScores((g) => [...g, resultPercent(final)]);
+      setPhaseState({ idx, phase: 'feedback', learned: learnedNow });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    [current, phase, idx, learnedNow, showMnemonic]
+  );
+
   const reveal = useCallback(() => {
-    if (!current || revealed) return;
-    setRevealed(true);
-  }, [current, revealed]);
+    completeRecall({ correct: 0, total: 0, hintsUsed: 0, durationMs: Date.now() - shownAtRef.current, selfRated: true });
+  }, [completeRecall]);
 
   const grade = useCallback(
     async (g: FsrsGrade) => {
@@ -212,7 +251,7 @@ export default function FlashcardRunner({ domains }: Props) {
             if (!prev) return prev;
             const next = [...prev];
             const at = Math.min(next.length, idx + 1 + REQUEUE_GAP);
-            next.splice(at, 0, { card: current.card, bucket: 'learning_due', repeat: true });
+            next.splice(at, 0, { card: current.card, bucket: 'learning_due', repeat: true, relearn: g === 1 });
             return next;
           });
         }
@@ -252,9 +291,17 @@ export default function FlashcardRunner({ domains }: Props) {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!current) return;
       if (e.key === ' ' || e.key === 'Enter') {
-        if (!revealed) {
+        // Let focused buttons (game choices, playback controls) handle their own activation.
+        if (t?.tagName === 'BUTTON' || t?.tagName === 'A') return;
+        if (phase === 'learn') {
+          e.preventDefault();
+          beginRecall();
+        } else if (phase === 'recall' && recallMode?.kind === 'self') {
           e.preventDefault();
           reveal();
+        } else if (phase === 'feedback' && suggested) {
+          e.preventDefault();
+          void grade(suggested);
         }
         return;
       }
@@ -264,13 +311,13 @@ export default function FlashcardRunner({ domains }: Props) {
         return;
       }
       const k = e.key.toLowerCase();
-      if (k === 'm') setShowMnemonic((v) => !v);
+      if (k === 'm' && phase === 'recall') setShowMnemonic(true);
       else if (k === 'p') void togglePin();
       else if (k === 's') void suspend();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [current, revealed, reveal, grade, togglePin, suspend]);
+  }, [current, phase, revealed, recallMode, suggested, beginRecall, reveal, grade, togglePin, suspend]);
 
   /* ---------------------------------------------------------------- */
   /* Loading / empty / finished states                                */
@@ -342,9 +389,13 @@ export default function FlashcardRunner({ domains }: Props) {
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           {params ? sessionTitle(params, domains) : ''}
         </p>
-        <div className="mx-auto mt-6 grid max-w-lg grid-cols-3 gap-3">
+        <div className="mx-auto mt-6 grid max-w-lg grid-cols-2 gap-3 sm:grid-cols-4">
           <Stat label="Reviews" value={String(total)} />
           <Stat label="Recalled" value={total ? `${Math.round((passed / total) * 100)}%` : '—'} />
+          <Stat
+            label="Game score"
+            value={gameScores.length ? `${Math.round(gameScores.reduce((a, b) => a + b, 0) / gameScores.length)}%` : '—'}
+          />
           <Stat label="Time" value={formatDuration(elapsed)} />
         </div>
         <div className="mx-auto mt-4 flex max-w-lg overflow-hidden rounded-full text-[10px] font-semibold">
@@ -413,8 +464,22 @@ export default function FlashcardRunner({ domains }: Props) {
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between gap-2 text-[11px] text-slate-500">
             <span className="truncate font-semibold">{sessionTitle(params, domains)}</span>
-            <span className="shrink-0 font-mono">
-              {idx + 1} / {queue.length}
+            <span className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => saveFsrsPreferences({ interactiveOrderMode: !gamesEnabled })}
+                title="Interactive recall games on/off"
+                className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 font-semibold ${
+                  gamesEnabled
+                    ? 'bg-violet-500/10 text-violet-700 dark:text-violet-300'
+                    : 'bg-slate-200/70 text-slate-500 dark:bg-slate-800'
+                }`}
+              >
+                <Gamepad2 className="h-3 w-3" /> {gamesEnabled ? 'Games on' : 'Games off'}
+              </button>
+              <span className="font-mono">
+                {idx + 1} / {queue.length}
+              </span>
             </span>
           </div>
           <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-200/80 dark:bg-slate-800">
@@ -463,13 +528,18 @@ export default function FlashcardRunner({ domains }: Props) {
           <p className="-mt-2 mb-4 text-[11px] text-rose-600/80 dark:text-rose-300/80">{currentState.gapBoostReason}</p>
         )}
 
-        <CardArchetypeRenderer
+        <CardStage
           key={idx}
+          attemptKey={idx}
           card={card}
-          revealed={revealed}
+          pool={cards}
+          phase={phase}
+          result={result}
+          gamesEnabled={gamesEnabled}
+          learnedNow={learnedNow}
           showMnemonic={showMnemonic}
-          interactiveOrderMode={prefs.interactiveOrderMode}
           onToggleMnemonic={() => setShowMnemonic(true)}
+          onRecallComplete={completeRecall}
         />
 
         <div className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200/70 pt-3 text-[11px] text-slate-400 dark:border-slate-800/70">
@@ -503,30 +573,72 @@ export default function FlashcardRunner({ domains }: Props) {
       <div className="pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-slate-200/70 bg-[var(--bg-canvas)]/95 px-4 pt-3 backdrop-blur-xl sm:static sm:mt-5 sm:border-0 sm:bg-transparent sm:px-0 sm:pt-0 sm:backdrop-blur-none dark:border-slate-800/70">
         <div className="mx-auto max-w-3xl pb-3 sm:pb-0">
           {saveError && <p className="mb-2 text-center text-xs text-rose-500">{saveError}</p>}
-          {!revealed ? (
-            <button type="button" onClick={reveal} className={`${btnPrimary} w-full py-3`}>
-              <Eye className="h-4 w-4" /> Show answer <Kbd dark>Space</Kbd>
+          {phase === 'learn' && (
+            <button
+              type="button"
+              onClick={beginRecall}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-violet-600/20 transition hover:bg-violet-500"
+            >
+              <Gamepad2 className="h-4 w-4" /> Got it — test me <Kbd dark>Space</Kbd>
             </button>
-          ) : (
-            <div className="grid grid-cols-4 gap-2">
-              {([1, 2, 3, 4] as FsrsGrade[]).map((g) => (
-                <button
-                  key={g}
-                  type="button"
-                  disabled={saving}
-                  onClick={() => void grade(g)}
-                  className={`flex flex-col items-center rounded-xl border px-1 py-2 text-sm font-semibold transition disabled:opacity-50 ${GRADE_STYLES[g]}`}
-                >
-                  <span>{previews?.[g].label}</span>
-                  <span className="font-mono text-[11px] font-medium opacity-80">{previews?.[g].intervalLabel}</span>
-                  <span className="mt-0.5 hidden font-mono text-[10px] opacity-50 sm:block">{g}</span>
-                </button>
-              ))}
+          )}
+          {phase === 'recall' && recallMode?.kind === 'self' && (
+            <button type="button" onClick={reveal} className={`${btnPrimary} w-full py-3`}>
+              Show answer <Kbd dark>Space</Kbd>
+            </button>
+          )}
+          {phase === 'recall' && recallMode?.kind === 'game' && (
+            <div className="flex items-center justify-between gap-2 text-xs text-slate-500">
+              <span className="inline-flex items-center gap-1.5">
+                <Gamepad2 className="h-3.5 w-3.5 text-violet-500" /> {recallMode.label}
+              </span>
+              <button
+                type="button"
+                onClick={reveal}
+                className="rounded-lg px-2 py-1.5 font-semibold hover:bg-slate-100 hover:text-slate-800 dark:hover:bg-slate-800 dark:hover:text-slate-200"
+              >
+                Skip game · show answer
+              </button>
             </div>
+          )}
+          {phase === 'feedback' && (
+            <>
+              <div className="grid grid-cols-4 gap-2 pt-1.5">
+                {([1, 2, 3, 4] as FsrsGrade[]).map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    disabled={saving}
+                    onClick={() => void grade(g)}
+                    className={`relative flex flex-col items-center rounded-xl border px-1 py-2 text-sm font-semibold transition disabled:opacity-50 ${GRADE_STYLES[g]} ${
+                      suggested === g
+                        ? 'ring-2 ring-violet-500 ring-offset-2 ring-offset-[var(--bg-canvas)]'
+                        : suggested
+                          ? 'opacity-70'
+                          : ''
+                    }`}
+                  >
+                    {suggested === g && (
+                      <span className="absolute -top-2.5 rounded-full bg-violet-600 px-1.5 text-[9px] font-bold uppercase tracking-wide text-white">
+                        Suggested
+                      </span>
+                    )}
+                    <span>{previews?.[g].label}</span>
+                    <span className="font-mono text-[11px] font-medium opacity-80">{previews?.[g].intervalLabel}</span>
+                    <span className="mt-0.5 hidden font-mono text-[10px] opacity-50 sm:block">{g}</span>
+                  </button>
+                ))}
+              </div>
+              {!suggested && (
+                <p className="mt-2 text-center text-[11px] text-slate-500">
+                  How well did you recall it? Be honest — the schedule depends on it.
+                </p>
+              )}
+            </>
           )}
           <p className="mt-2 hidden text-center text-[11px] text-slate-400 sm:block">
             <Clock className="mr-1 inline h-3 w-3" />
-            Space reveal · 1–4 grade · M mnemonic · P pin · S suspend
+            Space continue{suggested ? ' / accept suggestion' : ''} · 1–4 rate · M hint · P pin · S suspend
           </p>
         </div>
       </div>

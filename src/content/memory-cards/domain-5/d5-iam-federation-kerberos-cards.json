@@ -426,7 +426,14 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 14: Controlling and Monitoring Access"
       }
-    ]
+    ],
+    "presentation": {
+      "plugin": {
+        "id": "kerberos-flow"
+      },
+      "hook": "Kerberos is a ticket office: one ticket (TGT) to get more tickets, so your password is used once and never sent over the wire.",
+      "elaborate": "Why does the client need a TGT at all — why not ask the AS for every service ticket directly?"
+    }
   },
   {
     "id": "cissp-mem-d5-s5.3-c003",

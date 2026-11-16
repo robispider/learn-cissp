@@ -81,7 +81,11 @@
         "source": "ISC2 CISSP Official Study Guide (9th Edition)",
         "section": "Ch. 19: Investigations and Ethics"
       }
-    ]
+    ],
+    "presentation": {
+      "hook": "Evidence evaporates in order: what lives in the CPU vanishes in nanoseconds, a backup tape lasts years. Collect the fastest-disappearing first.",
+      "elaborate": "Why is pulling the power cord the worst first move for a forensic investigator?"
+    }
   },
   {
     "id": "cissp-mem-d7-s7.1-c002",
