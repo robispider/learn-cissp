@@ -23,6 +23,7 @@ import ConfidenceMatrix from './ConfidenceMatrix';
 import PacingTimeline from './PacingTimeline';
 import StrengthWeaknessTable from './StrengthWeaknessTable';
 import { withBase } from '../../lib/paths';
+import ExamGapMemoryCallout from '../memorize/ExamGapMemoryCallout';
 
 interface Props {
   initialSessionId?: string;
@@ -291,6 +292,9 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
                 ))}
               </ul>
             )}
+            <ExamGapMemoryCallout
+              subdomainIds={Array.from(new Set(orderedQuestions.map(({ question }) => question.subdomainId)))}
+            />
           </div>
 
           <div className="mt-5 flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-200/60 dark:border-slate-800">

@@ -1,0 +1,11 @@
+---
+import AppShell from '../../components/layout/AppShell.astro';
+import FlashcardRunner from '../../components/memorize/FlashcardRunner';
+import { getMemoryDomainMeta } from '../../lib/memorization/domain-meta';
+
+const domains = getMemoryDomainMeta();
+---
+
+<AppShell title="Review session — Learn CISSP" minimalChrome={true}>
+  <FlashcardRunner client:only="react" domains={domains} />
+</AppShell>

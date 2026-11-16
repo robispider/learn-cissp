@@ -1,0 +1,934 @@
+[
+  {
+    "id": "cissp-mem-d4-s4.1-c001",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.1",
+    "topicName": "OSI & TCP/IP Models & Encapsulation",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "OSI model",
+      "Physical",
+      "Data Link",
+      "Network",
+      "Transport",
+      "Session",
+      "Presentation",
+      "Application"
+    ],
+    "tags": [
+      "osi"
+    ],
+    "title": "OSI layers in order",
+    "prompt": "List the seven OSI layers from Layer 1 to Layer 7 with a one-line role for each.",
+    "answerSummary": "1 Physical, 2 Data Link, 3 Network, 4 Transport, 5 Session, 6 Presentation, 7 Application.",
+    "mnemonic": "Bottom up: \"Please Do Not Throw Sausage Pizza Away\". Top down: \"All People Seem To Need Data Processing\".",
+    "examTrapWarning": "TLS is usually mapped to the Transport/Session boundary in CISSP materials, while encryption and formatting as functions belong to Presentation. Read what the question emphasizes.",
+    "sequenceData": {
+      "directionLabel": "Layer 1 → Layer 7",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Physical",
+          "detail": "Bits over cable, fiber or radio; hubs, repeaters."
+        },
+        {
+          "order": 2,
+          "label": "Data Link",
+          "detail": "Frames, MAC addresses, switches, ARP, 802.1X."
+        },
+        {
+          "order": 3,
+          "label": "Network",
+          "detail": "Packets, IP addressing and routing, ICMP, IPsec."
+        },
+        {
+          "order": 4,
+          "label": "Transport",
+          "detail": "Segments/datagrams; TCP and UDP, ports, flow control."
+        },
+        {
+          "order": 5,
+          "label": "Session",
+          "detail": "Sets up, manages and tears down sessions (RPC, NetBIOS)."
+        },
+        {
+          "order": 6,
+          "label": "Presentation",
+          "detail": "Data formatting, encoding, compression, encryption."
+        },
+        {
+          "order": 7,
+          "label": "Application",
+          "detail": "Interface for network services: HTTP, DNS, SMTP, SNMP."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c002",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.1",
+    "topicName": "OSI & TCP/IP Models & Encapsulation",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "PDU",
+      "Frame",
+      "Packet",
+      "Segment",
+      "Router",
+      "Switch"
+    ],
+    "tags": [
+      "osi"
+    ],
+    "title": "OSI layer PDUs and devices",
+    "prompt": "Give the protocol data unit and typical device for OSI layers 1–4 and 7.",
+    "answerSummary": "Layer 1 bits (hub, repeater), Layer 2 frames (switch, bridge), Layer 3 packets (router), Layer 4 segments (TCP) or datagrams (UDP), Layers 5–7 data (application proxy, WAF at Layer 7).",
+    "mnemonic": null,
+    "examTrapWarning": "Standard switches work at Layer 2; a \"Layer 3 switch\" also routes. Packet-filtering firewalls work at Layers 3–4; application proxies at Layer 7.",
+    "matrixData": {
+      "headers": [
+        "Layer",
+        "PDU",
+        "Devices"
+      ],
+      "rows": [
+        [
+          "1 Physical",
+          "Bits",
+          "Hubs, repeaters, cabling"
+        ],
+        [
+          "2 Data Link",
+          "Frames",
+          "Switches, bridges, NICs"
+        ],
+        [
+          "3 Network",
+          "Packets",
+          "Routers, packet-filter firewalls"
+        ],
+        [
+          "4 Transport",
+          "Segments (TCP) / datagrams (UDP)",
+          "Stateful firewalls"
+        ],
+        [
+          "5–7 Upper layers",
+          "Data / messages",
+          "Application proxies, WAFs, gateways"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c003",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.1",
+    "topicName": "OSI & TCP/IP Models & Encapsulation",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Port numbers",
+      "SSH",
+      "DNS",
+      "Kerberos",
+      "LDAPS",
+      "RDP"
+    ],
+    "tags": [
+      "ports"
+    ],
+    "title": "Well-known ports to memorize",
+    "prompt": "Give the default port numbers for these common services.",
+    "answerSummary": "FTP 20/21, SSH/SFTP 22, Telnet 23, SMTP 25, DNS 53, HTTP 80, Kerberos 88, POP3 110, IMAP 143, LDAP 389, HTTPS 443, LDAPS 636, TACACS+ 49, RADIUS 1812/1813, RDP 3389.",
+    "mnemonic": null,
+    "examTrapWarning": "SFTP runs over SSH on 22; FTPS is FTP over TLS (990 implicit). TACACS+ uses TCP 49 while RADIUS uses UDP 1812/1813.",
+    "matrixData": {
+      "headers": [
+        "Service",
+        "Port",
+        "Transport"
+      ],
+      "rows": [
+        [
+          "FTP (data / control)",
+          "20 / 21",
+          "TCP"
+        ],
+        [
+          "SSH, SFTP, SCP",
+          "22",
+          "TCP"
+        ],
+        [
+          "Telnet",
+          "23",
+          "TCP"
+        ],
+        [
+          "SMTP",
+          "25 (587 submission)",
+          "TCP"
+        ],
+        [
+          "TACACS+",
+          "49",
+          "TCP"
+        ],
+        [
+          "DNS",
+          "53",
+          "UDP / TCP"
+        ],
+        [
+          "HTTP / HTTPS",
+          "80 / 443",
+          "TCP"
+        ],
+        [
+          "Kerberos",
+          "88",
+          "UDP / TCP"
+        ],
+        [
+          "POP3 / IMAP",
+          "110 / 143",
+          "TCP"
+        ],
+        [
+          "LDAP / LDAPS",
+          "389 / 636",
+          "TCP"
+        ],
+        [
+          "RADIUS (auth / accounting)",
+          "1812 / 1813",
+          "UDP"
+        ],
+        [
+          "RDP",
+          "3389",
+          "TCP"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "IANA Service Name and Transport Protocol Port Number Registry",
+        "section": "Well-known ports"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c004",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.2",
+    "topicName": "IPsec (AH vs. ESP, Tunnel vs. Transport, IKE), TLS 1.3, SSH",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "AH",
+      "ESP",
+      "IP protocol 50",
+      "IP protocol 51",
+      "NAT"
+    ],
+    "tags": [
+      "ipsec"
+    ],
+    "title": "IPsec AH vs. ESP",
+    "prompt": "Contrast IPsec Authentication Header and Encapsulating Security Payload.",
+    "answerSummary": "AH (IP protocol 51) gives integrity, data origin authentication and anti-replay but no encryption, and it breaks with NAT because it covers the IP header. ESP (IP protocol 50) gives confidentiality plus optional integrity/authentication and works with NAT traversal.",
+    "mnemonic": "AH = Authentication Header, Hides nothing. ESP = Encrypts Stuff Privately.",
+    "examTrapWarning": "If the question needs confidentiality, AH alone is wrong. ESP is what most VPNs use.",
+    "contrastData": {
+      "ruleOfThumb": "Need encryption? ESP. AH only authenticates.",
+      "columns": [
+        {
+          "label": "AH",
+          "badge": "Protocol 51",
+          "points": [
+            "Integrity and origin authentication",
+            "Anti-replay",
+            "No confidentiality",
+            "Incompatible with NAT (protects IP header)"
+          ]
+        },
+        {
+          "label": "ESP",
+          "badge": "Protocol 50",
+          "points": [
+            "Encryption (confidentiality)",
+            "Optional integrity and authentication",
+            "Works with NAT-T (UDP 4500)",
+            "Used by most IPsec VPNs"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "RFC 4301 / 4302 / 4303",
+        "section": "IPsec architecture, AH, ESP"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c005",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.2",
+    "topicName": "IPsec (AH vs. ESP, Tunnel vs. Transport, IKE), TLS 1.3, SSH",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Transport mode",
+      "Tunnel mode",
+      "Site-to-site VPN"
+    ],
+    "tags": [
+      "ipsec"
+    ],
+    "title": "IPsec transport mode vs. tunnel mode",
+    "prompt": "Contrast what IPsec transport and tunnel modes protect and where each is used.",
+    "answerSummary": "Transport mode protects only the payload and keeps the original IP header; used host-to-host. Tunnel mode encapsulates the entire original packet inside a new IP header; used gateway-to-gateway (site-to-site VPNs) and hides internal addresses.",
+    "mnemonic": null,
+    "examTrapWarning": "Site-to-site VPNs between two firewalls use tunnel mode, because the original source and destination are internal hosts.",
+    "contrastData": {
+      "ruleOfThumb": "Transport = end-to-end payload; tunnel = whole packet wrapped.",
+      "columns": [
+        {
+          "label": "Transport mode",
+          "badge": "Host to host",
+          "points": [
+            "Protects payload only",
+            "Original IP header visible",
+            "End-to-end between two hosts"
+          ]
+        },
+        {
+          "label": "Tunnel mode",
+          "badge": "Gateway to gateway",
+          "points": [
+            "Encrypts / authenticates the entire packet",
+            "Adds a new outer IP header",
+            "Site-to-site VPNs; hides internal addressing"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c006",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.2",
+    "topicName": "IPsec (AH vs. ESP, Tunnel vs. Transport, IKE), TLS 1.3, SSH",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "IKE",
+      "Phase 1",
+      "Phase 2",
+      "Security association",
+      "ISAKMP"
+    ],
+    "tags": [
+      "ipsec"
+    ],
+    "title": "IKE Phase 1 vs. Phase 2",
+    "prompt": "Complete the statement about what each IKE phase establishes.",
+    "answerSummary": "IKE Phase 1 authenticates the peers and builds a secure management channel (the IKE/ISAKMP SA). Phase 2 uses that channel to negotiate the IPsec SAs that actually protect traffic. SAs are one-way, so a two-way tunnel needs a pair.",
+    "mnemonic": null,
+    "examTrapWarning": "Security associations are unidirectional; bidirectional traffic needs two IPsec SAs.",
+    "clozeTemplate": "IKE Phase 1 authenticates the peers and creates the {{c1::IKE (ISAKMP) SA::management tunnel}}. Phase 2 negotiates the {{c2::IPsec SAs::data SAs}} that protect user traffic. Each SA is {{c3::unidirectional::direction}}, so two-way traffic needs a pair.",
+    "references": [
+      {
+        "source": "RFC 7296",
+        "section": "Internet Key Exchange Protocol Version 2 (IKEv2)"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c007",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.2",
+    "topicName": "IPsec (AH vs. ESP, Tunnel vs. Transport, IKE), TLS 1.3, SSH",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "TLS 1.3",
+      "1-RTT",
+      "Perfect forward secrecy",
+      "AEAD",
+      "Ephemeral Diffie-Hellman"
+    ],
+    "tags": [
+      "tls"
+    ],
+    "title": "What changed in TLS 1.3",
+    "prompt": "Complete the TLS 1.3 facts.",
+    "answerSummary": "TLS 1.3 completes a full handshake in one round trip, removes static RSA key exchange so every session uses ephemeral (EC)DHE and gets perfect forward secrecy, and allows only AEAD ciphers such as AES-GCM and ChaCha20-Poly1305.",
+    "mnemonic": null,
+    "examTrapWarning": "Perfect forward secrecy means stealing the server's long-term private key later does not decrypt past recorded sessions.",
+    "clozeTemplate": "TLS 1.3 completes a full handshake in {{c1::one round trip (1-RTT)::latency}}, removes static RSA key exchange so every session uses {{c2::ephemeral (EC)DHE::key exchange}} for {{c3::perfect forward secrecy::property}}, and permits only {{c4::AEAD::cipher class}} ciphers.",
+    "references": [
+      {
+        "source": "RFC 8446",
+        "section": "The Transport Layer Security (TLS) Protocol Version 1.3"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c008",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.3",
+    "topicName": "Wireless Security (WPA2/WPA3, 802.1X/EAP), Cellular (4G/5G)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "WEP",
+      "WPA",
+      "WPA2",
+      "WPA3",
+      "CCMP",
+      "SAE"
+    ],
+    "tags": [
+      "wireless"
+    ],
+    "title": "Wi-Fi security generations",
+    "prompt": "Compare WEP, WPA, WPA2 and WPA3 by encryption and status.",
+    "answerSummary": "WEP: RC4 with weak IVs, broken. WPA: TKIP (RC4), deprecated. WPA2: AES-CCMP, still common; PSK vulnerable to offline dictionary attacks on captured handshakes. WPA3: AES (GCMP-256 in enterprise 192-bit mode), SAE (Dragonfly) handshake resists offline dictionary attacks and gives forward secrecy.",
+    "mnemonic": null,
+    "examTrapWarning": "SAE is what stops offline password guessing in WPA3-Personal. Enterprise modes of any generation use 802.1X instead of a shared key.",
+    "matrixData": {
+      "headers": [
+        "Standard",
+        "Encryption",
+        "Key exchange / auth",
+        "Status"
+      ],
+      "rows": [
+        [
+          "WEP",
+          "RC4 (24-bit IV)",
+          "Shared key",
+          "Broken; never use"
+        ],
+        [
+          "WPA",
+          "TKIP (RC4)",
+          "PSK or 802.1X",
+          "Deprecated"
+        ],
+        [
+          "WPA2",
+          "AES-CCMP",
+          "PSK (4-way handshake) or 802.1X",
+          "Acceptable; PSK open to offline cracking"
+        ],
+        [
+          "WPA3",
+          "AES-CCMP / GCMP-256",
+          "SAE (Dragonfly) or 802.1X",
+          "Current best; forward secrecy"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.1-c009",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.3",
+    "topicName": "Wireless Security (WPA2/WPA3, 802.1X/EAP), Cellular (4G/5G)",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "802.1X",
+      "Supplicant",
+      "Authenticator",
+      "Authentication server",
+      "EAP-TLS"
+    ],
+    "tags": [
+      "nac",
+      "wireless"
+    ],
+    "title": "802.1X roles",
+    "prompt": "Name the three 802.1X roles with an example of each, and the strongest common EAP method.",
+    "answerSummary": "Supplicant: the client device requesting access. Authenticator: the switch or wireless access point that relays EAP and enforces the port state. Authentication server: usually RADIUS, which decides. EAP-TLS (mutual certificates) is the strongest common method.",
+    "mnemonic": null,
+    "examTrapWarning": "The access point or switch is the authenticator, not the authentication server; it only relays credentials to RADIUS.",
+    "matrixData": {
+      "headers": [
+        "Role",
+        "Example",
+        "Job"
+      ],
+      "rows": [
+        [
+          "Supplicant",
+          "Laptop or phone",
+          "Requests access and presents credentials via EAP"
+        ],
+        [
+          "Authenticator",
+          "Switch port or wireless AP",
+          "Blocks traffic until approved; relays EAP"
+        ],
+        [
+          "Authentication server",
+          "RADIUS server",
+          "Validates credentials and returns accept / reject"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "IEEE 802.1X",
+        "section": "Port-Based Network Access Control"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.2-c001",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.2",
+    "subdomainName": "Secure Network Components",
+    "topicId": "4.2.1",
+    "topicName": "Firewalls (Stateful, NGFW, WAF), Proxies, NAC",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Packet filter",
+      "Stateful inspection",
+      "Circuit-level proxy",
+      "Application proxy",
+      "NGFW",
+      "WAF"
+    ],
+    "tags": [
+      "firewalls"
+    ],
+    "title": "Firewall types by OSI layer",
+    "prompt": "Compare firewall types by the layer they inspect and what they can see.",
+    "answerSummary": "Packet filter: Layers 3–4, stateless rules on IPs and ports. Stateful inspection: tracks connection state. Circuit-level proxy (SOCKS): Layer 5 session setup. Application proxy / WAF: Layer 7 content. NGFW: stateful plus application awareness, IPS and identity.",
+    "mnemonic": null,
+    "examTrapWarning": "A packet filter cannot detect SQL injection; that needs Layer 7 inspection such as a WAF.",
+    "matrixData": {
+      "headers": [
+        "Type",
+        "Layer",
+        "Inspects"
+      ],
+      "rows": [
+        [
+          "Static packet filter",
+          "3–4",
+          "Source/destination IP, port, protocol; stateless"
+        ],
+        [
+          "Stateful inspection",
+          "3–4 (+ state table)",
+          "Connection state and context"
+        ],
+        [
+          "Circuit-level proxy",
+          "5",
+          "Session establishment (e.g., SOCKS)"
+        ],
+        [
+          "Application proxy / WAF",
+          "7",
+          "Full application content and commands"
+        ],
+        [
+          "NGFW",
+          "3–7",
+          "Stateful + application ID + IPS + user identity"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.2-c002",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.2",
+    "subdomainName": "Secure Network Components",
+    "topicId": "4.2.2",
+    "topicName": "Network Segmentation (VLANs, DMZ, Micro-segmentation, SDN, SD-WAN, SASE)",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SASE",
+      "SD-WAN",
+      "SWG",
+      "CASB",
+      "ZTNA",
+      "FWaaS"
+    ],
+    "tags": [
+      "sase",
+      "zero-trust"
+    ],
+    "title": "What makes up SASE",
+    "prompt": "List the main components of Secure Access Service Edge.",
+    "answerSummary": "SASE combines SD-WAN networking with cloud-delivered security services (SSE): secure web gateway, cloud access security broker, zero trust network access and firewall as a service.",
+    "mnemonic": null,
+    "examTrapWarning": "ZTNA replaces broad network-level VPN access with per-application access checked on every request.",
+    "matrixData": {
+      "headers": [
+        "Component",
+        "Role"
+      ],
+      "rows": [
+        [
+          "SD-WAN",
+          "Software-defined WAN routing over many links"
+        ],
+        [
+          "SWG (secure web gateway)",
+          "Filters web traffic and blocks malicious sites"
+        ],
+        [
+          "CASB",
+          "Visibility and policy for SaaS / cloud use"
+        ],
+        [
+          "ZTNA",
+          "Per-application access based on identity and device posture"
+        ],
+        [
+          "FWaaS",
+          "Cloud-delivered firewall"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 11: Secure Network Architecture and Components"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.3-c001",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.3",
+    "subdomainName": "Secure Communication Channels",
+    "topicId": "4.3.1",
+    "topicName": "Voice/VoIP Security, Email Security (SPF, DKIM, DMARC, S/MIME)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SPF",
+      "DKIM",
+      "DMARC",
+      "Email spoofing"
+    ],
+    "tags": [
+      "email"
+    ],
+    "title": "SPF vs. DKIM vs. DMARC",
+    "prompt": "Explain what each email authentication standard checks and how DMARC ties them together.",
+    "answerSummary": "SPF: a DNS TXT record listing servers allowed to send for the domain. DKIM: the sending domain signs headers and body; receivers verify with a public key in DNS. DMARC: requires SPF or DKIM to align with the visible From domain, sets a policy (none, quarantine, reject) and sends reports.",
+    "mnemonic": null,
+    "examTrapWarning": "None of these encrypt email. For confidentiality and end-to-end signing use S/MIME or PGP.",
+    "matrixData": {
+      "headers": [
+        "Standard",
+        "Checks",
+        "Published in"
+      ],
+      "rows": [
+        [
+          "SPF",
+          "Is the sending IP authorized for this domain?",
+          "DNS TXT record"
+        ],
+        [
+          "DKIM",
+          "Is the message signed by the domain and unaltered?",
+          "DNS public key (selector record)"
+        ],
+        [
+          "DMARC",
+          "Do SPF/DKIM align with the From domain? What to do if not?",
+          "DNS TXT at _dmarc; policy none / quarantine / reject + reports"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "RFC 7208 / 6376 / 7489",
+        "section": "SPF, DKIM, DMARC"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 12: Secure Communications and Network Attacks"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.3-c002",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.3",
+    "subdomainName": "Secure Communication Channels",
+    "topicId": "4.3.2",
+    "topicName": "VPNs (Split vs. Full Tunnel, Always-On), Remote Access, CDN & DNSSEC",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "DNSSEC",
+      "DoH",
+      "DoT",
+      "Integrity",
+      "Cache poisoning"
+    ],
+    "tags": [
+      "dns"
+    ],
+    "title": "What DNSSEC does and does not do",
+    "prompt": "Complete the statement about DNSSEC.",
+    "answerSummary": "DNSSEC signs DNS records so resolvers can verify origin and integrity, defeating cache poisoning. It does not encrypt queries; DNS over HTTPS or TLS provides confidentiality.",
+    "mnemonic": null,
+    "examTrapWarning": "If the question asks to hide which domains users look up, DNSSEC is wrong; choose DoH or DoT.",
+    "clozeTemplate": "DNSSEC uses {{c1::digital signatures::mechanism}} to give DNS responses origin authentication and {{c2::integrity::property}}, defeating cache poisoning. It does NOT provide {{c3::confidentiality::property}}; use {{c4::DNS over HTTPS or TLS::protocols}} for that.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 12: Secure Communications and Network Attacks"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d4-s4.3-c003",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.3",
+    "subdomainName": "Secure Communication Channels",
+    "topicId": "4.3.2",
+    "topicName": "VPNs (Split vs. Full Tunnel, Always-On), Remote Access, CDN & DNSSEC",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Split tunnel",
+      "Full tunnel",
+      "VPN",
+      "Always-on VPN"
+    ],
+    "tags": [
+      "vpn"
+    ],
+    "title": "Split-tunnel vs. full-tunnel VPN",
+    "prompt": "Contrast split-tunnel and full-tunnel VPN designs and their security trade-off.",
+    "answerSummary": "Full tunnel sends all traffic through the corporate VPN, so it is inspected by company controls but uses more bandwidth. Split tunnel sends only corporate traffic through the VPN and internet traffic goes direct, saving bandwidth but bypassing corporate inspection and letting a compromised device bridge networks.",
+    "mnemonic": null,
+    "examTrapWarning": "When the question stresses consistent monitoring and DLP for remote users, full tunnel (or SASE) is the answer.",
+    "contrastData": {
+      "ruleOfThumb": "Full tunnel = visibility; split tunnel = performance.",
+      "columns": [
+        {
+          "label": "Full tunnel",
+          "badge": "All traffic via VPN",
+          "points": [
+            "All traffic inspected by corporate controls",
+            "Higher bandwidth and latency",
+            "Consistent policy enforcement"
+          ]
+        },
+        {
+          "label": "Split tunnel",
+          "badge": "Corporate only via VPN",
+          "points": [
+            "Internet traffic goes direct",
+            "Less load on the VPN",
+            "Bypasses corporate monitoring; bridging risk"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 12: Secure Communications and Network Attacks"
+      }
+    ]
+  }
+]

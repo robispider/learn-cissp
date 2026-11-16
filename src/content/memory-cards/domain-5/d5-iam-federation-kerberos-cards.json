@@ -1,0 +1,837 @@
+[
+  {
+    "id": "cissp-mem-d5-s5.1-c001",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.1",
+    "subdomainName": "Control Physical and Logical Access to Assets",
+    "topicId": "5.1.1",
+    "topicName": "Subject/Object Access Control Matrix",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Access control matrix",
+      "ACL",
+      "Capability list"
+    ],
+    "tags": [
+      "access-control"
+    ],
+    "title": "Access control matrix: ACLs vs. capability lists",
+    "prompt": "In an access control matrix, which view is an ACL and which is a capability list?",
+    "answerSummary": "Rows are subjects and columns are objects. A column read down (one object, all subjects) is an access control list attached to the object. A row read across (one subject, all objects) is a capability list held by the subject.",
+    "mnemonic": "ACL = Attached to the object (Column). Capability = Carried by the subject (row).",
+    "examTrapWarning": "Capability tables are tied to subjects, ACLs to objects. Questions often swap them.",
+    "contrastData": {
+      "ruleOfThumb": "Object-centric ACL vs. subject-centric capability.",
+      "columns": [
+        {
+          "label": "ACL",
+          "badge": "Column of the matrix",
+          "points": [
+            "Stored with the object",
+            "Lists every subject and its rights",
+            "Easy to see who can access a file"
+          ]
+        },
+        {
+          "label": "Capability list",
+          "badge": "Row of the matrix",
+          "points": [
+            "Stored with the subject",
+            "Lists every object the subject can access",
+            "Easy to see what a user can do"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 14: Controlling and Monitoring Access"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.2-c001",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.2",
+    "subdomainName": "Identification and Authentication of People, Devices, and Services",
+    "topicId": "5.2.1",
+    "topicName": "MFA Factors (Something You Know, Have, Are, Somewhere You Are)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Type 1 factor",
+      "Type 2 factor",
+      "Type 3 factor",
+      "MFA"
+    ],
+    "tags": [
+      "authentication"
+    ],
+    "title": "Authentication factor types",
+    "prompt": "Name the three main authentication factor types with examples, plus the two supplementary attributes.",
+    "answerSummary": "Type 1, something you know (password, PIN). Type 2, something you have (smart card, token, phone). Type 3, something you are (fingerprint, iris). Supplementary: somewhere you are (location) and something you do (typing rhythm, signature).",
+    "mnemonic": null,
+    "examTrapWarning": "MFA requires factors of different types. A password plus a security question is still single-factor.",
+    "matrixData": {
+      "headers": [
+        "Factor",
+        "Type",
+        "Examples"
+      ],
+      "rows": [
+        [
+          "Something you know",
+          "Type 1",
+          "Password, PIN, passphrase"
+        ],
+        [
+          "Something you have",
+          "Type 2",
+          "Smart card, hardware token, authenticator app, security key"
+        ],
+        [
+          "Something you are",
+          "Type 3",
+          "Fingerprint, face, iris, retina, palm vein"
+        ],
+        [
+          "Somewhere you are",
+          "Attribute",
+          "GPS / IP geolocation"
+        ],
+        [
+          "Something you do",
+          "Attribute",
+          "Keystroke dynamics, signature dynamics"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.2-c002",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.2",
+    "subdomainName": "Identification and Authentication of People, Devices, and Services",
+    "topicId": "5.2.1",
+    "topicName": "MFA Factors (Something You Know, Have, Are, Somewhere You Are)",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Single-factor",
+      "MFA",
+      "Something you know"
+    ],
+    "tags": [
+      "authentication"
+    ],
+    "title": "Password + PIN is not MFA",
+    "prompt": "Complete the rule for counting authentication factors.",
+    "answerSummary": "Two items of the same type (for example a password and a PIN, both things you know) are single-factor authentication. Multifactor requires at least two different factor types.",
+    "mnemonic": null,
+    "examTrapWarning": "Smart card + PIN is two-factor (have + know). Password + PIN + security question is still one factor.",
+    "clozeTemplate": "A password plus a PIN is {{c1::single-factor::factor count}} authentication because both are {{c2::something you know::factor type}}. True MFA requires factors of {{c3::different types::rule}}, such as a smart card and a PIN.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.2-c003",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.2",
+    "subdomainName": "Identification and Authentication of People, Devices, and Services",
+    "topicId": "5.2.2",
+    "topicName": "Biometrics (FAR/CER/FRR, Crossover Error Rate)",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "FRR",
+      "FAR",
+      "CER",
+      "Type I error",
+      "Type II error"
+    ],
+    "tags": [
+      "biometrics"
+    ],
+    "title": "Biometric errors: FRR, FAR and CER",
+    "prompt": "Define FRR and FAR with their error types, and explain CER.",
+    "answerSummary": "FRR (Type I) rejects a legitimate user, a usability problem. FAR (Type II) accepts an impostor, a security problem. Raising sensitivity lowers FAR and raises FRR. The crossover error rate is where they are equal; a lower CER means a more accurate system.",
+    "mnemonic": "Type I = I am rejected (insiders annoyed). Type II = Intruder In.",
+    "examTrapWarning": "Use CER to compare biometric products. FAR is the more dangerous error for high-security areas.",
+    "contrastData": {
+      "ruleOfThumb": "Lower CER = better device; FAR is the dangerous one.",
+      "columns": [
+        {
+          "label": "FRR",
+          "badge": "Type I error",
+          "points": [
+            "Valid user falsely rejected",
+            "Usability / productivity cost",
+            "Rises when sensitivity is increased"
+          ]
+        },
+        {
+          "label": "FAR",
+          "badge": "Type II error",
+          "points": [
+            "Impostor falsely accepted",
+            "Security breach",
+            "Falls when sensitivity is increased"
+          ]
+        },
+        {
+          "label": "CER / EER",
+          "badge": "Crossover point",
+          "points": [
+            "Where FRR = FAR",
+            "Used to compare devices",
+            "Lower is more accurate"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.2-c004",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.2",
+    "subdomainName": "Identification and Authentication of People, Devices, and Services",
+    "topicId": "5.2.3",
+    "topicName": "Passkeys/FIDO2 & Passwordless",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "FIDO2",
+      "WebAuthn",
+      "Passkeys",
+      "Phishing-resistant"
+    ],
+    "tags": [
+      "passwordless"
+    ],
+    "title": "Why FIDO2 passkeys resist phishing",
+    "prompt": "Complete the explanation of why FIDO2/WebAuthn resists phishing.",
+    "answerSummary": "FIDO2 creates a unique key pair per site. The private key never leaves the authenticator, and the browser binds each signature to the real site's origin, so a look-alike phishing domain gets nothing reusable. No shared secret is stored on the server.",
+    "mnemonic": null,
+    "examTrapWarning": "SMS codes and push approvals can be phished or fatigued; FIDO2 security keys and passkeys are the phishing-resistant MFA answer.",
+    "clozeTemplate": "FIDO2 / WebAuthn uses a per-site {{c1::public/private key pair::credential type}}. The private key stays on the {{c2::authenticator::device}}, and each signature is bound to the site's {{c3::origin (domain)::binding}}, so credentials captured by a phishing site cannot be replayed.",
+    "references": [
+      {
+        "source": "FIDO Alliance / W3C WebAuthn Level 2",
+        "section": "Web Authentication API"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.3-c001",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.1",
+    "topicName": "SAML 2.0, OAuth 2.0, OpenID Connect (OIDC)",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 7,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SAML 2.0",
+      "OAuth 2.0",
+      "OpenID Connect",
+      "JWT",
+      "ID token"
+    ],
+    "tags": [
+      "federation"
+    ],
+    "title": "SAML vs. OAuth 2.0 vs. OpenID Connect",
+    "prompt": "Contrast SAML 2.0, OAuth 2.0 and OIDC by purpose, token format and typical use.",
+    "answerSummary": "SAML 2.0: XML assertions for enterprise browser SSO between an IdP and SP (authentication + attributes). OAuth 2.0: delegated authorization via scoped access tokens; it is not an authentication protocol. OIDC: an identity layer on OAuth 2.0 that adds a JWT ID token for authentication; common in modern web and mobile apps.",
+    "mnemonic": null,
+    "examTrapWarning": "\"Let this app read my calendar without my password\" is OAuth (authorization). \"Sign in with Google\" that proves who you are is OIDC.",
+    "contrastData": {
+      "ruleOfThumb": "SAML and OIDC authenticate; OAuth authorizes.",
+      "columns": [
+        {
+          "label": "SAML 2.0",
+          "badge": "XML assertions",
+          "points": [
+            "Authentication + attributes",
+            "Principal, IdP, SP",
+            "Enterprise web SSO"
+          ]
+        },
+        {
+          "label": "OAuth 2.0",
+          "badge": "Access tokens",
+          "points": [
+            "Delegated authorization (scopes)",
+            "Not authentication by itself",
+            "API access on a user's behalf"
+          ]
+        },
+        {
+          "label": "OpenID Connect",
+          "badge": "JWT ID token",
+          "points": [
+            "Authentication layer on OAuth 2.0",
+            "ID token + UserInfo endpoint",
+            "Modern web / mobile sign-in"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.3-c002",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.2",
+    "topicName": "Kerberos (AS, TGS, KDC, Tickets), RADIUS, TACACS+, LDAP",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 8,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Kerberos",
+      "KDC",
+      "AS",
+      "TGS",
+      "TGT",
+      "Service ticket"
+    ],
+    "tags": [
+      "kerberos"
+    ],
+    "title": "Kerberos authentication flow",
+    "prompt": "Order the steps of a Kerberos logon and service access.",
+    "answerSummary": "Client authenticates to the Authentication Service and receives a TGT; client presents the TGT to the Ticket Granting Service to request a service ticket; TGS returns the service ticket; client presents it to the target service, which validates it and grants access.",
+    "mnemonic": "AS gives the TGT; TGS gives the ST; the server grants access.",
+    "examTrapWarning": "The user's password is never sent across the network. The KDC (AS + TGS) is a single point of failure, and clocks must be in sync (default 5-minute skew).",
+    "sequenceData": {
+      "directionLabel": "Logon → service access",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Request to AS",
+          "detail": "Client sends user ID to the Authentication Service (part of the KDC)."
+        },
+        {
+          "order": 2,
+          "label": "AS returns TGT",
+          "detail": "AS returns a TGT plus session key, encrypted with a key derived from the user's password."
+        },
+        {
+          "order": 3,
+          "label": "Request service ticket",
+          "detail": "Client sends the TGT and an authenticator to the Ticket Granting Service."
+        },
+        {
+          "order": 4,
+          "label": "TGS returns service ticket",
+          "detail": "TGS issues a service ticket encrypted with the target service's key."
+        },
+        {
+          "order": 5,
+          "label": "Present ticket to service",
+          "detail": "Client sends the service ticket and a fresh authenticator to the server."
+        },
+        {
+          "order": 6,
+          "label": "Service grants access",
+          "detail": "Server decrypts the ticket, validates the timestamp, and allows access."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 14: Controlling and Monitoring Access"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.3-c003",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.2",
+    "topicName": "Kerberos (AS, TGS, KDC, Tickets), RADIUS, TACACS+, LDAP",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Kerberos",
+      "Port 88",
+      "Clock skew",
+      "Symmetric keys"
+    ],
+    "tags": [
+      "kerberos"
+    ],
+    "title": "Kerberos dependencies",
+    "prompt": "Fill in the Kerberos facts.",
+    "answerSummary": "Kerberos runs on port 88, uses symmetric-key cryptography, and relies on synchronized clocks; default tolerated skew is 5 minutes, so NTP outages break authentication.",
+    "mnemonic": null,
+    "examTrapWarning": "Kerberos uses symmetric keys, not PKI (PKINIT is an optional extension). The KDC is a single point of failure.",
+    "clozeTemplate": "Kerberos uses {{c1::symmetric::crypto type}} keys and listens on port {{c2::88::port}}. Tickets carry timestamps, so clocks must be synchronized, typically within {{c3::5 minutes::default skew}}; the {{c4::KDC::server}} is a single point of failure.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 14: Controlling and Monitoring Access"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.3-c004",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.2",
+    "topicName": "Kerberos (AS, TGS, KDC, Tickets), RADIUS, TACACS+, LDAP",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "RADIUS",
+      "TACACS+",
+      "Diameter",
+      "AAA"
+    ],
+    "tags": [
+      "aaa"
+    ],
+    "title": "RADIUS vs. TACACS+ vs. Diameter",
+    "prompt": "Contrast RADIUS, TACACS+ and Diameter on transport, encryption and AAA handling.",
+    "answerSummary": "RADIUS: UDP 1812/1813, encrypts only the password, combines authentication and authorization; common for network and Wi-Fi access. TACACS+: TCP 49, encrypts the entire payload, separates authentication, authorization and accounting; preferred for device administration. Diameter: RADIUS successor over TCP/SCTP with TLS/IPsec, used in mobile and IMS networks.",
+    "mnemonic": null,
+    "examTrapWarning": "For admin access to routers with per-command authorization and full encryption, choose TACACS+.",
+    "contrastData": {
+      "ruleOfThumb": "TACACS+ = TCP, full encryption, separate AAA.",
+      "columns": [
+        {
+          "label": "RADIUS",
+          "badge": "UDP 1812/1813",
+          "points": [
+            "Encrypts password only",
+            "Combines authN and authZ",
+            "Network / Wi-Fi / VPN access"
+          ]
+        },
+        {
+          "label": "TACACS+",
+          "badge": "TCP 49",
+          "points": [
+            "Encrypts entire payload",
+            "Separates the three A's",
+            "Device administration, command authorization"
+          ]
+        },
+        {
+          "label": "Diameter",
+          "badge": "TCP / SCTP 3868",
+          "points": [
+            "Successor to RADIUS",
+            "TLS or IPsec protection",
+            "Mobile carrier (4G/5G) networks"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 14: Controlling and Monitoring Access"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.4-c001",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.4",
+    "subdomainName": "Implement and Manage Authorization Mechanisms",
+    "topicId": "5.4.1",
+    "topicName": "DAC, MAC, RBAC, ABAC, Rule-Based, Risk-Based Access Control",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "DAC",
+      "MAC",
+      "RBAC",
+      "ABAC",
+      "Rule-based access control"
+    ],
+    "tags": [
+      "authorization"
+    ],
+    "title": "Access control models",
+    "prompt": "Compare DAC, MAC, RBAC, ABAC and rule-based access control: who decides and how.",
+    "answerSummary": "DAC: the owner sets permissions (ACLs); flexible but Trojan-prone. MAC: the system enforces labels and clearances; non-discretionary. RBAC: permissions follow job roles. ABAC: policies evaluate attributes of subject, object, action and environment. Rule-based: global rules apply to everyone, such as firewall rules.",
+    "mnemonic": null,
+    "examTrapWarning": "Labels and clearances mean MAC. \"Contractors may access only from company devices during business hours\" is ABAC.",
+    "matrixData": {
+      "headers": [
+        "Model",
+        "Who / what decides",
+        "Example"
+      ],
+      "rows": [
+        [
+          "DAC",
+          "Data owner",
+          "NTFS file permissions set by the file owner"
+        ],
+        [
+          "MAC",
+          "System, using labels and clearances",
+          "Military classified systems, SELinux"
+        ],
+        [
+          "RBAC",
+          "Job role membership",
+          "All nurses can read patient charts"
+        ],
+        [
+          "ABAC",
+          "Policy over attributes (user, resource, action, environment)",
+          "Managers in EU, on managed device, 9–5"
+        ],
+        [
+          "Rule-based",
+          "Global rules for all subjects",
+          "Firewall ACL denying Telnet"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 14: Controlling and Monitoring Access"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.5-c001",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.5",
+    "subdomainName": "Manage the Identity and Access Provisioning Lifecycle",
+    "topicId": "5.5.1",
+    "topicName": "Provisioning, Onboarding, Role Changes, Deprovisioning, Access Reviews",
+    "cardType": "sequence_order",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Provisioning",
+      "Access review",
+      "Privilege creep",
+      "Deprovisioning"
+    ],
+    "tags": [
+      "iam-lifecycle"
+    ],
+    "title": "Identity and access lifecycle",
+    "prompt": "Put the identity lifecycle stages in order.",
+    "answerSummary": "Identity proofing and provisioning at onboarding; ongoing use with periodic access reviews; role change (remove old rights, add new); deprovisioning at termination.",
+    "mnemonic": null,
+    "examTrapWarning": "Transfers are where privilege creep happens: new rights are added but old ones are not removed.",
+    "sequenceData": {
+      "directionLabel": "Joiner → mover → leaver",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Identity proofing",
+          "detail": "Verify the person against HR records and identity documents."
+        },
+        {
+          "order": 2,
+          "label": "Provisioning",
+          "detail": "Create accounts with least-privilege, role-based access."
+        },
+        {
+          "order": 3,
+          "label": "Periodic access review",
+          "detail": "Managers re-certify access; remove what is no longer needed."
+        },
+        {
+          "order": 4,
+          "label": "Role change (mover)",
+          "detail": "Revoke old privileges and grant new ones to prevent privilege creep."
+        },
+        {
+          "order": 5,
+          "label": "Deprovisioning (leaver)",
+          "detail": "Disable accounts promptly at termination; delete after retention period."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.5-c002",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.5",
+    "subdomainName": "Manage the Identity and Access Provisioning Lifecycle",
+    "topicId": "5.5.1",
+    "topicName": "Provisioning, Onboarding, Role Changes, Deprovisioning, Access Reviews",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "incomplete_partial_answer",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Privilege creep",
+      "Access recertification",
+      "Least privilege"
+    ],
+    "tags": [
+      "iam-lifecycle"
+    ],
+    "title": "Privilege creep and its fix",
+    "prompt": "Complete the statement about privilege creep.",
+    "answerSummary": "Privilege creep is the gradual buildup of access rights as users change jobs without old rights being removed. Periodic access reviews (recertification) by managers, together with RBAC, detect and correct it.",
+    "mnemonic": null,
+    "examTrapWarning": "Account reviews are the detective control; the root fix is a mover process that removes old access at each transfer.",
+    "clozeTemplate": "{{c1::Privilege creep::term}} happens when users keep old permissions after changing roles. It violates {{c2::least privilege::principle}} and is caught by periodic {{c3::access reviews (recertification)::control}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.6-c001",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.6",
+    "subdomainName": "Implement Authentication Systems & PAM",
+    "topicId": "5.6.1",
+    "topicName": "Privileged Access Management (PAM), Just-in-Time (JIT) Access, Vaulting",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "PAM",
+      "Just-in-time access",
+      "Zero standing privileges",
+      "Credential vaulting",
+      "Session recording"
+    ],
+    "tags": [
+      "pam"
+    ],
+    "title": "Privileged access management controls",
+    "prompt": "Describe the core PAM capabilities.",
+    "answerSummary": "Just-in-time elevation grants admin rights only when needed and for a limited time. Zero standing privileges means no always-on admin accounts. Credential vaulting stores and rotates privileged passwords and keys. Session recording and monitoring capture privileged activity. Service account governance inventories and rotates non-human credentials.",
+    "mnemonic": null,
+    "examTrapWarning": "Shared, never-rotated admin passwords are the classic PAM gap. JIT access shrinks the window an attacker can use stolen admin credentials.",
+    "matrixData": {
+      "headers": [
+        "Control",
+        "What it does"
+      ],
+      "rows": [
+        [
+          "Just-in-time (JIT) access",
+          "Time-limited elevation on approval"
+        ],
+        [
+          "Zero standing privileges",
+          "No permanent admin rights"
+        ],
+        [
+          "Credential vaulting / rotation",
+          "Stores privileged secrets; rotates after use"
+        ],
+        [
+          "Session recording",
+          "Records and monitors privileged sessions"
+        ],
+        [
+          "Service account governance",
+          "Inventory, ownership and rotation of non-human accounts"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 14: Controlling and Monitoring Access"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d5-s5.5-c003",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.5",
+    "subdomainName": "Manage the Identity and Access Provisioning Lifecycle",
+    "topicId": "5.5.1",
+    "topicName": "Provisioning, Onboarding, Role Changes, Deprovisioning, Access Reviews",
+    "cardType": "manager_heuristic",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase",
+      "technical_fix_over_process"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Hostile termination",
+      "Deprovisioning",
+      "Access revocation"
+    ],
+    "tags": [
+      "iam-lifecycle",
+      "termination"
+    ],
+    "title": "Deprovisioning a hostile leaver",
+    "prompt": "A database administrator is being dismissed for cause this afternoon. When should their access be removed?",
+    "answerSummary": "Disable all accounts, VPN, tokens and physical badges at the same time as (or immediately before) the termination meeting, coordinated with HR. Review accounts they created or shared credentials they knew and rotate them.",
+    "mnemonic": null,
+    "examTrapWarning": "Waiting for the normal monthly account review is too late. Also remember shared and service account passwords the person knew.",
+    "heuristicData": {
+      "technicalReflexTrap": "Remove access at the next scheduled account review, or leave accounts active so the DBA can hand over work.",
+      "managerAction": "Coordinate with HR to revoke all logical and physical access at the moment of notification, then rotate any shared or service credentials the person knew.",
+      "governingPrinciple": "Deprovisioning must be timely and complete; hostile terminations need immediate, coordinated revocation."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 13: Managing Identity and Authentication"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  }
+]

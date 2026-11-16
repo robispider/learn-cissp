@@ -1,0 +1,782 @@
+[
+  {
+    "id": "cissp-mem-d8-s8.1-c001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.1",
+    "subdomainName": "Understand and Integrate Security in the SDLC",
+    "topicId": "8.1.1",
+    "topicName": "SDLC Models (Agile, DevSecOps, Waterfall, Spiral)",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Waterfall",
+      "Spiral",
+      "Agile",
+      "DevSecOps"
+    ],
+    "tags": [
+      "sdlc"
+    ],
+    "title": "SDLC models compared",
+    "prompt": "Contrast Waterfall, Spiral, Agile and DevSecOps.",
+    "answerSummary": "Waterfall: sequential phases, little room for change. Spiral: iterations with an explicit risk analysis in each loop. Agile: short sprints delivering working software and adapting to change. DevSecOps: integrates automated security testing into CI/CD and shifts security left.",
+    "mnemonic": null,
+    "examTrapWarning": "The model known for risk analysis at every iteration is Spiral.",
+    "contrastData": {
+      "ruleOfThumb": "Spiral = risk-driven loops; DevSecOps = automated security in the pipeline.",
+      "columns": [
+        {
+          "label": "Waterfall",
+          "badge": "Sequential",
+          "points": [
+            "One phase after another",
+            "Hard to go back",
+            "Clear documentation"
+          ]
+        },
+        {
+          "label": "Spiral",
+          "badge": "Risk-driven",
+          "points": [
+            "Repeated loops",
+            "Risk analysis each iteration",
+            "Prototypes reduce uncertainty"
+          ]
+        },
+        {
+          "label": "Agile / Scrum",
+          "badge": "Iterative",
+          "points": [
+            "Short sprints",
+            "Working software over docs",
+            "Embraces changing requirements"
+          ]
+        },
+        {
+          "label": "DevSecOps",
+          "badge": "Continuous",
+          "points": [
+            "Security automated in CI/CD",
+            "Shift left",
+            "Shared responsibility for security"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.1-c002",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.1",
+    "subdomainName": "Understand and Integrate Security in the SDLC",
+    "topicId": "8.1.2",
+    "topicName": "Security Gates at Requirements, Design, Coding, Testing, Deployment",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Security requirements",
+      "Threat modeling",
+      "SAST",
+      "DAST",
+      "Code signing"
+    ],
+    "tags": [
+      "sdlc",
+      "security-gates"
+    ],
+    "title": "Security activities at each SDLC phase",
+    "prompt": "Order the SDLC phases and name the key security activity at each.",
+    "answerSummary": "Requirements: security requirements and abuse cases. Design: threat modeling and architecture review. Development: secure coding, peer review, SAST. Testing: DAST, penetration testing, acceptance testing. Deployment and operations: change control, code signing, monitoring. Disposal: data sanitization and decommissioning.",
+    "mnemonic": null,
+    "examTrapWarning": "Security is cheapest to add during requirements and design. Threat modeling belongs in design, not after deployment.",
+    "sequenceData": {
+      "directionLabel": "Start → end of life",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Requirements",
+          "detail": "Define security and privacy requirements, abuse and misuse cases."
+        },
+        {
+          "order": 2,
+          "label": "Design",
+          "detail": "Threat modeling, secure architecture review, attack surface analysis."
+        },
+        {
+          "order": 3,
+          "label": "Development",
+          "detail": "Secure coding standards, peer code review, SAST, SCA."
+        },
+        {
+          "order": 4,
+          "label": "Testing",
+          "detail": "DAST, fuzzing, penetration testing, user acceptance testing."
+        },
+        {
+          "order": 5,
+          "label": "Deployment and operations",
+          "detail": "Change management, code signing, hardening, monitoring, patching."
+        },
+        {
+          "order": 6,
+          "label": "Disposal",
+          "detail": "Archive or sanitize data and retire the system securely."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.2-c001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.2",
+    "subdomainName": "Identify and Apply Security Controls in Development Environments",
+    "topicId": "8.2.1",
+    "topicName": "CI/CD Pipeline Security, Secrets Management, Environment Separation",
+    "cardType": "manager_heuristic",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "solves_wrong_problem"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Production data",
+      "Test data",
+      "Synthetic data",
+      "Environment separation"
+    ],
+    "tags": [
+      "dev-environment",
+      "privacy"
+    ],
+    "title": "Developers want real customer data for testing",
+    "prompt": "The development team asks for a copy of the production customer database to reproduce a bug in the test environment. What is the right response?",
+    "answerSummary": "Do not copy live PII into lower environments. Provide masked, anonymized or synthetic data, or reproduce the bug under production-level controls with data owner approval.",
+    "mnemonic": null,
+    "examTrapWarning": "Test and dev environments usually have weaker controls and wider access, so copying production PII there creates a breach risk and may violate privacy law.",
+    "heuristicData": {
+      "technicalReflexTrap": "Copy the production database into test and rely on the developers to be careful.",
+      "managerAction": "Keep environments separated: supply masked or synthetic data, and require data-owner approval with equivalent controls if real data is truly necessary.",
+      "governingPrinciple": "Separate development, test and production, and protect sensitive data in every environment it lands in."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.2-c002",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.2",
+    "subdomainName": "Identify and Apply Security Controls in Development Environments",
+    "topicId": "8.2.1",
+    "topicName": "CI/CD Pipeline Security, Secrets Management, Environment Separation",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Secrets management",
+      "CI/CD",
+      "Hard-coded credentials",
+      "Signed artifacts"
+    ],
+    "tags": [
+      "ci-cd"
+    ],
+    "title": "Securing the CI/CD pipeline",
+    "prompt": "Complete the CI/CD security practices.",
+    "answerSummary": "Keep secrets out of source code and inject them at runtime from a vault, sign build artifacts so tampering is detected, use least-privilege and ephemeral build runners, and protect branches with required reviews.",
+    "mnemonic": null,
+    "examTrapWarning": "Deleting a secret in a later commit does not remove it from repository history; rotate any credential ever committed.",
+    "clozeTemplate": "Pipelines should pull credentials from a {{c1::secrets vault::store}} instead of {{c2::hard-coding them in source::anti-pattern}}, {{c3::sign build artifacts::integrity control}} so tampering is detectable, and use ephemeral, least-privilege build runners. A committed secret must be {{c4::rotated::response}}.",
+    "references": [
+      {
+        "source": "NIST SP 800-204D",
+        "section": "Software supply chain security in DevSecOps CI/CD pipelines"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.3-c001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.3",
+    "subdomainName": "Assess the Effectiveness of Software Security",
+    "topicId": "8.3.1",
+    "topicName": "Software Assurance Maturity Model (SAMM / BSIMM), Acceptance Testing",
+    "cardType": "sequence_order",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "CMMI",
+      "Initial",
+      "Managed",
+      "Defined",
+      "Quantitatively managed",
+      "Optimizing"
+    ],
+    "tags": [
+      "maturity"
+    ],
+    "title": "CMMI maturity levels",
+    "prompt": "Order the five CMMI maturity levels.",
+    "answerSummary": "1 Initial (ad hoc) → 2 Managed (repeatable at project level) → 3 Defined (organization-wide standard processes) → 4 Quantitatively managed (measured) → 5 Optimizing (continuous improvement).",
+    "mnemonic": "\"I Must Define Quality Often\": Initial, Managed, Defined, Quantitatively managed, Optimizing.",
+    "examTrapWarning": "Level 4 is about measurement and statistical control; Level 5 is continuous process improvement.",
+    "sequenceData": {
+      "directionLabel": "Level 1 → Level 5",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Initial",
+          "detail": "Unpredictable, ad hoc processes that depend on individuals."
+        },
+        {
+          "order": 2,
+          "label": "Managed (Repeatable)",
+          "detail": "Basic project management; processes can be repeated."
+        },
+        {
+          "order": 3,
+          "label": "Defined",
+          "detail": "Standard processes documented across the organization."
+        },
+        {
+          "order": 4,
+          "label": "Quantitatively managed",
+          "detail": "Processes measured and controlled with metrics."
+        },
+        {
+          "order": 5,
+          "label": "Optimizing",
+          "detail": "Continuous process improvement."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.3-c002",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.3",
+    "subdomainName": "Assess the Effectiveness of Software Security",
+    "topicId": "8.3.1",
+    "topicName": "Software Assurance Maturity Model (SAMM / BSIMM), Acceptance Testing",
+    "cardType": "concept_contrast",
+    "examPriority": "deep_detail",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "OWASP SAMM",
+      "BSIMM",
+      "Maturity model"
+    ],
+    "tags": [
+      "maturity"
+    ],
+    "title": "OWASP SAMM vs. BSIMM",
+    "prompt": "Contrast OWASP SAMM and BSIMM.",
+    "answerSummary": "OWASP SAMM is prescriptive and open: it tells you what to do across five business functions (governance, design, implementation, verification, operations) to raise maturity. BSIMM is descriptive: it reports what real organizations actually do, based on observation, so you can compare yourself with peers.",
+    "mnemonic": null,
+    "examTrapWarning": "Prescriptive (SAMM) vs. descriptive (BSIMM) is the tested distinction.",
+    "contrastData": {
+      "ruleOfThumb": "SAMM prescribes; BSIMM describes.",
+      "columns": [
+        {
+          "label": "OWASP SAMM",
+          "badge": "Prescriptive",
+          "points": [
+            "Five business functions",
+            "Roadmap for improving maturity",
+            "Free, open model"
+          ]
+        },
+        {
+          "label": "BSIMM",
+          "badge": "Descriptive",
+          "points": [
+            "Based on observing real firms",
+            "Benchmark against peers",
+            "Reports common activities"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "OWASP SAMM v2 / BSIMM",
+        "section": "Model overviews"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.4-c001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.4",
+    "subdomainName": "Assess Security Impact of Acquired Software",
+    "topicId": "8.4.1",
+    "topicName": "COTS, SaaS, Open-Source Libraries, SBOM, Supply Chain Tampering",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SBOM",
+      "Source code escrow",
+      "Third-party components"
+    ],
+    "tags": [
+      "supply-chain"
+    ],
+    "title": "SBOM and source code escrow",
+    "prompt": "Complete the acquired software risk controls.",
+    "answerSummary": "An SBOM lists every component and dependency in a product so you can quickly check for affected versions when a new CVE appears. Source code escrow keeps the vendor's code with a third party, released to you if the vendor goes out of business or stops support.",
+    "mnemonic": null,
+    "examTrapWarning": "Escrow protects against vendor failure, not against vulnerabilities. An SBOM gives visibility, not a fix.",
+    "clozeTemplate": "A {{c1::software bill of materials (SBOM)::inventory}} lists all components and dependencies, enabling fast impact checks for new CVEs. {{c2::Source code escrow::arrangement}} protects the customer if the vendor {{c3::goes bankrupt or stops support::trigger}}.",
+    "references": [
+      {
+        "source": "NTIA / CISA",
+        "section": "Minimum Elements for an SBOM"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.5-c001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.5",
+    "subdomainName": "Define and Apply Secure Coding Guidelines and Standards",
+    "topicId": "8.5.1",
+    "topicName": "OWASP Top 10 (Injection, Broken Access Control, SSRF, XSS, CSRF)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "solves_wrong_problem",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SQL injection",
+      "XSS",
+      "CSRF",
+      "SSRF",
+      "Broken access control"
+    ],
+    "tags": [
+      "owasp"
+    ],
+    "title": "Web flaws and their primary fixes",
+    "prompt": "For each common web vulnerability, give the primary defense.",
+    "answerSummary": "SQL injection: parameterized queries / prepared statements. XSS: context-aware output encoding plus Content Security Policy. CSRF: anti-CSRF tokens and SameSite cookies. SSRF: allow-list destinations and block internal metadata addresses. Broken access control: deny by default and enforce authorization server-side on every request.",
+    "mnemonic": null,
+    "examTrapWarning": "Blacklisting characters or client-side validation alone is never the best fix for injection. Encoding output (not input filtering) is the main XSS defense.",
+    "matrixData": {
+      "headers": [
+        "Vulnerability",
+        "Primary defense"
+      ],
+      "rows": [
+        [
+          "SQL injection",
+          "Parameterized queries / prepared statements; least-privilege DB accounts"
+        ],
+        [
+          "Cross-site scripting (XSS)",
+          "Context-aware output encoding; Content Security Policy"
+        ],
+        [
+          "Cross-site request forgery (CSRF)",
+          "Anti-CSRF synchronizer tokens; SameSite cookies"
+        ],
+        [
+          "Server-side request forgery (SSRF)",
+          "Allow-list outbound destinations; block internal / metadata IPs"
+        ],
+        [
+          "Broken access control",
+          "Deny by default; server-side authorization checks per request"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "OWASP Top 10 (2021) and OWASP Cheat Sheet Series",
+        "section": "Prevention guidance"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.5-c002",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.5",
+    "subdomainName": "Define and Apply Secure Coding Guidelines and Standards",
+    "topicId": "8.5.1",
+    "topicName": "OWASP Top 10 (Injection, Broken Access Control, SSRF, XSS, CSRF)",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Stored XSS",
+      "Reflected XSS",
+      "DOM-based XSS"
+    ],
+    "tags": [
+      "owasp",
+      "xss"
+    ],
+    "title": "Stored vs. reflected vs. DOM-based XSS",
+    "prompt": "Contrast the three kinds of cross-site scripting.",
+    "answerSummary": "Stored (persistent): the script is saved on the server (for example in a comment) and served to every viewer. Reflected: the script arrives in a request (often a crafted link) and is echoed back immediately. DOM-based: client-side JavaScript writes untrusted data into the page without the server ever reflecting it.",
+    "mnemonic": null,
+    "examTrapWarning": "Stored XSS affects every visitor without them clicking a special link, so it usually has the widest impact.",
+    "contrastData": {
+      "ruleOfThumb": "Where the payload lives: server (stored), request (reflected), browser code (DOM).",
+      "columns": [
+        {
+          "label": "Stored",
+          "badge": "Persistent",
+          "points": [
+            "Saved in server data",
+            "Hits every viewer",
+            "Widest impact"
+          ]
+        },
+        {
+          "label": "Reflected",
+          "badge": "Non-persistent",
+          "points": [
+            "Payload in URL or form input",
+            "Victim must follow a crafted link",
+            "Echoed back in the response"
+          ]
+        },
+        {
+          "label": "DOM-based",
+          "badge": "Client-side",
+          "points": [
+            "Unsafe JavaScript sinks (innerHTML)",
+            "Server may never see payload",
+            "Fix in front-end code"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "OWASP Top 10 (2021) and OWASP Cheat Sheet Series",
+        "section": "Prevention guidance"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.5-c003",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.5",
+    "subdomainName": "Define and Apply Secure Coding Guidelines and Standards",
+    "topicId": "8.5.2",
+    "topicName": "Buffer Overflows, Race Conditions (TOCTOU), Input Validation, API Security",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Aggregation",
+      "Inference",
+      "Polyinstantiation"
+    ],
+    "tags": [
+      "database"
+    ],
+    "title": "Aggregation vs. inference (and polyinstantiation)",
+    "prompt": "Distinguish database aggregation and inference attacks and name the classic countermeasure for inference.",
+    "answerSummary": "Aggregation combines many individually low-sensitivity items into something more sensitive (troop counts per base reveal force strength). Inference deduces hidden information from what you can see (a missing record implies a secret). Polyinstantiation, query restriction and noise/perturbation counter inference.",
+    "mnemonic": null,
+    "examTrapWarning": "Polyinstantiation (multiple records with the same key at different classification levels) is the textbook answer for inference.",
+    "contrastData": {
+      "ruleOfThumb": "Aggregation adds pieces up; inference reasons from them.",
+      "columns": [
+        {
+          "label": "Aggregation",
+          "badge": "Combining data",
+          "points": [
+            "Many low-level items form a high-level secret",
+            "Controlled by limiting combined access",
+            "Classify the aggregate higher"
+          ]
+        },
+        {
+          "label": "Inference",
+          "badge": "Deducing data",
+          "points": [
+            "Deriving hidden facts from visible data",
+            "Countered by polyinstantiation",
+            "Also cell suppression, noise and perturbation"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.5-c004",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.5",
+    "subdomainName": "Define and Apply Secure Coding Guidelines and Standards",
+    "topicId": "8.5.2",
+    "topicName": "Buffer Overflows, Race Conditions (TOCTOU), Input Validation, API Security",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "ACID",
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "tags": [
+      "database"
+    ],
+    "title": "ACID transaction properties",
+    "prompt": "Define each ACID property for database transactions.",
+    "answerSummary": "Atomicity: all of a transaction happens or none of it does. Consistency: transactions move the database from one valid state to another. Isolation: concurrent transactions do not interfere. Durability: committed changes survive failures.",
+    "mnemonic": null,
+    "examTrapWarning": "Atomicity is about all-or-nothing; isolation is about concurrency. These are often swapped in distractors.",
+    "matrixData": {
+      "headers": [
+        "Property",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Atomicity",
+          "All-or-nothing: partial transactions are rolled back"
+        ],
+        [
+          "Consistency",
+          "Each transaction preserves database rules and integrity"
+        ],
+        [
+          "Isolation",
+          "Concurrent transactions do not see each other's partial work"
+        ],
+        [
+          "Durability",
+          "Committed changes persist despite crashes"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 20: Software Development Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.5-c005",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.5",
+    "subdomainName": "Define and Apply Secure Coding Guidelines and Standards",
+    "topicId": "8.5.2",
+    "topicName": "Buffer Overflows, Race Conditions (TOCTOU), Input Validation, API Security",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "TOCTOU",
+      "Race condition",
+      "Atomic operation",
+      "Locking"
+    ],
+    "tags": [
+      "secure-coding"
+    ],
+    "title": "TOCTOU race conditions",
+    "prompt": "Complete the description of a time-of-check to time-of-use flaw.",
+    "answerSummary": "A TOCTOU flaw happens when a program checks a resource (permissions, file identity) and later uses it, and an attacker changes the resource in between. Fix with atomic operations, file locking or by operating on handles rather than names.",
+    "mnemonic": null,
+    "examTrapWarning": "Adding more checks does not fix a race; the check and the use must be made atomic.",
+    "clozeTemplate": "A {{c1::TOCTOU::flaw name}} race occurs when a program checks a resource and then uses it later, and an attacker {{c2::changes the resource between check and use::exploit}}. The fix is to make check and use {{c3::atomic (locking or handles)::remedy}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 21: Malicious Code and Application Attacks"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d8-s8.5-c006",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.5",
+    "subdomainName": "Define and Apply Secure Coding Guidelines and Standards",
+    "topicId": "8.5.2",
+    "topicName": "Buffer Overflows, Race Conditions (TOCTOU), Input Validation, API Security",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Buffer overflow",
+      "ASLR",
+      "DEP / NX",
+      "Stack canary",
+      "Bounds checking"
+    ],
+    "tags": [
+      "secure-coding",
+      "memory-safety"
+    ],
+    "title": "Buffer overflow defenses",
+    "prompt": "Name the main buffer overflow defenses and what each one does.",
+    "answerSummary": "Bounds checking and memory-safe languages prevent the overflow. Stack canaries detect a smashed stack before a function returns. DEP/NX marks data memory non-executable. ASLR randomizes memory addresses so jumps to injected code or gadgets fail.",
+    "mnemonic": null,
+    "examTrapWarning": "ASLR and DEP make exploitation harder but do not remove the bug; input validation and bounds checking are the root-cause fix.",
+    "matrixData": {
+      "headers": [
+        "Defense",
+        "How it helps"
+      ],
+      "rows": [
+        [
+          "Bounds checking / input validation",
+          "Prevents writing past the buffer (root-cause fix)"
+        ],
+        [
+          "Memory-safe languages",
+          "Rust, Go, Java, C# manage memory bounds automatically"
+        ],
+        [
+          "Stack canaries",
+          "Detects overwritten return address before it is used"
+        ],
+        [
+          "DEP / NX bit",
+          "Data regions cannot execute injected code"
+        ],
+        [
+          "ASLR",
+          "Randomizes addresses so exploits cannot predict targets"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 21: Malicious Code and Application Attacks"
+      }
+    ]
+  }
+]

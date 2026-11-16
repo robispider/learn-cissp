@@ -317,4 +317,31 @@ export function previewCardRatings(
   return result;
 }
 
+/**
+ * Simulates a card answered "Good" on every scheduled due date and returns the stability
+ * (days) after each graduated review — used to illustrate how each successful review
+ * flattens the forgetting curve (§8.2 ForgettingCurveChart).
+ */
+export function simulateGoodReviewStabilities(
+  prefs: FsrsUserPreferences = getFsrsPreferences(),
+  reviews = 4,
+  start: Date = new Date()
+): number[] {
+  const scheduler = buildScheduler(prefs);
+  let card = createEmptyCard(start);
+  let now = start;
+  const out: number[] = [];
+  for (let i = 0; i < reviews * 4 && out.length < reviews; i++) {
+    const res = scheduler.next(card, now, Rating.Good);
+    card = res.card;
+    now = card.due;
+    // Only record once the card has graduated out of intraday learning steps.
+    if (card.state === 2 && card.scheduled_days >= 1) {
+      const s = round4(card.stability);
+      if (!out.length || s > out[out.length - 1]) out.push(s);
+    }
+  }
+  return out;
+}
+
 export { Rating };

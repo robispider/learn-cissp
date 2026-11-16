@@ -1,0 +1,1631 @@
+[
+  {
+    "id": "cissp-mem-d3-s3.1-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.1",
+    "subdomainName": "Secure Design Principles",
+    "topicId": "3.1.1",
+    "topicName": "Saltzer & Schroeder Principles",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Saltzer and Schroeder",
+      "Least privilege",
+      "Fail-safe defaults",
+      "Economy of mechanism",
+      "Complete mediation",
+      "Open design"
+    ],
+    "tags": [
+      "design-principles"
+    ],
+    "title": "Saltzer & Schroeder's secure design principles",
+    "prompt": "Name the eight Saltzer and Schroeder design principles and what each means.",
+    "answerSummary": "Economy of mechanism, fail-safe defaults, complete mediation, open design, separation of privilege, least privilege, least common mechanism, psychological acceptability.",
+    "mnemonic": "Every Fine Castle Opens Slowly: Least Locks Protect (Economy, Fail-safe, Complete, Open, Separation, Least privilege, Least common, Psychological).",
+    "examTrapWarning": "Open design means security should not depend on secrecy of the design (no security through obscurity); only keys stay secret.",
+    "matrixData": {
+      "headers": [
+        "Principle",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Economy of mechanism",
+          "Keep the design small and simple so it can be verified"
+        ],
+        [
+          "Fail-safe defaults",
+          "Default is deny; access must be explicitly granted"
+        ],
+        [
+          "Complete mediation",
+          "Check every access to every object, every time"
+        ],
+        [
+          "Open design",
+          "Security must not rely on a secret design (Kerckhoffs)"
+        ],
+        [
+          "Separation of privilege",
+          "Require more than one condition or key to grant access"
+        ],
+        [
+          "Least privilege",
+          "Give only the rights needed to do the job"
+        ],
+        [
+          "Least common mechanism",
+          "Minimize shared mechanisms between users"
+        ],
+        [
+          "Psychological acceptability",
+          "Security must be easy enough that people use it correctly"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "Saltzer & Schroeder (1975)",
+        "section": "The Protection of Information in Computer Systems"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.1-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.1",
+    "subdomainName": "Secure Design Principles",
+    "topicId": "3.1.1",
+    "topicName": "Saltzer & Schroeder Principles",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "ignores_human_safety",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Fail-safe",
+      "Fail-secure",
+      "Fail-open",
+      "Fail-closed"
+    ],
+    "tags": [
+      "failure-modes"
+    ],
+    "title": "Fail-safe vs. fail-secure",
+    "prompt": "Contrast fail-safe and fail-secure behavior, with physical and logical examples, and say which wins when lives are at stake.",
+    "answerSummary": "Fail-safe (fail-open) defaults to a state that protects people, such as doors unlocking during a power loss or fire. Fail-secure (fail-closed) defaults to protecting assets, such as a firewall blocking all traffic when it crashes. Human safety always wins for exit doors.",
+    "mnemonic": null,
+    "examTrapWarning": "Saltzer's \"fail-safe defaults\" means default deny, which is the opposite of a fail-safe door. Read the context: physical life safety vs. logical access.",
+    "contrastData": {
+      "ruleOfThumb": "People first: exits fail-safe; systems holding assets fail-secure.",
+      "columns": [
+        {
+          "label": "Fail-safe / fail-open",
+          "badge": "Protects people",
+          "points": [
+            "Doors unlock on power loss or fire alarm",
+            "Prioritizes human life",
+            "Required for emergency egress"
+          ]
+        },
+        {
+          "label": "Fail-secure / fail-closed",
+          "badge": "Protects assets",
+          "points": [
+            "Firewall denies all traffic on failure",
+            "Vault door stays locked",
+            "Used where no life-safety issue exists"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.2-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.2",
+    "subdomainName": "Fundamental Concepts of Security Models",
+    "topicId": "3.2.1",
+    "topicName": "Confidentiality Models (Bell-LaPadula)",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 7,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Bell-LaPadula",
+      "Biba",
+      "Simple Security Property",
+      "*-Property",
+      "Confidentiality",
+      "Integrity"
+    ],
+    "tags": [
+      "security-models"
+    ],
+    "title": "Bell-LaPadula (confidentiality) vs. Biba (integrity)",
+    "prompt": "Compare the simple and star (*) properties of Bell-LaPadula and Biba, and say which goal each model protects.",
+    "answerSummary": "Bell-LaPadula protects confidentiality: no read up (simple security property), no write down (* property). Biba protects integrity: no read down (simple integrity axiom), no write up (* integrity axiom).",
+    "mnemonic": "BLP is military secrecy: you can't read above your level or leak below it. Biba is the mirror image: dirty data must not flow up into clean data.",
+    "examTrapWarning": "Questions name the property (\"simple\" = read, \"star\" = write) instead of saying \"no read up\". A process copying Secret data into a Public folder is blocked by the BLP * property.",
+    "contrastData": {
+      "ruleOfThumb": "BLP: read down, write up. Biba: read up, write down.",
+      "columns": [
+        {
+          "label": "Bell-LaPadula",
+          "badge": "Confidentiality",
+          "points": [
+            "Simple security property: no read up",
+            "Star (*) property: no write down",
+            "Strong star property: read/write only at same level",
+            "Does not address integrity or covert channels"
+          ]
+        },
+        {
+          "label": "Biba",
+          "badge": "Integrity",
+          "points": [
+            "Simple integrity axiom: no read down",
+            "Star (*) integrity axiom: no write up",
+            "Invocation property: cannot invoke higher-integrity subjects",
+            "Stops low-integrity data corrupting trusted data"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.2-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.2",
+    "subdomainName": "Fundamental Concepts of Security Models",
+    "topicId": "3.2.2",
+    "topicName": "Integrity Models (Biba, Clark-Wilson)",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 7,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Clark-Wilson",
+      "CDI",
+      "UDI",
+      "TP",
+      "IVP",
+      "Access triple"
+    ],
+    "tags": [
+      "security-models",
+      "integrity"
+    ],
+    "title": "Clark-Wilson integrity model vocabulary",
+    "prompt": "Define the Clark-Wilson components and the access triple.",
+    "answerSummary": "Users never touch constrained data items directly; they must go through transformation procedures (well-formed transactions), checked by integrity verification procedures, with separation of duties. Access is defined as a subject–program–object triple.",
+    "mnemonic": null,
+    "examTrapWarning": "Clark-Wilson is the commercial integrity model built on well-formed transactions and separation of duties, unlike Biba's lattice of integrity levels.",
+    "matrixData": {
+      "headers": [
+        "Term",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "CDI (constrained data item)",
+          "Data whose integrity is protected; only TPs may change it"
+        ],
+        [
+          "UDI (unconstrained data item)",
+          "Input not yet validated (e.g., user input)"
+        ],
+        [
+          "TP (transformation procedure)",
+          "Well-formed transaction; the only way to modify a CDI"
+        ],
+        [
+          "IVP (integrity verification procedure)",
+          "Confirms CDIs are in a valid state"
+        ],
+        [
+          "Access triple",
+          "Subject → program (TP) → object; no direct subject-to-object access"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.2-c003",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.2",
+    "subdomainName": "Fundamental Concepts of Security Models",
+    "topicId": "3.2.3",
+    "topicName": "Brewer-Nash (Chinese Wall), Graham-Denning, Take-Grant",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Brewer-Nash",
+      "Chinese Wall",
+      "Graham-Denning",
+      "Take-Grant"
+    ],
+    "tags": [
+      "security-models"
+    ],
+    "title": "Brewer-Nash vs. Graham-Denning vs. Take-Grant",
+    "prompt": "Contrast what problem each of these three models addresses.",
+    "answerSummary": "Brewer-Nash (Chinese Wall) changes access dynamically to prevent conflicts of interest. Graham-Denning defines eight primitive rights for securely creating, deleting and granting access to subjects and objects. Take-Grant uses a directed graph with take, grant, create and remove rules to show how rights pass between subjects.",
+    "mnemonic": null,
+    "examTrapWarning": "A consultant who viewed Bank A's data being blocked from Bank B's data is Brewer-Nash, not Bell-LaPadula.",
+    "contrastData": {
+      "ruleOfThumb": "Conflict of interest → Brewer-Nash; rights management primitives → Graham-Denning; rights transfer graph → Take-Grant.",
+      "columns": [
+        {
+          "label": "Brewer-Nash (Chinese Wall)",
+          "badge": "Conflict of interest",
+          "points": [
+            "Access depends on what you accessed before",
+            "Dynamic, history-based",
+            "Consulting, finance, law firms"
+          ]
+        },
+        {
+          "label": "Graham-Denning",
+          "badge": "Eight protection rules",
+          "points": [
+            "Create/delete objects and subjects",
+            "Read/grant/delete/transfer access rights",
+            "Formal rules for rights management"
+          ]
+        },
+        {
+          "label": "Take-Grant",
+          "badge": "Directed graph",
+          "points": [
+            "Rules: take, grant, create, remove",
+            "Shows how rights propagate",
+            "Analyzes leakage of rights"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.3-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.3",
+    "subdomainName": "Select Controls Based Upon Systems Security Requirements",
+    "topicId": "3.3.1",
+    "topicName": "Common Criteria (ISO 15408: TOE, PP, ST, EALs)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 7,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Common Criteria",
+      "EAL",
+      "ISO/IEC 15408"
+    ],
+    "tags": [
+      "common-criteria"
+    ],
+    "title": "Common Criteria Evaluation Assurance Levels (EAL 1–7)",
+    "prompt": "List EAL1 through EAL7 with their descriptions.",
+    "answerSummary": "EAL1 functionally tested; EAL2 structurally tested; EAL3 methodically tested and checked; EAL4 methodically designed, tested and reviewed; EAL5 semiformally designed and tested; EAL6 semiformally verified design and tested; EAL7 formally verified design and tested.",
+    "mnemonic": "Functional → Structural → Methodical ×2 → Semiformal ×2 → Formal.",
+    "examTrapWarning": "EAL4 is the highest level generally reached by commercial products without special engineering. EALs measure assurance (confidence in evaluation), not how many security features a product has.",
+    "matrixData": {
+      "headers": [
+        "Level",
+        "Description"
+      ],
+      "rows": [
+        [
+          "EAL1",
+          "Functionally tested"
+        ],
+        [
+          "EAL2",
+          "Structurally tested"
+        ],
+        [
+          "EAL3",
+          "Methodically tested and checked"
+        ],
+        [
+          "EAL4",
+          "Methodically designed, tested and reviewed (typical commercial ceiling)"
+        ],
+        [
+          "EAL5",
+          "Semiformally designed and tested"
+        ],
+        [
+          "EAL6",
+          "Semiformally verified design and tested"
+        ],
+        [
+          "EAL7",
+          "Formally verified design and tested"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISO/IEC 15408 (Common Criteria)",
+        "section": "Part 3: Security assurance components"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.3-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.3",
+    "subdomainName": "Select Controls Based Upon Systems Security Requirements",
+    "topicId": "3.3.1",
+    "topicName": "Common Criteria (ISO 15408: TOE, PP, ST, EALs)",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Protection Profile",
+      "Security Target",
+      "Target of Evaluation"
+    ],
+    "tags": [
+      "common-criteria"
+    ],
+    "title": "Protection Profile vs. Security Target vs. TOE",
+    "prompt": "Contrast the Common Criteria Protection Profile, Security Target and Target of Evaluation.",
+    "answerSummary": "A Protection Profile (PP) is an implementation-independent set of requirements written by a customer or community (\"what I want\"). A Security Target (ST) is the vendor's claims for a specific product (\"what I offer\"). The TOE is the product or system actually evaluated.",
+    "mnemonic": "PP = Purchaser's Profile, ST = Seller's Target.",
+    "examTrapWarning": "The vendor writes the Security Target, not the Protection Profile.",
+    "contrastData": {
+      "ruleOfThumb": "Customer needs (PP) vs. vendor claims (ST), evaluated on the product (TOE).",
+      "columns": [
+        {
+          "label": "Protection Profile (PP)",
+          "badge": "Customer needs",
+          "points": [
+            "Implementation-independent requirements",
+            "Written by users or communities",
+            "Reusable for a product type"
+          ]
+        },
+        {
+          "label": "Security Target (ST)",
+          "badge": "Vendor claims",
+          "points": [
+            "Implementation-specific",
+            "Written by the vendor",
+            "May claim conformance to a PP"
+          ]
+        },
+        {
+          "label": "Target of Evaluation (TOE)",
+          "badge": "What is tested",
+          "points": [
+            "The actual product or system",
+            "Evaluated against the ST",
+            "Receives the EAL rating"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISO/IEC 15408 (Common Criteria)",
+        "section": "Part 1: Introduction and general model"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.3-c003",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.3",
+    "subdomainName": "Select Controls Based Upon Systems Security Requirements",
+    "topicId": "3.3.2",
+    "topicName": "System Certification vs. Accreditation / Authorization (RMF)",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "NIST RMF",
+      "Prepare",
+      "Categorize",
+      "Select",
+      "Implement",
+      "Assess",
+      "Authorize",
+      "Monitor"
+    ],
+    "tags": [
+      "rmf",
+      "nist"
+    ],
+    "title": "NIST Risk Management Framework: 7 steps",
+    "prompt": "Put the seven NIST RMF (SP 800-37 Rev. 2) steps in order.",
+    "answerSummary": "Prepare → Categorize → Select → Implement → Assess → Authorize → Monitor.",
+    "mnemonic": "People Can See I Am Always Monitoring.",
+    "examTrapWarning": "Assessment comes before authorization: the authorizing official grants the ATO based on assessment results, and monitoring is continuous afterward.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Prepare",
+          "detail": "Establish context, roles, risk strategy and priorities at organization and system levels."
+        },
+        {
+          "order": 2,
+          "label": "Categorize",
+          "detail": "Categorize the system and its information by impact (FIPS 199)."
+        },
+        {
+          "order": 3,
+          "label": "Select",
+          "detail": "Select and tailor baseline controls (SP 800-53)."
+        },
+        {
+          "order": 4,
+          "label": "Implement",
+          "detail": "Implement the controls and document how they are deployed."
+        },
+        {
+          "order": 5,
+          "label": "Assess",
+          "detail": "Assess whether controls are implemented correctly and work as intended."
+        },
+        {
+          "order": 6,
+          "label": "Authorize",
+          "detail": "Senior official accepts residual risk and grants authorization to operate (ATO)."
+        },
+        {
+          "order": 7,
+          "label": "Monitor",
+          "detail": "Continuously monitor controls, changes and risk."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-37 Rev. 2",
+        "section": "Risk Management Framework for Information Systems and Organizations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.4-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.4",
+    "subdomainName": "Security Capabilities of Information Systems",
+    "topicId": "3.4.1",
+    "topicName": "Memory Protection, Protection Rings, TPM, HSM, Reference Monitor",
+    "cardType": "cloze_deletion",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Reference monitor",
+      "Security kernel",
+      "TCB",
+      "Tamperproof"
+    ],
+    "tags": [
+      "reference-monitor"
+    ],
+    "title": "Reference monitor requirements",
+    "prompt": "Complete the three properties a reference monitor implementation must satisfy.",
+    "answerSummary": "The reference monitor mediates every subject-to-object access. Its implementation (the security kernel) must be tamperproof, always invoked (non-bypassable), and small enough to be verified.",
+    "mnemonic": "NEAT: Non-bypassable, Evaluable, Always invoked, Tamperproof.",
+    "examTrapWarning": "The reference monitor is an abstract concept; the security kernel is its implementation inside the TCB.",
+    "clozeTemplate": "A reference monitor mediates every access by subjects to objects. Its implementation, the {{c1::security kernel::component}}, must be {{c2::tamperproof::property 1}}, {{c3::always invoked::property 2}} so it cannot be bypassed, and {{c4::small enough to be verified::property 3}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.4-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.4",
+    "subdomainName": "Security Capabilities of Information Systems",
+    "topicId": "3.4.1",
+    "topicName": "Memory Protection, Protection Rings, TPM, HSM, Reference Monitor",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "TPM",
+      "HSM",
+      "Root of trust",
+      "Secure boot"
+    ],
+    "tags": [
+      "hardware-security"
+    ],
+    "title": "TPM vs. HSM",
+    "prompt": "Contrast a Trusted Platform Module with a Hardware Security Module.",
+    "answerSummary": "A TPM is a chip on a single device that provides a hardware root of trust: measured/secure boot, sealing keys (e.g., BitLocker) and attestation. An HSM is a dedicated, often network-attached appliance or card that generates, stores and uses many keys at high speed for servers, PKI and payments, usually validated to FIPS 140.",
+    "mnemonic": null,
+    "examTrapWarning": "For protecting a CA's private signing key or high-volume TLS keys, choose an HSM. For binding disk encryption to a laptop's boot state, choose a TPM.",
+    "contrastData": {
+      "ruleOfThumb": "TPM protects one device; HSM serves keys for many systems.",
+      "columns": [
+        {
+          "label": "TPM",
+          "badge": "Per-device",
+          "points": [
+            "Chip on the motherboard",
+            "Root of trust, measured boot, attestation",
+            "Seals disk-encryption keys to platform state"
+          ]
+        },
+        {
+          "label": "HSM",
+          "badge": "Enterprise key vault",
+          "points": [
+            "Dedicated appliance or PCIe card",
+            "High-throughput crypto, tamper responsive",
+            "Protects CA keys, payment keys, TLS keys"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 8: Principles of Security Models, Design, and Capabilities"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 9: Security Vulnerabilities, Threats, and Countermeasures"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.5-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.5",
+    "subdomainName": "Cloud, Virtualization, IoT & Embedded Systems Security",
+    "topicId": "3.5.1",
+    "topicName": "Hypervisors (Type 1 vs. Type 2), VM Escape, Containers",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Type 1 hypervisor",
+      "Type 2 hypervisor",
+      "VM escape"
+    ],
+    "tags": [
+      "virtualization"
+    ],
+    "title": "Type 1 vs. Type 2 hypervisors",
+    "prompt": "Contrast bare-metal and hosted hypervisors and their security implications.",
+    "answerSummary": "Type 1 (bare-metal) runs directly on hardware with a small attack surface; used in data centers (ESXi, Hyper-V, KVM). Type 2 (hosted) runs as an application on a host OS (VirtualBox, VMware Workstation), so host OS flaws affect all guests.",
+    "mnemonic": null,
+    "examTrapWarning": "VM escape (a guest compromising the hypervisor or other guests) is the key virtualization threat for both types.",
+    "contrastData": {
+      "ruleOfThumb": "Type 1 sits on hardware; Type 2 sits on an OS.",
+      "columns": [
+        {
+          "label": "Type 1 (bare-metal)",
+          "badge": "Production",
+          "points": [
+            "Runs directly on hardware",
+            "Smaller attack surface, better performance",
+            "ESXi, Hyper-V, Xen, KVM"
+          ]
+        },
+        {
+          "label": "Type 2 (hosted)",
+          "badge": "Desktop / lab",
+          "points": [
+            "Runs on top of a host operating system",
+            "Host OS vulnerabilities expose all guests",
+            "VirtualBox, VMware Workstation"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 9: Security Vulnerabilities, Threats, and Countermeasures"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.5-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.5",
+    "subdomainName": "Cloud, Virtualization, IoT & Embedded Systems Security",
+    "topicId": "3.5.2",
+    "topicName": "Cloud Shared Responsibility (IaaS, PaaS, SaaS)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Shared responsibility",
+      "IaaS",
+      "PaaS",
+      "SaaS"
+    ],
+    "tags": [
+      "cloud"
+    ],
+    "title": "Cloud shared responsibility by service model",
+    "prompt": "For IaaS, PaaS and SaaS, who is responsible for each layer of the stack?",
+    "answerSummary": "The customer always owns its data, classification, identities/accounts and endpoints. The provider always owns physical facilities, hardware and virtualization. The OS and applications shift to the provider as you move from IaaS to PaaS to SaaS.",
+    "mnemonic": null,
+    "examTrapWarning": "Even in SaaS the customer is accountable for its data and for user access management. Responsibility for a breach caused by weak customer IAM stays with the customer.",
+    "matrixData": {
+      "headers": [
+        "Layer",
+        "IaaS",
+        "PaaS",
+        "SaaS"
+      ],
+      "rows": [
+        [
+          "Data, classification, accountability",
+          "Customer",
+          "Customer",
+          "Customer"
+        ],
+        [
+          "Identities and access management",
+          "Customer",
+          "Customer",
+          "Customer"
+        ],
+        [
+          "Application",
+          "Customer",
+          "Customer",
+          "Provider"
+        ],
+        [
+          "OS, middleware, runtime",
+          "Customer",
+          "Provider",
+          "Provider"
+        ],
+        [
+          "Virtualization, hardware, network",
+          "Provider",
+          "Provider",
+          "Provider"
+        ],
+        [
+          "Physical facility",
+          "Provider",
+          "Provider",
+          "Provider"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.5-c003",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.5",
+    "subdomainName": "Cloud, Virtualization, IoT & Embedded Systems Security",
+    "topicId": "3.5.3",
+    "topicName": "ICS/SCADA, IoT, Edge Computing",
+    "cardType": "cloze_deletion",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "ignores_human_safety",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "ICS",
+      "SCADA",
+      "OT",
+      "Availability",
+      "Safety"
+    ],
+    "tags": [
+      "ics",
+      "ot"
+    ],
+    "title": "IT vs. OT/ICS security priorities",
+    "prompt": "Fill in how security priorities change between IT and industrial control systems.",
+    "answerSummary": "IT systems usually rank confidentiality first (CIA). ICS/OT environments rank availability and human safety first, then integrity, then confidentiality, because downtime can endanger lives and physical processes.",
+    "mnemonic": null,
+    "examTrapWarning": "Patching or scanning an ICS like an office PC can crash a physical process. Changes need vendor approval, testing and maintenance windows.",
+    "clozeTemplate": "Traditional IT prioritizes {{c1::confidentiality::first property}} (CIA order), but industrial control systems put {{c2::availability and safety::first priorities}} first, because an outage can cause physical harm. Aggressive active scanning of PLCs can {{c3::crash the controlled process::risk}}.",
+    "references": [
+      {
+        "source": "NIST SP 800-82 Rev. 3",
+        "section": "Guide to Operational Technology (OT) Security"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.6-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.6",
+    "subdomainName": "Cryptography & Symmetric/Asymmetric Algorithms",
+    "topicId": "3.6.1",
+    "topicName": "Symmetric Ciphers (AES, ChaCha20, Block Modes: GCM, CBC, ECB)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "ECB",
+      "CBC",
+      "CTR",
+      "GCM",
+      "AEAD",
+      "IV"
+    ],
+    "tags": [
+      "crypto",
+      "block-modes"
+    ],
+    "title": "Block cipher modes: ECB, CBC, CTR, GCM",
+    "prompt": "Compare ECB, CBC, CTR and GCM on IV use, parallelism and what they protect.",
+    "answerSummary": "ECB: no IV, identical plaintext blocks give identical ciphertext (leaks patterns, never use). CBC: random IV, each block chained to the previous, encryption is sequential. CTR: nonce plus counter turns the block cipher into a stream, parallel. GCM: CTR mode plus authentication tag (AEAD) for confidentiality and integrity.",
+    "mnemonic": null,
+    "examTrapWarning": "Only GCM (an AEAD mode) gives integrity and authenticity on its own. The ECB \"penguin\" image shows why ECB leaks structure.",
+    "matrixData": {
+      "headers": [
+        "Mode",
+        "IV / nonce",
+        "Parallel encryption",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "ECB",
+          "None",
+          "Yes",
+          "Same input → same output; leaks patterns; avoid"
+        ],
+        [
+          "CBC",
+          "Random IV",
+          "No (decrypt yes)",
+          "Chains blocks; padding oracle risk"
+        ],
+        [
+          "CTR",
+          "Nonce + counter",
+          "Yes",
+          "Stream-like; never reuse a nonce"
+        ],
+        [
+          "GCM",
+          "Nonce",
+          "Yes",
+          "AEAD: confidentiality + integrity tag"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-38A / 800-38D",
+        "section": "Block cipher modes; GCM"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 6: Cryptography and Symmetric Key Algorithms"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.6-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.6",
+    "subdomainName": "Cryptography & Symmetric/Asymmetric Algorithms",
+    "topicId": "3.6.2",
+    "topicName": "Asymmetric Cryptography (RSA, ECC, Diffie-Hellman) & Post-Quantum Crypto",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Symmetric",
+      "Asymmetric",
+      "AES",
+      "RSA",
+      "ECC",
+      "Key exchange"
+    ],
+    "tags": [
+      "crypto"
+    ],
+    "title": "Symmetric vs. asymmetric cryptography",
+    "prompt": "Contrast symmetric and asymmetric cryptography on keys, speed, services and examples.",
+    "answerSummary": "Symmetric uses one shared secret key: fast, good for bulk data, but key distribution is hard and it cannot give non-repudiation (AES, ChaCha20). Asymmetric uses a public/private key pair: slower, solves key exchange and enables digital signatures (RSA, ECC, Diffie-Hellman). Real systems combine both (hybrid).",
+    "mnemonic": null,
+    "examTrapWarning": "Diffie-Hellman provides key agreement, not encryption or signatures. A 256-bit ECC key gives roughly the strength of 3072-bit RSA.",
+    "contrastData": {
+      "ruleOfThumb": "Asymmetric to exchange keys and sign; symmetric to encrypt the data.",
+      "columns": [
+        {
+          "label": "Symmetric",
+          "badge": "Shared secret",
+          "points": [
+            "One key for encrypt and decrypt",
+            "Very fast; bulk encryption",
+            "Key distribution problem; no non-repudiation",
+            "AES, ChaCha20, 3DES (legacy)"
+          ]
+        },
+        {
+          "label": "Asymmetric",
+          "badge": "Key pair",
+          "points": [
+            "Public key encrypts / verifies; private key decrypts / signs",
+            "Slow; used for small data and keys",
+            "Enables signatures and key exchange",
+            "RSA, ECC, Diffie-Hellman, ML-KEM"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 6: Cryptography and Symmetric Key Algorithms"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 7: PKI and Cryptographic Applications"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.7-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.7",
+    "subdomainName": "PKI, Digital Signatures, Hashing & Key Management",
+    "topicId": "3.7.3",
+    "topicName": "Key Lifecycle & Escrow",
+    "cardType": "formula_drill",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Symmetric key count",
+      "Asymmetric key count",
+      "n(n-1)/2"
+    ],
+    "tags": [
+      "crypto",
+      "key-management"
+    ],
+    "title": "How many keys? n(n−1)/2 vs. 2n",
+    "prompt": "Give the number of keys needed for n users to communicate privately with symmetric and with asymmetric cryptography.",
+    "answerSummary": "Symmetric: n(n−1)/2 unique shared keys. Asymmetric: 2n keys (one public and one private per user).",
+    "mnemonic": null,
+    "examTrapWarning": "Read whether the question asks for key pairs (n) or keys (2n) in the asymmetric case.",
+    "formulaData": {
+      "formula": "Symmetric = n(n − 1) / 2      Asymmetric = 2n",
+      "variables": [
+        {
+          "symbol": "n",
+          "meaning": "Number of users who must communicate pairwise"
+        },
+        {
+          "symbol": "n(n − 1)/2",
+          "meaning": "Unique shared secret keys for every pair"
+        },
+        {
+          "symbol": "2n",
+          "meaning": "Total keys when each user has a public and private key"
+        }
+      ],
+      "workedExample": "100 users: symmetric needs 100 × 99 / 2 = 4,950 keys; asymmetric needs 2 × 100 = 200 keys.",
+      "decisionRule": "Large groups make symmetric key management unscalable, which is why asymmetric crypto is used to distribute symmetric session keys."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 6: Cryptography and Symmetric Key Algorithms"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.7-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.7",
+    "subdomainName": "PKI, Digital Signatures, Hashing & Key Management",
+    "topicId": "3.7.2",
+    "topicName": "Digital Signatures & Certificates (X.509, CA, CRL, OCSP, Pinning)",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Digital signature",
+      "Hash",
+      "Private key",
+      "Public key",
+      "Non-repudiation"
+    ],
+    "tags": [
+      "crypto",
+      "signatures"
+    ],
+    "title": "Creating and verifying a digital signature",
+    "prompt": "Order the steps for signing a message and having the recipient verify it.",
+    "answerSummary": "Sender hashes the message, encrypts (signs) the digest with the sender's private key, and sends message + signature. Recipient decrypts the signature with the sender's public key, hashes the received message, and compares the two digests.",
+    "mnemonic": "Sign with your Secret (private) key; anyone verifies with your Public key.",
+    "examTrapWarning": "Signing uses the sender's private key, never the recipient's public key (that would be encryption for confidentiality). Signatures give integrity, authentication and non-repudiation, not confidentiality.",
+    "sequenceData": {
+      "directionLabel": "Sender → recipient",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Hash the message",
+          "detail": "Sender computes a digest of the message (e.g., SHA-256)."
+        },
+        {
+          "order": 2,
+          "label": "Sign the digest",
+          "detail": "Sender encrypts the digest with the sender's private key."
+        },
+        {
+          "order": 3,
+          "label": "Send message + signature",
+          "detail": "The message itself is not encrypted unless confidentiality is also needed."
+        },
+        {
+          "order": 4,
+          "label": "Recover the digest",
+          "detail": "Recipient decrypts the signature with the sender's public key."
+        },
+        {
+          "order": 5,
+          "label": "Re-hash and compare",
+          "detail": "Recipient hashes the received message; matching digests prove integrity and origin."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 7: PKI and Cryptographic Applications"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.7-c003",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.7",
+    "subdomainName": "PKI, Digital Signatures, Hashing & Key Management",
+    "topicId": "3.7.2",
+    "topicName": "Digital Signatures & Certificates (X.509, CA, CRL, OCSP, Pinning)",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "CRL",
+      "OCSP",
+      "OCSP stapling",
+      "Certificate revocation"
+    ],
+    "tags": [
+      "pki"
+    ],
+    "title": "CRL vs. OCSP vs. OCSP stapling",
+    "prompt": "Contrast the three ways to check whether a certificate has been revoked.",
+    "answerSummary": "A CRL is a signed list of revoked serial numbers downloaded periodically, so it can be stale and large. OCSP asks the CA's responder about one certificate in real time but leaks browsing to the CA and adds latency. OCSP stapling has the server attach a recent signed OCSP response during the TLS handshake.",
+    "mnemonic": null,
+    "examTrapWarning": "OCSP stapling fixes the privacy and performance problems of OCSP; the CRL latency problem is that revocations only show up after the next download.",
+    "contrastData": {
+      "ruleOfThumb": "CRL = list, OCSP = live query, stapling = server-provided proof.",
+      "columns": [
+        {
+          "label": "CRL",
+          "badge": "Periodic list",
+          "points": [
+            "Signed list of revoked serials",
+            "Downloaded on a schedule; may be stale",
+            "Grows large over time"
+          ]
+        },
+        {
+          "label": "OCSP",
+          "badge": "Real-time query",
+          "points": [
+            "Client asks CA responder per certificate",
+            "Fresh status",
+            "Privacy leak and extra latency"
+          ]
+        },
+        {
+          "label": "OCSP stapling",
+          "badge": "Server attaches proof",
+          "points": [
+            "Server fetches signed OCSP response",
+            "Delivered in the TLS handshake",
+            "Faster and private for the client"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 7: PKI and Cryptographic Applications"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.8-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.8",
+    "subdomainName": "Cryptanalytic Attacks",
+    "topicId": "3.8.1",
+    "topicName": "Ciphertext-Only, Known-Plaintext, Chosen-Plaintext, Side-Channel, Birthday",
+    "cardType": "formula_drill",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Birthday attack",
+      "Collision",
+      "Hash length"
+    ],
+    "tags": [
+      "cryptanalysis"
+    ],
+    "title": "Birthday attack work factor: 2^(n/2)",
+    "prompt": "How much work does a birthday attack need to find a hash collision for an n-bit hash?",
+    "answerSummary": "About 2^(n/2) hash computations. A 128-bit hash offers only about 2^64 collision resistance, so use longer hashes (SHA-256 or larger).",
+    "mnemonic": null,
+    "examTrapWarning": "Finding a collision (any two inputs) is far easier than a preimage (matching a specific hash, about 2^n work).",
+    "formulaData": {
+      "formula": "Collision work ≈ 2^(n/2)",
+      "variables": [
+        {
+          "symbol": "n",
+          "meaning": "Output length of the hash in bits"
+        },
+        {
+          "symbol": "2^(n/2)",
+          "meaning": "Approximate attempts to find any collision"
+        },
+        {
+          "symbol": "2^n",
+          "meaning": "Approximate attempts for a preimage attack"
+        }
+      ],
+      "workedExample": "MD5 is 128 bits, so collisions take about 2^64 work (and practical attacks are faster). SHA-256 needs about 2^128.",
+      "decisionRule": "Pick a hash whose collision resistance (n/2) meets the required security strength; for 128-bit strength use at least a 256-bit hash."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 7: PKI and Cryptographic Applications"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.8-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.8",
+    "subdomainName": "Cryptanalytic Attacks",
+    "topicId": "3.8.1",
+    "topicName": "Ciphertext-Only, Known-Plaintext, Chosen-Plaintext, Side-Channel, Birthday",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Ciphertext-only",
+      "Known-plaintext",
+      "Chosen-plaintext",
+      "Chosen-ciphertext",
+      "Side-channel",
+      "Meet-in-the-middle"
+    ],
+    "tags": [
+      "cryptanalysis"
+    ],
+    "title": "Cryptanalytic attack types by attacker knowledge",
+    "prompt": "Describe what the attacker has in each cryptanalytic attack type.",
+    "answerSummary": "Ciphertext-only: only ciphertext. Known-plaintext: some plaintext/ciphertext pairs. Chosen-plaintext: can encrypt chosen inputs. Chosen-ciphertext: can decrypt chosen ciphertexts. Side-channel: measures timing, power or emissions. Meet-in-the-middle: attacks double encryption, which is why 2DES gives little more than DES.",
+    "mnemonic": null,
+    "examTrapWarning": "Meet-in-the-middle is why Double DES was skipped in favor of 3DES; it reduces 2DES to roughly 2^57 work, not 2^112.",
+    "matrixData": {
+      "headers": [
+        "Attack",
+        "Attacker has / does"
+      ],
+      "rows": [
+        [
+          "Ciphertext-only",
+          "Only ciphertext samples (hardest for attacker)"
+        ],
+        [
+          "Known-plaintext",
+          "Matching plaintext and ciphertext pairs"
+        ],
+        [
+          "Chosen-plaintext",
+          "Can encrypt plaintext of their choosing"
+        ],
+        [
+          "Chosen-ciphertext",
+          "Can get chosen ciphertexts decrypted"
+        ],
+        [
+          "Side-channel",
+          "Measures timing, power, EM or cache behavior"
+        ],
+        [
+          "Meet-in-the-middle",
+          "Encrypts from one end and decrypts from the other to break double encryption"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 7: PKI and Cryptographic Applications"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.9-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.9",
+    "subdomainName": "Site and Facility Design Secure Principles",
+    "topicId": "3.9.1",
+    "topicName": "CPTED (Crime Prevention Through Environmental Design), Site Selection",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "CPTED",
+      "Natural surveillance",
+      "Natural access control",
+      "Territorial reinforcement"
+    ],
+    "tags": [
+      "physical"
+    ],
+    "title": "CPTED strategies",
+    "prompt": "Name the Crime Prevention Through Environmental Design strategies and an example of each.",
+    "answerSummary": "Natural surveillance (open sightlines, lighting), natural access control (landscaping and paths that guide people to controlled entrances), territorial reinforcement (signs, fences and design that show ownership), and maintenance (well-kept spaces signal active ownership).",
+    "mnemonic": null,
+    "examTrapWarning": "CPTED uses building and landscape design, not guards or cameras, to deter crime.",
+    "matrixData": {
+      "headers": [
+        "Strategy",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Natural surveillance",
+          "Low shrubs, windows, lighting so intruders can be seen"
+        ],
+        [
+          "Natural access control",
+          "Walkways, planters and bollards guiding people to one entrance"
+        ],
+        [
+          "Territorial reinforcement",
+          "Signage, fencing, pavement changes marking private space"
+        ],
+        [
+          "Maintenance",
+          "Repairing damage quickly to signal the area is cared for"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.10-c001",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.10",
+    "subdomainName": "Physical Security & Environmental Controls",
+    "topicId": "3.10.2",
+    "topicName": "HVAC, Power (UPS, Generators), Fire Suppression",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "ignores_human_safety"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Class A",
+      "Class B",
+      "Class C",
+      "Class D",
+      "Class K"
+    ],
+    "tags": [
+      "fire",
+      "physical"
+    ],
+    "title": "Fire classes and suppression agents (US)",
+    "prompt": "Give each US fire class, its fuel, and a suitable suppression agent.",
+    "answerSummary": "A: common combustibles (water, foam). B: flammable liquids (CO2, foam, dry chemical). C: electrical equipment (CO2, clean agents; no water). D: combustible metals (dry powder). K: kitchen oils and fats (wet chemical).",
+    "mnemonic": "A = Ash, B = Boil (liquids), C = Current, D = Dynamite-like metals, K = Kitchen.",
+    "examTrapWarning": "Never use water on an energized Class C fire. Halon is no longer produced; use clean agents such as FM-200 or Novec 1230.",
+    "matrixData": {
+      "headers": [
+        "Class",
+        "Fuel",
+        "Suppression"
+      ],
+      "rows": [
+        [
+          "A",
+          "Common combustibles: paper, wood, cloth",
+          "Water, foam"
+        ],
+        [
+          "B",
+          "Flammable liquids and gases",
+          "CO2, foam, dry chemical"
+        ],
+        [
+          "C",
+          "Energized electrical equipment",
+          "CO2, clean agent (FM-200, Novec 1230)"
+        ],
+        [
+          "D",
+          "Combustible metals",
+          "Dry powder"
+        ],
+        [
+          "K",
+          "Cooking oils and fats",
+          "Wet chemical"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.10-c002",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.10",
+    "subdomainName": "Physical Security & Environmental Controls",
+    "topicId": "3.10.2",
+    "topicName": "HVAC, Power (UPS, Generators), Fire Suppression",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Wet pipe",
+      "Dry pipe",
+      "Pre-action",
+      "Deluge"
+    ],
+    "tags": [
+      "fire",
+      "physical"
+    ],
+    "title": "Sprinkler system types",
+    "prompt": "Contrast the four water sprinkler system types and say which is best for a data center.",
+    "answerSummary": "Wet pipe: always full of water, fastest, risk of leaks. Dry pipe: pressurized air until triggered, for freezing areas. Pre-action: dry until a detector fires, then fills, and heads still need heat to open; best for data centers. Deluge: all heads open at once to flood the area; for high-hazard sites.",
+    "mnemonic": null,
+    "examTrapWarning": "Pre-action is the preferred sprinkler choice for computer rooms because it prevents accidental discharge from a single broken head.",
+    "contrastData": {
+      "ruleOfThumb": "Pre-action is the data-center answer.",
+      "columns": [
+        {
+          "label": "Wet pipe",
+          "badge": "Always charged",
+          "points": [
+            "Water in pipes at all times",
+            "Fast response",
+            "Leak or freezing risk"
+          ]
+        },
+        {
+          "label": "Dry pipe",
+          "badge": "Air pressure",
+          "points": [
+            "Water held back by air pressure",
+            "For unheated or freezing areas",
+            "Slower discharge"
+          ]
+        },
+        {
+          "label": "Pre-action",
+          "badge": "Two-stage",
+          "points": [
+            "Detector fills pipes first",
+            "Head must also melt to release water",
+            "Preferred for data centers"
+          ]
+        },
+        {
+          "label": "Deluge",
+          "badge": "All heads open",
+          "points": [
+            "Open heads; large water volume",
+            "High-hazard areas",
+            "Not for electronics"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d3-s3.10-c003",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.10",
+    "subdomainName": "Physical Security & Environmental Controls",
+    "topicId": "3.10.1",
+    "topicName": "Perimeter Controls, Mantraps, Bollards, Locks",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Fence height",
+      "Perimeter",
+      "Barbed wire"
+    ],
+    "tags": [
+      "physical",
+      "perimeter"
+    ],
+    "title": "Fence heights and what they deter",
+    "prompt": "Match common fence heights to the level of intruder they deter.",
+    "answerSummary": "3–4 ft deters casual trespassers; 6–7 ft is too high to climb easily; 8 ft or more with three strands of barbed wire deters determined intruders.",
+    "mnemonic": null,
+    "examTrapWarning": "Only the 8 ft + barbed wire option deters a determined intruder; lower fences just mark boundaries.",
+    "matrixData": {
+      "headers": [
+        "Height",
+        "Deters"
+      ],
+      "rows": [
+        [
+          "3–4 ft (≈1 m)",
+          "Casual trespassers; marks the boundary"
+        ],
+        [
+          "6–7 ft (≈2 m)",
+          "Most climbers; too high to climb easily"
+        ],
+        [
+          "8 ft (≈2.4 m) + 3 strands barbed wire",
+          "Determined intruders"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 10: Physical Security Requirements"
+      }
+    ]
+  }
+]

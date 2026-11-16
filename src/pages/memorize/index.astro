@@ -1,0 +1,14 @@
+---
+import AppShell from '../../components/layout/AppShell.astro';
+import MemorizeHub from '../../components/memorize/MemorizeHub';
+import { getMemoryDomainMeta } from '../../lib/memorization/domain-meta';
+
+const domains = getMemoryDomainMeta();
+---
+
+<AppShell
+  title="Memorize — Learn CISSP"
+  description="Spaced-repetition flashcards for CISSP contrasts, sequences, formulas and manager-mindset rules, scheduled with FSRS and stored only in your browser."
+>
+  <MemorizeHub client:only="react" domains={domains} />
+</AppShell>

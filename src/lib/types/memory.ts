@@ -275,3 +275,14 @@ export const EXAM_PRIORITY_META: Record<
     badgeClass: 'bg-slate-500/15 text-slate-600 dark:text-slate-400',
   },
 };
+
+/** Lightweight taxonomy slice passed from Astro pages into memorization islands. */
+export interface MemoryDomainMeta {
+  domainId: string;
+  number: number;
+  name: string;
+  shortName: string;
+  color: string;
+  weightPercent: number;
+  subdomains: Array<{ subdomainId: string; name: string }>;
+}

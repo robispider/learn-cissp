@@ -1,0 +1,1435 @@
+[
+  {
+    "id": "cissp-mem-d1-s1.1-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.1",
+    "subdomainName": "Professional Ethics & ISC2 Code of Ethics",
+    "topicId": "1.1.1",
+    "topicName": "ISC2 Canons & Priority Order",
+    "cardType": "sequence_order",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase",
+      "ignores_human_safety"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "ISC2 Code of Ethics",
+      "Canon I",
+      "Canon II",
+      "Canon III",
+      "Canon IV"
+    ],
+    "tags": [
+      "ethics",
+      "canons"
+    ],
+    "title": "ISC2 Code of Ethics: the 4 Canons in priority order",
+    "prompt": "Order the four ISC2 Code of Ethics Canons from highest priority (1) to lowest (4), as you would apply them when duties conflict.",
+    "answerSummary": "1. Protect society, the common good, necessary public trust and confidence, and the infrastructure. 2. Act honorably, honestly, justly, responsibly, and legally. 3. Provide diligent and competent service to principals. 4. Advance and protect the profession.",
+    "mnemonic": "S-H-P-P: Society, Honor, Principals, Profession. The wider the circle, the higher the priority.",
+    "examTrapWarning": "When an employer or client (Canon III) asks you to hide a public-safety flaw or an illegal act, Canons I and II override Canon III.",
+    "sequenceData": {
+      "directionLabel": "Highest priority (1) → lowest (4)",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Canon I: Protect society",
+          "detail": "Protect society, the common good, necessary public trust and confidence, and the infrastructure."
+        },
+        {
+          "order": 2,
+          "label": "Canon II: Act honorably",
+          "detail": "Act honorably, honestly, justly, responsibly, and legally."
+        },
+        {
+          "order": 3,
+          "label": "Canon III: Serve principals",
+          "detail": "Provide diligent and competent service to principals (employers and clients)."
+        },
+        {
+          "order": 4,
+          "label": "Canon IV: Advance the profession",
+          "detail": "Advance and protect the profession."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 Code of Ethics",
+        "section": "Code of Ethics Canons"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 19: Investigations and Ethics"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.1-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.1",
+    "subdomainName": "Professional Ethics & ISC2 Code of Ethics",
+    "topicId": "1.1.1",
+    "topicName": "ISC2 Canons & Priority Order",
+    "cardType": "manager_heuristic",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "ignores_human_safety"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Canon I",
+      "Canon III",
+      "Ethics conflict"
+    ],
+    "tags": [
+      "ethics"
+    ],
+    "title": "Employer asks you to keep a public-safety flaw quiet",
+    "prompt": "Your CEO tells you not to report a vulnerability in a shipped medical device because disclosure would hurt sales. What does the ISC2 Code of Ethics require?",
+    "answerSummary": "Protecting society (Canon I) and acting legally and honestly (Canon II) outrank duty to your employer (Canon III). Escalate through proper channels and pursue responsible disclosure; do not stay silent.",
+    "mnemonic": null,
+    "examTrapWarning": "Answers that favor loyalty to the employer or quietly \"fixing it later\" violate the canon order. Going straight to the press before using proper channels is also wrong.",
+    "heuristicData": {
+      "technicalReflexTrap": "Stay quiet because the employer pays you, or silently patch a few devices yourself without telling anyone.",
+      "managerAction": "Document the risk, escalate to senior management and legal, and pursue responsible disclosure so the public is protected. Canon I outranks Canon III.",
+      "governingPrinciple": "ISC2 Canons apply in strict priority order: society first, then honor and law, then principals, then the profession."
+    },
+    "references": [
+      {
+        "source": "ISC2 Code of Ethics",
+        "section": "Code of Ethics Canons"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.2-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.2",
+    "subdomainName": "Security Concepts (CIA, DAD, Non-Repudiation, 5 Pillars)",
+    "topicId": "1.2.1",
+    "topicName": "CIA Triad & Parkerian Hexad",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "CIA Triad",
+      "DAD Triad",
+      "Disclosure",
+      "Alteration",
+      "Destruction"
+    ],
+    "tags": [
+      "cia",
+      "fundamentals"
+    ],
+    "title": "CIA Triad vs. its opposite, the DAD Triad",
+    "prompt": "Map each CIA property to the DAD threat that defeats it, with a typical control for each.",
+    "answerSummary": "Confidentiality is defeated by Disclosure (control: encryption, access control). Integrity is defeated by Alteration (hashing, digital signatures, change control). Availability is defeated by Destruction or Denial (redundancy, backups, DDoS protection).",
+    "mnemonic": "DAD is the attacker's version of CIA, letter for letter: C↔D, I↔A, A↔D.",
+    "examTrapWarning": "Encryption protects confidentiality, not availability. Hashing alone detects alteration but does not prevent it.",
+    "matrixData": {
+      "headers": [
+        "CIA property",
+        "DAD threat",
+        "Typical controls"
+      ],
+      "rows": [
+        [
+          "Confidentiality",
+          "Disclosure",
+          "Encryption, access control, classification, data masking"
+        ],
+        [
+          "Integrity",
+          "Alteration",
+          "Hashing, digital signatures, input validation, change control"
+        ],
+        [
+          "Availability",
+          "Destruction / Denial",
+          "Redundancy, backups, fault tolerance, DDoS mitigation"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 1: Security Governance Through Principles and Policies"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.2-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.2",
+    "subdomainName": "Security Concepts (CIA, DAD, Non-Repudiation, 5 Pillars)",
+    "topicId": "1.2.2",
+    "topicName": "Authenticity & Non-repudiation",
+    "cardType": "cloze_deletion",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Non-repudiation",
+      "Digital signature",
+      "HMAC",
+      "Private key"
+    ],
+    "tags": [
+      "non-repudiation",
+      "crypto"
+    ],
+    "title": "Which mechanism gives non-repudiation?",
+    "prompt": "Complete the statement about which mechanisms provide non-repudiation.",
+    "answerSummary": "Only digital signatures (made with the sender's private key) provide non-repudiation. HMACs and symmetric encryption use a shared key, so either party could have produced the message.",
+    "mnemonic": null,
+    "examTrapWarning": "HMAC gives integrity and authenticity of origin between two parties, but not non-repudiation, because both parties hold the same key.",
+    "clozeTemplate": "{{c1::Digital signatures::mechanism}} provide integrity, authentication and non-repudiation because only the sender holds the {{c2::private key::key type}}. An {{c3::HMAC::keyed hash}} proves integrity and authenticity but NOT non-repudiation, since the key is {{c4::shared by both parties::who holds it}}.",
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 7: PKI and Cryptographic Applications"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.3-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.3",
+    "subdomainName": "Security Governance Principles & Alignment",
+    "topicId": "1.3.2",
+    "topicName": "Roles & Responsibilities (Owner, Custodian, User)",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Data Owner",
+      "Data Custodian",
+      "User",
+      "Accountability"
+    ],
+    "tags": [
+      "roles"
+    ],
+    "title": "Data Owner vs. Custodian vs. User",
+    "prompt": "Contrast who is accountable for data, who implements its protection day to day, and who simply uses it.",
+    "answerSummary": "The Owner (a senior business manager) is accountable: classifies data, approves access, and decides protection levels. The Custodian (often IT) implements and maintains the controls the owner specifies. Users access data under policy and the acceptable use policy.",
+    "mnemonic": "Owner Orders, Custodian Carries out, User Uses.",
+    "examTrapWarning": "The custodian performs backups and applies controls but never decides classification. Accountability cannot be delegated away from the owner (and ultimately senior management).",
+    "contrastData": {
+      "ruleOfThumb": "Owner decides and is accountable; custodian implements; user complies.",
+      "columns": [
+        {
+          "label": "Data Owner",
+          "badge": "Accountable",
+          "points": [
+            "Senior business manager",
+            "Assigns classification",
+            "Approves who gets access",
+            "Decides required protection and retention"
+          ]
+        },
+        {
+          "label": "Data Custodian",
+          "badge": "Implements",
+          "points": [
+            "Usually IT or operations staff",
+            "Runs backups, patches, access control lists",
+            "Maintains controls the owner specified",
+            "Does not set classification"
+          ]
+        },
+        {
+          "label": "User",
+          "badge": "Complies",
+          "points": [
+            "Accesses data to do their job",
+            "Follows policy and the acceptable use policy",
+            "Reports incidents",
+            "Least privilege applies"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 5: Protecting Security of Assets"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.3-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.3",
+    "subdomainName": "Security Governance Principles & Alignment",
+    "topicId": "1.3.3",
+    "topicName": "Security Frameworks (NIST, ISO 27001, COBIT, SABSA)",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "NIST CSF 2.0",
+      "Govern",
+      "Identify",
+      "Protect",
+      "Detect",
+      "Respond",
+      "Recover"
+    ],
+    "tags": [
+      "frameworks",
+      "nist"
+    ],
+    "title": "NIST Cybersecurity Framework 2.0: six core functions",
+    "prompt": "List the six NIST CSF 2.0 functions and what each one covers.",
+    "answerSummary": "Govern (strategy, policy, roles, oversight; new in 2.0), Identify (assets and risk), Protect (safeguards), Detect (find events), Respond (act on incidents), Recover (restore operations).",
+    "mnemonic": "G-I-P-D-R-R: \"Good IT People Detect, Respond, Recover.\" Govern sits in the middle of the CSF wheel.",
+    "examTrapWarning": "CSF 1.1 had five functions. Govern was added in 2.0 (2024) and covers cybersecurity risk management strategy and supply-chain risk.",
+    "matrixData": {
+      "headers": [
+        "Function",
+        "Focus",
+        "Example outcome"
+      ],
+      "rows": [
+        [
+          "Govern",
+          "Strategy, expectations, policy, oversight",
+          "Roles and risk appetite are defined"
+        ],
+        [
+          "Identify",
+          "Understand assets and risk",
+          "Asset inventory and risk assessment"
+        ],
+        [
+          "Protect",
+          "Safeguards",
+          "Access control, training, data security"
+        ],
+        [
+          "Detect",
+          "Find cybersecurity events",
+          "Continuous monitoring, anomaly detection"
+        ],
+        [
+          "Respond",
+          "Act on a detected incident",
+          "Incident analysis, containment, communication"
+        ],
+        [
+          "Recover",
+          "Restore assets and operations",
+          "Recovery plan execution and improvements"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST Cybersecurity Framework (CSF) 2.0",
+        "section": "CSF Core Functions"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.3-c003",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.3",
+    "subdomainName": "Security Governance Principles & Alignment",
+    "topicId": "1.3.1",
+    "topicName": "Governance vs. Management",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Governance",
+      "Management",
+      "Board of Directors"
+    ],
+    "tags": [
+      "governance"
+    ],
+    "title": "Governance vs. Management",
+    "prompt": "Distinguish security governance from security management: who does each, and what do they produce?",
+    "answerSummary": "Governance (board and executives) sets direction, risk appetite and accountability, and oversees performance. Management (CISO and managers) plans, builds, runs and monitors activities to meet that direction.",
+    "mnemonic": null,
+    "examTrapWarning": "Questions asking who is ultimately responsible for security point to senior management or the board, not the CISO or IT.",
+    "contrastData": {
+      "ruleOfThumb": "Governance decides \"what and why\"; management handles \"how and when\".",
+      "columns": [
+        {
+          "label": "Governance",
+          "badge": "Direct & oversee",
+          "points": [
+            "Board and senior executives",
+            "Sets strategy, risk appetite, policy direction",
+            "Evaluates, directs, monitors",
+            "Holds ultimate accountability"
+          ]
+        },
+        {
+          "label": "Management",
+          "badge": "Plan & run",
+          "points": [
+            "CISO, managers, team leads",
+            "Plans, builds, runs, monitors",
+            "Turns policy into programs and procedures",
+            "Reports performance upward"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 1: Security Governance Through Principles and Policies"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.4-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.2",
+    "topicName": "Quantitative Risk Analysis & Cost-Benefit Evaluation (ALE, SLE, ARO, ACS)",
+    "cardType": "formula_drill",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "cost_disproportionate",
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SLE",
+      "ALE",
+      "AV",
+      "EF",
+      "ARO"
+    ],
+    "tags": [
+      "quantitative-risk"
+    ],
+    "title": "SLE = AV × EF and ALE = SLE × ARO",
+    "prompt": "Give the formulas for Single Loss Expectancy and Annualized Loss Expectancy, and define each variable.",
+    "answerSummary": "SLE = Asset Value × Exposure Factor (the loss from one event). ALE = SLE × Annualized Rate of Occurrence (the expected loss per year).",
+    "mnemonic": "Single first, then Annual: multiply value by the fraction lost, then by how often per year.",
+    "examTrapWarning": "EF is a percentage of the asset value lost, not a probability. ARO of once every 10 years is 0.1, not 10.",
+    "formulaData": {
+      "formula": "SLE = AV × EF      ALE = SLE × ARO",
+      "variables": [
+        {
+          "symbol": "AV",
+          "meaning": "Asset value in currency"
+        },
+        {
+          "symbol": "EF",
+          "meaning": "Exposure factor: percentage of the asset lost in one event"
+        },
+        {
+          "symbol": "SLE",
+          "meaning": "Single loss expectancy: cost of one occurrence"
+        },
+        {
+          "symbol": "ARO",
+          "meaning": "Annualized rate of occurrence: expected events per year"
+        },
+        {
+          "symbol": "ALE",
+          "meaning": "Annualized loss expectancy: expected yearly loss"
+        }
+      ],
+      "workedExample": "A $200,000 data center floor with a 25% EF gives SLE = $50,000. A flood expected once every 5 years has ARO = 0.2, so ALE = $50,000 × 0.2 = $10,000 per year.",
+      "decisionRule": "Spend no more per year on a safeguard than the ALE reduction it delivers."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.4-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.2",
+    "topicName": "Quantitative Risk Analysis & Cost-Benefit Evaluation (ALE, SLE, ARO, ACS)",
+    "cardType": "formula_drill",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "cost_disproportionate"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Safeguard value",
+      "ALE",
+      "ACS",
+      "Cost-benefit analysis"
+    ],
+    "tags": [
+      "quantitative-risk"
+    ],
+    "title": "Safeguard value = (ALE before − ALE after) − ACS",
+    "prompt": "What is the cost/benefit formula for deciding whether a safeguard is worth buying?",
+    "answerSummary": "Value of safeguard = (ALE before the safeguard − ALE after) − Annual Cost of the Safeguard. A positive result justifies the control; a negative result means it costs more than it saves.",
+    "mnemonic": null,
+    "examTrapWarning": "Use the annual cost of the safeguard (including maintenance), not the one-time purchase price, and compare against the ALE reduction, not the full ALE.",
+    "formulaData": {
+      "formula": "Safeguard value = (ALE₁ − ALE₂) − ACS",
+      "variables": [
+        {
+          "symbol": "ALE₁",
+          "meaning": "Annualized loss expectancy before the safeguard"
+        },
+        {
+          "symbol": "ALE₂",
+          "meaning": "Annualized loss expectancy with the safeguard in place"
+        },
+        {
+          "symbol": "ACS",
+          "meaning": "Annual cost of the safeguard (purchase amortized + operation + maintenance)"
+        }
+      ],
+      "workedExample": "ALE₁ = $10,000, ALE₂ = $2,000, ACS = $3,000. Value = ($10,000 − $2,000) − $3,000 = +$5,000, so the safeguard is justified.",
+      "decisionRule": "Positive value: implement. Negative value: the control is cost-disproportionate; choose another treatment."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.4-c003",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.1",
+    "topicName": "Risk Terminology (Asset, Threat, Vulnerability, Exposure)",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "understand",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Total risk",
+      "Residual risk",
+      "Controls gap",
+      "Inherent risk"
+    ],
+    "tags": [
+      "risk"
+    ],
+    "title": "Total (inherent) risk vs. residual risk",
+    "prompt": "Relate total risk, the controls gap and residual risk. Which one does management accept?",
+    "answerSummary": "Total (inherent) risk exists before controls: threats × vulnerabilities × asset value. Residual risk is what remains after controls: total risk − controls gap. Management formally accepts the residual risk.",
+    "mnemonic": null,
+    "examTrapWarning": "Risk can never be reduced to zero. An answer that \"eliminates all risk\" is wrong; the goal is residual risk within risk appetite.",
+    "contrastData": {
+      "ruleOfThumb": "Total risk − controls gap = residual risk, which management accepts.",
+      "columns": [
+        {
+          "label": "Total / inherent risk",
+          "badge": "Before controls",
+          "points": [
+            "Threats × vulnerabilities × asset value",
+            "Exists without any safeguard",
+            "Starting point of risk analysis"
+          ]
+        },
+        {
+          "label": "Controls gap",
+          "badge": "Reduction",
+          "points": [
+            "Risk reduced by implemented safeguards",
+            "Never 100% effective",
+            "Measured through control testing"
+          ]
+        },
+        {
+          "label": "Residual risk",
+          "badge": "After controls",
+          "points": [
+            "Risk left after safeguards",
+            "Must sit within risk appetite",
+            "Formally accepted by senior management"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.4-c004",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.4",
+    "topicName": "Risk Treatment (Mitigate, Transfer, Accept, Avoid)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "extreme_absolutist"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Mitigate",
+      "Transfer",
+      "Avoid",
+      "Accept",
+      "Risk rejection"
+    ],
+    "tags": [
+      "risk-treatment"
+    ],
+    "title": "Risk treatment options",
+    "prompt": "List the valid risk responses with an example of each, and name the response that is never acceptable.",
+    "answerSummary": "Mitigate/reduce (add controls), Transfer/share (insurance, outsourcing), Avoid (stop the risky activity), Accept (document and sign off on residual risk). Rejecting or ignoring risk is never acceptable.",
+    "mnemonic": "TAMA: Transfer, Avoid, Mitigate, Accept. Ignoring is not in the acronym.",
+    "examTrapWarning": "Transferring risk (insurance) does not transfer accountability. Ignoring a risk is not \"acceptance\"; acceptance requires a documented management decision.",
+    "matrixData": {
+      "headers": [
+        "Response",
+        "What it means",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Mitigate / Reduce",
+          "Implement safeguards to lower likelihood or impact",
+          "Install a firewall, add MFA"
+        ],
+        [
+          "Transfer / Share",
+          "Shift financial impact to a third party",
+          "Cyber insurance, outsourcing"
+        ],
+        [
+          "Avoid",
+          "Stop the activity that creates the risk",
+          "Do not launch the risky product line"
+        ],
+        [
+          "Accept",
+          "Formally accept residual risk with sign-off",
+          "Documented risk acceptance by management"
+        ],
+        [
+          "Reject / Ignore",
+          "Invalid: pretending the risk does not exist",
+          "Never an acceptable response"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.5-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.5",
+    "subdomainName": "Threat Modeling Concepts & Methodologies",
+    "topicId": "1.5.1",
+    "topicName": "STRIDE, PASTA, VAST, DREAD",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "remember",
+    "perspective": "technical_architect",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "STRIDE",
+      "Spoofing",
+      "Tampering",
+      "Repudiation",
+      "Information disclosure",
+      "Denial of service",
+      "Elevation of privilege"
+    ],
+    "tags": [
+      "threat-modeling"
+    ],
+    "title": "STRIDE threats and the property each one violates",
+    "prompt": "For each STRIDE category, name the security property it violates.",
+    "answerSummary": "Spoofing → authentication; Tampering → integrity; Repudiation → non-repudiation; Information disclosure → confidentiality; Denial of service → availability; Elevation of privilege → authorization.",
+    "mnemonic": null,
+    "examTrapWarning": "STRIDE is a threat categorization model from Microsoft. PASTA is the seven-stage risk-centric methodology, and DREAD is a rating scheme.",
+    "matrixData": {
+      "headers": [
+        "Threat",
+        "Property violated",
+        "Example control"
+      ],
+      "rows": [
+        [
+          "Spoofing",
+          "Authentication",
+          "MFA, certificates"
+        ],
+        [
+          "Tampering",
+          "Integrity",
+          "Hashing, digital signatures"
+        ],
+        [
+          "Repudiation",
+          "Non-repudiation",
+          "Signed audit logs"
+        ],
+        [
+          "Information disclosure",
+          "Confidentiality",
+          "Encryption, access control"
+        ],
+        [
+          "Denial of service",
+          "Availability",
+          "Rate limiting, redundancy"
+        ],
+        [
+          "Elevation of privilege",
+          "Authorization",
+          "Least privilege, input validation"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 1: Security Governance Through Principles and Policies"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.6-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.6",
+    "subdomainName": "Supply Chain Risk Management (SCRM)",
+    "topicId": "1.6.2",
+    "topicName": "SLAs, NDAs, MOUs, ISAs, Right-to-Audit",
+    "cardType": "reference_fact",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "SLA",
+      "NDA",
+      "MOU",
+      "ISA",
+      "BPA"
+    ],
+    "tags": [
+      "third-party",
+      "agreements"
+    ],
+    "title": "Third-party agreement types",
+    "prompt": "Match SLA, NDA, MOU, ISA and BPA to their purpose.",
+    "answerSummary": "SLA: measurable service levels with penalties. NDA: protects confidential information. MOU: documents intent to cooperate, usually not legally binding. ISA: technical and security requirements for connecting two organizations' systems. BPA: defines partner roles, profit sharing and responsibilities.",
+    "mnemonic": null,
+    "examTrapWarning": "Only the SLA defines performance metrics and penalties. An MOU usually carries no binding obligations, so it cannot enforce security requirements.",
+    "matrixData": {
+      "headers": [
+        "Agreement",
+        "Purpose",
+        "Binding?"
+      ],
+      "rows": [
+        [
+          "SLA (service level agreement)",
+          "Measurable service levels (uptime, response) and penalties",
+          "Yes"
+        ],
+        [
+          "NDA (non-disclosure agreement)",
+          "Protects confidential information shared between parties",
+          "Yes"
+        ],
+        [
+          "MOU / MOA",
+          "Records common intent and cooperation",
+          "Usually not"
+        ],
+        [
+          "ISA (interconnection security agreement)",
+          "Security and technical rules for linking two systems",
+          "Yes"
+        ],
+        [
+          "BPA (business partnership agreement)",
+          "Partner roles, investments, profit sharing",
+          "Yes"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-47 Rev. 1",
+        "section": "Managing the Security of Information Exchanges"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 1: Security Governance Through Principles and Policies"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.7-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.7",
+    "subdomainName": "Legal, Regulatory, Compliance & Privacy",
+    "topicId": "1.7.1",
+    "topicName": "Cybercrime Laws & Intellectual Property (Copyright, Patent, Trade Secret)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 6,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Copyright",
+      "Patent",
+      "Trademark",
+      "Trade secret"
+    ],
+    "tags": [
+      "intellectual-property",
+      "law"
+    ],
+    "title": "Intellectual property protection matrix",
+    "prompt": "For copyright, patent, trademark and trade secret, give what each protects and how long protection lasts (US).",
+    "answerSummary": "Copyright: original expression; author's life + 70 years. Patent: novel, useful, non-obvious inventions; 20 years from filing, with public disclosure. Trademark: brand names and logos; 10-year terms renewable indefinitely. Trade secret: confidential business information; lasts as long as it stays secret.",
+    "mnemonic": null,
+    "examTrapWarning": "A patent requires public disclosure, so an algorithm you want to keep secret indefinitely is better protected as a trade secret. Copyright protects expression, not ideas.",
+    "matrixData": {
+      "headers": [
+        "Type",
+        "Protects",
+        "Duration (US)"
+      ],
+      "rows": [
+        [
+          "Copyright",
+          "Original works of authorship (expression, not ideas), including software code",
+          "Author's life + 70 years; works for hire 95 years from publication or 120 from creation, whichever is shorter"
+        ],
+        [
+          "Patent",
+          "New, useful, non-obvious inventions",
+          "20 years from application; invention is publicly disclosed"
+        ],
+        [
+          "Trademark",
+          "Words, logos, slogans identifying a brand",
+          "10-year terms, renewable indefinitely"
+        ],
+        [
+          "Trade secret",
+          "Confidential info giving competitive advantage (formulas, processes)",
+          "Indefinite, as long as reasonable secrecy (NDAs, controls) is maintained"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 4: Laws, Regulations, and Compliance"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.7-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.7",
+    "subdomainName": "Legal, Regulatory, Compliance & Privacy",
+    "topicId": "1.7.2",
+    "topicName": "Privacy Regulations (GDPR, CCPA, HIPAA, PCI-DSS)",
+    "cardType": "cloze_deletion",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "premature_escalation"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "GDPR",
+      "72 hours",
+      "Supervisory authority",
+      "Data controller"
+    ],
+    "tags": [
+      "privacy",
+      "gdpr"
+    ],
+    "title": "GDPR breach notification deadline",
+    "prompt": "Fill in the GDPR breach notification rule.",
+    "answerSummary": "Under GDPR Article 33 the controller must notify the supervisory authority within 72 hours of becoming aware of a personal data breach, unless it is unlikely to result in a risk to individuals. Processors must notify the controller without undue delay.",
+    "mnemonic": null,
+    "examTrapWarning": "The 72-hour duty belongs to the controller, and it goes to the supervisory authority. Notifying data subjects (Article 34) is required only when the risk to them is high.",
+    "clozeTemplate": "Under GDPR, the data {{c1::controller::role}} must notify the {{c2::supervisory authority::recipient}} of a personal data breach within {{c3::72 hours::deadline}} of becoming aware of it, unless the breach is unlikely to result in a risk to individuals.",
+    "references": [
+      {
+        "source": "EU General Data Protection Regulation (GDPR)",
+        "section": "Articles 33 and 34"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.8-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.8",
+    "subdomainName": "Security Policies, Standards, Procedures & Baselines",
+    "topicId": "1.8.1",
+    "topicName": "Policy Hierarchy (Policy vs. Standard vs. Guideline vs. Procedure)",
+    "cardType": "reference_fact",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "incomplete_partial_answer"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Policy",
+      "Standard",
+      "Baseline",
+      "Guideline",
+      "Procedure"
+    ],
+    "tags": [
+      "policy-hierarchy"
+    ],
+    "title": "Policy, standard, baseline, guideline, procedure",
+    "prompt": "Describe each security document type and say whether it is mandatory.",
+    "answerSummary": "Policy: high-level management intent, mandatory. Standard: mandatory specific rules (e.g., required technology). Baseline: mandatory minimum security configuration. Guideline: discretionary recommendations. Procedure: mandatory step-by-step instructions.",
+    "mnemonic": "Only Guidelines are Gentle (optional); everything else is mandatory.",
+    "examTrapWarning": "Guidelines are the only non-mandatory document. A question about \"recommended but optional\" practices points to guidelines.",
+    "matrixData": {
+      "headers": [
+        "Document",
+        "Mandatory?",
+        "Purpose",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Policy",
+          "Yes",
+          "High-level statement of management intent and direction",
+          "All sensitive data must be encrypted"
+        ],
+        [
+          "Standard",
+          "Yes",
+          "Specific, uniform rules that support the policy",
+          "Use AES-256 for data at rest"
+        ],
+        [
+          "Baseline",
+          "Yes",
+          "Minimum security configuration for a system type",
+          "CIS benchmark hardened Windows image"
+        ],
+        [
+          "Guideline",
+          "No",
+          "Recommended practices and advice",
+          "Suggested password manager tips"
+        ],
+        [
+          "Procedure",
+          "Yes",
+          "Detailed step-by-step instructions",
+          "How to enable BitLocker on a laptop"
+        ]
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 1: Security Governance Through Principles and Policies"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.9-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.9",
+    "subdomainName": "Business Continuity (BCP) Requirements",
+    "topicId": "1.9.2",
+    "topicName": "Business Impact Analysis (BIA: MTD, RTO, RPO, WRT)",
+    "cardType": "formula_drill",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms",
+      "cost_disproportionate"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "MTD",
+      "RTO",
+      "WRT",
+      "RPO",
+      "BIA"
+    ],
+    "tags": [
+      "bia",
+      "bcp"
+    ],
+    "title": "BIA timing: RTO + WRT ≤ MTD (and RPO)",
+    "prompt": "What relationship must hold between RTO, WRT and MTD, and how does RPO differ?",
+    "answerSummary": "RTO + WRT must be less than or equal to MTD. RPO looks backward from the outage (maximum acceptable data loss); RTO and WRT look forward from it.",
+    "mnemonic": "RPO = Point in the Past (data). RTO = Time to Operate. WRT = Work to verify. All forward times must fit inside MTD.",
+    "examTrapWarning": "RPO is not part of the RTO + WRT ≤ MTD sum. Picking a recovery option whose RTO equals the MTD leaves no time for WRT.",
+    "formulaData": {
+      "formula": "RTO + WRT ≤ MTD      (RPO measured backward from the outage)",
+      "variables": [
+        {
+          "symbol": "RPO",
+          "meaning": "Recovery point objective: maximum tolerable data loss, measured back in time; drives backup frequency"
+        },
+        {
+          "symbol": "RTO",
+          "meaning": "Recovery time objective: time to restore systems after the outage"
+        },
+        {
+          "symbol": "WRT",
+          "meaning": "Work recovery time: time to verify data, re-enter transactions and resume work"
+        },
+        {
+          "symbol": "MTD",
+          "meaning": "Maximum tolerable downtime: limit before irreparable business harm"
+        }
+      ],
+      "workedExample": "MTD = 12 hours and WRT = 4 hours, so RTO must be ≤ 8 hours. If backups run every 2 hours, RPO is at most 2 hours.",
+      "decisionRule": "If RTO + WRT > MTD, upgrade the recovery strategy (for example cold to warm or hot site) or get documented executive risk acceptance."
+    },
+    "references": [
+      {
+        "source": "NIST SP 800-34 Rev. 1",
+        "section": "Business Impact Analysis"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 3: Business Continuity Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.9-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.9",
+    "subdomainName": "Business Continuity (BCP) Requirements",
+    "topicId": "1.9.1",
+    "topicName": "BCP Project Initiation & Scope",
+    "cardType": "sequence_order",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "remember",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "BCP",
+      "Project scope and planning",
+      "BIA",
+      "Continuity planning",
+      "Approval and implementation"
+    ],
+    "tags": [
+      "bcp"
+    ],
+    "title": "The four phases of the BCP process",
+    "prompt": "Put the business continuity planning process phases in order.",
+    "answerSummary": "1. Project scope and planning (includes senior management support and team selection). 2. Business impact analysis. 3. Continuity planning (strategy development and provisions). 4. Approval and implementation (plus training, testing and maintenance).",
+    "mnemonic": null,
+    "examTrapWarning": "The BIA comes before choosing continuity strategies; you cannot pick a recovery site before knowing MTD and RTO values. Senior management support comes first of all.",
+    "sequenceData": {
+      "directionLabel": "First → last",
+      "steps": [
+        {
+          "order": 1,
+          "label": "Project scope and planning",
+          "detail": "Business organization analysis, BCP team selection, resource requirements, legal review, and senior management sponsorship."
+        },
+        {
+          "order": 2,
+          "label": "Business impact analysis",
+          "detail": "Identify priorities, assess risk, likelihood and impact; set MTD, RTO and RPO."
+        },
+        {
+          "order": 3,
+          "label": "Continuity planning",
+          "detail": "Develop strategies and provisions and processes to keep critical functions running."
+        },
+        {
+          "order": 4,
+          "label": "Approval and implementation",
+          "detail": "Senior management approves; implement, train, test and maintain the plan."
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 3: Business Continuity Planning"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.10-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.10",
+    "subdomainName": "Personnel Security Policies & Processes",
+    "topicId": "1.10.2",
+    "topicName": "Job Rotation, Mandatory Vacations, Separation of Duties",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 5,
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Separation of duties",
+      "Job rotation",
+      "Mandatory vacation",
+      "Collusion"
+    ],
+    "tags": [
+      "personnel"
+    ],
+    "title": "Separation of duties vs. job rotation vs. mandatory vacation",
+    "prompt": "Contrast these three personnel controls by type (preventive or detective) and what fraud they address.",
+    "answerSummary": "Separation of duties is preventive: no single person can complete a sensitive task, so fraud requires collusion. Job rotation cross-trains and can detect fraud when a new person takes over. Mandatory vacation is detective: someone else performs the duties and uncovers ongoing fraud.",
+    "mnemonic": null,
+    "examTrapWarning": "Mandatory vacation is the classic detective control for an employee hiding ongoing fraud. Separation of duties prevents fraud but can be defeated by collusion.",
+    "contrastData": {
+      "ruleOfThumb": "SoD prevents (needs collusion); rotation and vacations detect.",
+      "columns": [
+        {
+          "label": "Separation of duties",
+          "badge": "Preventive",
+          "points": [
+            "Splits a critical task among people",
+            "Fraud requires collusion",
+            "Example: requester cannot approve own payment"
+          ]
+        },
+        {
+          "label": "Job rotation",
+          "badge": "Detective + resilience",
+          "points": [
+            "Moves staff between roles periodically",
+            "Cross-training reduces single points of failure",
+            "New person may spot irregularities"
+          ]
+        },
+        {
+          "label": "Mandatory vacation",
+          "badge": "Detective",
+          "points": [
+            "Forces 1–2 consecutive weeks off",
+            "Someone else performs the duties",
+            "Reveals hidden ongoing fraud"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      },
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 16: Managing Security Operations"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.11-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.11",
+    "subdomainName": "Security Awareness, Education, and Training",
+    "topicId": "1.11.1",
+    "topicName": "Awareness vs. Training vs. Education",
+    "cardType": "concept_contrast",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 3,
+    "cognitiveLevel": "understand",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Awareness",
+      "Training",
+      "Education"
+    ],
+    "tags": [
+      "training"
+    ],
+    "title": "Awareness vs. training vs. education",
+    "prompt": "Distinguish security awareness, training and education by audience and goal.",
+    "answerSummary": "Awareness: everyone; changes attitudes and keeps security in mind (posters, campaigns). Training: specific roles; teaches skills to perform tasks. Education: individuals pursuing deeper understanding, such as degrees or certifications.",
+    "mnemonic": null,
+    "examTrapWarning": "Awareness is a prerequisite for training. A question about teaching help-desk staff how to reset passwords securely is training, not awareness.",
+    "contrastData": {
+      "ruleOfThumb": "Awareness = \"what\", training = \"how\", education = \"why\".",
+      "columns": [
+        {
+          "label": "Awareness",
+          "badge": "Everyone",
+          "points": [
+            "Focuses attention on security",
+            "Posters, newsletters, phishing reminders",
+            "Changes behavior and attitude"
+          ]
+        },
+        {
+          "label": "Training",
+          "badge": "Role-specific",
+          "points": [
+            "Teaches skills for a job function",
+            "Hands-on, task oriented",
+            "Example: secure coding for developers"
+          ]
+        },
+        {
+          "label": "Education",
+          "badge": "Deep / career",
+          "points": [
+            "Broad, in-depth understanding",
+            "Degrees and certifications",
+            "Prepares for future roles"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.12-c001",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.12",
+    "subdomainName": "Due Care & Due Diligence",
+    "topicId": "1.12.2",
+    "topicName": "Distinguishing Due Diligence (Knowing) from Due Care (Doing)",
+    "cardType": "concept_contrast",
+    "examPriority": "must_know",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "relatedTrapTypes": [
+      "confuses_similar_terms"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Due diligence",
+      "Due care",
+      "Prudent person rule",
+      "Negligence"
+    ],
+    "tags": [
+      "due-care"
+    ],
+    "title": "Due diligence vs. due care",
+    "prompt": "Distinguish due diligence from due care and give an example of each.",
+    "answerSummary": "Due diligence is knowing: researching, assessing risk, planning and auditing. Due care is doing: actually implementing and maintaining reasonable controls, as a prudent person would. Failing at due care can be negligence.",
+    "mnemonic": "Diligence = Detect / Do research. Care = Correct / Carry it out.",
+    "examTrapWarning": "Performing a risk assessment is due diligence; patching the identified vulnerabilities is due care. Many questions swap the two.",
+    "contrastData": {
+      "ruleOfThumb": "Diligence comes first (investigate); care follows (act).",
+      "columns": [
+        {
+          "label": "Due diligence",
+          "badge": "Knowing",
+          "points": [
+            "Investigate and assess before acting",
+            "Risk assessments, vendor reviews, audits",
+            "Developing plans and policies"
+          ]
+        },
+        {
+          "label": "Due care",
+          "badge": "Doing",
+          "points": [
+            "Implement and maintain reasonable controls",
+            "Patching, training, enforcing policy",
+            "Prudent person rule; absence can be negligence"
+          ]
+        }
+      ]
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 1: Security Governance Through Principles and Policies"
+      }
+    ]
+  },
+  {
+    "id": "cissp-mem-d1-s1.10-c002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.10",
+    "subdomainName": "Personnel Security Policies & Processes",
+    "topicId": "1.10.3",
+    "topicName": "Termination & Offboarding",
+    "cardType": "manager_heuristic",
+    "examPriority": "high_yield",
+    "intrinsicDifficulty": 4,
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "relatedTrapTypes": [
+      "technical_fix_over_process",
+      "wrong_lifecycle_phase"
+    ],
+    "relatedQuestionIds": [],
+    "keyTerms": [
+      "Termination",
+      "Offboarding",
+      "Access revocation",
+      "Exit interview"
+    ],
+    "tags": [
+      "personnel"
+    ],
+    "title": "Terminating an employee securely",
+    "prompt": "HR plans to fire a system administrator on Friday. What is the right security sequence?",
+    "answerSummary": "Disable logical and physical access at the same moment the employee is notified, with a witness and security present. Collect badges, keys and devices, remind them of NDA obligations in an exit interview, and escort them off the premises.",
+    "mnemonic": null,
+    "examTrapWarning": "Revoking access days later (or after a long goodbye) leaves a window for sabotage. Revoking it weeks before notification can tip them off; coordinate timing with HR.",
+    "heuristicData": {
+      "technicalReflexTrap": "Let the admin finish the week, then file a ticket to remove accounts after they have left.",
+      "managerAction": "Coordinate with HR so all accounts and physical access are disabled as the termination is delivered; hold an exit interview, collect assets and escort the person out.",
+      "governingPrinciple": "Personnel security: access removal must be timely and coordinated with HR; the termination process is a documented, consistent procedure."
+    },
+    "references": [
+      {
+        "source": "ISC2 CISSP Official Study Guide (9th Edition)",
+        "section": "Ch. 2: Personnel Security and Risk Management Concepts"
+      }
+    ]
+  }
+]
