@@ -1,0 +1,238 @@
+[
+  {
+    "id": "cissp-d6-s6.2-q019",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "least_likely",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Penetration testing deliverables",
+      "Assessment evidence",
+      "Remediation ownership"
+    ],
+    "keyTerms": [
+      "Penetration testing deliverables",
+      "Assessment evidence",
+      "Remediation ownership"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "Management commissions a scoped penetration test and assigns any resulting repairs to the system owner. Which item falls outside the tester's assignment?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Identify confirmed security weaknesses in the tested scope.",
+        "isCorrect": false,
+        "explanation": "Confirming and reporting weaknesses is a core assessment outcome. The system owner uses those findings to plan remediation.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Explain the potential business impact of confirmed findings.",
+        "isCorrect": false,
+        "explanation": "Impact explains why a finding matters. It gives the owner and risk stakeholders evidence for prioritization.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Implement permanent fixes to the assessed systems during the engagement.",
+        "isCorrect": true,
+        "explanation": "Carrying out production fixes is a separate responsibility in this engagement. Testers can present evidence and recommend mitigation without changing systems on the owner's behalf.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Report which in-scope controls resisted the agreed assessment.",
+        "isCorrect": false,
+        "explanation": "Test observations may report how controls performed within scope. That result is bounded by the agreed test conditions and coverage.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "An assessment evaluates controls and reports findings. Recommendations can accompany the report, and the designated system owner arranges and approves changes through remediation.",
+      "managerMindsetTip": "Give findings an accountable owner, a remediation decision, and a timetable for verification.",
+      "studyFocusDirective": "Create a responsibility matrix for assessment, risk acceptance, change approval, and retesting.",
+      "keyTakeaway": "Assessment produces evidence and recommendations. System owners manage authorized remediation.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 55, p. 24 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-115",
+          "section": "Chapter 8, Post-Testing Activities"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q002",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.2",
+    "topicName": "Rules of Engagement (RoE) & Scope",
+    "cognitiveLevel": "evaluate",
+    "perspective": "compliance_auditor",
+    "questionStyle": "first_action",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Assessment objectives",
+      "Rules of engagement",
+      "Test planning"
+    ],
+    "keyTerms": [
+      "Assessment objectives",
+      "Rules of engagement",
+      "Test planning"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A company has approved funding for a penetration test, but its leaders have yet to agree what decision the results should inform. What should the assessment lead do first?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "first"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Submit technical changes for change control approval.",
+        "isCorrect": false,
+        "explanation": "A change request may be appropriate later if the approved test requires one. The objectives must explain what the engagement needs to assess first.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "B",
+        "text": "Write the detailed test plan around the tools already available.",
+        "isCorrect": false,
+        "explanation": "Detailed planning should translate objectives into scope and methods. Starting with tools can leave the real decision unsupported.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Agree with management on specific assessment objectives.",
+        "isCorrect": true,
+        "explanation": "Objectives establish what evidence management needs and why. They inform the scope, constraints, and rules that must be approved before testing.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Set a schedule for test-team status updates.",
+        "isCorrect": false,
+        "explanation": "Status updates support coordination once responsibilities and deliverables are known. The schedule cannot define what question the engagement should answer.",
+        "trapType": "wrong_lifecycle_phase"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Clarify the management decision and assessment objectives before designing or scheduling the assessment. Objectives drive the scope, rules of engagement, and reporting expectations.",
+      "managerMindsetTip": "Ask management what they will decide differently once they have the results.",
+      "studyFocusDirective": "List which decisions about scope, constraints, and deliverables depend on the assessment objective.",
+      "keyTakeaway": "The assessment objective drives the detailed plan and rules of engagement.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 59, p. 26 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-115",
+          "section": "Chapter 6, Security Assessment Planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q003",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Continuous monitoring",
+      "Point-in-time audit",
+      "Control evidence"
+    ],
+    "keyTerms": [
+      "Continuous monitoring",
+      "Point-in-time audit",
+      "Control evidence"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "An organization collects security telemetry throughout the year and commissions a scoped independent audit each year. Which statement accurately distinguishes the two practices?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The annual audit is the system's ongoing real-time observation process.",
+        "isCorrect": false,
+        "explanation": "Real-time telemetry is an example of monitoring. The scoped audit evaluates evidence for a stated period or point in time.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Automated evidence collection is incompatible with an independent audit.",
+        "isCorrect": false,
+        "explanation": "Auditors can use automated evidence collection and analysis. They still need independent judgment about the scope, evidence, and conclusion.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "C",
+        "text": "Continuous monitoring observes systems or activity over time, while an audit evaluates evidence against defined criteria.",
+        "isCorrect": true,
+        "explanation": "Monitoring provides recurring information about control performance or change. An independent audit applies defined criteria and evaluates evidence to reach a conclusion.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Continuous monitoring is a one-time evaluation completed on the audit date.",
+        "isCorrect": false,
+        "explanation": "One audit date can anchor evidence selection. Monitoring is designed to observe conditions over an ongoing period.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Continuous monitoring supports ongoing visibility through recurring measurements and checks. Audit provides a scoped evaluation of evidence against criteria, potentially using monitoring data.",
+      "managerMindsetTip": "Specify how monitoring evidence is retained and how an independent reviewer will assess its reliability.",
+      "studyFocusDirective": "Compare a daily telemetry check and an annual audit by purpose, cadence, and output.",
+      "keyTakeaway": "Monitoring provides ongoing observations that a scoped audit may use as evidence.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1558, p. 764 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CA-2 Control Assessments and CA-7 Continuous Monitoring"
+        }
+      ]
+    }
+  }
+]

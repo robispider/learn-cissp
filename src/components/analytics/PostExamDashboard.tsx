@@ -24,6 +24,7 @@ import PacingTimeline from './PacingTimeline';
 import StrengthWeaknessTable from './StrengthWeaknessTable';
 import { withBase } from '../../lib/paths';
 import ExamGapMemoryCallout from '../memorize/ExamGapMemoryCallout';
+import { QuestionExhibit } from '../exam-runner/QuestionExhibit';
 
 interface Props {
   initialSessionId?: string;
@@ -455,6 +456,15 @@ export default function PostExamDashboard({ initialSessionId }: Props) {
                 <p className="mt-4 text-base font-medium leading-relaxed text-slate-900 dark:text-white">
                   {question.stem}
                 </p>
+
+                {question.exhibit && (
+                  <>
+                    {question.scenarioContext && (
+                      <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">{question.scenarioContext}</p>
+                    )}
+                    <QuestionExhibit exhibit={question.exhibit} />
+                  </>
+                )}
 
                 <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                   {question.options.map((opt) => {

@@ -71,6 +71,10 @@ export const QuestionSchema = z.object({
   // 3. Question Content
   stem: z.string().min(30),
   scenarioContext: z.string().nullable().default(null), // Optional background exhibit / table / scenario block
+  exhibit: z.object({
+    file: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*\.webp$/),
+    alt: z.string().trim().min(1),
+  }).optional(),
   highlightKeywords: z.array(z.string()).default([]),   // Words like "BEST", "FIRST", "NOT", "PRIMARY" for Review Mode
 
   // 4. Options (Exactly 4 options, 1 correct)

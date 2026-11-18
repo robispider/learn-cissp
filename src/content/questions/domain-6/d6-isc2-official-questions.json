@@ -1379,7 +1379,11 @@
       "ch6-q19"
     ],
     "stem": "Jennifer needs to ensure that all Windows systems provide identical logging information to the SIEM. How can she best ensure that all Windows desktops have the same log settings?",
-    "scenarioContext": "For questions 19-21, please refer to the following scenario:\n\nThe company that Jennifer works for has implemented a central logging infrastructure, as shown in the following image. Use this diagram and your knowledge of logging systems to answer the following questions.\n\nCorporate Network Data Center\n\nData center Firewall\n\nAccess Points\n\nWindows Desktop SIEM Systems Appliance\n\nLinux Web Linux Database Server Server",
+    "scenarioContext": "Jennifer’s company has implemented the central logging infrastructure shown in the diagram.",
+    "exhibit": {
+      "file": "isc2-ch6-q19.webp",
+      "alt": "Wireless access point, workstation, servers, and firewall connected to a SIEM appliance."
+    },
     "highlightKeywords": [
       "BEST"
     ],
@@ -1457,7 +1461,11 @@
       "ch6-q20"
     ],
     "stem": "During normal operations, Jennifer's team uses the SIEM appliance to monitor for exceptions received via syslog. What system shown does not natively have support for syslog events?",
-    "scenarioContext": "For questions 19-21, please refer to the following scenario:\n\nThe company that Jennifer works for has implemented a central logging infrastructure, as shown in the following image. Use this diagram and your knowledge of logging systems to answer the following questions.\n\nCorporate Network Data Center\n\nData center Firewall\n\nAccess Points\n\nWindows Desktop SIEM Systems Appliance\n\nLinux Web Linux Database Server Server",
+    "scenarioContext": "Jennifer’s company has implemented the central logging infrastructure shown in the diagram.",
+    "exhibit": {
+      "file": "isc2-ch6-q19.webp",
+      "alt": "Wireless access point, workstation, servers, and firewall connected to a SIEM appliance."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -1533,7 +1541,11 @@
       "ch6-q21"
     ],
     "stem": "What technology should an organization use for each of the devices shown in the diagram to ensure that logs can be time sequenced across the entire infrastructure?",
-    "scenarioContext": "For questions 19-21, please refer to the following scenario:\n\nThe company that Jennifer works for has implemented a central logging infrastructure, as shown in the following image. Use this diagram and your knowledge of logging systems to answer the following questions.\n\nCorporate Network Data Center\n\nData center Firewall\n\nAccess Points\n\nWindows Desktop SIEM Systems Appliance\n\nLinux Web Linux Database Server Server",
+    "scenarioContext": "Jennifer’s company has implemented the central logging infrastructure shown in the diagram.",
+    "exhibit": {
+      "file": "isc2-ch6-q19.webp",
+      "alt": "Wireless access point, workstation, servers, and firewall connected to a SIEM appliance."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3015,7 +3027,11 @@
       "ch6-q41"
     ],
     "stem": "What task is the most important during Phase 1, Planning?",
-    "scenarioContext": "For questions 41-43, please refer to the following scenario. Chris uses the standard penetration testing methodology shown here. Use this methodology and your knowledge of penetration testing to answer questions about tool usage during a penetration test.\n\nPlanning\n\nInformation Reporting Gathering and Discovery\n\nVulnerability Exploitation Scanning",
+    "scenarioContext": "Chris uses the penetration testing methodology shown in the diagram.",
+    "exhibit": {
+      "file": "isc2-ch6-q41.webp",
+      "alt": "Five phases form a cycle: planning, information gathering and discovery, vulnerability scanning, exploitation, and reporting."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -3090,7 +3106,11 @@
       "ch6-q42"
     ],
     "stem": "Which of the following tools is most likely to be used during discovery?",
-    "scenarioContext": "For questions 41-43, please refer to the following scenario. Chris uses the standard penetration testing methodology shown here. Use this methodology and your knowledge of penetration testing to answer questions about tool usage during a penetration test.\n\nPlanning\n\nInformation Reporting Gathering and Discovery\n\nVulnerability Exploitation Scanning",
+    "scenarioContext": "Chris uses the penetration testing methodology shown in the diagram.",
+    "exhibit": {
+      "file": "isc2-ch6-q41.webp",
+      "alt": "Five phases form a cycle: planning, information gathering and discovery, vulnerability scanning, exploitation, and reporting."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -3165,7 +3185,11 @@
       "ch6-q43"
     ],
     "stem": "Which of these concerns is the most important to address during planning to ensure that the reporting phase does not cause problems?",
-    "scenarioContext": "For questions 41-43, please refer to the following scenario. Chris uses the standard penetration testing methodology shown here. Use this methodology and your knowledge of penetration testing to answer questions about tool usage during a penetration test.\n\nPlanning\n\nInformation Reporting Gathering and Discovery\n\nVulnerability Exploitation Scanning",
+    "scenarioContext": "Chris uses the penetration testing methodology shown in the diagram.",
+    "exhibit": {
+      "file": "isc2-ch6-q41.webp",
+      "alt": "Five phases form a cycle: planning, information gathering and discovery, vulnerability scanning, exploitation, and reporting."
+    },
     "highlightKeywords": [
       "MOST",
       "NOT"
@@ -3314,8 +3338,12 @@
       "ch6-q45",
       "think-like-a-manager"
     ],
-    "stem": "As part of his role as a security manager, Jacob provides the following chart to his organization's management team. What type of measurement is he providing for them?\n\nTime to Remediate in Days vs. Number of Vulnerabilities 60\n\n45\n\n30\n\n15\n\n0 3 6 9 12 15 Number of Vulnerabilities",
+    "stem": "As part of his role as a security manager, Jacob provides the following chart to his organization's management team. What type of measurement is he providing for them?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch6-q45.webp",
+      "alt": "Line chart of remediation time in days versus number of vulnerabilities, decreasing as vulnerability count increases."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3838,7 +3866,11 @@
       "ch6-q52"
     ],
     "stem": "In this image, what issue may occur due to the log handling settings?",
-    "scenarioContext": "Visual exhibit (Windows Event Log Properties dialog for 'Application'):\n  Maximum log size (KB): 20480\n  When maximum event log size is reached:\n    [ ] Overwrite events as needed (oldest events first)\n    [*] Archive the log when full, do not overwrite events\n    [ ] Do not overwrite events (Clear logs manually)",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch6-q52.webp",
+      "alt": "Windows Application Event Log Properties. The maximum log size is 20,480 KB. “Archive the log when full, do not overwrite events” is selected."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4066,7 +4098,7 @@
       "converted-matching"
     ],
     "stem": "Identify the correct mapping matching numbered scanning types with the appropriate lettered description shown. You should use each item exactly once. Which option shows the correct complete matching?",
-    "scenarioContext": "Nmap scan output exhibit (v7.40 for myhost / 192.168.107.9):\n  Not shown: 997 filtered ports\n  PORT    STATE SERVICE\n  22/tcp  open  ssh\n  80/tcp  open  http\n  443/tcp open  https\n\nScanning types\n1. TCP Connect\n2. TCP ACK\n3. TCP SYN\n4. Xmas\n\nDescriptions / Categories:\n  A. Sends a request to open a new connection\n  B. Completes a three-way handshake\n  C. Sends a packet disguised as part of an active control\n  D. Sends a packet with the FIN, PSH, and URG flags set",
+    "scenarioContext": "Scanning types\n1. TCP Connect\n2. TCP ACK\n3. TCP SYN\n4. Xmas\n\nDescriptions / Categories:\n  A. Sends a request to open a new connection\n  B. Completes a three-way handshake\n  C. Sends a packet disguised as part of an active control\n  D. Sends a packet with the FIN, PSH, and URG flags set",
     "highlightKeywords": [],
     "options": [
       {
@@ -4139,7 +4171,11 @@
       "ch6-q56"
     ],
     "stem": "If Kara's primary concern is preventing eavesdropping attacks, which port should she block?",
-    "scenarioContext": "Nmap scan output for 192.168.107.9:\n  Not shown: 997 filtered ports\n  22/tcp  open  ssh\n  80/tcp  open  http\n  443/tcp open  https\n\nKara used nmap to perform a scan of a system under her control and received the results shown here. Refer to these results to answer questions 56 and 57.",
+    "scenarioContext": "Kara used Nmap to scan a system under her control.",
+    "exhibit": {
+      "file": "isc2-ch6-q56.webp",
+      "alt": "Port scan output listing SSH on 22, HTTP on 80, and HTTPS on 443."
+    },
     "highlightKeywords": [
       "PRIMARY"
     ],
@@ -4215,7 +4251,11 @@
       "ch6-q57"
     ],
     "stem": "If Kara's primary concern is preventing administrative connections to the server, which port should she block?",
-    "scenarioContext": "Nmap scan output for 192.168.107.9:\n  Not shown: 997 filtered ports\n  22/tcp  open  ssh\n  80/tcp  open  http\n  443/tcp open  https\n\nKara used nmap to perform a scan of a system under her control and received the results shown here. Refer to these results to answer questions 56 and 57.",
+    "scenarioContext": "Kara used Nmap to scan a system under her control.",
+    "exhibit": {
+      "file": "isc2-ch6-q56.webp",
+      "alt": "Port scan output listing SSH on 22, HTTP on 80, and HTTPS on 443."
+    },
     "highlightKeywords": [
       "PRIMARY"
     ],
@@ -6309,7 +6349,11 @@
       "ch6-q85"
     ],
     "stem": "If Ben is conducting a penetration test, what should his next step be after receiving these results?",
-    "scenarioContext": "Nmap scan output for 192.168.184.130 (Not shown: 977 closed ports):\n  21/tcp open ftp | 22/tcp open ssh | 23/tcp open telnet | 25/tcp open smtp | 53/tcp open domain | 80/tcp open http | 111/tcp open rpcbind | 139/tcp open netbios-ssn | 445/tcp open microsoft-ds | 512/tcp open exec | 513/tcp open login | 514/tcp open shell | 1099/tcp open rmiregistry | 1524/tcp open ingreslock | 2049/tcp open nfs | 2121/tcp open ccproxy-ftp | 3306/tcp open mysql | 5432/tcp open postgresql | 5900/tcp open vnc | 6000/tcp open X11 | 6667/tcp open irc | 8009/tcp open ajp13 | 8180/tcp open unknown\n\nFor questions 85-87, please refer to the following scenario. During a port scan, Ben uses nmap's default settings and sees the following results.",
+    "scenarioContext": "Ben ran a port scan with Nmap’s default settings.",
+    "exhibit": {
+      "file": "isc2-ch6-q85.webp",
+      "alt": "Terminal output from a port scan, listing open TCP ports and services."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6383,7 +6427,11 @@
       "ch6-q86"
     ],
     "stem": "Based on the scan results, what operating system (OS) was the system that was scanned most likely running?",
-    "scenarioContext": "Nmap scan output for 192.168.184.130 (Not shown: 977 closed ports):\n  Open ports include: 21/ftp, 22/ssh, 23/telnet, 25/smtp, 53/domain, 80/http, 111/rpcbind, 139/netbios-ssn, 445/microsoft-ds, 512/exec, 513/login, 514/shell, 1099/rmiregistry, 1524/ingreslock, 2049/nfs, 2121/ccproxy-ftp, 3306/mysql, 5432/postgresql, 5900/vnc, 6000/X11, 6667/irc, 8009/ajp13, 8180/unknown.\n\nFor questions 85-87, please refer to the following scenario. During a port scan, Ben uses nmap's default settings and sees the following results.",
+    "scenarioContext": "Ben ran a port scan with Nmap’s default settings.",
+    "exhibit": {
+      "file": "isc2-ch6-q85.webp",
+      "alt": "Terminal output from a port scan, listing open TCP ports and services."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -6458,7 +6506,11 @@
       "ch6-q87"
     ],
     "stem": "Ben's manager expresses concern about the coverage of his scan. Why might his manager have this concern?",
-    "scenarioContext": "For questions 85-87, please refer to the following scenario. During a port scan, Ben uses nmap's default settings and sees the following results.",
+    "scenarioContext": "Ben ran a port scan with Nmap’s default settings.",
+    "exhibit": {
+      "file": "isc2-ch6-q85.webp",
+      "alt": "Terminal output from a port scan, listing open TCP ports and services."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7281,7 +7333,11 @@
       "ch6-q98"
     ],
     "stem": "Which of the following is not a part of the discovery phase?",
-    "scenarioContext": "For questions 98-100, please refer to the following scenario. NIST Special Publication 800-115, the Technical Guide to Information Security Testing and Assessment, provides NIST's process for penetration testing. Use this image as well as your knowledge of penetration testing to answer the questions.\n\nAdditional Discovery\n\nPlanning Discovery Attack\n\nReporting\n\nSource: NIST SP 800-115.",
+    "scenarioContext": "The diagram shows the penetration testing process from NIST SP 800-115.",
+    "exhibit": {
+      "file": "isc2-ch6-q98.webp",
+      "alt": "NIST diagram linking Planning, Discovery, Attack, and Reporting, with an Additional Discovery loop."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -7361,7 +7417,11 @@
       "ch6-q99"
     ],
     "stem": "NIST specifies four attack phase steps: gaining access, escalating privileges, system browsing, and installing additional tools. Once attackers install additional tools, what phase will a penetration tester typically return to?",
-    "scenarioContext": "For questions 98-100, please refer to the following scenario. NIST Special Publication 800-115, the Technical Guide to Information Security Testing and Assessment, provides NIST's process for penetration testing. Use this image as well as your knowledge of penetration testing to answer the questions.\n\nAdditional Discovery\n\nPlanning Discovery Attack\n\nReporting\n\nSource: NIST SP 800-115.",
+    "scenarioContext": "The diagram shows the penetration testing process from NIST SP 800-115.",
+    "exhibit": {
+      "file": "isc2-ch6-q98.webp",
+      "alt": "NIST diagram linking Planning, Discovery, Attack, and Reporting, with an Additional Discovery loop."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7438,7 +7498,11 @@
       "ch6-q100"
     ],
     "stem": "Which of the following is not a typical part of a penetration test report?",
-    "scenarioContext": "For questions 98-100, please refer to the following scenario. NIST Special Publication 800-115, the Technical Guide to Information Security Testing and Assessment, provides NIST's process for penetration testing. Use this image as well as your knowledge of penetration testing to answer the questions.\n\nAdditional Discovery\n\nPlanning Discovery Attack\n\nReporting\n\nSource: NIST SP 800-115.",
+    "scenarioContext": "The diagram shows the penetration testing process from NIST SP 800-115.",
+    "exhibit": {
+      "file": "isc2-ch6-q98.webp",
+      "alt": "NIST diagram linking Planning, Discovery, Attack, and Reporting, with an Additional Discovery loop."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -7963,6 +8027,10 @@
     ],
     "stem": "What type of risk assessment uses a probability-versus-impact matrix categorizing threats into Low, Moderate, and High risk tiers?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q93.webp",
+      "alt": "A probability-versus-impact matrix showing low, moderate, and high risk regions."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8331,7 +8399,11 @@
       "ch9-q116"
     ],
     "stem": "Why does Nikto flag the /test directory?",
-    "scenarioContext": "Nikto v2.1.4 web scan output against `192.168.184.130:80` (Apache/2.2.8 Ubuntu):\n  + OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST\n  + /phpinfo.php: Output from the phpinfo() function was found.\n  + /doc/: Directory indexing found.\n  + /test/: Directory indexing found.\n  + /test/: OSVDB-3092: /test/: This might be interesting...\n  + /phpMyAdmin/: This might be interesting...\n\nFor questions 116-118, please refer to the following scenario:\n\nDuring a web application vulnerability scanning test, Steve runs Nikto against a web server he believes may be vulnerable to attacks. Using the Nikto output shown here, answer the following questions.",
+    "scenarioContext": "Steve ran Nikto against a web server as part of a web application vulnerability assessment.",
+    "exhibit": {
+      "file": "isc2-ch9-q116.webp",
+      "alt": "Terminal window showing the results of a Nikto web server scan."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8404,7 +8476,11 @@
       "ch9-q117"
     ],
     "stem": "Why does Nikto identify directory indexing as an issue?",
-    "scenarioContext": "Nikto v2.1.4 web scan output against `192.168.184.130:80`:\n  + /doc/: Directory indexing found.\n  + /test/: Directory indexing found.\n  + /phpinfo.php & /phpMyAdmin/ discovered.\n\nFor questions 116-118, please refer to the following scenario:\n\nDuring a web application vulnerability scanning test, Steve runs Nikto against a web server he believes may be vulnerable to attacks. Using the Nikto output shown here, answer the following questions.",
+    "scenarioContext": "Steve ran Nikto against a web server as part of a web application vulnerability assessment.",
+    "exhibit": {
+      "file": "isc2-ch9-q116.webp",
+      "alt": "Terminal window showing the results of a Nikto web server scan."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8478,7 +8554,11 @@
       "ch9-q118"
     ],
     "stem": "Nikto lists OSVDB-877, noting that the system may be vulnerable to XST. What would this type of attack allow an attacker to do?",
-    "scenarioContext": "Nikto v2.1.4 web scan output against `192.168.184.130:80`:\n  + OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST\n  + /phpinfo.php, /doc/, /test/, /phpMyAdmin/ reported.\n\nFor questions 116-118, please refer to the following scenario:\n\nDuring a web application vulnerability scanning test, Steve runs Nikto against a web server he believes may be vulnerable to attacks. Using the Nikto output shown here, answer the following questions.",
+    "scenarioContext": "Steve ran Nikto against a web server as part of a web application vulnerability assessment.",
+    "exhibit": {
+      "file": "isc2-ch9-q116.webp",
+      "alt": "Terminal window showing the results of a Nikto web server scan."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8772,7 +8852,11 @@
       "ch10-q38"
     ],
     "stem": "As they prepare to migrate their data center to an infrastructure as a service (IaaS) provider, Susan's company wants to understand the effectiveness of their new provider's security, integrity, and availability controls. What SOC report would provide them with the most detail, including input from the auditor on the effectiveness of controls at the IaaS provider?",
-    "scenarioContext": "Using the following table and your knowledge of the auditing process, answer questions 38-40.\n\nReport Content Audience\n\nInternal controls for financial Users and auditors SOC 1 reporting Confidentiality, integrity, Auditors, regulators, SOC 2 availability, security, and privacy management, partners, and controls others under NDA\n\nConfidentiality, integrity, Publicly available, often SOC 3 availability, security, and privacy used for a website seal controls",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q38.webp",
+      "alt": "Table comparing the report content and audiences of SOC 1, SOC 2, and SOC 3."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -8848,7 +8932,11 @@
       "ch10-q39"
     ],
     "stem": "Susan wants to ensure that the audit report that her organization requested includes input from an external auditor. What type of report should she request?",
-    "scenarioContext": "Using the following table and your knowledge of the auditing process, answer questions 38-40.\n\nReport Content Audience\n\nInternal controls for financial Users and auditors SOC 1 reporting Confidentiality, integrity, Auditors, regulators, SOC 2 availability, security, and privacy management, partners, and controls others under NDA\n\nConfidentiality, integrity, Publicly available, often SOC 3 availability, security, and privacy used for a website seal controls",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q38.webp",
+      "alt": "Table comparing the report content and audiences of SOC 1, SOC 2, and SOC 3."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8924,7 +9012,11 @@
       "ch10-q40"
     ],
     "stem": "When Susan requests a SOC 2 report, she receives a SAS 70 report. What issue should Susan raise?",
-    "scenarioContext": "Using the following table and your knowledge of the auditing process, answer questions 38-40.\n\nReport Content Audience\n\nInternal controls for financial Users and auditors SOC 1 reporting Confidentiality, integrity, Auditors, regulators, SOC 2 availability, security, and privacy management, partners, and controls others under NDA\n\nConfidentiality, integrity, Publicly available, often SOC 3 availability, security, and privacy used for a website seal controls",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q38.webp",
+      "alt": "Table comparing the report content and audiences of SOC 1, SOC 2, and SOC 3."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9959,8 +10051,12 @@
       "isc2-official-practice",
       "ch11-q82"
     ],
-    "stem": "What code review process is shown here?\n\nPlanning\n\nOverview\n\nPreparation\n\nInspection\n\nRework\n\nFollow-up",
+    "stem": "What code review process is shown here?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q82.webp",
+      "alt": "Flowchart showing Planning, Overview, Preparation, Inspection, Rework, and Follow-up in order."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10034,7 +10130,11 @@
       "ch11-q83"
     ],
     "stem": "During a log review, Karen discovers that the system she needs to gather logs from has the log setting shown here. What problem is Karen likely to encounter?",
-    "scenarioContext": "Visual exhibit (Windows Event Log Properties dialog for 'Application'):\n  Maximum log size (KB): 20480\n  When maximum event log size is reached:\n    [*] Overwrite events as needed (oldest events first)\n    [ ] Archive the log when full, do not overwrite events\n    [ ] Do not overwrite events (Clear logs manually)",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q83.webp",
+      "alt": "Windows Application Event Log Properties. The maximum log size is 20,480 KB. “Overwrite events as needed (oldest events first)” is selected."
+    },
     "highlightKeywords": [],
     "options": [
       {

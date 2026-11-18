@@ -1,0 +1,314 @@
+[
+  {
+    "id": "cissp-d3-s3.1-q004",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.1",
+    "subdomainName": "Secure Design Principles",
+    "topicId": "3.1.1",
+    "topicName": "Saltzer & Schroeder Principles",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Least privilege",
+      "Authorized tasks",
+      "Access design"
+    ],
+    "keyTerms": [
+      "Least privilege",
+      "Authorized tasks",
+      "Access design"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A batch service only needs to read a specific input directory and write to a specific output directory. Which criterion should determine the privileges its account receives?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "All privileges used by similar processes on the system.",
+        "isCorrect": false,
+        "explanation": "Similar jobs may perform extra work. Copying their permissions can grant access beyond the batch service's actual needs.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "The default privileges of the job family maintaining the service.",
+        "isCorrect": false,
+        "explanation": "A staff job profile describes duties across people, whereas this account should be scoped to the system process's individual tasks.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "The minimum privileges needed for the service's authorized tasks.",
+        "isCorrect": true,
+        "explanation": "Least privilege grants the permissions needed to perform the approved reads and writes on the named resources. It limits the effect of misuse or malfunction.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "All privileges associated with its assigned operations role.",
+        "isCorrect": false,
+        "explanation": "A role can simplify provisioning, but its entire permission set should be checked against the service's narrower functional requirements.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Least privilege applies to human and service accounts. Derive permissions from authorized actions and resources, and review them when those tasks change.",
+      "managerMindsetTip": "Check both what the identity may do and which resources the permission reaches.",
+      "studyFocusDirective": "Write the minimum read and write permissions for two services with different input and output directories.",
+      "keyTakeaway": "Least privilege limits an identity to permissions needed for its authorized tasks.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 78, p. 34 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AC-6 Least Privilege"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.7-q055",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.7",
+    "subdomainName": "PKI, Digital Signatures, Hashing & Key Management",
+    "topicId": "3.7.2",
+    "topicName": "Digital Signatures & Certificates (X.509, CA, CRL, OCSP, Pinning)",
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "X.509 certificates",
+      "Certificate issuer",
+      "Certificate signature algorithm"
+    ],
+    "keyTerms": [
+      "X.509 certificates",
+      "Certificate issuer",
+      "Certificate signature algorithm"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A certificate authority is preparing an X.509 certificate. Besides the subject's public key and the validity period, which pair of fields belongs in the portion signed by the issuer?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The issuer name and the signature algorithm identifier.",
+        "isCorrect": true,
+        "explanation": "Both the issuer name and an identifier for the signature algorithm are part of the X.509 TBSCertificate structure, which the issuer signs.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "The subject's private key and a master key code identifier.",
+        "isCorrect": false,
+        "explanation": "The certificate binds a public key to a subject. Publishing the corresponding private key would undermine that key pair.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "The name of the transport channel and its protocol identifier.",
+        "isCorrect": false,
+        "explanation": "Transport settings are negotiated or configured separately. The certificate is signed independently of the channel over which it may be presented.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A Kerberos key distribution center identifier and key authorization data.",
+        "isCorrect": false,
+        "explanation": "A key distribution center is part of Kerberos. X.509 certificate issuer and signature information belong to a certificate authority and its PKI.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The issuer signs the TBSCertificate data. It contains the subject's public key, validity interval, issuer name, and signature algorithm identifier, among other fields.",
+      "managerMindsetTip": "Distinguish the signed certificate fields from the signature value and the subject's private key.",
+      "studyFocusDirective": "Inspect an X.509 field list and locate the issuer, validity, subject public key, and signature algorithm.",
+      "keyTakeaway": "The issuer name and signature algorithm identifier are inside the signed X.509 certificate data.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 803, p. 378 (adapted)"
+        },
+        {
+          "source": "IETF RFC 5280",
+          "section": "Section 4.1, Basic Certificate Fields"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.2-q031",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.2",
+    "subdomainName": "Fundamental Concepts of Security Models",
+    "topicId": "3.2.2",
+    "topicName": "Integrity Models (Biba, Clark-Wilson)",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Clark–Wilson",
+      "Well-formed transactions",
+      "Separation of duties"
+    ],
+    "keyTerms": [
+      "Clark–Wilson",
+      "Well-formed transactions",
+      "Separation of duties"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "An accounting system allows ledger changes only through approved transaction routines. An employee may submit a posting, and a separate role certifies the procedure. Which two ideas characterize the model being applied?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Capability lists and protection domains.",
+        "isCorrect": false,
+        "explanation": "Capability lists and domains organize access to objects. They do not capture the controls over transaction integrity and independent duties described here.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Least privilege and well-formed transactions.",
+        "isCorrect": false,
+        "explanation": "Least privilege is useful for limiting access, and approved transactions are central here. The explicit split between execution and certification is separation of duties.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Separation of duties and well-formed transactions.",
+        "isCorrect": true,
+        "explanation": "Controlled procedures take the ledger from one valid state to another. Separating execution and certification helps prevent an individual from subverting that procedure.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Well-formed transactions and service availability.",
+        "isCorrect": false,
+        "explanation": "Well-formed transactions are central to the model. Availability concerns service continuity and does not explain the role separation in the scenario.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Clark–Wilson protects commercial data integrity through certified, well-formed transactions and separation of duties. Users change protected data through authorized procedures.",
+      "managerMindsetTip": "Look for both a constrained way to modify records and an independent check on who can perform or certify the change.",
+      "studyFocusDirective": "Compare Clark–Wilson's integrity controls with the information-flow rules in Biba.",
+      "keyTakeaway": "Clark–Wilson combines well-formed transactions with separation of duties.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1680, p. 843 (adapted)"
+        },
+        {
+          "source": "Clark and Wilson, A Comparison of Commercial and Military Computer Security Policies",
+          "section": "Well-formed transactions and separation of duty"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.2-q032",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.2",
+    "subdomainName": "Fundamental Concepts of Security Models",
+    "topicId": "3.2.1",
+    "topicName": "Confidentiality Models (Bell-LaPadula)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Bell–LaPadula",
+      "Star property",
+      "Confidentiality"
+    ],
+    "keyTerms": [
+      "Bell–LaPadula",
+      "Star property",
+      "Confidentiality"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A Bell–LaPadula subject operating at Secret can read a Secret briefing. Which operation is prohibited specifically by the model's star property, assuming there is no trusted declassification mechanism?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Read a different Secret document.",
+        "isCorrect": false,
+        "explanation": "Confidentiality levels alone do not bar a same-level read. Ordinary permissions may still restrict access.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Read a Top Secret document.",
+        "isCorrect": false,
+        "explanation": "A read above the subject's security level is barred by the simple security property. The star property is the write restriction relevant here.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Read an Unclassified document.",
+        "isCorrect": false,
+        "explanation": "Reading at a lower level does not move protected information into a less restricted object. The star property governs the write in this scenario.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Write the briefing to an Unclassified document.",
+        "isCorrect": true,
+        "explanation": "The star property disallows writing from a higher security level into a lower one. Writing the Secret briefing to an Unclassified object would disclose it downward.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Bell–LaPadula protects confidentiality. The simple security property bars reading up, and the star property bars writing down for an ordinary subject.",
+      "managerMindsetTip": "Identify the direction information would flow when a subject reads or writes an object.",
+      "studyFocusDirective": "Draw two security levels and label which read and write operations are prohibited by each property.",
+      "keyTakeaway": "Bell–LaPadula's star property is the rule against writing down.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1694, p. 854 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 3, Fundamental concepts of security models"
+        }
+      ]
+    }
+  }
+]

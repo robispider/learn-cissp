@@ -30,8 +30,12 @@
       "isc2-official-practice",
       "ch7-q1"
     ],
-    "stem": "Referring to the following figure, what technology is shown that provides fault tolerance for the database servers?\n\nDB1 Network RAID load balancing array Web 1\n\nInternet Load access balancer\n\nWeb 2 Database used by database DB2 servers\n\nWeb 3",
+    "stem": "Referring to the following figure, what technology is shown that provides fault tolerance for the database servers?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch7-q1.webp",
+      "alt": "Network architecture showing load balancing for web servers, two database servers, and a storage array."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -847,8 +851,12 @@
       "isc2-official-practice",
       "ch7-q12"
     ],
-    "stem": "As Gary designs the program, he uses the matrix shown here. What principle of information security does this matrix most directly help enforce?\n\ne l r e b s v t s a e s r r o r o r r o y y a h e n e t t e S t l a P c h Roles/Tasks o m a r a r a r n e t a c t i m t e t e t A s l b s P a t a y t s i s s i s s i t t n a t n P c a r i r n a b n a b n e u v u y o y i l g u i m a i m a i m g o i e o l f p p o c d t d t d d u c c c p i r A r P e S A a D A a D A B c A e R c A e D e V Application Programmer X X X Security Administrator X X X X X X X Database Administrator X X X Database Server Administrator X X X Budget Analyst X X X Accounts Receivable X X X Accounts Payable X X X Deploy Patches X X Verify Patches X Potential Areas of Conflict",
-    "scenarioContext": "For questions 11-14, please refer to the following scenario:\n\nGary was recently hired as the first chief information security officer (CISO) for a local government agency. The agency recently suffered a security breach and is attempting to build a new information security program. Gary would like to apply some best practices for security operations as he is designing this program.",
+    "stem": "As Gary designs the program, he uses the matrix shown here. What principle of information security does this matrix most directly help enforce?",
+    "scenarioContext": "Gary is the new CISO for a local government agency. Following a security breach, he is building a new information security program.",
+    "exhibit": {
+      "file": "isc2-ch7-q12.webp",
+      "alt": "A matrix lists purchasing and payment responsibilities, with X marks indicating conflicts between duties."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -2348,8 +2356,12 @@
       "ch7-q32",
       "calculation"
     ],
-    "stem": "Sam is responsible for backing up his company's primary file server. He configured a backup schedule that performs full backups every Monday evening at 9 p.m. and differential backups on other days of the week at that same time. Files change according to the information shown in the following figure. How many files will be copied in Wednesday's backup?\n\nFile Modifications Monday 8 a.m. - File 1 created Monday 10 a.m. - File 2 created Monday 11 a.m. - File 3 created Monday 4 p.m. - File 1 modified Monday 5 p.m. - File 4 created Tuesday 8 a.m. - File 1 modified Tuesday 9 a.m. - File 2 modified Tuesday 10 a.m. - File 5 created Wednesday 8 a.m. - File 3 modified Wednesday 9 a.m. - File 6 created",
+    "stem": "Sam is responsible for backing up his company's primary file server. He configured a backup schedule that performs full backups every Monday evening at 9 p.m. and differential backups on other days of the week at that same time. Files change according to the information shown in the following figure. How many files will be copied in Wednesday's backup?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch7-q32.webp",
+      "alt": "File changes. Monday: file 1 created at 8 a.m., file 2 at 10 a.m., file 3 at 11 a.m., file 1 modified at 4 p.m., and file 4 created at 5 p.m. Tuesday: file 1 modified at 8 a.m., file 2 at 9 a.m., and file 5 created at 10 a.m. Wednesday: file 3 modified at 8 a.m. and file 6 created at 9 a.m."
+    },
     "highlightKeywords": [
       "PRIMARY"
     ],
@@ -3545,8 +3557,12 @@
       "isc2-official-practice",
       "ch7-q48"
     ],
-    "stem": "What type of attack is shown in the following figure?\n\nSYN\n\nSYN/ACK\n\nSYN\n\nSYN/ACK\n\nSYN\n\nSYN/ACK Attacker Victim",
+    "stem": "What type of attack is shown in the following figure?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch7-q48.webp",
+      "alt": "Message sequence showing repeated SYN packets from one system and SYN/ACK responses from the other."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4003,7 +4019,11 @@
       "ch7-q54"
     ],
     "stem": "What technique has been used to protect the intellectual property in the following image?",
-    "scenarioContext": "Visual exhibit: Outdoor photograph of two coastal researchers collecting samples, with a translucent branding stamp reading 'USGS science for a changing world' embedded across the lower-left corner of the image.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch7-q54.webp",
+      "alt": "Photograph of two people working by the shore, with a USGS mark in its lower-left corner."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10784,8 +10804,12 @@
       "ch11-q20",
       "calculation"
     ],
-    "stem": "Cameron is responsible for backing up his company's primary file server. He configured a backup schedule that performs full backups every Monday evening at 9 p.m. and incremental backups on other days of the week at that same time. How many files will be copied in Wednesday's backup?",
-    "scenarioContext": "File Modifications Schedule Table:\n  Monday:    8 a.m. File 1 created | 10 a.m. File 2 created | 11 a.m. File 3 created | 4 p.m. File 1 modified | 5 p.m. File 4 created\n  Tuesday:   8 a.m. File 1 modified | 9 a.m. File 2 modified | 10 a.m. File 5 created\n  Wednesday: 8 a.m. File 3 modified | 9 a.m. File 6 created",
+    "stem": "Cameron performs full backups of the primary file server on Mondays at 9 p.m. and incremental backups at the same time on other days. Based on the file changes shown, how many files will Wednesday’s backup copy?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q20.webp",
+      "alt": "File changes. Monday: file 1 created at 8 a.m., file 2 at 10 a.m., file 3 at 11 a.m., file 1 modified at 4 p.m., and file 4 created at 5 p.m. Tuesday: file 1 modified at 8 a.m., file 2 at 9 a.m., and file 5 created at 10 a.m. Wednesday: file 3 modified at 8 a.m. and file 6 created at 9 a.m."
+    },
     "highlightKeywords": [
       "PRIMARY"
     ],
@@ -11460,7 +11484,11 @@
       "ch11-q84"
     ],
     "stem": "While investigating a widespread distributed denial of service attack, Matt types in the IP address of one of the attacking systems into his browser and sees the following page. What type of devices is the botnet likely composed of?",
-    "scenarioContext": "Visual exhibit (attacker HTTP control interface): Web browser view showing a live video feed of a room with Pan/Tilt/Zoom (PTZ) directional controls, Resolution `640*480`, Mode `60 HZ`, and Flip/Mirror checkboxes.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q84.webp",
+      "alt": "Camera interface showing an indoor scene and a control panel with a directional pad and settings."
+    },
     "highlightKeywords": [],
     "options": [
       {

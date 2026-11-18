@@ -3994,8 +3994,12 @@
       "ch2-q53",
       "think-like-a-manager"
     ],
-    "stem": "Ben is following the National Institute of Standards and Technology (NIST) Special Publication 800-88 guidelines for sanitization and disposition as shown here. He is handling information that his organization classified as sensitive, which is a moderate security categorization in the NIST model. If the media is going to be sold as surplus, what process does Ben need to follow?\n\nSecurity Leaving No Categorization Org Clear Low Control?\n\nYes Purge\n\nDestroy Clear Validate Document\n\nNo No\n\nSecurity Leaving Reuse Yes Categorization Org Exit Media? Control? Moderate\n\nYes\n\nPurge\n\nNo\n\nSecurity Yes Leaving Yes Reuse Categorization Org Destroy Media? High Control?\n\nNo",
+    "stem": "Ben is following the National Institute of Standards and Technology (NIST) Special Publication 800-88 guidelines for sanitization and disposition as shown here. He is handling information that his organization classified as sensitive, which is a moderate security categorization in the NIST model. If the media is going to be sold as surplus, what process does Ben need to follow?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch2-q53.webp",
+      "alt": "NIST sanitization decision flowchart branching by security categorization, reuse, and whether media leaves organizational control."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5063,7 +5067,11 @@
       "think-like-a-manager"
     ],
     "stem": "What issue is the validation portion of the NIST SP 800-88 sample certificate of sanitization (shown here) intended to help prevent?",
-    "scenarioContext": "Visual exhibit (NIST SP 800-88 Sample Certificate of Sanitization): Form containing sections for 'Person Performing Sanitization' (Name, Title, Organization, Location, Phone, Signature, Date), 'Media Information' (Type, Serial Number, Classification, Sanitization Method, Tool), followed by a separate bottom 'VALIDATION' block (Reviewer Name, Title, Organization, Location, Phone, Signature, Date).",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch2-q67.webp",
+      "alt": "Sample Certificate of Sanitization with performer, media, and validation sections."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5606,8 +5614,12 @@
       "ch2-q74",
       "think-like-a-manager"
     ],
-    "stem": "NIST SP 800-60 provides a process shown in the following diagram to assess information systems. What process does this diagram show?\n\nProcess Inputs Identify Information Systems\n\n3 1 2 Review Adjust/ Assign 4 Identify Select Provisional Finalize System Information Provisional Impact Information Security Types Impact Levels Levels Impact Levels Category\n\nProcess\n\nProcess Outputs FIPS 200 / SP 800-53 Security Control Security Selection Categorization\n\nSource: NIST SP 800-60.",
+    "stem": "NIST SP 800-60 provides a process shown in the following diagram to assess information systems. What process does this diagram show?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch2-q74.webp",
+      "alt": "NIST diagram showing four stages between identifying information systems and selecting security controls."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5689,7 +5701,11 @@
       "think-like-a-manager"
     ],
     "stem": "Which letters on this diagram are locations where you might find data at rest?",
-    "scenarioContext": "The following diagram shows a typical workstation and server and their connections to each other and the internet. For questions 75-77, please refer to this diagram.\n\nC\n\nInternet\n\nB D\n\nA\n\nF E\n\nUser workstation Server",
+    "scenarioContext": "The diagram shows a workstation, a server, and their connections to one another and to the internet.",
+    "exhibit": {
+      "file": "isc2-ch2-q75.webp",
+      "alt": "A workstation at A and server at E connect to the Internet at C. The three links are labeled B, D, and F."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5768,7 +5784,11 @@
       "think-like-a-manager"
     ],
     "stem": "What would be the best way to secure data at points B, D, and F?",
-    "scenarioContext": "The following diagram shows a typical workstation and server and their connections to each other and the internet. For questions 75-77, please refer to this diagram.\n\nC\n\nInternet\n\nB D\n\nA\n\nF E\n\nUser workstation Server",
+    "scenarioContext": "The diagram shows a workstation, a server, and their connections to one another and to the internet.",
+    "exhibit": {
+      "file": "isc2-ch2-q75.webp",
+      "alt": "A workstation at A and server at E connect to the Internet at C. The three links are labeled B, D, and F."
+    },
     "highlightKeywords": [
       "BEST"
     ],
@@ -5849,7 +5869,11 @@
       "think-like-a-manager"
     ],
     "stem": "What is the best way to secure files that are sent from workstation A via the internet service (C) to remote server E?",
-    "scenarioContext": "The following diagram shows a typical workstation and server and their connections to each other and the internet. For questions 75-77, please refer to this diagram.\n\nC\n\nInternet\n\nB D\n\nA\n\nF E\n\nUser workstation Server",
+    "scenarioContext": "The diagram shows a workstation, a server, and their connections to one another and to the internet.",
+    "exhibit": {
+      "file": "isc2-ch2-q75.webp",
+      "alt": "A workstation at A and server at E connect to the Internet at C. The three links are labeled B, D, and F."
+    },
     "highlightKeywords": [
       "BEST"
     ],
@@ -6539,7 +6563,11 @@
       "think-like-a-manager"
     ],
     "stem": "What data role will own responsibility for step 1, the categorization of information systems; to whom will they delegate step 2; and what data role will be responsible for step 3?",
-    "scenarioContext": "For questions 86-88, please refer to the following scenario:\n\nAs shown in the following security lifecycle diagram (loosely based on the NIST reference architecture), NIST uses a five-step process for risk management. Using your knowledge of data roles and practices, answer the following questions based on the NIST framework process.\n\nStep 1\n\nCategorize Systems and Data\n\nStep 5 Step 2\n\nMonitor Security Select Security Controls\n\nStep 4 Step 3\n\nAssess Security Implement Security Controls Controls",
+    "scenarioContext": "The diagram shows a five-step risk management cycle based on the NIST reference architecture.",
+    "exhibit": {
+      "file": "isc2-ch2-q86.webp",
+      "alt": "Five-step cycle: categorize systems and data, select security controls, implement security controls, assess security controls, and monitor security controls."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6616,7 +6644,11 @@
       "think-like-a-manager"
     ],
     "stem": "If the systems that are being assessed all handle credit card information (and no other sensitive data), at what step would the PCI DSS first play an important role?",
-    "scenarioContext": "For questions 86-88, please refer to the following scenario:\n\nAs shown in the following security lifecycle diagram (loosely based on the NIST reference architecture), NIST uses a five-step process for risk management. Using your knowledge of data roles and practices, answer the following questions based on the NIST framework process.\n\nStep 1\n\nCategorize Systems and Data\n\nStep 5 Step 2\n\nMonitor Security Select Security Controls\n\nStep 4 Step 3\n\nAssess Security Implement Security Controls Controls",
+    "scenarioContext": "The diagram shows a five-step risk management cycle based on the NIST reference architecture.",
+    "exhibit": {
+      "file": "isc2-ch2-q86.webp",
+      "alt": "Five-step cycle: categorize systems and data, select security controls, implement security controls, assess security controls, and monitor security controls."
+    },
     "highlightKeywords": [
       "FIRST"
     ],
@@ -6696,7 +6728,11 @@
       "think-like-a-manager"
     ],
     "stem": "What data security role is primarily responsible for step 5?",
-    "scenarioContext": "For questions 86-88, please refer to the following scenario:\n\nAs shown in the following security lifecycle diagram (loosely based on the NIST reference architecture), NIST uses a five-step process for risk management. Using your knowledge of data roles and practices, answer the following questions based on the NIST framework process.\n\nStep 1\n\nCategorize Systems and Data\n\nStep 5 Step 2\n\nMonitor Security Select Security Controls\n\nStep 4 Step 3\n\nAssess Security Implement Security Controls Controls",
+    "scenarioContext": "The diagram shows a five-step risk management cycle based on the NIST reference architecture.",
+    "exhibit": {
+      "file": "isc2-ch2-q86.webp",
+      "alt": "Five-step cycle: categorize systems and data, select security controls, implement security controls, assess security controls, and monitor security controls."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7901,7 +7937,11 @@
       "think-like-a-manager"
     ],
     "stem": "Sean suspects that an individual in his company is smuggling out secret information despite his company's careful use of data loss prevention systems. He discovers that the suspect is posting photos, including the one shown here, to public Internet message boards. What type of technique may the individuals be using to hide messages inside this image?",
-    "scenarioContext": "Visual exhibit: Digital photograph of a scenic coastal pier posted publicly on an Internet message board, suspected of embedding covert hidden payload data inside the image file.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q49.webp",
+      "alt": "Photograph of two round gold-colored coins against a black background."
+    },
     "highlightKeywords": [],
     "options": [
       {

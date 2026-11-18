@@ -849,8 +849,12 @@
       "isc2-official-practice",
       "ch4-q12"
     ],
-    "stem": "What network topology connects workstations and a server sequentially in a single closed-loop circuit, as shown in the image?",
-    "scenarioContext": "Visual exhibit (network topology diagram): Closed-loop circular cabling path connecting five workstations and one server sequentially in a single continuous ring where traffic travels from node to node around the loop.",
+    "stem": "What network topology is shown in the following image?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch4-q12.webp",
+      "alt": "Five workstations and one server are connected by a continuous circular cable."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -923,7 +927,11 @@
       "ch4-q13"
     ],
     "stem": "What type of firewall design is shown in the diagram?",
-    "scenarioContext": "Chris is designing layered network security for his organization. Using the following diagram, answer questions 13 through 15.\n\nInternet\n\nA\n\nWeb Server Firewall B\n\nC Router\n\nVPN Concentrator Switch",
+    "scenarioContext": "Chris is designing layered network security for his organization.",
+    "exhibit": {
+      "file": "isc2-ch4-q13.webp",
+      "alt": "Network diagram with A on the Internet connection, B on the web server connection, and C on the VPN concentrator connection."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -998,7 +1006,11 @@
       "ch4-q14"
     ],
     "stem": "If the VPN grants remote users the same access to network and system resources as local workstations have, what security issue should Chris raise?",
-    "scenarioContext": "Chris is designing layered network security for his organization. Using the following diagram, answer questions 13 through 15.\n\nInternet\n\nA\n\nWeb Server Firewall B\n\nC Router\n\nVPN Concentrator Switch",
+    "scenarioContext": "Chris is designing layered network security for his organization.",
+    "exhibit": {
+      "file": "isc2-ch4-q13.webp",
+      "alt": "Network diagram with A on the Internet connection, B on the web server connection, and C on the VPN concentrator connection."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -1076,7 +1088,11 @@
       "ch4-q15"
     ],
     "stem": "If Chris wants to stop cross-site scripting attacks against the web server, what is the best device for this purpose, and where should he put it?",
-    "scenarioContext": "Chris is designing layered network security for his organization. Using the following diagram, answer questions 13 through 15.\n\nInternet\n\nA\n\nWeb Server Firewall B\n\nC Router\n\nVPN Concentrator Switch",
+    "scenarioContext": "Chris is designing layered network security for his organization.",
+    "exhibit": {
+      "file": "isc2-ch4-q13.webp",
+      "alt": "Network diagram with A on the Internet connection, B on the web server connection, and C on the VPN concentrator connection."
+    },
     "highlightKeywords": [
       "BEST"
     ],
@@ -2119,7 +2135,11 @@
       "ch4-q29"
     ],
     "stem": "What protocol is the messaging traffic most likely to use based on the diagram?",
-    "scenarioContext": "Network diagram:\n  Workstation A & Workstation C (internal LAN) <-> Switch <-> Router <-> Firewall <-> Internet <-> Remote Host B\n  Labeled traffic flow: 'Messaging Traffic via TCP 80' traveling from internal Workstation A out through the Firewall to Internet Host B.\n\nLauren's organization has used a popular messaging service for a number of years. Recently, concerns have been raised about the use of messaging. Using the following diagram, answer questions 29 through 31 about messaging.\n\nMessaging Traffic via TCP 80 B Internet\n\nA\n\nFirewall\n\nRouter\n\nSwitch\n\nMessaging Traffic via TCP 80\n\nA C",
+    "scenarioContext": "Lauren’s organization has used a popular messaging service for a number of years. Concerns have recently been raised about its use.",
+    "exhibit": {
+      "file": "isc2-ch4-q29.webp",
+      "alt": "Network diagram showing messaging paths among labeled hosts A, B, and C, with a router, firewall, switch, and the Internet."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -2194,7 +2214,11 @@
       "ch4-q30"
     ],
     "stem": "What security concern does sending internal communications from A to B raise?",
-    "scenarioContext": "Network diagram:\n  Workstation A & Workstation C (internal LAN) <-> Switch <-> Router <-> Firewall <-> Internet <-> Remote Host B\n  Labeled traffic flow: 'Messaging Traffic via TCP 80' traveling from internal Workstation A out through the Firewall to Internet Host B.\n\nLauren's organization has used a popular messaging service for a number of years. Recently, concerns have been raised about the use of messaging. Using the following diagram, answer questions 29 through 31 about messaging.\n\nMessaging Traffic via TCP 80 B Internet\n\nA\n\nFirewall\n\nRouter\n\nSwitch\n\nMessaging Traffic via TCP 80\n\nA C",
+    "scenarioContext": "Lauren’s organization has used a popular messaging service for a number of years. Concerns have recently been raised about its use.",
+    "exhibit": {
+      "file": "isc2-ch4-q29.webp",
+      "alt": "Network diagram showing messaging paths among labeled hosts A, B, and C, with a router, firewall, switch, and the Internet."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -2267,7 +2291,11 @@
       "ch4-q31"
     ],
     "stem": "How could Lauren's company best address a desire for secure messaging for users of internal systems A and C?",
-    "scenarioContext": "Network diagram:\n  Workstation A & Workstation C (internal LAN) <-> Switch <-> Router <-> Firewall <-> Internet <-> Remote Host B\n  Labeled traffic flow: 'Messaging Traffic via TCP 80' traveling from internal Workstation A out through the Firewall to Internet Host B.\n\nLauren's organization has used a popular messaging service for a number of years. Recently, concerns have been raised about the use of messaging. Using the following diagram, answer questions 29 through 31 about messaging.\n\nMessaging Traffic via TCP 80 B Internet\n\nA\n\nFirewall\n\nRouter\n\nSwitch\n\nMessaging Traffic via TCP 80\n\nA C",
+    "scenarioContext": "Lauren’s organization has used a popular messaging service for a number of years. Concerns have recently been raised about its use.",
+    "exhibit": {
+      "file": "isc2-ch4-q29.webp",
+      "alt": "Network diagram showing messaging paths among labeled hosts A, B, and C, with a router, firewall, switch, and the Internet."
+    },
     "highlightKeywords": [
       "BEST"
     ],
@@ -2414,8 +2442,12 @@
       "isc2-official-practice",
       "ch4-q33"
     ],
-    "stem": "What network topology connects multiple workstations via drop lines to a single shared linear backbone cable, as shown in the image?",
-    "scenarioContext": "Visual exhibit (network topology diagram): Single vertical shared linear backbone cable with five workstations attached along its length via individual drop cables/T-connectors.",
+    "stem": "What network topology is shown in the following image?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch4-q33.webp",
+      "alt": "Five workstations connect to short branches along a single vertical cable."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3530,8 +3562,12 @@
       "isc2-official-practice",
       "ch4-q48"
     ],
-    "stem": "What network topology directly interconnects every computer with a dedicated link to every other computer in the network, as shown in the image?",
-    "scenarioContext": "Visual exhibit (network topology diagram): Four computers arranged in a square, with dedicated point-to-point links along all four outer edges and both diagonals so every node connects directly to all three other nodes.",
+    "stem": "What network topology is shown in the image?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch4-q48.webp",
+      "alt": "Four computers are connected along the sides and both diagonals of a square."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4594,7 +4630,11 @@
       "ch4-q62"
     ],
     "stem": "Which one of the following rules is not shown in the rulebase but will be enforced by the firewall?",
-    "scenarioContext": "Stateful inspection firewall rulebase table (evaluated top-down, implicit deny at end):\n  Rule 1: ALLOW | Src IP: ANY         | Src Port: ___ | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 2: DENY  | Src IP: 15.246.10.1 | Src Port: ___ | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 3: ALLOW | Src IP: ANY         | Src Port: ___ | Dst IP: 10.1.0.26 | Dst Port: 25\n  Rule 4: ALLOW | Src IP: ANY         | Src Port: ___ | Dst IP: 10.1.0.26 | Dst Port: 465\n\nFor questions 62-65, please refer to a stateful inspection firewall running the rulebase shown here. The source ports have been omitted from the figure, but you may assume that they are specified correctly for the purposes of answering questions 62-64.",
+    "scenarioContext": "The exhibit shows the rulebase for a stateful inspection firewall. Assume the omitted source ports are correctly specified.",
+    "exhibit": {
+      "file": "isc2-ch4-q62.webp",
+      "alt": "Four firewall rules with action, source IP and port, and destination IP and port. Source port cells are blank."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -4670,7 +4710,11 @@
       "ch4-q63"
     ],
     "stem": "What type of server is running at IP address 10.1.0.26?",
-    "scenarioContext": "Stateful inspection firewall rulebase table:\n  Rule 1: ALLOW | Src IP: ANY         | Src Port: ANY | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 2: DENY  | Src IP: 15.246.10.1 | Src Port: ANY | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 3: ALLOW | Src IP: ANY         | Src Port: ANY | Dst IP: 10.1.0.26 | Dst Port: 25\n  Rule 4: ALLOW | Src IP: ANY         | Src Port: ANY | Dst IP: 10.1.0.26 | Dst Port: 465\n\nFor questions 62-65, please refer to a stateful inspection firewall running the rulebase shown here. The source ports have been omitted from the figure, but you may assume that they are specified correctly for the purposes of answering questions 62-64.",
+    "scenarioContext": "The exhibit shows the rulebase for a stateful inspection firewall. Assume the omitted source ports are correctly specified.",
+    "exhibit": {
+      "file": "isc2-ch4-q62.webp",
+      "alt": "Four firewall rules with action, source IP and port, and destination IP and port. Source port cells are blank."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4746,7 +4790,11 @@
       "ch4-q64"
     ],
     "stem": "The system at 15.246.10.1 attempts HTTP and HTTPS connections to the web server running at 10.1.0.50. Which one of the following statements is true about that connection?",
-    "scenarioContext": "Stateful inspection firewall rulebase table (top-down evaluation, implicit deny all else):\n  Rule 1: ALLOW | Src IP: ANY         | Src Port: ANY | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 2: DENY  | Src IP: 15.246.10.1 | Src Port: ANY | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 3: ALLOW | Src IP: ANY         | Src Port: ANY | Dst IP: 10.1.0.26 | Dst Port: 25\n  Rule 4: ALLOW | Src IP: ANY         | Src Port: ANY | Dst IP: 10.1.0.26 | Dst Port: 465\n\nFor questions 62-65, please refer to a stateful inspection firewall running the rulebase shown here. The source ports have been omitted from the figure, but you may assume that they are specified correctly for the purposes of answering questions 62-64.",
+    "scenarioContext": "The exhibit shows the rulebase for a stateful inspection firewall. Assume the omitted source ports are correctly specified.",
+    "exhibit": {
+      "file": "isc2-ch4-q62.webp",
+      "alt": "Four firewall rules with action, source IP and port, and destination IP and port. Source port cells are blank."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4819,7 +4867,11 @@
       "ch4-q65"
     ],
     "stem": "What value should be used to fill in the source port for rule #3?",
-    "scenarioContext": "Stateful inspection firewall rulebase table:\n  Rule 1: ALLOW | Src IP: ANY         | Src Port: ___ | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 2: DENY  | Src IP: 15.246.10.1 | Src Port: ___ | Dst IP: 10.1.0.50 | Dst Port: 80\n  Rule 3: ALLOW | Src IP: ANY         | Src Port: ___ | Dst IP: 10.1.0.26 | Dst Port: 25\n  Rule 4: ALLOW | Src IP: ANY         | Src Port: ___ | Dst IP: 10.1.0.26 | Dst Port: 465\n\nFor questions 62-65, please refer to a stateful inspection firewall running the rulebase shown here. The source ports have been omitted from the figure, but you may assume that they are specified correctly for the purposes of answering questions 62-64.",
+    "scenarioContext": "The exhibit shows the rulebase for a stateful inspection firewall.",
+    "exhibit": {
+      "file": "isc2-ch4-q62.webp",
+      "alt": "Four firewall rules with action, source IP and port, and destination IP and port. Source port cells are blank."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5191,8 +5243,12 @@
       "isc2-official-practice",
       "ch4-q70"
     ],
-    "stem": "What type of firewall design is shown in the following image?\n\nFirewall Private Network\n\nInternet\n\nRouter",
-    "scenarioContext": "Architecture diagram: Internet <-> Router <-> Firewall <-> Private Network (a single perimeter firewall with one external and one internal protected interface; no DMZ).",
+    "stem": "What type of firewall design is shown in the following image?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch4-q70.webp",
+      "alt": "Network diagram connecting the Internet, a router, a firewall, and a private network."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5865,8 +5921,12 @@
       "isc2-official-practice",
       "ch4-q79"
     ],
-    "stem": "What type of firewall design does the following image show?\n\nFirewall Private Network\n\nInternet\n\nRouter\n\nDMZ",
-    "scenarioContext": "Architecture diagram: Internet <-> Router <-> Firewall with two protected zones: one interface connecting to a DMZ subnet and a separate interface connecting to the Private Network.",
+    "stem": "What type of firewall design does the following image show?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch4-q79.webp",
+      "alt": "Network diagram with paths from a firewall to a private network and a separate DMZ."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8039,7 +8099,11 @@
       "ch9-q37"
     ],
     "stem": "What type of log is shown in the figure?",
-    "scenarioContext": "Apache HTTP access log excerpt:\n  217.69.133.190 - - [28/Feb/2017:04:01:47 -0500] \"GET /forum/viewtopic.php?f=32&t=350222 HTTP/1.1\" 503 2009 \"-\" \"Mail.RU_Bot/2.0\"\n  217.69.133.190 - - [28/Feb/2017:04:01:51 -0500] \"GET /ask-a-pci-dss-question/ HTTP/1.1\" 200 6501 \"-\" \"Mail.RU_Bot/2.0\"\n  217.69.133.190 - - [28/Feb/2017:04:01:56 -0500] \"GET /forum/posting.php?mode=quote HTTP/1.1\" 503 2009 \"-\" \"Mail.RU_Bot/2.0\"",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q37.webp",
+      "alt": "Web request log with client IP addresses, timestamps, HTTP methods and paths, and response codes."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8112,7 +8176,7 @@
       "ch9-q38"
     ],
     "stem": "Alex works for the United States (U.S.) federal government and is required to ensure that the devices and components he acquires are not compromised. What program will he participate in to help ensure this?",
-    "scenarioContext": "Apache HTTP access log excerpt:\n  217.69.133.190 - - [28/Feb/2017:04:01:47 -0500] \"GET /forum/viewtopic.php?f=32&t=350222 HTTP/1.1\" 503 2009 \"-\" \"Mail.RU_Bot/2.0\"\n  217.69.133.190 - - [28/Feb/2017:04:01:51 -0500] \"GET /ask-a-pci-dss-question/ HTTP/1.1\" 200 6501 \"-\" \"Mail.RU_Bot/2.0\"",
+    "scenarioContext": null,
     "highlightKeywords": [
       "NOT"
     ],
@@ -8792,8 +8856,12 @@
       "isc2-official-practice",
       "ch9-q124"
     ],
-    "stem": "What network topology connects every endpoint through dedicated point-to-point links to a single central hub or switch, as shown in the topology diagram?",
-    "scenarioContext": "Visual exhibit (network topology diagram): Central network hub/switch at the center with dedicated point-to-point spokes radiating outward to each surrounding workstation.",
+    "stem": "What network topology is shown in the image?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q124.webp",
+      "alt": "Five workstations and one server each connect directly to the same central device."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9091,8 +9159,12 @@
       "isc2-official-practice",
       "ch10-q17"
     ],
-    "stem": "In this diagram of the TCP three-way handshake, what should system A send to system B in step 3?\n\nA\n\n1 B\n\n2\n\nA\n\n3\n\nB",
+    "stem": "In this diagram of the TCP three-way handshake, what should system A send to system B in step 3?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q17.webp",
+      "alt": "Two systems labeled A and B exchange three messages numbered 1, 2, and 3."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9919,7 +9991,11 @@
       "ch10-q95"
     ],
     "stem": "What type of log file is shown in this figure?",
-    "scenarioContext": "Visual exhibit (log excerpt from 2015-08-09 16:39:01 - 16:40:55):\n  2015-08-09 16:39:01 ALLOW UDP 172.30.0.64 172.30.0.2 53655 53 ... SEND\n  2015-08-09 16:40:12 ALLOW TCP 54.172.251.189 172.30.0.64 443 80 ... RECEIVE\n  2015-08-09 16:40:55 ALLOW TCP 172.30.0.64 169.254.169.254 49160 80 ... SEND",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q95.webp",
+      "alt": "Log records showing timestamps, actions, network protocols, source and destination addresses and ports, and send or receive direction."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10516,8 +10592,12 @@
       "isc2-official-practice",
       "ch11-q5"
     ],
-    "stem": "In the image shown here, what does system B send to system A at step 2 of the three-way TCP handshake?\n\nA 1 B\n\n2\n\nA 3 B",
+    "stem": "In the image shown here, what does system B send to system A at step 2 of the three-way TCP handshake?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q5.webp",
+      "alt": "Two systems labeled A and B exchange three messages numbered 1, 2, and 3."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10814,8 +10894,12 @@
       "isc2-official-practice",
       "ch11-q32"
     ],
-    "stem": "Ed's Windows system can't connect to the network and ipconfig shows the following:\n\nWhat has occurred on the system?",
-    "scenarioContext": "Windows `ipconfig` command output exhibit:\n  Ethernet adapter Local Area Connection:\n    Autoconfiguration IPv4 Address. . : 169.254.19.21\n    Subnet Mask . . . . . . . . . . . : 255.255.0.0\n    Default Gateway . . . . . . . . . :",
+    "stem": "Ed’s Windows system cannot connect to the network. Based on the ipconfig output shown, what happened?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q32.webp",
+      "alt": "Windows ipconfig output for the local area connection: autoconfiguration IPv4 address 169.254.19.21, subnet mask 255.255.0.0, and a blank default gateway."
+    },
     "highlightKeywords": [],
     "options": [
       {

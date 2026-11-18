@@ -1,0 +1,552 @@
+[
+  {
+    "id": "cissp-d1-s1.8-q026",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.8",
+    "subdomainName": "Security Policies, Standards, Procedures & Baselines",
+    "topicId": "1.8.1",
+    "topicName": "Policy Hierarchy (Policy vs. Standard vs. Guideline vs. Procedure)",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Security policy approval",
+      "Executive accountability"
+    ],
+    "keyTerms": [
+      "Security policy approval",
+      "Executive accountability"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A security team has drafted an enterprise security policy. Why is formal endorsement by senior management important before the policy is issued?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "It demonstrates leadership's ownership of the organization's security direction.",
+        "isCorrect": true,
+        "explanation": "Executive endorsement establishes organizational authority for the policy and demonstrates leadership ownership of the direction and expectations it sets.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "It guarantees that employees will comply with policy directives.",
+        "isCorrect": false,
+        "explanation": "Employees still need clear procedures, training, and appropriate enforcement. A signature cannot guarantee compliance.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "C",
+        "text": "It certifies compliance to external stakeholders.",
+        "isCorrect": false,
+        "explanation": "An internal approval does not establish conformity to an external framework. Certification calls for evidence and a separate assessment.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "It transfers legal accountability from system owners to senior management.",
+        "isCorrect": false,
+        "explanation": "Approving a policy supports executive oversight. Specific legal or operational responsibilities depend on applicable duties and the organization's governance arrangements.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "An enterprise policy sets direction across business units. Senior management endorsement formally backs that direction and gives the policy organizational authority.",
+      "managerMindsetTip": "Look for the role that can make an enterprise-wide commitment and allocate support for it.",
+      "studyFocusDirective": "Trace who approves the policy, who implements it, and who evaluates whether implementation conforms.",
+      "keyTakeaway": "Executive endorsement makes security policy an organizational commitment.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 8, p. 5 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "PM-1 Information Security Program Plan and PL-1 Policy and Procedures"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.11-q007",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.11",
+    "subdomainName": "Security Awareness, Education, and Training",
+    "topicId": "1.11.1",
+    "topicName": "Awareness vs. Training vs. Education",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Audience-specific security awareness",
+      "Business risk communication"
+    ],
+    "keyTerms": [
+      "Audience-specific security awareness",
+      "Business risk communication"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "The security officer has ten minutes to brief executives on the awareness program. Which objective is most useful for this audience?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "most"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Teach the steps for submitting a help-desk ticket.",
+        "isCorrect": false,
+        "explanation": "The ticket procedure is useful training for people submitting requests. It gives executives little context for the risks they oversee.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Build a clear understanding of the business's security exposure and potential impacts.",
+        "isCorrect": true,
+        "explanation": "Executives need to connect exposure and consequences to business decisions, including where to sponsor changes or allocate resources.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Distribute the detailed risk register and end the briefing.",
+        "isCorrect": false,
+        "explanation": "The register is supporting material. Merely distributing it does little to build understanding of which exposures matter and why.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "Review the instructions that employees use to change passwords.",
+        "isCorrect": false,
+        "explanation": "Password instructions teach a specific task. The board-level objective is understanding business impact and the organization's responsibilities.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Role-based awareness should give executives enough risk context to exercise oversight. Translate technical issues into effects on operations, customers, and organizational objectives.",
+      "managerMindsetTip": "Choose a briefing objective based on the decisions the audience will make after the session.",
+      "studyFocusDirective": "Draft a separate learning objective for executives, system administrators, and general users.",
+      "keyTakeaway": "Executive awareness should connect security exposure to business impact.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 37, pp. 16–17 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AT-2 Literacy Training and Awareness and AT-3 Role-Based Training"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.11-q008",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.11",
+    "subdomainName": "Security Awareness, Education, and Training",
+    "topicId": "1.11.1",
+    "topicName": "Awareness vs. Training vs. Education",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Security awareness planning",
+      "Organizational culture"
+    ],
+    "keyTerms": [
+      "Security awareness planning",
+      "Organizational culture"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A company is redesigning security awareness for field crews, call-center staff, and remote engineers. What should most strongly inform how the program is designed?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "most"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "How organizational culture and work patterns affect secure behavior.",
+        "isCorrect": true,
+        "explanation": "Culture and work patterns reveal what behaviors need to change and which examples, delivery channels, and reinforcements will fit each audience.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Which training format employees say they like most.",
+        "isCorrect": false,
+        "explanation": "Format preference can improve engagement. Role exposure, accessibility, and behavior objectives also drive the design.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Which off-the-shelf awareness products are currently available.",
+        "isCorrect": false,
+        "explanation": "A tool can be selected once the organization knows its audiences and desired behaviors. Starting with the product constrains the assessment of needs.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "Which line managers missed the last rollout deadline.",
+        "isCorrect": false,
+        "explanation": "Past delays may reveal a rollout issue. They offer a narrow view of the environment and the security behaviors the program must address.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Effective awareness starts with the way employees work and the risks they face. Use that information to choose realistic messages and delivery methods, then measure whether behavior improves.",
+      "managerMindsetTip": "Ask whether people can follow the desired security practice in their normal workflow.",
+      "studyFocusDirective": "Map two audience roles to an observable behavior, delivery method, and follow-up measure.",
+      "keyTakeaway": "Design awareness around the audience's work and the behavior you want to change.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 38, p. 17 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AT-2 Literacy Training and Awareness"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.4-q082",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.2",
+    "topicName": "Quantitative Risk Analysis & Cost-Benefit Evaluation (ALE, SLE, ARO, ACS)",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "calculation",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Annualized loss expectancy",
+      "Single loss expectancy",
+      "Annualized rate of occurrence"
+    ],
+    "keyTerms": [
+      "Annualized loss expectancy",
+      "Single loss expectancy",
+      "Annualized rate of occurrence"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A recurring outage costs $20,000 each time and occurs three times a year on average. Using the annualized loss expectancy formula, what annual loss should the risk analyst record?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "$60,000",
+        "isCorrect": true,
+        "explanation": "Multiply $20,000 per event by three events per year to get $60,000 per year.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "$20,000",
+        "isCorrect": false,
+        "explanation": "This is the single loss expectancy. It gives the cost of one outage without applying frequency.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "$6,666.67",
+        "isCorrect": false,
+        "explanation": "Dividing loss per event by events per year reverses the relationship. More frequent outages increase expected annual losses.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "$80,000",
+        "isCorrect": false,
+        "explanation": "Adding the per-event amount to $60,000 would count a fourth outage. The assumption is three events per year.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Annualized loss expectancy multiplies single loss expectancy by annualized rate of occurrence. Here, $20,000 per event × 3 events per year = $60,000 per year.",
+      "managerMindsetTip": "Keep units beside the values so the result can be compared with annual control costs.",
+      "studyFocusDirective": "Practice converting a loss rate of once every four years to 0.25 events per year before computing ALE.",
+      "keyTakeaway": "ALE = SLE × ARO, expressed as expected loss per year.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1540, p. 752 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 1, Risk management concepts and quantitative risk analysis"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.11-q009",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.11",
+    "subdomainName": "Security Awareness, Education, and Training",
+    "topicId": "1.11.1",
+    "topicName": "Awareness vs. Training vs. Education",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Security awareness",
+      "Security training",
+      "Security education"
+    ],
+    "keyTerms": [
+      "Security awareness",
+      "Security training",
+      "Security education"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "Accounts-payable staff get a short security newsletter, then practice verifying vendor bank changes in a guided exercise. Which statement best describes the exercise?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "It is formal security education that every system operator needs.",
+        "isCorrect": false,
+        "explanation": "Education develops broader or deeper knowledge over time. A guided exercise on one job task is training.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "It is deeper than a security education program because it follows a newsletter.",
+        "isCorrect": false,
+        "explanation": "Sequence does not determine depth. The scope and learning objective distinguish a focused skill exercise from a broader education program.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "It is role-based training that teaches employees a skill for performing their jobs securely.",
+        "isCorrect": true,
+        "explanation": "Staff rehearse how to verify a change before releasing funds. Practicing a job-specific skill is the defining feature of role-based training.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "It replaces the need for awareness among senior executives.",
+        "isCorrect": false,
+        "explanation": "The exercise addresses accounts-payable staff. Executives still need awareness suited to their decision-making responsibilities.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Awareness draws attention to an issue, training develops a practical skill, and education builds broader knowledge. The verification exercise develops a job-specific skill.",
+      "managerMindsetTip": "Start with what the learner must be able to do and choose an appropriate learning activity.",
+      "studyFocusDirective": "Classify a reminder, a workflow drill, and a security curriculum as awareness, training, or education.",
+      "keyTakeaway": "Training develops job-specific skills through instruction and practice.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1617, p. 801 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AT-2 Literacy Training and Awareness and AT-3 Role-Based Training"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.9-q036",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.9",
+    "subdomainName": "Business Continuity (BCP) Requirements",
+    "topicId": "1.9.2",
+    "topicName": "Business Impact Analysis (BIA: MTD, RTO, RPO, WRT)",
+    "cognitiveLevel": "analyze",
+    "perspective": "risk_advisor",
+    "questionStyle": "least_likely",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Business impact analysis",
+      "Recovery requirements",
+      "Recovery strategy selection"
+    ],
+    "keyTerms": [
+      "Business impact analysis",
+      "Recovery requirements",
+      "Recovery strategy selection"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A continuity team is documenting the scope of its business impact analysis. Which activity should it exclude from the BIA and schedule for the recovery strategy phase?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Select the recovery solution that can meet the approved objectives.",
+        "isCorrect": true,
+        "explanation": "A recovery strategy uses impact estimates, dependencies, and approved time and data-loss objectives to compare and select solutions.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Identify critical business functions and their resource dependencies.",
+        "isCorrect": false,
+        "explanation": "Identifying critical functions and dependencies belongs to the business impact analysis. The strategy must account for those dependencies.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Identify outage tolerances for critical systems.",
+        "isCorrect": false,
+        "explanation": "Outage tolerance is a requirement identified during impact analysis. Candidate recovery solutions are evaluated against that requirement.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "Estimate operational and financial impacts as outage duration increases.",
+        "isCorrect": false,
+        "explanation": "Estimating how impact grows as an outage continues is a business impact analysis activity. It helps justify the recovery objectives.",
+        "trapType": "wrong_lifecycle_phase"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The BIA explains what matters, the consequences of interruption, and the required recovery targets. The recovery strategy chooses how to meet those targets.",
+      "managerMindsetTip": "Get agreement on downtime and data-loss tolerances before evaluating recovery products or sites.",
+      "studyFocusDirective": "Sort the deliverables of a continuity project into impact analysis, recovery design, and testing.",
+      "keyTakeaway": "A BIA defines recovery needs that the recovery strategy must meet.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 996, p. 473 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-34 Rev. 1",
+          "section": "Sections 3.2 and 3.4, Business Impact Analysis and Contingency Strategies"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.10-q021",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.10",
+    "subdomainName": "Personnel Security Policies & Processes",
+    "topicId": "1.10.2",
+    "topicName": "Job Rotation, Mandatory Vacations, Separation of Duties",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Separation of duties",
+      "Dual control",
+      "Job rotation",
+      "Need to know"
+    ],
+    "keyTerms": [
+      "Separation of duties",
+      "Dual control",
+      "Job rotation",
+      "Need to know"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "In a payment process, one employee can create a payee and a different employee must authorize the first payment to that payee. Which description captures the control behind this design?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "first"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Operators rotate through assignments after a fixed period.",
+        "isCorrect": false,
+        "explanation": "Job rotation changes assignments over time. It can reveal irregularities, but two incompatible duties could still be combined on a given shift.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Two operators enter credentials simultaneously for the same action.",
+        "isCorrect": false,
+        "explanation": "This describes a dual-control implementation for a single action. The example assigns distinct functions to separate roles.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Incompatible transaction duties are assigned to different people.",
+        "isCorrect": true,
+        "explanation": "Creating payees and authorizing payments are separated so a single employee cannot carry the transaction through both points unchecked.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Each operator sees only the information required for their work.",
+        "isCorrect": false,
+        "explanation": "Need to know governs disclosure and access to information. The payment example governs who may perform each sensitive activity.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Separation of duties splits incompatible functions across people or roles. It reduces the risk of one person initiating and completing an improper transaction without oversight.",
+      "managerMindsetTip": "Review which actions an individual can combine across the whole process, including actions in different systems.",
+      "studyFocusDirective": "Draw a payment workflow and mark the roles responsible for setup, approval, and reconciliation.",
+      "keyTakeaway": "Separate incompatible functions so one employee cannot bypass independent checks.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1820, p. 940 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AC-5 Separation of Duties"
+        }
+      ]
+    }
+  }
+]

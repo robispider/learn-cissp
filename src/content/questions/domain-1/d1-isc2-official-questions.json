@@ -2007,7 +2007,11 @@
       "think-like-a-manager"
     ],
     "stem": "The International Information Systems Security Certification Consortium uses the logo shown here to represent itself online and in a variety of forums. What type of intellectual property protection may it use to protect its rights in this logo?",
-    "scenarioContext": "Visual exhibit: Stylized circular organizational seal/logo of the International Information Systems Security Certification Consortium, Inc. — (ISC)² — displayed to identify the credentialing body online and in publications.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q27.webp",
+      "alt": "Green (ISC)² logo."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -2080,7 +2084,11 @@
       "ch1-q28"
     ],
     "stem": "Mary is helping a computer user who sees the following message appear on his computer screen. What type of attack has occurred?",
-    "scenarioContext": "Visual exhibit (screen warning popup): Red alert dialog titled 'CryptoLocker' stating: 'Your personal files are encrypted! ... Any files are encrypted with RSA-2048 using a unique public key ... To obtain the private key you must pay 300 USD / 300 EUR ... Private key will be destroyed' accompanied by a countdown timer.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q28.webp",
+      "alt": "A computer warning window reports encrypted files and shows a countdown and a payment prompt."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4665,8 +4673,12 @@
       "ch1-q62",
       "think-like-a-manager"
     ],
-    "stem": "The following graphic shows the NIST risk management framework with step 4 missing. What is the missing step?\n\nArchitecture Description PROCESS Organizational Inputs Architecture Reference Models OVERVIEW Laws, Directives, Policy Guidance Segment and Solution Architectures Strategic Goals and Objectives Mission and Business Processes Starting Priorities and Resource Availability Information System Boundaries Point Supply Chain Considerations\n\nRepeat as necessary Step 1 CATEGORIZE Information System Step 6 Step 2 MONITOR SELECT Security Controls RISK Security Controls MANAGEMENT FRAMEWORK Step 5 Step 3 AUTHORIZE IMPLEMENT Information System Security Controls",
+    "stem": "The following graphic shows the NIST risk management framework with step 4 missing. What is the missing step?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q62.webp",
+      "alt": "A process diagram shows numbered steps 1 through 6. Step 4 is a box containing a question mark."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6115,8 +6127,12 @@
       "ch1-q81",
       "think-like-a-manager"
     ],
-    "stem": "The Domer Industries risk assessment team recently conducted a qualitative risk assessment and developed a 2x2 Probability-vs-Impact matrix (Quadrant II: High Probability/Low Impact; Quadrant I: High Probability/High Impact; Quadrant III: Low Probability/Low Impact; Quadrant IV: Low Probability/High Impact). Which quadrant contains the risks that require the most immediate attention?",
+    "stem": "The Domer Industries risk assessment team developed the probability and impact matrix shown here. Which quadrant contains the risks that require the most immediate attention?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q81.webp",
+      "alt": "A probability and impact matrix with quadrant II at top left, I at top right, III at bottom left, and IV at bottom right."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -6420,8 +6436,12 @@
       "ch1-q85",
       "think-like-a-manager"
     ],
-    "stem": "Tom is considering locating a business in the downtown area of Miami, Florida. He con-sults the FEMA flood plain map for the region, shown here, and determines that the area he is considering lies within a 100-year flood plain.\n\nWhat is the ARO of a flood in this area?",
-    "scenarioContext": "Visual exhibit (FEMA Flood Insurance Rate / Flood Plain Map): Geographic map of coastal downtown Miami, Florida, with extensive dark shading across waterfront blocks marking designated 100-year flood hazard zones (1% annual exceedance probability flood plain).",
+    "stem": "Tom is considering locating a business in downtown Miami, Florida. He consults the FEMA flood plain map shown here and determines that the site lies within a 100-year flood plain. What is the ARO of a flood in this area?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q85.webp",
+      "alt": "Flood plain map of downtown Miami, Florida, with shaded zones."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6495,7 +6515,11 @@
       "think-like-a-manager"
     ],
     "stem": "You discover that a user on your network has been using the Wireshark tool, as shown here. Further investigation revealed that he was using it for illicit purposes. What pillar of information security has most likely been violated?",
-    "scenarioContext": "Visual exhibit (Wireshark capture on interface *eth0): Live packet capture displaying TCP three-way handshake frames and clear-text HTTP requests (`GET /WebGoat/attack HTTP/1.1` between `10.0.2.15` and `10.0.2.4`) with decoded payload inspection panes.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q86.webp",
+      "alt": "Wireshark capture with a list of captured packets and protocol details."
+    },
     "highlightKeywords": [
       "MOST"
     ],
@@ -6575,8 +6599,12 @@
       "ch1-q87",
       "think-like-a-manager"
     ],
-    "stem": "Alan is performing threat modeling and decides that it would be useful to decompose the system into the key elements shown here. What tool is he using?\n\nUser / Web Server Boundary\n\nLogin Request Authenticate User()\n\nUsers Web Servlet Login Authenticate User Process Result Login Response Authenticate Authenticate User SQL User SQL Query Pages Query Result Web Server / Database Boundary\n\nWeb Data Pages College Library Database Database Files\n\nData\n\nImage reprinted from CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide, 7th Edition © John Wiley & Sons 2015, reprinted with permission.",
+    "stem": "Alan is performing threat modeling and decides that it would be useful to decompose the system into the key elements shown here. What tool is he using?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q87.webp",
+      "alt": "Diagram showing data flows between users, web server processes, and a database across marked trust boundaries."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6738,8 +6766,12 @@
       "ch1-q89",
       "think-like-a-manager"
     ],
-    "stem": "Craig is selecting the site for a new data center and must choose a location somewhere within the United States. He obtained the earthquake risk map shown here from the United States Geological Survey. Which of the following would be the safest location to build his facility if he were primarily concerned with earthquake risk?\n\n(Source: US Geological Survey)\n\nImage reprinted from CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide, 7th Edition © John Wiley & Sons 2015, reprinted with permission.",
-    "scenarioContext": "Visual exhibit (USGS United States Seismic Hazard Map): Continental U.S. color/shading intensity map showing heavy peak-ground-acceleration hazard along the Pacific Coast, Alaska, Nevada/Utah, New Madrid (Central U.S.), and South Carolina coast, while Florida is completely unshaded in the lowest seismic hazard tier.",
+    "stem": "Craig is selecting the site for a new data center and must choose a location somewhere within the United States. He obtained the earthquake risk map shown here from the United States Geological Survey. Which of the following would be the safest location to build his facility if he were primarily concerned with earthquake risk?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch1-q89.webp",
+      "alt": "USGS map showing earthquake hazard across the contiguous United States, with a legend at right."
+    },
     "highlightKeywords": [],
     "options": [
       {

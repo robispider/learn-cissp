@@ -1,0 +1,320 @@
+[
+  {
+    "id": "cissp-d7-s7.9-q009",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.9",
+    "subdomainName": "Understand and Participate in Change Management Processes",
+    "topicId": "7.9.1",
+    "topicName": "CAB Approval, Rollback Plans, Emergency Change Procedures",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Change control",
+      "Authorization",
+      "Testing and change records"
+    ],
+    "keyTerms": [
+      "Change control",
+      "Authorization",
+      "Testing and change records"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A team is writing a change procedure for production systems that includes an expedited emergency path. What should the procedure ensure for both routine and emergency changes?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Changes have appropriate authorization, testing, and traceable records.",
+        "isCorrect": true,
+        "explanation": "Authorization, proportionate testing, and records reduce production risk and make the decision traceable. An expedited path can tailor how these activities are performed.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Every change is reviewed by a board with the same name and membership.",
+        "isCorrect": false,
+        "explanation": "The decision authority can vary by organization and change type. The assurance comes from defined review and accountability, independent of the group's name.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Every requested change reaches production on the originally requested date.",
+        "isCorrect": false,
+        "explanation": "A change may be delayed or rejected because of risk, failed testing, or dependencies. Meeting a date is secondary to a controlled release.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Leadership receives a notification after each production change.",
+        "isCorrect": false,
+        "explanation": "Notification helps communication. It does not establish who approved the change, how it was tested, or what was deployed.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Change control covers risk review, authorization, testing and documentation. An emergency path defines how to perform these controls under time pressure.",
+      "managerMindsetTip": "Define who can approve urgent changes and how the evidence will be recorded and reviewed.",
+      "studyFocusDirective": "Compare the approval, testing, and record requirements for routine and emergency changes.",
+      "keyTakeaway": "Production changes need authorization, proportionate testing, and traceable records.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 33, p. 15 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CM-3 Configuration Change Control and CM-3(2) Testing, Validation, and Documentation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.9-q010",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.9",
+    "subdomainName": "Understand and Participate in Change Management Processes",
+    "topicId": "7.9.1",
+    "topicName": "CAB Approval, Rollback Plans, Emergency Change Procedures",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "least_likely",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Production change assurance",
+      "Separation of duties",
+      "Release authorization"
+    ],
+    "keyTerms": [
+      "Production change assurance",
+      "Separation of duties",
+      "Release authorization"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "An auditor reviews four practices for changes to production source code. Which practice most reduces assurance that only properly controlled changes reach production?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "most"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "An authorized approver reviews the change before release.",
+        "isCorrect": false,
+        "explanation": "An approval record provides evidence that an authorized person reviewed the change. It supports the control objective.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "An independent tester records the test results.",
+        "isCorrect": false,
+        "explanation": "Independent testing helps confirm the change's behavior and provides a record of verification before release.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "The author can directly change production source outside the approved release process.",
+        "isCorrect": true,
+        "explanation": "Direct ungoverned write access lets the author put changes into production without independent authorization or testing.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "The release team keeps documentation of the deployed change.",
+        "isCorrect": false,
+        "explanation": "Release records help reviewers reconcile what was approved with what was deployed and identify deviations.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Production source access should support the approved change process. Authoring and production release authority should be separated or independently controlled so the author cannot bypass review.",
+      "managerMindsetTip": "Check actual production privileges against the release procedure to find alternate change paths.",
+      "studyFocusDirective": "Trace a production change from its request to the deployed artifact and identify who can bypass or approve each step.",
+      "keyTakeaway": "Direct ungoverned production writes undermine change assurance.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 473, pp. 225–226 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AC-5 Separation of Duties and CM-5 Access Restrictions for Change"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.3-q011",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.3",
+    "subdomainName": "Configuration Management (CM) & Hardening",
+    "topicId": "7.3.1",
+    "topicName": "Baseline Images, Drift Detection, Asset Inventory",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Configuration management",
+      "Configuration identification",
+      "Status accounting",
+      "Configuration auditing"
+    ],
+    "keyTerms": [
+      "Configuration management",
+      "Configuration identification",
+      "Status accounting",
+      "Configuration auditing"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A team must identify the systems under control, approve changes, report their current state, and check what is deployed against approved records. Which group of practices addresses all four needs?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Program management, systems engineering, and quality assurance.",
+        "isCorrect": false,
+        "explanation": "Those functions can support a project, but the list does not specify baselines, change authorization, status reporting, or audits.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Requirements verification, product design, integration, and testing.",
+        "isCorrect": false,
+        "explanation": "These are development and verification activities. They do not provide the operational records and controls of a configuration management program.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Independent validation of the initial and subsequent baselines.",
+        "isCorrect": false,
+        "explanation": "Checking a baseline provides assurance for part of the program. It leaves out how items are identified, changes controlled, and status recorded.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "Configuration identification, change control, status accounting, and configuration auditing.",
+        "isCorrect": true,
+        "explanation": "The four practices define the items, govern changes, record configuration status, and verify actual configurations against approved records.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Configuration management preserves the integrity and traceability of a system's configuration. The practices cover identifying items, controlling changes, tracking status, and auditing the result.",
+      "managerMindsetTip": "Keep the baseline, approval records, and actual deployed state linked so differences are visible.",
+      "studyFocusDirective": "Assign a concrete artifact to each function, such as an inventory, change request, version report, or reconciliation.",
+      "keyTakeaway": "Configuration management identifies, controls, tracks, and audits configuration items.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 604, p. 286 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-128",
+          "section": "Security-focused configuration management concepts and processes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.1-q041",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.1",
+    "subdomainName": "Understand and Comply with Investigations",
+    "topicId": "7.1.1",
+    "topicName": "Digital Forensics Order of Volatility (RFC 3227), Chain of Custody",
+    "cognitiveLevel": "analyze",
+    "perspective": "incident_responder",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Digital evidence",
+      "Chain of custody",
+      "Evidence transfers"
+    ],
+    "keyTerms": [
+      "Digital evidence",
+      "Chain of custody",
+      "Evidence transfers"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "During an internal investigation, a sealed drive is transferred between authorized custodians. Which detail is least relevant to the chain-of-custody entry for that transfer?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "least"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "How the item was physically transported.",
+        "isCorrect": false,
+        "explanation": "Transport details describe how custody passed and help account for the handling and protection of the item.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Whether the data owner was separately notified about the collection.",
+        "isCorrect": true,
+        "explanation": "A required notification can belong in the investigation's communications record. It does not identify the item or establish who held it during the transfer.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "A description and unique identifier for the evidence item.",
+        "isCorrect": false,
+        "explanation": "The description and identifier link the custody record to the particular piece of evidence and distinguish it from other items.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "The identity of the person who received the evidence.",
+        "isCorrect": false,
+        "explanation": "The recipient's identity documents who took control at this handoff. It is central to tracking possession.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Chain of custody records the identity and handling of evidence, including who transferred it, who received it, and when and how the transfer took place.",
+      "managerMindsetTip": "Record each handoff when it happens and link it to a stable evidence identifier.",
+      "studyFocusDirective": "Draft one transfer entry with the item ID, parties, transport details, and time of handoff.",
+      "keyTakeaway": "Chain of custody traces evidence identity, possession, and transfers.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1066, pp. 500–501 (adapted)"
+        },
+        {
+          "source": "IETF RFC 3227",
+          "section": "Section 4.1, Chain of Custody"
+        }
+      ]
+    }
+  }
+]

@@ -106,8 +106,12 @@
       "isc2-official-practice",
       "ch3-q2"
     ],
-    "stem": "Referring to the four stages of a fire (Stage 1: Incipient/invisible gases; Stage 2: Smoke; Stage 3: Flame; Stage 4: Heat), what is the earliest stage of a fire where it is possible to use detection technology to identify it?",
+    "stem": "At which stage shown in the figure can technology first detect a fire?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q2.webp",
+      "alt": "Temperature over time in four fire stages, labeled incipient, smoke, flame, and heat."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -857,8 +861,12 @@
       "ch3-q12",
       "think-like-a-manager"
     ],
-    "stem": "In the figure shown here, Sally is blocked from reading the file due to the Biba integrity model. Sally has a Secret security clearance, and the file has a Confidential classification. What principle of the Biba model is being enforced?\n\nRead Request\n\nSally Data File",
+    "stem": "In the figure shown here, Sally is blocked from reading the file due to the Biba integrity model. Sally has a Secret security clearance, and the file has a Confidential classification. What principle of the Biba model is being enforced?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q12.webp",
+      "alt": "A read request from Sally to a data file is blocked."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -1817,8 +1825,12 @@
       "isc2-official-practice",
       "ch3-q25"
     ],
-    "stem": "What logical operation is described by the truth table shown here?\n\nInput 1 Input 2 Output 0 0 0 0 1 1 1 0 1 1 1 0",
+    "stem": "What logical operation is described by the truth table shown here?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q25.webp",
+      "alt": "Truth table. Inputs 00, 01, 10, and 11 produce outputs 0, 1, 1, and 0 respectively."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -1966,8 +1978,12 @@
       "ch3-q27",
       "think-like-a-manager"
     ],
-    "stem": "In the figure shown here, Harry's request to write to the data file is blocked. Harry has a Secret security clearance, and the data file has a Confidential classification. What principle of the Bell-LaPadula model blocked this request?\n\nWrite Request\n\nHarry Data File",
+    "stem": "In the figure shown here, Harry's request to write to the data file is blocked. Harry has a Secret security clearance, and the data file has a Confidential classification. What principle of the Bell-LaPadula model blocked this request?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q27.webp",
+      "alt": "A write request from Harry to a data file is blocked."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -2415,8 +2431,12 @@
       "isc2-official-practice",
       "ch3-q33"
     ],
-    "stem": "Referring to the physical security floorplan diagram indicated by the arrow, what is the name of the double-door access control vestibule that prevents tailgating?",
-    "scenarioContext": "Visual exhibit (physical access control floorplan diagram): Architectural doorway layout showing an exterior door leading into an enclosed double-door vestibule where the first door must close and lock before the second interior door unlocks; an arrow points to this double-door airlock chamber.",
+    "stem": "What physical security control does the arrow in the floor plan point to?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q33.webp",
+      "alt": "Floor plan with an arrow pointing to the entry structure at the front left."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -2564,8 +2584,12 @@
       "isc2-official-practice",
       "ch3-q35"
     ],
-    "stem": "In the figure shown here, Sally is blocked from writing to the data file by the Biba integrity model. Sally has a Secret security clearance, and the file is classified Top Secret. What principle is preventing her from writing to the file?\n\nWrite Request\n\nSally Data File",
+    "stem": "In the figure shown here, Sally is blocked from writing to the data file by the Biba integrity model. Sally has a Secret security clearance, and the file is classified Top Secret. What principle is preventing her from writing to the file?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q35.webp",
+      "alt": "A write request from Sally to a data file is blocked."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3457,7 +3481,11 @@
       "ch3-q47"
     ],
     "stem": "Gary intercepts a communication between two individuals and suspects that they are exchanging secret messages. The content of the communication appears to be the image shown here. What type of technique may the individuals use to hide messages inside this image?",
-    "scenarioContext": "Visual exhibit: Ordinary-looking digital landscape photograph attached to an online message, suspected during forensic inspection of carrying concealed data inside image pixels.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q47.webp",
+      "alt": "Color photograph of people walking down to a beach and a boat offshore."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3602,8 +3630,12 @@
       "isc2-official-practice",
       "ch3-q49"
     ],
-    "stem": "In the ring protection model shown here, what ring contains the operating system's kernel?\n\nRING 3\n\nRING 2\n\nRING 1\n\nRING 0",
+    "stem": "In the ring protection model shown here, what ring contains the operating system's kernel?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q49.webp",
+      "alt": "Four concentric circles labeled Ring 0 at the center through Ring 3 at the outside."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4273,7 +4305,11 @@
       "ch3-q58"
     ],
     "stem": "Rhonda is considering the use of new identification cards for physical access control in her organization. She comes across a military system that uses the card shown here. What type of card is this?",
-    "scenarioContext": "Visual exhibit (identification badge photograph): U.S. Department of Defense Common Access Card (CAC) / Geneva Conventions Identification Card featuring photo, barcode, and an embedded gold metallic integrated-circuit contact pad visible beneath the U.S. flag.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q58.webp",
+      "alt": "Front of a sample military identification card with a photo and a visible contact chip."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4419,8 +4455,12 @@
       "isc2-official-practice",
       "ch3-q60"
     ],
-    "stem": "In the diagram shown here of security boundaries within a computer system, what component's name has been replaced with XXX?\n\nUser Space\n\nProcess Process Process\n\nReference Monitor\n\nXXX\n\nKernel",
+    "stem": "In the diagram shown here of security boundaries within a computer system, what component's name has been replaced with XXX?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q60.webp",
+      "alt": "System boundary diagram showing user space and processes, with XXX between the reference monitor and the kernel."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5685,8 +5725,12 @@
       "isc2-official-practice",
       "ch3-q77"
     ],
-    "stem": "John and Gary are negotiating a business transaction, and John must demonstrate to Gary that he has access to a system. He engages in an electronic version of the \"magic door\" scenario shown here. What technique is John using?\n\n1\n\n2\n\nImage reprinted from CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide, 7th Edition © John Wiley & Sons 2015, reprinted with permission.",
+    "stem": "John and Gary are negotiating a business transaction, and John must demonstrate to Gary that he has access to a system. He engages in an electronic version of the \"magic door\" scenario shown here. What technique is John using?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q77.webp",
+      "alt": "A person stands outside a branching passage with two routes labeled 1 and 2."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5835,8 +5879,12 @@
       "isc2-official-practice",
       "ch3-q79"
     ],
-    "stem": "Referring to the fire triangle shown here, which one of the following suppression materials attacks a fire by removing the fuel source?\n\nHeat\n\nChemical Reaction\n\nOxygen Fuel\n\nImage reprinted from CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide, 7th Edition © John Wiley & Sons 2015, reprinted with permission.",
+    "stem": "Referring to the fire triangle shown here, which one of the following suppression materials attacks a fire by removing the fuel source?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch3-q79.webp",
+      "alt": "Triangle labeled heat, oxygen, and fuel, with chemical reaction in the center."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8522,7 +8570,11 @@
       "ch9-q41"
     ],
     "stem": "What mathematical operation, when substituted for the blank lines shown here, would make the equations correct?",
-    "scenarioContext": "Equations shown in figure:\n   8 ___ 6 = 2\n   8 ___ 4 = 0\n  10 ___ 3 = 1\n  10 ___ 2 = 0",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q41.webp",
+      "alt": "Four equations with blanks for an operator: 8 blank 6 equals 2, 8 blank 4 equals 0, 10 blank 3 equals 1, and 10 blank 2 equals 0."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9116,8 +9168,12 @@
       "ch9-q110",
       "think-like-a-manager"
     ],
-    "stem": "In the figure shown here, Harry's request to read the data file is blocked. Harry has a Secret security clearance, and the data file has a Top Secret classification. What principle of the Bell-LaPadula model blocked this request?\n\nRead Request\n\nHarry Data File",
+    "stem": "In the figure shown here, Harry's request to read the data file is blocked. Harry has a Secret security clearance, and the data file has a Top Secret classification. What principle of the Bell-LaPadula model blocked this request?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q110.webp",
+      "alt": "A read request from Harry to a data file is blocked."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10826,8 +10882,12 @@
       "isc2-official-practice",
       "ch10-q120"
     ],
-    "stem": "Referring to the physical security floorplan diagram indicated by the arrow, what is the name of the unidirectional entry control barrier allowing one person at a time?",
-    "scenarioContext": "Visual exhibit (physical access control floorplan diagram): Architectural entry barrier featuring a unidirectional rotating gate restricting passage to one person per revolution; an arrow points to this barrier.",
+    "stem": "What physical security control does the arrow in the floor plan point to?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q120.webp",
+      "alt": "Floor plan with an arrow marking the entrance mechanism on the right of a fenced area."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -11269,8 +11329,12 @@
       "isc2-official-practice",
       "ch11-q37"
     ],
-    "stem": "In the ring protection model shown here, what ring contains user programs and applications?\n\nRing 3\n\nRing 2\n\nRing 1\n\nRing 0",
+    "stem": "In the ring protection model shown here, what ring contains user programs and applications?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch11-q37.webp",
+      "alt": "Four concentric circles labeled Ring 0 at the center through Ring 3 at the outside."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -12677,8 +12741,12 @@
       "isc2-official-practice",
       "ch12-q41"
     ],
-    "stem": "In the ring protection model shown here, what ring does not run in privileged mode?\n\nRing 3\n\nRing 2\n\nRing 1\n\nRing 0",
+    "stem": "In the ring protection model shown here, what ring does not run in privileged mode?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q41.webp",
+      "alt": "Four concentric circles labeled Ring 0 at the center through Ring 3 at the outside."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -13124,8 +13192,12 @@
       "isc2-official-practice",
       "ch12-q83"
     ],
-    "stem": "In the diagram shown here of security boundaries within a computer system, what component's name has been replaced with XXX?\n\nUser Space\n\nProcess Process Process\n\nReference Monitor\n\nTCB\n\nXXX",
+    "stem": "In the diagram shown here of security boundaries within a computer system, what component's name has been replaced with XXX?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q83.webp",
+      "alt": "System boundary diagram showing user space and processes, with XXX below the reference monitor and TCB."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -13278,8 +13350,12 @@
       "ch12-q100",
       "think-like-a-manager"
     ],
-    "stem": "In the diagram shown here, Harry is prevented from reading a file at a higher classification level than his security clearance. What security model prevents this behavior?\n\nRead Request\n\nHarry Data File",
+    "stem": "In the diagram shown here, Harry is prevented from reading a file at a higher classification level than his security clearance. What security model prevents this behavior?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q100.webp",
+      "alt": "A read request from Harry to a data file is blocked."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -13428,8 +13504,12 @@
       "isc2-official-practice",
       "ch12-q124"
     ],
-    "stem": "What email encryption technique is illustrated in this figure?\n\nEncrypt Decrypt\n\nGenerate Random Key\n\nEncrypted Message Data TlakvAQkCu2u Random Key\n\nEncrypt data Encrypt key q4fzNeBCRSYo using randon using receive Encrypted Key key public key Decrypt using RSA receiver's private key\n\nRSA\n\nData TlakvAQkCu2u q4fzNeBCRSYo\n\nData Encrypted Key\n\nDecrypt data using key\n\nEncrypted Message\n\nData",
+    "stem": "What email encryption technique is illustrated in this figure?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q124.webp",
+      "alt": "Message encryption and decryption diagram showing a random key protected using RSA and used to recover the message."
+    },
     "highlightKeywords": [],
     "options": [
       {

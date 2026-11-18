@@ -1,0 +1,318 @@
+[
+  {
+    "id": "cissp-d8-s8.3-q001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.3",
+    "subdomainName": "Assess the Effectiveness of Software Security",
+    "topicId": "8.3.1",
+    "topicName": "Software Assurance Maturity Model (SAMM / BSIMM), Acceptance Testing",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Software validation",
+      "Acceptance testing",
+      "Intended use"
+    ],
+    "keyTerms": [
+      "Software validation",
+      "Acceptance testing",
+      "Intended use"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A claims application passes its written interface specifications. Before rollout, claims staff run realistic cases and confirm the workflow meets their operational needs. What are they demonstrating?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "That the development organization has reached a particular maturity level.",
+        "isCorrect": false,
+        "explanation": "A maturity assessment examines organizational processes. Successful business workflows do not establish a process maturity level.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "That the software is suitable for its intended use in the business workflow.",
+        "isCorrect": true,
+        "explanation": "Validation provides evidence that the resulting system serves stakeholders' real needs and intended use under representative conditions.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "That the product follows generally accepted design principles.",
+        "isCorrect": false,
+        "explanation": "Conformity to broad design principles says little about whether the workflow meets the needs of claims staff in practice.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "That the software conforms to the derived interface specifications.",
+        "isCorrect": false,
+        "explanation": "Checking conformance to the written interface specification is verification. The workflow trial checks suitability for the intended use.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Validation asks whether the software meets stakeholder needs in its intended operating context. Representative workflows can reveal gaps that passing specification checks does not catch.",
+      "managerMindsetTip": "Include representative users and acceptance criteria that reflect actual work.",
+      "studyFocusDirective": "Write a validation test case for a product that already meets its functional specification.",
+      "keyTakeaway": "Validation checks suitability for intended use.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1866, p. 971 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-160 Vol. 1 Rev. 1",
+          "section": "Validation process"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.1-q015",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.1",
+    "subdomainName": "Understand and Integrate Security in the SDLC",
+    "topicId": "8.1.1",
+    "topicName": "SDLC Models (Agile, DevSecOps, Waterfall, Spiral)",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Spiral development",
+      "Risk analysis",
+      "Iterative SDLC"
+    ],
+    "keyTerms": [
+      "Spiral development",
+      "Risk analysis",
+      "Iterative SDLC"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A software team plans several development cycles. Before committing to the next cycle, it evaluates alternatives, resolves the highest risks with prototypes, and revises the plan. Which model best matches this approach?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "A risk-driven spiral development model.",
+        "isCorrect": true,
+        "explanation": "The spiral model repeatedly evaluates objectives and alternatives, uses risk to guide the work, and plans the next cycle from what the team learns.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "A strictly sequential waterfall model.",
+        "isCorrect": false,
+        "explanation": "A strictly sequential model emphasizes moving through fixed phases. The scenario uses deliberate cycles driven by unresolved risk.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "An organizational software maturity model.",
+        "isCorrect": false,
+        "explanation": "A maturity model assesses or guides process capability. It does not describe how the team structures a project's development cycles.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A one-time security approval checklist.",
+        "isCorrect": false,
+        "explanation": "A single approval checklist can provide a gate. It does not describe repeated risk evaluation, prototypes, and replanning.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Risk analysis drives each iteration of the spiral model. Prototypes and other work help resolve the most important uncertainties before the project makes larger commitments.",
+      "managerMindsetTip": "Identify what uncertainty each prototype must resolve before approving the next iteration.",
+      "studyFocusDirective": "Compare when risk is evaluated in a spiral project versus a strictly sequential project.",
+      "keyTakeaway": "The spiral model organizes software development around repeated risk-driven cycles.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1889, p. 986 (adapted)"
+        },
+        {
+          "source": "Barry W. Boehm, A Spiral Model of Software Development and Enhancement",
+          "section": "IEEE Computer, May 1988, Spiral Model"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.1-q016",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.1",
+    "subdomainName": "Understand and Integrate Security in the SDLC",
+    "topicId": "8.1.2",
+    "topicName": "Security Gates at Requirements, Design, Coding, Testing, Deployment",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Software verification",
+      "Specified requirements",
+      "Testing gates"
+    ],
+    "keyTerms": [
+      "Software verification",
+      "Specified requirements",
+      "Testing gates"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A release candidate claims to enforce a documented timeout requirement. Test engineers measure the behavior and compare it with the written requirement. What development activity are they performing?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Verification against a specified requirement.",
+        "isCorrect": true,
+        "explanation": "Verification checks objective evidence against a specified requirement. Measuring the product against the documented timeout is such a check.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Validation of suitability for users' real-world needs.",
+        "isCorrect": false,
+        "explanation": "Validation would examine whether the timeout supports stakeholders' intended use under realistic conditions. The given test checks the written value.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Comparison with competing products.",
+        "isCorrect": false,
+        "explanation": "Comparative testing might inform procurement or design. It does not demonstrate conformance to the stated timeout requirement.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "General assessment against industry baselines.",
+        "isCorrect": false,
+        "explanation": "An industry baseline could influence requirements. The pass/fail criterion in this test is the product's own written requirement.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Verification confirms that a product satisfies specified requirements. A test compares observed behavior with defined criteria and records the result.",
+      "managerMindsetTip": "Make each release-gate requirement measurable and link its result to the tested build.",
+      "studyFocusDirective": "Turn one written security requirement into a test with a reproducible pass/fail threshold.",
+      "keyTakeaway": "Verification checks the product against specified requirements.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1922, pp. 1008–1009 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-160 Vol. 1 Rev. 1",
+          "section": "Verification process"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.2-q011",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.2",
+    "subdomainName": "Identify and Apply Security Controls in Development Environments",
+    "topicId": "8.2.1",
+    "topicName": "CI/CD Pipeline Security, Secrets Management, Environment Separation",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Controlled software repositories",
+      "Approved release artifacts",
+      "Access control"
+    ],
+    "keyTerms": [
+      "Controlled software repositories",
+      "Approved release artifacts",
+      "Access control"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A release team needs a controlled software library for approved build artifacts. Which implementation best meets that requirement?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "An access-controlled repository with an approved procedure for adding and retrieving release artifacts.",
+        "isCorrect": true,
+        "explanation": "The repository holds the approved artifacts and governs how authorized people publish and retrieve them, preserving controlled release inputs.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "An access-controlled catalog listing the approved versions of components.",
+        "isCorrect": false,
+        "explanation": "Version records help identify configurations, but a catalog alone contains no retrievable approved artifacts.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "A write-protected collection of build and approval logs.",
+        "isCorrect": false,
+        "explanation": "Build logs help reconstruct what happened. They do not supply controlled, approved packages for downstream release.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "A restricted backup archive that holds periodic copies of the team's build directories.",
+        "isCorrect": false,
+        "explanation": "Backup archives support restoration. Periodic copies can include unfinished artifacts and do not establish release approval for each package.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "A controlled software library provides governed storage for approved software artifacts. Authorized release procedures establish what enters the library and who can retrieve or promote it.",
+      "managerMindsetTip": "Track artifact identity, approval, and access so deployment can use a verifiable release input.",
+      "studyFocusDirective": "Compare the access and retention requirements for build logs, backups, and approved release packages.",
+      "keyTakeaway": "A controlled software library restricts and records handling of approved artifacts.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1933, pp. 1014–1015 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CM-5 Access Restrictions for Change and SA-10 Developer Configuration Management"
+        }
+      ]
+    }
+  }
+]

@@ -14811,8 +14811,12 @@
       "certkingdom-1373",
       "book-q490"
     ],
-    "stem": "Based on the network attack topology described in the scenario (a single Master system issuing commands to multiple Zombie hosts flooding a single Victim server), identify the attack:",
-    "scenarioContext": "Diagram Topology: 1 Master controller -> arrows to 4 distributed Zombie hosts -> simultaneous traffic streams directed at 1 Victim server.",
+    "stem": "What type of attack is depicted in the diagram?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "certkingdom-q490.webp",
+      "alt": "A master computer sends commands to four computers labeled Zombies. Each sends traffic to the same victim server."
+    },
     "highlightKeywords": [],
     "options": [
       {

@@ -1,0 +1,318 @@
+[
+  {
+    "id": "cissp-d2-s2.1-q006",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.1",
+    "subdomainName": "Identify and Classify Information and Assets",
+    "topicId": "2.1.1",
+    "topicName": "Government vs. Commercial Classification Labels",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Information classification",
+      "Protection requirements",
+      "Sensitivity levels"
+    ],
+    "keyTerms": [
+      "Information classification",
+      "Protection requirements",
+      "Sensitivity levels"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A company labels its public catalog and unpublished customer records differently. What is the main purpose of making that classification distinction?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "To grant individual user permissions directly.",
+        "isCorrect": false,
+        "explanation": "Classification can inform access rules, but granting permissions still depends on authorization. Other safeguards also follow from classification.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "To require different safeguards based on sensitivity and business impact.",
+        "isCorrect": true,
+        "explanation": "Classification lets the company apply safeguards proportionate to what disclosure or misuse would cost, such as tighter sharing rules for customer records.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "To define the fonts and placement for security labels.",
+        "isCorrect": false,
+        "explanation": "Marking conveys the assigned class. The value of classifying the information is specifying how it should be protected.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "To divide administrative responsibilities among staff.",
+        "isCorrect": false,
+        "explanation": "Separation of duties addresses incompatible responsibilities. Classification determines the protection needs of the information itself.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The purpose of classifying information is to connect its sensitivity and business value to appropriate handling and security controls throughout its lifecycle.",
+      "managerMindsetTip": "Check that each classification level has usable requirements for storage, access, and transfer.",
+      "studyFocusDirective": "Choose public and restricted data examples and compare their handling requirements.",
+      "keyTakeaway": "Classification assigns protection needs that labels communicate to users.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 74, pp. 32–33 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 2, Information and asset classification and handling requirements"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q006",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Information ownership",
+      "Information classification",
+      "Custodian responsibilities"
+    ],
+    "keyTerms": [
+      "Information ownership",
+      "Information classification",
+      "Custodian responsibilities"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A business unit creates a new dataset. The organization asks its designated information owner to act before the data enters production. Which decision belongs to the owner?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Determine the dataset's classification under the organization's rules.",
+        "isCorrect": true,
+        "explanation": "The owner understands the business use and impact of the dataset and assigns its classification according to the adopted scheme.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Run scheduled backups on the storage platform.",
+        "isCorrect": false,
+        "explanation": "Running backups is ordinarily a custodian or operations duty. The owner may set protection and recovery requirements.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "Perform an independent audit of every user access request.",
+        "isCorrect": false,
+        "explanation": "Access approval or oversight can involve an owner. Independent auditing plays a different role from the owner's classification decision.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Check the accuracy of every record in the production system.",
+        "isCorrect": false,
+        "explanation": "Data owners can set quality rules, but checking every production record is a stewardship or operational process and does not establish the classification.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "An information owner is accountable for business decisions about the information, including how its sensitivity should be classified. Custodians apply the resulting safeguards.",
+      "managerMindsetTip": "Assign the classification decision to someone who knows the business impact of disclosure or alteration.",
+      "studyFocusDirective": "Compare who assigns classification with who implements backup, encryption, and access settings.",
+      "keyTakeaway": "The designated information owner determines the appropriate classification.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 76, p. 33 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-37 Rev. 2",
+          "section": "Appendix D, Information Owner or Steward"
+        },
+        {
+          "source": "FIPS 199",
+          "section": "Security Categorization Applied to Information Types"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q007",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "System ownership",
+      "Information ownership",
+      "Shared services"
+    ],
+    "keyTerms": [
+      "System ownership",
+      "Information ownership",
+      "Shared services"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "An organization consolidates claims and billing data into one application. Each dataset retains its business owner, and IT appoints one system owner. What does this show about the roles?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The system owner sets the business rules for appropriate use of every dataset.",
+        "isCorrect": false,
+        "explanation": "Information owners set appropriate use and protection requirements for their data. The system owner implements or coordinates safeguards on the platform.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Each information owner is responsible for defining the application platform's operating parameters.",
+        "isCorrect": false,
+        "explanation": "An information owner specifies data requirements. Operating parameters for the platform fall under system ownership and its technical teams.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "A single system can host information governed by multiple information owners.",
+        "isCorrect": true,
+        "explanation": "The system has its own owner, while claims and billing can retain separate information owners who define requirements for their respective data.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Each system owner and information owner must be paired one to one.",
+        "isCorrect": false,
+        "explanation": "The responsibilities attach to the platform and to the information respectively. A shared system can host datasets with several business owners.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "System and information ownership describe different responsibilities. A system owner coordinates implementation on the platform, while several information owners can govern distinct datasets on it.",
+      "managerMindsetTip": "Record ownership for each dataset and the shared platform so policy conflicts can be assigned and resolved.",
+      "studyFocusDirective": "Map ownership of a shared system used by two departments and name the decision rights of each role.",
+      "keyTakeaway": "A shared platform can have one system owner and multiple information owners.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1481, pp. 716–717 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-37 Rev. 2",
+          "section": "Appendix D, System Owner and Information Owner or Steward"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q008",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.2",
+    "topicName": "Custodian Duties",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Data custodian",
+      "Classification implementation",
+      "Data ownership"
+    ],
+    "keyTerms": [
+      "Data custodian",
+      "Classification implementation",
+      "Data ownership"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "The data owner classifies a set of customer documents as restricted. How should the storage custodian apply the classification scheme?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Apply the required handling controls for the classification assigned by the data owner.",
+        "isCorrect": true,
+        "explanation": "A custodian implements the agreed controls, such as storage access and handling restrictions. The owner makes the business classification decision.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Assign the classification and have the owner configure the storage controls.",
+        "isCorrect": false,
+        "explanation": "This reverses the typical assignment. Technical custody gives the custodian the ability to implement protection, while ownership establishes the requirement.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Assign the classification and send it to the operations manager to implement.",
+        "isCorrect": false,
+        "explanation": "The custodian can identify implementation constraints. The business decision about sensitivity belongs to the designated data owner.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Apply the controls after the operations manager independently assigns the classification.",
+        "isCorrect": false,
+        "explanation": "An operations manager may coordinate implementation. The designated owner supplies the classification that determines the controls.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The owner sets the classification and the custodian carries out the safeguards tied to it. The roles work together when the required controls cannot be implemented as specified.",
+      "managerMindsetTip": "Establish a clear handoff from the owner who sets protection needs to the team that implements them.",
+      "studyFocusDirective": "List three technical handling controls and identify who approves each requirement and who operates it.",
+      "keyTakeaway": "Data custodians apply the handling controls designated for the owner's classification.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1618, pp. 801–802 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 2, Information and asset handling requirements"
+        }
+      ]
+    }
+  }
+]

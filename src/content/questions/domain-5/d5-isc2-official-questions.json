@@ -1004,7 +1004,11 @@
       "ch5-q14"
     ],
     "stem": "As shown in the following image, a user on a Windows system is not able to use the \"Send Message\" functionality. What access control model best describes this type of limitation?",
-    "scenarioContext": "Visual exhibit (Windows Task Manager 'Users' tab screenshot): Lists user 'Example' (ID: 1, Status: Active, Client Name: Console). Action buttons at bottom show 'Disconnect' and 'Logoff' enabled, while the 'Send Message...' button is greyed out and non-clickable.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch5-q14.webp",
+      "alt": "Windows Task Manager Users tab showing an active session and a disabled Send Message button."
+    },
     "highlightKeywords": [
       "BEST",
       "NOT"
@@ -1237,7 +1241,11 @@
       "ch5-q17"
     ],
     "stem": "At point A in the diagram, the client sends the username and password to the KDC. How is the username and password protected?",
-    "scenarioContext": "Kerberos logon flow diagram:\n  Step A: Client Workstation --(Username and Password)--> KDC\n  Step B: KDC --> Client Workstation\n  Step C: Client Workstation <--> Services\n\nUse your knowledge of the Kerberos logon process and the following diagram to answer questions 17-19.\n\nUsername and Password A\n\nKDC Client Workstation\n\nB\n\nKDC Client Workstation\n\nC Services\n\nClient Workstation",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch5-q17.webp",
+      "alt": "Three labeled steps A, B, and C connect a client workstation to a KDC and a network service."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -1313,7 +1321,11 @@
       "ch5-q18"
     ],
     "stem": "At point B in the diagram, what two important elements does the KDC send to the client after verifying that the username is valid?",
-    "scenarioContext": "Kerberos logon flow diagram:\n  Step A: Client Workstation --(Username and Password)--> KDC\n  Step B: KDC --> Client Workstation\n  Step C: Client Workstation <--> Services\n\nUse your knowledge of the Kerberos logon process and the following diagram to answer questions 17-19.\n\nUsername and Password A\n\nKDC Client Workstation\n\nB\n\nKDC Client Workstation\n\nC Services\n\nClient Workstation",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch5-q17.webp",
+      "alt": "Three labeled steps A, B, and C connect a client workstation to a KDC and a network service."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -1387,7 +1399,11 @@
       "ch5-q19"
     ],
     "stem": "What tasks must the client perform before it can use the TGT?",
-    "scenarioContext": "Kerberos logon flow diagram:\n  Step A: Client Workstation --(Username and Password)--> KDC\n  Step B: KDC --> Client Workstation\n  Step C: Client Workstation <--> Services\n\nUse your knowledge of the Kerberos logon process and the following diagram to answer questions 17-19.\n\nUsername and Password A\n\nKDC Client Workstation\n\nB\n\nKDC Client Workstation\n\nC Services\n\nClient Workstation",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch5-q17.webp",
+      "alt": "Three labeled steps A, B, and C connect a client workstation to a KDC and a network service."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -2503,8 +2519,12 @@
       "isc2-official-practice",
       "ch5-q34"
     ],
-    "stem": "What type of access control scheme is shown in the following table?\n\nHighly Sensitive Red Blue Green\n\nConfidential Purple Orange Yellow\n\nInternal Use Black Gray White\n\nPublic Clear Clear Clear",
+    "stem": "What type of access control scheme is shown in the following table?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch5-q34.webp",
+      "alt": "Access control table with security levels and four color-coded columns."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3178,7 +3198,11 @@
       "ch5-q43"
     ],
     "stem": "Alex is concerned about eavesdropping on the SAML traffic and also wants to ensure that forged assertions will not be successful. What should he do to prevent these potential attacks?",
-    "scenarioContext": "Alex is in charge of SAML integration with a major third-party partner that provides a variety of business productivity services for his organization. Use the following diagram and your knowledge of SAML integrations and security architecture design to answer questions 43-45.\n\nHome User SAML Organization Integrated Identity 1. User Third-Party Provider attempts Service to access application\n2. Redirect\n3. Browser to SSO\naccesses URL SSO URL\n\n4. Home\n5. SAML\norganization response authenticates 6. Browser sent to user and Web sends browser sends SAML Browser SAML response response to third party\n\n7. SAML\nresponse verified, user logged into third-party application",
+    "scenarioContext": "Alex is in charge of SAML integration with a major third-party partner that provides business productivity services for his organization.",
+    "exhibit": {
+      "file": "isc2-ch5-q43.webp",
+      "alt": "Seven-step SAML exchange involving the home identity provider, web browser, and third-party service."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -3254,7 +3278,11 @@
       "ch5-q44"
     ],
     "stem": "If Alex's organization is one that is primarily made up of offsite, traveling users, what availability risk does integration of critical business applications to onsite authentication create, and how could he solve it?",
-    "scenarioContext": "Alex is in charge of SAML integration with a major third-party partner that provides a variety of business productivity services for his organization. Use the following diagram and your knowledge of SAML integrations and security architecture design to answer questions 43-45.\n\nHome User SAML Organization Integrated Identity 1. User Third-Party Provider attempts Service to access application\n2. Redirect\n3. Browser to SSO\naccesses URL SSO URL\n\n4. Home\n5. SAML\norganization response authenticates 6. Browser sent to user and Web sends browser sends SAML Browser SAML response response to third party\n\n7. SAML\nresponse verified, user logged into third-party application",
+    "scenarioContext": "Alex is in charge of SAML integration with a major third-party partner that provides business productivity services for his organization.",
+    "exhibit": {
+      "file": "isc2-ch5-q43.webp",
+      "alt": "Seven-step SAML exchange involving the home identity provider, web browser, and third-party service."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -3332,7 +3360,11 @@
       "ch5-q45"
     ],
     "stem": "What solution can best help address concerns about third parties that control SSO redirects as shown in step 2 in the diagram?",
-    "scenarioContext": "Alex is in charge of SAML integration with a major third-party partner that provides a variety of business productivity services for his organization. Use the following diagram and your knowledge of SAML integrations and security architecture design to answer questions 43-45.\n\nHome User SAML Organization Integrated Identity 1. User Third-Party Provider attempts Service to access application\n2. Redirect\n3. Browser to SSO\naccesses URL SSO URL\n\n4. Home\n5. SAML\norganization response authenticates 6. Browser sent to user and Web sends browser sends SAML Browser SAML response response to third party\n\n7. SAML\nresponse verified, user logged into third-party application",
+    "scenarioContext": "Alex is in charge of SAML integration with a major third-party partner that provides business productivity services for his organization.",
+    "exhibit": {
+      "file": "isc2-ch5-q43.webp",
+      "alt": "Seven-step SAML exchange involving the home identity provider, web browser, and third-party service."
+    },
     "highlightKeywords": [
       "BEST"
     ],
@@ -4906,7 +4938,11 @@
       "ch5-q66"
     ],
     "stem": "When the e-commerce application creates an account for a Google user, where should that user's password be stored?",
-    "scenarioContext": "Chris is the identity architect for a growing e-commerce website that wants to leverage social identity. To do this, he and his team intend to allow users to use their existing Google accounts as their primary accounts when using the e-commerce site. This means that when a new user initially connects to the e-commerce platform, they are given the choice between using their Google account using OAuth 2.0 or creating a new account on the platform using their own email address and a password of their choice.\n\nUse this information and the following diagram of an example authentication flow to answer questions 66-68.\n\nE-commerce Google Servers Application Servers\n1. Anti-forgery\ntoken created\n\n2. User login and\nconsent to data release\n\n3. Token confirmed and\nauthorization code sent Client\n\n4. Exchange code for\naccess and ID token\n\n5. Token\nresponse\n\n6. Call Google API\nusing token",
+    "scenarioContext": "Chris is the identity architect for a growing e-commerce website. New users can sign in with an existing Google account using OAuth 2.0 or create a local account with their own email address and password.",
+    "exhibit": {
+      "file": "isc2-ch5-q66.webp",
+      "alt": "Sequence of requests and responses among the client, e-commerce application, and Google servers."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4980,7 +5016,11 @@
       "ch5-q67"
     ],
     "stem": "Which system or systems is/are responsible for user authentication for Google users?",
-    "scenarioContext": "Chris is the identity architect for a growing e-commerce website that wants to leverage social identity. To do this, he and his team intend to allow users to use their existing Google accounts as their primary accounts when using the e-commerce site. This means that when a new user initially connects to the e-commerce platform, they are given the choice between using their Google account using OAuth 2.0 or creating a new account on the platform using their own email address and a password of their choice.\n\nUse this information and the following diagram of an example authentication flow to answer questions 66-68.\n\nE-commerce Google Servers Application Servers\n1. Anti-forgery\ntoken created\n\n2. User login and\nconsent to data release\n\n3. Token confirmed and\nauthorization code sent Client\n\n4. Exchange code for\naccess and ID token\n\n5. Token\nresponse\n\n6. Call Google API\nusing token",
+    "scenarioContext": "Chris is the identity architect for a growing e-commerce website. New users can sign in with an existing Google account using OAuth 2.0 or create a local account with their own email address and password.",
+    "exhibit": {
+      "file": "isc2-ch5-q66.webp",
+      "alt": "Sequence of requests and responses among the client, e-commerce application, and Google servers."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5058,7 +5098,11 @@
       "ch5-q68"
     ],
     "stem": "What type of attack is the creation and exchange of state tokens intended to prevent?",
-    "scenarioContext": "Chris is the identity architect for a growing e-commerce website that wants to leverage social identity. To do this, he and his team intend to allow users to use their existing Google accounts as their primary accounts when using the e-commerce site. This means that when a new user initially connects to the e-commerce platform, they are given the choice between using their Google account using OAuth 2.0 or creating a new account on the platform using their own email address and a password of their choice.\n\nUse this information and the following diagram of an example authentication flow to answer questions 66-68.\n\nE-commerce Google Servers Application Servers\n1. Anti-forgery\ntoken created\n\n2. User login and\nconsent to data release\n\n3. Token confirmed and\nauthorization code sent Client\n\n4. Exchange code for\naccess and ID token\n\n5. Token\nresponse\n\n6. Call Google API\nusing token",
+    "scenarioContext": "Chris is the identity architect for a growing e-commerce website. New users can sign in with an existing Google account using OAuth 2.0 or create a local account with their own email address and password.",
+    "exhibit": {
+      "file": "isc2-ch5-q66.webp",
+      "alt": "Sequence of requests and responses among the client, e-commerce application, and Google servers."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6339,7 +6383,11 @@
       "ch5-q85"
     ],
     "stem": "Ben's company is considering configuring its systems to work at the level shown by point A on the diagram. To what level is it setting the sensitivity?",
-    "scenarioContext": "Biometric sensitivity tradeoff chart (X-axis: Sensitivity increasing left-to-right; Y-axis: Percent error):\n  - FRR curve rises from low to high as Sensitivity increases.\n  - FAR curve falls from high to low as Sensitivity increases.\n  - Point A marks the exact intersection where FAR and FRR curves cross.\n  - Point B sits to the left of Point A (lower sensitivity threshold where FAR is higher than FRR).\n\nBen's organization is adopting biometric authentication for its high-security building's access control system. Use the following chart to answer questions 85-87 about the organization's adoption of the technology.\n\nFAR FRR\n\nt n e c r e A P\n\nB\n\nSensitivity",
+    "scenarioContext": "Ben’s organization is adopting biometric authentication for its high-security building’s access control system.",
+    "exhibit": {
+      "file": "isc2-ch5-q85.webp",
+      "alt": "Percent error versus sensitivity. The FAR curve falls and the FRR curve rises as sensitivity increases. A points to their intersection. B points to the FRR curve at a lower sensitivity."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6415,7 +6463,11 @@
       "ch5-q86"
     ],
     "stem": "At point B, what problem is likely to occur?",
-    "scenarioContext": "Biometric sensitivity tradeoff chart (X-axis: Sensitivity increasing left-to-right; Y-axis: Percent error):\n  - FRR curve rises with Sensitivity; FAR curve falls with Sensitivity.\n  - Point A marks where FAR and FRR cross.\n  - Point B is located to the left of Point A (very low sensitivity threshold where the FAR curve is high and FRR is near zero).\n\nBen's organization is adopting biometric authentication for its high-security building's access control system. Use the following chart to answer questions 85-87 about the organization's adoption of the technology.\n\nFAR FRR\n\nt n e c r e A P\n\nB\n\nSensitivity",
+    "scenarioContext": "Ben’s organization is adopting biometric authentication for its high-security building’s access control system.",
+    "exhibit": {
+      "file": "isc2-ch5-q85.webp",
+      "alt": "Percent error versus sensitivity. The FAR curve falls and the FRR curve rises as sensitivity increases. A points to their intersection. B points to the FRR curve at a lower sensitivity."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6493,7 +6545,11 @@
       "ch5-q87"
     ],
     "stem": "What should Ben do if the FAR and FRR shown in this diagram does not provide an acceptable performance level for his organization's needs?",
-    "scenarioContext": "Biometric sensitivity tradeoff chart (X-axis: Sensitivity; Y-axis: Percent error) showing FAR and FRR curves crossing at Point A, with Point B at lower sensitivity (high FAR, low FRR).\n\nBen's organization is adopting biometric authentication for its high-security building's access control system. Use the following chart to answer questions 85-87 about the organization's adoption of the technology.\n\nFAR FRR\n\nt n e c r e A P\n\nB\n\nSensitivity",
+    "scenarioContext": "Ben’s organization is adopting biometric authentication for its high-security building’s access control system.",
+    "exhibit": {
+      "file": "isc2-ch5-q85.webp",
+      "alt": "Percent error versus sensitivity. The FAR curve falls and the FRR curve rises as sensitivity increases. A points to their intersection. B points to the FRR curve at a lower sensitivity."
+    },
     "highlightKeywords": [
       "NOT"
     ],
@@ -6943,7 +6999,11 @@
       "ch5-q93"
     ],
     "stem": "When Alex sets the permissions shown in the following image as one of many users on a Linux server, what type of access control model is he leveraging?",
-    "scenarioContext": "Visual exhibit (Linux terminal screenshot):\n  $ chmod 731 alex.txt\n  $ ls -la\n  -rwx-wx--x 1 alex alex 15 Feb 27 19:26 alex.txt",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch5-q93.webp",
+      "alt": "Linux terminal showing a chmod command and the resulting file permission listing."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7996,7 +8056,11 @@
       "ch9-q42"
     ],
     "stem": "If availability of authentication services is the organization's biggest priority, what type of identity platform should Ben recommend?",
-    "scenarioContext": "For questions 42-44, please refer to the following scenario:\n\nThe organization that Ben works for has a traditional onsite Active Directory environment that uses a manual provisioning process for each addition to their 350-employee company. As the company adopts new technologies, they are increasingly using software as a service applications to replace their internally developed software stack.\n\nBen has been tasked with designing an identity management implementation that will allow his company to use cloud services while supporting their existing systems. Using the logical diagram shown here, answer the following questions about the identity recommendations Ben should make.\n\nBusiness Partner Internet\n\nCorporate Secure Border Cloud eCommerce Application\n\nInternal Network\n\nActive CRM Database Employee Directory Workstations",
+    "scenarioContext": "Ben’s 350-employee company uses an on-site Active Directory environment with manual provisioning. His task is to design an identity management system that supports existing systems and the company’s move to cloud applications.",
+    "exhibit": {
+      "file": "isc2-ch9-q42.webp",
+      "alt": "Network diagram with internal workstations, Active Directory, CRM, and databases behind a secure border, plus a business partner and cloud application."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8069,7 +8133,11 @@
       "ch9-q43"
     ],
     "stem": "If Ben needs to share identity information with the business partner shown, what should he investigate?",
-    "scenarioContext": "For questions 42-44, please refer to the following scenario:\n\nThe organization that Ben works for has a traditional onsite Active Directory environment that uses a manual provisioning process for each addition to their 350-employee company. As the company adopts new technologies, they are increasingly using software as a service applications to replace their internally developed software stack.\n\nBen has been tasked with designing an identity management implementation that will allow his company to use cloud services while supporting their existing systems. Using the logical diagram shown here, answer the following questions about the identity recommendations Ben should make.\n\nBusiness Partner Internet\n\nCorporate Secure Border Cloud eCommerce Application\n\nInternal Network\n\nActive CRM Database Employee Directory Workstations",
+    "scenarioContext": "Ben’s 350-employee company uses an on-site Active Directory environment with manual provisioning. His task is to design an identity management system that supports existing systems and the company’s move to cloud applications.",
+    "exhibit": {
+      "file": "isc2-ch9-q42.webp",
+      "alt": "Network diagram with internal workstations, Active Directory, CRM, and databases behind a secure border, plus a business partner and cloud application."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8145,7 +8213,11 @@
       "ch9-q44"
     ],
     "stem": "What technology is likely to be involved when Ben's organization needs to provide authentication and authorization assertions to their cloud e-commerce application?",
-    "scenarioContext": "For questions 42-44, please refer to the following scenario:\n\nThe organization that Ben works for has a traditional onsite Active Directory environment that uses a manual provisioning process for each addition to their 350-employee company. As the company adopts new technologies, they are increasingly using software as a service applications to replace their internally developed software stack.\n\nBen has been tasked with designing an identity management implementation that will allow his company to use cloud services while supporting their existing systems. Using the logical diagram shown here, answer the following questions about the identity recommendations Ben should make.\n\nBusiness Partner Internet\n\nCorporate Secure Border Cloud eCommerce Application\n\nInternal Network\n\nActive CRM Database Employee Directory Workstations",
+    "scenarioContext": "Ben’s 350-employee company uses an on-site Active Directory environment with manual provisioning. His task is to design an identity management system that supports existing systems and the company’s move to cloud applications.",
+    "exhibit": {
+      "file": "isc2-ch9-q42.webp",
+      "alt": "Network diagram with internal workstations, Active Directory, CRM, and databases behind a secure border, plus a business partner and cloud application."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8516,7 +8588,11 @@
       "ch9-q61"
     ],
     "stem": "Alan is considering the use of new identification cards in his organization that will be used for physical access control. He comes across a sample card and is unsure of the technology. He breaks it open and sees the following internal construction. What type of card is this?",
-    "scenarioContext": "Visual exhibit (disassembled physical access badge): Open white plastic ID badge casing revealing a rectangular coiled copper wire antenna connected to a small internal microchip, with no external metallic smart-card contact pad and no battery.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q61.webp",
+      "alt": "Two halves of a disassembled card, one containing a loop of copper wire and a small chip."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8964,7 +9040,11 @@
       "ch9-q82"
     ],
     "stem": "If Alex hires a new employee and the employee's account is provisioned after HR manually inputs information into the provisioning system based on data Alex provides via a series of forms, what type of provisioning has occurred?",
-    "scenarioContext": "Identity & provisioning diagram mapping:\n  A = HR provisioning workflow inputs to Provisioning System\n  B = Application Servers (connected from Provisioning System)\n  C = Database Servers (connected from Provisioning System)\n  D = Active Directory Enabled Workstations (connected via Directory Server)\n  E = Directory Server connection\n  F = Incident Management System connection\n\nFor questions 82-84, please refer to the following scenario:\n\nAlex has been with the university he works at for over 10 years. During that time, he has been a system administrator and a database administrator, and he has worked in the university's help desk. He is now a manager for the team that runs the university's web applications. Using the provisioning diagram shown here, answer the following questions.\n\nB A\n\nProvisioning System F Application Servers\n\nIncident Management C System\n\nE Database Servers\n\nDirectory Server D\n\nActive Directory Enabled Workstations",
+    "scenarioContext": "Alex has worked at the university for more than 10 years. He previously worked in system administration, database administration, and the help desk. He now manages the team that runs the university’s web applications.",
+    "exhibit": {
+      "file": "isc2-ch9-q82.webp",
+      "alt": "Provisioning diagram with inputs at A and labeled destinations B through F for application servers, database servers, Active Directory workstations, directory services, and incident management."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9038,7 +9118,11 @@
       "think-like-a-manager"
     ],
     "stem": "Alex has access to B, C, and D. What concern should he raise to the university's identity management team?",
-    "scenarioContext": "Identity & provisioning diagram mapping:\n  A = HR provisioning workflow inputs\n  B = Application Servers (Alex's current team)\n  C = Database Servers (Alex's previous role)\n  D = Active Directory Enabled Workstations\n  E = Directory Server connection | F = Incident Management System\n\nFor questions 82-84, please refer to the following scenario:\n\nAlex has been with the university he works at for over 10 years. During that time, he has been a system administrator and a database administrator, and he has worked in the university's help desk. He is now a manager for the team that runs the university's web applications. Using the provisioning diagram shown here, answer the following questions.\n\nB A\n\nProvisioning System F Application Servers\n\nIncident Management C System\n\nE Database Servers\n\nDirectory Server D\n\nActive Directory Enabled Workstations",
+    "scenarioContext": "Alex has worked at the university for more than 10 years. He previously worked in system administration, database administration, and the help desk. He now manages the team that runs the university’s web applications.",
+    "exhibit": {
+      "file": "isc2-ch9-q82.webp",
+      "alt": "Provisioning diagram with inputs at A and labeled destinations B through F for application servers, database servers, Active Directory workstations, directory services, and incident management."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9112,7 +9196,11 @@
       "ch9-q84"
     ],
     "stem": "When Alex changes roles, what should occur?",
-    "scenarioContext": "Identity & provisioning diagram mapping:\n  A = HR provisioning workflow inputs | B = Application Servers | C = Database Servers | D = Active Directory Enabled Workstations | E = Directory Server | F = Incident Management System\n\nFor questions 82-84, please refer to the following scenario:\n\nAlex has been with the university he works at for over 10 years. During that time, he has been a system administrator and a database administrator, and he has worked in the university's help desk. He is now a manager for the team that runs the university's web applications. Using the provisioning diagram shown here, answer the following questions.\n\nB A\n\nProvisioning System F Application Servers\n\nIncident Management C System\n\nE Database Servers\n\nDirectory Server D\n\nActive Directory Enabled Workstations",
+    "scenarioContext": "Alex has worked at the university for more than 10 years. He previously worked in system administration, database administration, and the help desk. He now manages the team that runs the university’s web applications.",
+    "exhibit": {
+      "file": "isc2-ch9-q82.webp",
+      "alt": "Provisioning diagram with inputs at A and labeled destinations B through F for application servers, database servers, Active Directory workstations, directory services, and incident management."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10835,8 +10923,12 @@
       "isc2-official-practice",
       "ch10-q94"
     ],
-    "stem": "Grace is considering the use of new identification cards in her organization that will be used for physical access control. She comes across the sample card shown here and is unsure of the technology it uses. What type of card is this?\n\nSEX DATE OF BIRTH This card belongs to the Social Security Administration and you must return it if we ask for it. If you find a card that isn't yours, please return it to: Social Security Administration P.O. Box 17087, Baltimore, MD 21235\n\nSignature Social Security Administration Form SSA-0000",
-    "scenarioContext": "Visual exhibit (back of ID card sample): Plastic card back featuring a horizontal dark magnetic stripe running along the upper edge above the signature strip and agency text.",
+    "stem": "Grace is considering the use of new identification cards in her organization that will be used for physical access control. She comes across the sample card shown here and is unsure of the technology it uses. What type of card is this?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q94.webp",
+      "alt": "Back of a sample identification card showing a dark band near the top and a signature panel beneath it."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -12192,7 +12284,11 @@
       "ch12-q3"
     ],
     "stem": "Ben's company is considering configuring their systems to work at the level shown by point A on the diagram. What level are they setting the sensitivity to?",
-    "scenarioContext": "Biometric sensitivity tradeoff chart (X-axis: Sensitivity increasing left-to-right; Y-axis: Percent error):\n  - FRR curve rises with Sensitivity; FAR curve falls with Sensitivity.\n  - Point A marks the intersection where FAR and FRR cross.\n  - Point B sits to the left of Point A (low sensitivity threshold where FAR > FRR).\n\nBen's organization is adopting biometric authentication for their high-security building's access control system. Using this chart, answer questions 3-5 about their adoption of the technology.\n\nFAR FRR\n\nt n e c r e A P\n\nB\n\nSensitivity",
+    "scenarioContext": "Ben’s organization is adopting biometric authentication for its high-security building’s access control system.",
+    "exhibit": {
+      "file": "isc2-ch12-q3.webp",
+      "alt": "Percent error versus sensitivity. The FAR curve falls and the FRR curve rises as sensitivity increases. A points to their intersection. B points to the FRR curve at a lower sensitivity."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -12569,7 +12665,11 @@
       "ch12-q58"
     ],
     "stem": "If the client has already authenticated to the KDC, what does the client workstation send to the KDC at point A when it wants to access a resource?",
-    "scenarioContext": "Kerberos resource-access flow diagram (post-initial-logon):\n  Step A: Client Workstation --(request)--> KDC (Ticket Granting Service)\n  Step B: KDC --(response)--> Client Workstation\n  Step C/D: Client Workstation <--> Target Service\n\nUse your knowledge of Kerberos authentication and authorization as well as the following diagram to answer questions 58-60.\n\nA\n\nKDC Client Workstation\n\nB\n\nKDC Client Workstation\n\nC D\n\nClient Workstation Service",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q58.webp",
+      "alt": "Kerberos diagram showing four arrows labeled A through D between the client workstation, KDC, and a service."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -12645,7 +12745,11 @@
       "ch12-q59"
     ],
     "stem": "What occurs between steps A and B?",
-    "scenarioContext": "Kerberos resource-access flow diagram:\n  Step A: Client Workstation --(TGT + service request)--> KDC\n  Step B: KDC --(response)--> Client Workstation\n  Step C/D: Client Workstation <--> Target Service\n\nUse your knowledge of Kerberos authentication and authorization as well as the following diagram to answer questions 58-60.\n\nA\n\nKDC Client Workstation\n\nB\n\nKDC Client Workstation\n\nC D\n\nClient Workstation Service",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q58.webp",
+      "alt": "Kerberos diagram showing four arrows labeled A through D between the client workstation, KDC, and a service."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -12718,7 +12822,11 @@
       "ch12-q60"
     ],
     "stem": "What system or systems does the service that is being accessed use to validate the ticket?",
-    "scenarioContext": "Kerberos resource-access flow diagram:\n  Step A: Client Workstation --> KDC | Step B: KDC --> Client Workstation\n  Step C/D: Client Workstation --(service ticket + authenticator)--> Target Service\n\nUse your knowledge of Kerberos authentication and authorization as well as the following diagram to answer questions 58-60.\n\nA\n\nKDC Client Workstation\n\nB\n\nKDC Client Workstation\n\nC D\n\nClient Workstation Service",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q58.webp",
+      "alt": "Kerberos diagram showing four arrows labeled A through D between the client workstation, KDC, and a service."
+    },
     "highlightKeywords": [],
     "options": [
       {

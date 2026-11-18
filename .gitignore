@@ -21,3 +21,5 @@ pnpm-debug.log*
 
 # extracted reference book outputs (PDF dumps, raw JSONs, images, audit artifacts)
 scripts/extracted/
+
+/ref_local/

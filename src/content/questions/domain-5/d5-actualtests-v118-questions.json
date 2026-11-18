@@ -1,0 +1,316 @@
+[
+  {
+    "id": "cissp-d5-s5.4-q036",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.4",
+    "subdomainName": "Implement and Manage Authorization Mechanisms",
+    "topicId": "5.4.1",
+    "topicName": "DAC, MAC, RBAC, ABAC, Rule-Based, Risk-Based Access Control",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Mandatory access control",
+      "Security labels",
+      "Subject clearance"
+    ],
+    "keyTerms": [
+      "Mandatory access control",
+      "Security labels",
+      "Subject clearance"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "An agency uses a centrally enforced mandatory access control policy for sensitive files. Which information must the access mechanism compare for its classification-based decision?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The names of the users' job roles.",
+        "isCorrect": false,
+        "explanation": "Job roles determine entitlements in role-based access control. The mandatory policy here uses security levels and categories.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "The subject's clearance and the object's security label.",
+        "isCorrect": true,
+        "explanation": "The mechanism compares subject clearance to the object's label and applies centrally defined rules, which users cannot override at their discretion.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "The time and duration of the currently assigned task.",
+        "isCorrect": false,
+        "explanation": "A task or time limit can constrain a workflow or provide context. It does not supply the clearance and classification used by this mandatory policy.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "The user's identity and the owner's discretionary grant.",
+        "isCorrect": false,
+        "explanation": "An owner's grant is a feature of discretionary access control. The mandatory check must still be enforced regardless of an owner's preference.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Label-based mandatory access control enforces centrally defined policy using subject and object attributes such as clearance, classification, and categories.",
+      "managerMindsetTip": "Identify which authority can set or change access policy before naming the access control model.",
+      "studyFocusDirective": "Contrast an owner's permission grant, a role assignment, and a clearance-to-label decision.",
+      "keyTakeaway": "Label-based MAC compares subject clearance with the object's security label.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1485, p. 719 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AC-3(3) Mandatory Access Control and AC-16 Security and Privacy Attributes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.3-q034",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.2",
+    "topicName": "Kerberos (AS, TGS, KDC, Tickets), RADIUS, TACACS+, LDAP",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Kerberos authenticator",
+      "Timestamp",
+      "Clock synchronization"
+    ],
+    "keyTerms": [
+      "Kerberos authenticator",
+      "Timestamp",
+      "Clock synchronization"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "An application server intermittently rejects requests after its clock drifts several minutes. In Kerberos V5, which field in the client's authenticator lets the server check request freshness?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The client network address.",
+        "isCorrect": false,
+        "explanation": "A ticket can carry client addresses as optional restrictions. An address cannot establish when the client produced the authenticator.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "The ticket-granting ticket.",
+        "isCorrect": false,
+        "explanation": "The client uses a ticket-granting ticket with the ticket-granting service. The application server checks the authenticator supplied with the application service ticket.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "The client timestamp.",
+        "isCorrect": true,
+        "explanation": "The authenticator contains the client's current time with a microseconds field. The server checks it against the permitted clock skew.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "The client/TGS session key.",
+        "isCorrect": false,
+        "explanation": "The client/TGS session key supports exchanges with the ticket-granting service. Key material does not provide the client's current time.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Kerberos V5 checks a timestamp from the authenticator along with the service ticket. Clocks that drift beyond the permitted window can cause authentication failure.",
+      "managerMindsetTip": "Treat time synchronization as an authentication dependency when investigating widespread ticket failures.",
+      "studyFocusDirective": "Compare the purposes and contents of a Kerberos ticket and its accompanying authenticator.",
+      "keyTakeaway": "Kerberos uses the authenticator timestamp to check that a request is fresh.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1503, pp. 730–731 (adapted)"
+        },
+        {
+          "source": "IETF RFC 4120",
+          "section": "Sections 3.2.3 and 5.5.1, Authenticator and Clock Skew"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.4-q037",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.4",
+    "subdomainName": "Implement and Manage Authorization Mechanisms",
+    "topicId": "5.4.1",
+    "topicName": "DAC, MAC, RBAC, ABAC, Rule-Based, Risk-Based Access Control",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Role-based access control",
+      "Provisioning",
+      "Personnel changes"
+    ],
+    "keyTerms": [
+      "Role-based access control",
+      "Provisioning",
+      "Personnel changes"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "A retailer is deciding when role-based access control will simplify administration. Which requirement best supports adopting role-based access control?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Access decisions must follow the classification label of each record.",
+        "isCorrect": false,
+        "explanation": "Classification and clearance are typical inputs for label-based mandatory controls. Assigning a role alone would not implement that policy.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Employees' eligibility must be determined by their formal security clearances.",
+        "isCorrect": false,
+        "explanation": "A security clearance is a subject attribute. It is different from membership in a group of job responsibilities.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Staff frequently change assignments among a small set of standardized jobs.",
+        "isCorrect": true,
+        "explanation": "Stable job roles allow administrators to maintain permission bundles and change a person's role membership when duties change.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Each account owner must be able to delegate any permission directly.",
+        "isCorrect": false,
+        "explanation": "Delegating permissions at a resource owner's discretion is characteristic of DAC. RBAC assigns permissions through organizational roles.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "RBAC associates permissions with roles and assigns users to those roles. It fits environments with recurring job functions and frequent personnel changes.",
+      "managerMindsetTip": "Include removal of the old role in the transfer workflow to avoid accumulated privileges.",
+      "studyFocusDirective": "Design permission bundles for two jobs and describe which memberships change when an employee moves between them.",
+      "keyTakeaway": "RBAC simplifies access changes when users rotate through stable job roles.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1518, p. 739 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AC-2 Account Management and AC-3(7) Role-Based Access Control"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.3-q035",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.2",
+    "topicName": "Kerberos (AS, TGS, KDC, Tickets), RADIUS, TACACS+, LDAP",
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Kerberos session keys",
+      "Key distribution center",
+      "Symmetric cryptography"
+    ],
+    "keyTerms": [
+      "Kerberos session keys",
+      "Key distribution center",
+      "Symmetric cryptography"
+    ],
+    "tags": [
+      "actualtests-v118"
+    ],
+    "stem": "In a standard Kerberos V5 service exchange, what does the key distribution center generate to provide shared cryptographic material for the client and service?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A reusable bearer token that contains the client's password.",
+        "isCorrect": false,
+        "explanation": "Kerberos issues tickets, but this exchange does not place a client's password in a bearer token. The question concerns the cryptographic key shared with the service.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "A new long-term password shared by the client and service.",
+        "isCorrect": false,
+        "explanation": "A password can be associated with long-term client authentication. The KDC generates separate, time-limited key material for the exchange.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "A public key distributed in a new service certificate.",
+        "isCorrect": false,
+        "explanation": "Public-key mechanisms can extend initial Kerberos authentication. The ordinary client/service ticket includes a symmetric session key.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A temporary symmetric session key.",
+        "isCorrect": true,
+        "explanation": "The KDC generates a temporary key for the client and service. The service receives its copy through the protected ticket.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "A Kerberos session key is temporary shared key material generated by the KDC. The ticket conveys it securely to the service and identifies the client.",
+      "managerMindsetTip": "Separate service credentials used to protect tickets from temporary keys for individual exchanges.",
+      "studyFocusDirective": "Trace what the client, KDC, and service each receive when a service ticket is issued.",
+      "keyTakeaway": "The Kerberos KDC generates temporary symmetric session keys.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 1554, p. 761 (adapted)"
+        },
+        {
+          "source": "IETF RFC 4120",
+          "section": "Section 1.7, Session Key and Ticket"
+        }
+      ]
+    }
+  }
+]

@@ -203,6 +203,8 @@ Every question file in `src/content/questions/domain-*/` is a JSON array of obje
 > [!IMPORTANT]
 > **Math Verification Rule for Question Authoring Agents**: Whenever `questionStyle` is `"calculation"` or involves quantitative numbers (`AV`, `EF`, `SLE`, `ARO`, `ALE`, `MTBF`, `MTTR`, `RTO`, `RPO`), the authoring agent MUST verify the arithmetic so that the numbers in `stem`, `scenarioContext`, and `options` match `explanation.summary` with 100% mathematical precision.
 
+For image-based questions, add `"exhibit": { "file": "example.webp", "alt": "Accessible description of the exhibit" }` and place the image in `public/question-exhibits/`. Questions that share an exhibit can reference the same file. Keep supporting scenario details in `scenarioContext`.
+
 ---
 
 ## 4. Exam Manifest JSON Examples

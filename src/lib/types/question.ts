@@ -56,6 +56,11 @@ export interface QuestionReference {
   section: string;
 }
 
+export interface QuestionExhibit {
+  file: string;
+  alt: string;
+}
+
 export interface QuestionExplanation {
   correctOptionId: OptionId;
   summary: string;
@@ -84,6 +89,7 @@ export interface Question {
   tags: string[];
   stem: string;
   scenarioContext: string | null;
+  exhibit?: QuestionExhibit;
   highlightKeywords: string[];
   options: QuestionOption[];
   explanation: QuestionExplanation;

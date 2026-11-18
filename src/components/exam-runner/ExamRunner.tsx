@@ -44,6 +44,7 @@ import type {
   QuestionResponseState,
 } from '../../lib/types/session';
 import ThemeToggle from '../layout/ThemeToggle';
+import { QuestionExhibit } from './QuestionExhibit';
 
 interface Props {
   exam: HydratedExamPayload;
@@ -564,7 +565,7 @@ export default function ExamRunner({ exam }: Props) {
     currentQuestion.explanation.correctOptionId;
 
   // Parse scenarioContext into clean chips if pipe-separated
-  const scenarioChips = currentQuestion.scenarioContext
+  const scenarioChips = !currentQuestion.exhibit && currentQuestion.scenarioContext
     ? currentQuestion.scenarioContext
         .split('|')
         .map((s) => s.trim())
@@ -866,6 +867,11 @@ export default function ExamRunner({ exam }: Props) {
           </div>
 
           {/* Optional Scenario Context Strip (Scannable Chips, Not Wall of Text) */}
+          {currentQuestion.exhibit && currentQuestion.scenarioContext && (
+            <p className="mt-4 rounded-2xl border border-slate-200/80 bg-white/70 p-3 text-sm leading-relaxed text-slate-700 dark:border-slate-800/80 dark:bg-slate-900/50 dark:text-slate-300">
+              {currentQuestion.scenarioContext}
+            </p>
+          )}
           {scenarioChips.length > 0 && (
             <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-slate-200/80 bg-white/70 p-3 dark:border-slate-800/80 dark:bg-slate-900/50">
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -892,6 +898,8 @@ export default function ExamRunner({ exam }: Props) {
           >
             {highlightedStem}
           </h1>
+
+          {currentQuestion.exhibit && <QuestionExhibit exhibit={currentQuestion.exhibit} />}
 
           {/* Answer Options (A, B, C, D) */}
           <div className="mt-7 space-y-3">

@@ -550,7 +550,11 @@
       "ch8-q8"
     ],
     "stem": "Jaime is a technical support analyst and is asked to visit a user whose computer is display-ing the error message shown here. What state has this computer entered?",
-    "scenarioContext": "Visual exhibit (Windows Blue Screen of Death screenshot):\n  PAGE_FAULT_IN_NONPAGED_AREA\n  Technical information: *** STOP: 0x00000050 (0xF89861A0, 0x00000000, ...)\n  *** SPCMDCON.SYS - Address F89861A0 base at F897D000\n  Beginning dump of physical memory. Physical memory dump complete.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q8.webp",
+      "alt": "Blue Windows error screen with the stop message PAGE_FAULT_IN_NONPAGED_AREA."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -698,8 +702,12 @@
       "ch8-q10",
       "think-like-a-manager"
     ],
-    "stem": "In the diagram shown here, which is an example of a method?\n\nAccount\n\nBalance: currency = 0 Owner: string\n\nAddFunds(deposit: currency) RemoveFunds(withdrawal: currency)",
+    "stem": "In the diagram shown here, which is an example of a method?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q10.webp",
+      "alt": "Account class diagram with Balance and Owner fields and AddFunds and RemoveFunds operations."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -1148,7 +1156,11 @@
       "ch8-q16"
     ],
     "stem": "Berta is analyzing the logs of the Windows Firewall on one of her servers and comes across the entries shown in this figure. What type of attack do these entries indicate?",
-    "scenarioContext": "Visual exhibit (Windows Firewall log excerpt, 2016-04-21 05:14:52 - 05:15:04):\n  Repeated `DROP TCP 192.168.250.4 -> 192.168.42.14` entries targeting sequential destination ports `21, 22, 23, 25, 53, 80, 110, 111` (SYN packets) within 12 seconds.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q16.webp",
+      "alt": "Excerpt from a Windows Firewall log showing repeated dropped TCP packets."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -2338,7 +2350,11 @@
       "ch8-q32"
     ],
     "stem": "Referring to the database transaction shown here, what would happen if no account exists in the Accounts table with account number 1001?",
-    "scenarioContext": "Database SQL snippet shown in figure:\n  BEGIN TRANSACTION;\n  UPDATE accounts SET balance = balance + 250 WHERE account_number = 1001;\n  UPDATE accounts SET balance = balance - 250 WHERE account_number = 2002;\n  END TRANSACTION;",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q32.webp",
+      "alt": "SQL transaction adds 250 to account 1001, subtracts 250 from account 2002, and ends the transaction."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -4131,8 +4147,12 @@
       "ch8-q56",
       "think-like-a-manager"
     ],
-    "stem": "What type of project management tool is shown in the figure?\n\n40 t=1 mo t=3 mo D F\n\nt=3 mo t=3 mo 10 30 50 A E B C t=4 mo t=3 mo 20",
+    "stem": "What type of project management tool is shown in the figure?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q56.webp",
+      "alt": "Project schedule network diagram showing numbered nodes and activities A through F with durations in months."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5023,7 +5043,11 @@
       "ch8-q68"
     ],
     "stem": "In the transaction shown here, what would happen if the database failed in between the first and second update statements?",
-    "scenarioContext": "Database SQL snippet shown in figure:\n  BEGIN TRANSACTION;\n  UPDATE accounts SET balance = balance + 250 WHERE account_number = 1001;\n  UPDATE accounts SET balance = balance - 250 WHERE account_number = 2002;\n  COMMIT TRANSACTION;",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q68.webp",
+      "alt": "SQL transaction adds 250 to account 1001, subtracts 250 from account 2002, and commits."
+    },
     "highlightKeywords": [
       "FIRST"
     ],
@@ -5098,8 +5122,12 @@
       "ch8-q69",
       "think-like-a-manager"
     ],
-    "stem": "In the diagram shown here, which is an example of an attribute?\n\nAccount\n\nBalance: currency = 0 Owner: string\n\nAddFunds(deposit: currency) RemoveFunds(withdrawal: currency)",
+    "stem": "In the diagram shown here, which is an example of an attribute?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q69.webp",
+      "alt": "Account class diagram with Balance and Owner fields and AddFunds and RemoveFunds operations."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5250,8 +5278,12 @@
       "isc2-official-practice",
       "ch8-q71"
     ],
-    "stem": "David is working on developing a project schedule for a software development effort, and he comes across the chart shown here. What type of chart is this?\n\nWEEKS: 1 2 3 4 5 6 7 8 9 10 21 22 23\n\nWBS 1 Summary Element 1 55% complete\n\nWBS 1.1 Activity A 75% complete START-TO-START WBS 1.2 Activity B 67% complete FINISH-TO-START WBS 1.3 Activity C 50% complete FINISH-TO-FINISH WBS 1.4 Activity D 0% complete\n\nWBS 2 Summary Element 2 0% complete\n\nWBS 2.1 Activity E 0% complete\n\nWBS 2.2 Activity F 0% complete\n\nWBS 2.3 Activity G 0% complete TODAY",
-    "scenarioContext": "Visual exhibit (Project schedule chart): Horizontal timeline divided into columns Week 1–Week 10 with horizontal task bars across calendar time, red dependency connector arrows between sequential tasks, and a dashed vertical current-date progress line.",
+    "stem": "David is working on developing a project schedule for a software development effort, and he comes across the chart shown here. What type of chart is this?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q71.webp",
+      "alt": "Week-by-week project schedule with horizontal bars, progress percentages, and dependencies."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5475,8 +5507,12 @@
       "isc2-official-practice",
       "ch8-q74"
     ],
-    "stem": "What part of the security review process are the input parameters shown in the diagram used for?\n\nConfiguration Back-end User input Control input input input parameters parameters parameters parameters\n\nParameter tracking through code",
+    "stem": "What part of the security review process are the input parameters shown in the diagram used for?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q74.webp",
+      "alt": "Configuration, user, control, and back-end input parameters lead to parameter tracking through code."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -5698,8 +5734,12 @@
       "isc2-official-practice",
       "ch8-q77"
     ],
-    "stem": "What software development model is shown in the figure?\n\nDetermine objectives, Evaluate alternatives. alternatives, and constraints. Identify and resolve risks.\n\nP1 P2 P3\n\nPlan next phases. Develop and verify next-level product.\n\nImage reprinted from CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide, 7th Edition © John Wiley & Sons 2015, reprinted with permission.",
+    "stem": "What software development model is shown in the figure?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q77.webp",
+      "alt": "Software development diagram with a spiral crossing four named development and evaluation regions."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -6143,7 +6183,11 @@
       "ch8-q83"
     ],
     "stem": "TJ is inspecting a system where the user reported a strange error message and the inability to access files. He sees the window shown in this figure. What type of malware should TJ suspect?",
-    "scenarioContext": "Visual exhibit (screen warning popup): Red alert dialog titled 'CryptoLocker' stating: 'Your personal files are encrypted! ... RSA-2048 unique public key ... pay 300 USD / 300 EUR to obtain the private key' with a countdown timer before key destruction.",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q83.webp",
+      "alt": "A computer warning window reports encrypted files and shows a countdown and a payment prompt."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7111,8 +7155,12 @@
       "ch8-q96",
       "think-like-a-manager"
     ],
-    "stem": "What approach to technology management integrates the three components of technology management shown in this illustration?\n\nSoftware Development\n\nQuality Assurance Operations\n\nImage reprinted from CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide, 7th Edition © John Wiley & Sons 2015, reprinted with permission.",
+    "stem": "What approach to technology management integrates the three components of technology management shown in this illustration?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q96.webp",
+      "alt": "Three overlapping circles labeled Software Development, Quality Assurance, and Operations."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7559,8 +7607,12 @@
       "isc2-official-practice",
       "ch8-q102"
     ],
-    "stem": "What application development method uses the cycle shown here?\n\nRequirements Planning\n\nUser Design Construction\n\nCutover",
+    "stem": "What application development method uses the cycle shown here?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q102.webp",
+      "alt": "Requirements Planning leads into User Design and Construction, which loop before Cutover."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -7634,7 +7686,11 @@
       "ch8-q103"
     ],
     "stem": "Kathleen is reviewing the Ruby code shown here. What security technique is this code using?",
-    "scenarioContext": "Ruby code snippet shown in figure:\n  insert_new_user = db.prepare \"INSERT INTO users (name, userid, gender, usertype) VALUES (?, ?, ?, ?)\"\n  insert_new_user.execute 'davids', '194567', 'male', 'admin'",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch8-q103.webp",
+      "alt": "Ruby code prepares an INSERT statement with placeholders and supplies the values separately."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8009,8 +8065,12 @@
       "isc2-official-practice",
       "ch9-q28"
     ],
-    "stem": "In the database table shown here, which column would be the best candidate for a primary key?\n\nCompany ID Company Name Address City State ZIP Code Telephone Sales Rep 1 Acme Widgets 234 Main Street Columbia MD 21040 (301) 555-1212 14 2 Abrams Consulting 1024 Sample Street Miami FL 33131 (305) 555-1995 14 3 Dome Widgets 913 Sorin Street South Bend IN 46556 (574) 555-5863 26",
+    "stem": "In the database table shown here, which column would be the best candidate for a primary key?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q28.webp",
+      "alt": "Database table showing company IDs, names, addresses, phone numbers, and sales representatives for three companies."
+    },
     "highlightKeywords": [
       "BEST",
       "PRIMARY"
@@ -8236,8 +8296,12 @@
       "ch9-q111",
       "think-like-a-manager"
     ],
-    "stem": "Norm is starting a new software project with a vendor that uses an SDLC approach to development. When he arrives on the job, he receives a document that has the sections shown here. What type of planning document is this?\n\nExecutive Summary section with a high-level schedule of key activities and milestones\n\nDetailed project tasks for the applicable SDLC phases\n\nSpecial interest areas tracked outside the SDLC phase areas as required",
+    "stem": "Norm is starting a new software project with a vendor that uses an SDLC approach to development. When he arrives on the job, he receives a document that has the sections shown here. What type of planning document is this?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch9-q111.webp",
+      "alt": "Schedule document with callouts for an executive summary, detailed project tasks, and separately tracked special-interest areas."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -8464,8 +8528,12 @@
       "isc2-official-practice",
       "ch10-q27"
     ],
-    "stem": "Jackie is creating a database that contains the Customers table, shown here. She is designing a new table to contain Orders and plans to use the Company ID in that table to uniquely identify the customer associated with each order. What role does the Company ID field play in the Orders table?\n\nCompany ID Company Name Address City State ZIP Code Telephone Sales Rep 1 Acme Widgets 234 Main Street Columbia MD 21040 (301) 555-1212 14 2 Abrams Consulting 1024 Sample Street Miami FL 33131 (305) 555-1995 14 3 Dome Widgets 913 Sorin Street South Bend IN 46556 (574) 555-5863 26",
+    "stem": "Jackie is creating a database that contains the Customers table, shown here. She is designing a new table to contain Orders and plans to use the Company ID in that table to uniquely identify the customer associated with each order. What role does the Company ID field play in the Orders table?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch10-q27.webp",
+      "alt": "Customers table with company IDs and other details for three companies."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -9513,8 +9581,12 @@
       "isc2-official-practice",
       "ch12-q7"
     ],
-    "stem": "What software development life-cycle model is shown in the following illustration?\n\nSystem Requirements\n\nSoftware Requirements\n\nPreliminary Design\n\nDetailed Design\n\nCode and Debug\n\nTesting\n\nOperations and Maintenance",
+    "stem": "What software development life-cycle model is shown in the following illustration?",
     "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q7.webp",
+      "alt": "Software development stages descend in order from System Requirements to Operations and Maintenance."
+    },
     "highlightKeywords": [],
     "options": [
       {
@@ -10181,8 +10253,12 @@
       "isc2-official-practice",
       "ch12-q125"
     ],
-    "stem": "When Ben lists the files on a Linux system, he sees a set of attributes as shown in the following image.\n\nThe letters rwx indicate different levels of what?",
-    "scenarioContext": "Visual exhibit (Linux terminal screenshot):\n  $ ls -l\n  total 8\n  -rw-r--r-- 1 demo demo 93 Apr 11 23:38 example.txt\n  -rw-rw-r-- 1 demo demo 15 Apr 11 23:37 index.html",
+    "stem": "In the Linux file listing shown, the letters rwx indicate different levels of what?",
+    "scenarioContext": null,
+    "exhibit": {
+      "file": "isc2-ch12-q125.webp",
+      "alt": "Linux file listing showing permission strings with r, w, x, and d characters."
+    },
     "highlightKeywords": [],
     "options": [
       {
