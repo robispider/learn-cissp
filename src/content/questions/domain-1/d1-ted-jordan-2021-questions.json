@@ -1,0 +1,394 @@
+[
+  {
+    "id": "cissp-d1-s1.3-q011",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.3",
+    "subdomainName": "Security Governance Principles & Alignment",
+    "topicId": "1.3.3",
+    "topicName": "Security Frameworks (NIST, ISO 27001, COBIT, SABSA)",
+    "cognitiveLevel": "apply",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "ISO/IEC 27002",
+      "Information security controls",
+      "ISMS"
+    ],
+    "keyTerms": [
+      "ISO/IEC 27002",
+      "Information security controls",
+      "ISMS"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A team already has the requirements for its information security management system. It now needs detailed implementation guidance for individual information security controls. Which standard should it consult?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "ISO/IEC 27001",
+        "isCorrect": false,
+        "explanation": "ISO/IEC 27001 specifies requirements for the management system, including risk treatment. The team is looking for detailed guidance on the controls themselves.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "ISO/IEC 27002",
+        "isCorrect": true,
+        "explanation": "ISO/IEC 27002 describes information security controls and provides implementation guidance for selecting and applying them.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "ISO/IEC 27003",
+        "isCorrect": false,
+        "explanation": "ISO/IEC 27003 gives guidance on the management system and its requirements. Its focus differs from a catalog of individual controls.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "ISO/IEC 27004",
+        "isCorrect": false,
+        "explanation": "ISO/IEC 27004 focuses on monitoring, measurement, analysis, and evaluation. It helps assess performance after controls are selected.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Use ISO/IEC 27002 to understand information security controls and how to implement them. ISO/IEC 27001 supplies the requirements for the information security management system.",
+      "managerMindsetTip": "Start by deciding whether the team needs management-system requirements, implementation guidance for a control, or a way to measure performance.",
+      "studyFocusDirective": "Map ISO/IEC 27001, 27002, 27003, and 27004 to their distinct purposes.",
+      "keyTakeaway": "ISO/IEC 27002 provides control guidance within the ISO/IEC 27000 family.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 1, question 12, PDF page 40 (adapted)"
+        },
+        {
+          "source": "ISO/IEC 27002:2022",
+          "section": "Scope and information security controls"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.6-q002",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.6",
+    "subdomainName": "Supply Chain Risk Management (SCRM)",
+    "topicId": "1.6.2",
+    "topicName": "SLAs, NDAs, MOUs, ISAs, Right-to-Audit",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Service-level agreement",
+      "Vendor performance",
+      "Measurable obligations"
+    ],
+    "keyTerms": [
+      "Service-level agreement",
+      "Vendor performance",
+      "Measurable obligations"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "An automotive company is outsourcing its help desk. It wants a contractual commitment to specific response times, uptime targets, and monthly performance reporting. Which mechanism best meets that need?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "A key risk indicator dashboard.",
+        "isCorrect": false,
+        "explanation": "Risk indicators can warn about emerging exposure. A dashboard does not create a commitment by the supplier to meet service targets.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "An internal key goal indicator for completing the transition.",
+        "isCorrect": false,
+        "explanation": "A transition goal measures completion of an internal project. It does not define the provider's ongoing service obligations.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "A monthly key performance indicator by itself.",
+        "isCorrect": false,
+        "explanation": "A performance indicator can become part of the agreement. A metric alone omits who is accountable and how missed targets are handled.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "A service-level agreement that defines targets and reporting.",
+        "isCorrect": true,
+        "explanation": "An SLA records agreed service obligations, how measurements are made, and how parties handle failure to meet the targets.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "A service-level agreement makes vendor expectations measurable and accountable. It can contain response thresholds, reporting cadence, and escalation for missed commitments.",
+      "managerMindsetTip": "Agree on service outcomes and how they will be measured before committing to a supplier.",
+      "studyFocusDirective": "Draft a response-time target with a measurement window, reporting requirement, and escalation procedure.",
+      "keyTakeaway": "An SLA formalizes measurable supplier commitments and reporting.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 1, question 23, PDF page 42 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "SA-9 External System Services"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.4-q083",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.4",
+    "topicName": "Risk Treatment (Mitigate, Transfer, Accept, Avoid)",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Risk avoidance",
+      "Risk treatment"
+    ],
+    "keyTerms": [
+      "Risk avoidance",
+      "Risk treatment"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A company plans to build an office at a site with unacceptable flood exposure. Leadership cancels the project at that site and selects an alternative location outside the flood zone. Which treatment applies to the original site's risk?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Mitigation",
+        "isCorrect": false,
+        "explanation": "Mitigation would reduce exposure while the company continued at the original site, for example by adding flood protection.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Avoidance",
+        "isCorrect": true,
+        "explanation": "Canceling the activity at the original site removes the company's exposure to the specific risk associated with that location.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Acceptance",
+        "isCorrect": false,
+        "explanation": "Acceptance would mean proceeding despite the identified exposure under a documented risk decision.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Transfer",
+        "isCorrect": false,
+        "explanation": "Transfer allocates consequences to another party, for instance under an insurance contract. The company eliminated the original activity.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Risk avoidance changes or stops an activity to remove the identified exposure. Choosing a different site avoids the original site risk and calls for assessment of the new site.",
+      "managerMindsetTip": "Identify the specific activity and exposure when deciding what type of treatment took place.",
+      "studyFocusDirective": "Classify cancellation, barriers, insurance, and proceeding unchanged against the four treatment types.",
+      "keyTakeaway": "Avoidance removes the activity or condition that creates the specific risk.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Practice Exam 2, question 59, PDF page 372–373 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-37 Rev. 2",
+          "section": "Risk response and risk management terminology"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.10-q022",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.10",
+    "subdomainName": "Personnel Security Policies & Processes",
+    "topicId": "1.10.1",
+    "topicName": "Hiring, Background Checks & Onboarding",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "first_action",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Employment screening",
+      "Role-based screening",
+      "Personnel security"
+    ],
+    "keyTerms": [
+      "Employment screening",
+      "Role-based screening",
+      "Personnel security"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A hiring manager is staffing roles that will handle restricted design files. Before ordering any individual screening check, what should the manager do first?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "first"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Order the same advanced screening for every applicant.",
+        "isCorrect": false,
+        "explanation": "Screening should be proportionate to the role and performed under the organization's process. Uniform advanced checks can collect information unnecessarily.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "B",
+        "text": "Request a background check from a preferred vendor immediately.",
+        "isCorrect": false,
+        "explanation": "A background check can be part of approved screening. The process determines whether it applies, how it is authorized, and when it happens.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Apply the organization's approved candidate-screening process for the role.",
+        "isCorrect": true,
+        "explanation": "The approved process defines the checks, permissible timing and authorization, and role-based requirements for consistent handling of candidates.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Let each hiring team choose its own screening tests.",
+        "isCorrect": false,
+        "explanation": "Independent screening choices create inconsistent practices. An approved process applies organizational policy and preserves accountability.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Begin personnel screening with the process approved for the role. It sets responsibilities, scope and handling requirements for any checks performed.",
+      "managerMindsetTip": "Base screening depth on the responsibilities and data access of the role.",
+      "studyFocusDirective": "Compare an approved screening checklist for an ordinary position and a position with restricted access.",
+      "keyTakeaway": "Start hiring checks with the approved, role-appropriate screening process.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 1, question 83, PDF page 55 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "PS-2 Position Risk Designation and PS-3 Personnel Screening"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d1-s1.4-q084",
+    "version": 1,
+    "domainId": "dom-1",
+    "subdomainId": "1.4",
+    "subdomainName": "Risk Management Concepts & Risk Analysis",
+    "topicId": "1.4.2",
+    "topicName": "Quantitative Risk Analysis & Cost-Benefit Evaluation (ALE, SLE, ARO, ACS)",
+    "cognitiveLevel": "apply",
+    "perspective": "risk_advisor",
+    "questionStyle": "calculation",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Exposure factor",
+      "Asset value",
+      "Single loss expectancy"
+    ],
+    "keyTerms": [
+      "Exposure factor",
+      "Asset value",
+      "Single loss expectancy"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A server fleet is valued at $200,000. A single modeled failure is expected to cause $80,000 in losses to that asset. What is the exposure factor for that event?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "20%",
+        "isCorrect": false,
+        "explanation": "Twenty percent of $200,000 is $40,000. That would understate the assumed loss from the event by half.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "25%",
+        "isCorrect": false,
+        "explanation": "A 25% exposure factor would correspond to a $50,000 loss from this asset, below the modeled $80,000.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "40%",
+        "isCorrect": true,
+        "explanation": "Divide the estimated loss per event by asset value. $80,000 ÷ $200,000 equals 0.40, or 40%.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "60%",
+        "isCorrect": false,
+        "explanation": "Sixty percent is the share of value assumed to remain after the event. Exposure factor is the share lost.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Exposure factor is the fraction of asset value expected to be lost in one event. The estimated $80,000 loss on a $200,000 asset gives an exposure factor of 40%.",
+      "managerMindsetTip": "Keep the loss per event and loss per year separate when quantifying risk.",
+      "studyFocusDirective": "Use asset value and exposure factor to compute single loss expectancy, then apply a frequency to compute annualized loss.",
+      "keyTakeaway": "Exposure factor equals expected single-event loss divided by asset value.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Practice Exam 2, question 58, PDF page 372 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 1, Risk management and risk analysis"
+        }
+      ]
+    }
+  }
+]

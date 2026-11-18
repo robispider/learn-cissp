@@ -1,0 +1,1343 @@
+[
+  {
+    "id": "cissp-d6-s6.1-q005",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 56,
+    "conceptsTested": [
+      "Internal vs. External vs. Third-Party Assessments",
+      "Has autonomy from other levels"
+    ],
+    "keyTerms": [
+      "Internal vs. External vs. Third-Party Assessments",
+      "Has autonomy from other levels"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0034",
+      "rationale-review"
+    ],
+    "stem": "Within the organizational environment, the security function should report to an organizational level that",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Has information technology oversight.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“information” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates internal vs. external vs. third-party assessments with “Has autonomy from other levels.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "B",
+        "text": "Has autonomy from other levels.",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "The question associates internal vs. external vs. third-party assessments with “Has autonomy from other levels.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "C",
+        "text": "Is an external operation.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“external” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates internal vs. external vs. third-party assessments with “Has autonomy from other levels.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "D",
+        "text": "Provides the internal audit function.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“provides” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates internal vs. external vs. third-party assessments with “Has autonomy from other levels.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The question associates internal vs. external vs. third-party assessments with “Has autonomy from other levels.”. Use the condition in the stem to distinguish this case from the other alternatives.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Has autonomy from other levels.",
+      "studyFocusDirective": "Review Internal vs. External vs. Third-Party Assessments and practice identifying the conditions that make Has autonomy from other levels applicable.",
+      "keyTakeaway": "The question associates internal vs. external vs. third-party assessments with “Has autonomy from other levels.”.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Security Management Practices, question 34, PDF page 15–16"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q021",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 47,
+    "conceptsTested": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Detection"
+    ],
+    "keyTerms": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Detection"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0057",
+      "rationale-review"
+    ],
+    "stem": "Which one of the following is the PRIMARY objective of penetration testing?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "PRIMARY"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Assessment",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“assessment” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Detection identifies indicators that support initial assessment of a potential incident."
+      },
+      {
+        "id": "B",
+        "text": "Correction",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“correction” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Detection identifies indicators that support initial assessment of a potential incident."
+      },
+      {
+        "id": "C",
+        "text": "Detection",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Detection identifies indicators that support initial assessment of a potential incident. Its goal is to measure an organization's resistance to an attack and to uncover any weakness within the environment."
+      },
+      {
+        "id": "D",
+        "text": "Protection",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“protection” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Detection identifies indicators that support initial assessment of a potential incident."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Detection identifies indicators that support initial assessment of a potential incident. Its goal is to measure an organization's resistance to an attack and to uncover any weakness within the environment.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Detection.",
+      "studyFocusDirective": "Review Vulnerability Scanning vs. Penetration Testing and practice identifying the conditions that make Detection applicable.",
+      "keyTakeaway": "Detection identifies indicators that support initial assessment of a potential incident.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Security Management Practices, question 57, PDF page 25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q022",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 56,
+    "conceptsTested": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Social engineering, configuration review, and vulnerability assessment"
+    ],
+    "keyTerms": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Social engineering, configuration review, and vulnerability assessment"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0060",
+      "rationale-review"
+    ],
+    "stem": "Penetration testing will typically include",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Generally accepted auditing practices.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“generally” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates penetration testing with “Social engineering, configuration review, and vulnerability assessment.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "B",
+        "text": "Review of Public Key Infrastructure (PKI) digital certificate, and encryption.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“public” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates penetration testing with “Social engineering, configuration review, and vulnerability assessment.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "C",
+        "text": "Social engineering, configuration review, and vulnerability assessment.",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "The question associates penetration testing with “Social engineering, configuration review, and vulnerability assessment.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "D",
+        "text": "Computer Emergency Response Team (CERT) procedures.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“computer” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates penetration testing with “Social engineering, configuration review, and vulnerability assessment.”. Use the condition in the stem to distinguish this case from the other alternatives."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "The question associates penetration testing with “Social engineering, configuration review, and vulnerability assessment.”. Use the condition in the stem to distinguish this case from the other alternatives.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Social engineering, configuration review, and vulnerability assessment.",
+      "studyFocusDirective": "Review Vulnerability Scanning vs. Penetration Testing and practice identifying the conditions that make Social engineering, configuration review, and vulnerability assessment applicable.",
+      "keyTakeaway": "The question associates penetration testing with “Social engineering, configuration review, and vulnerability assessment.”.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Security Management Practices, question 60, PDF page 27"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q023",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 57,
+    "conceptsTested": [
+      "Vulnerability Scanning vs. Penetration Testing"
+    ],
+    "keyTerms": [
+      "Vulnerability Scanning vs. Penetration Testing"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0062",
+      "source-adapted",
+      "rationale-review"
+    ],
+    "stem": "Which of the following tools can you use to assess your networks vulnerability? Choose the answer that contains all applicable statements.",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "ISS",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Consider the scope of “ISS”. Evaluate whether that choice provides the property the question asks for. ISS, Ballista and SATAN are all penetration tools."
+      },
+      {
+        "id": "B",
+        "text": "All of these statements (ISS / SATAN / Ballista).",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "ISS, Ballista and SATAN are all penetration tools."
+      },
+      {
+        "id": "C",
+        "text": "SATAN",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Consider the scope of “SATAN”. Evaluate whether that choice provides the property the question asks for. ISS, Ballista and SATAN are all penetration tools."
+      },
+      {
+        "id": "D",
+        "text": "Ballista",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Consider the scope of “Ballista”. Evaluate whether that choice provides the property the question asks for. ISS, Ballista and SATAN are all penetration tools."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "ISS, Ballista and SATAN are all penetration tools.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Vulnerability Scanning vs. Penetration Testing.",
+      "studyFocusDirective": "Review Vulnerability Scanning vs. Penetration Testing and practice identifying the conditions that make Vulnerability Scanning vs. Penetration Testing applicable.",
+      "keyTakeaway": "ISS, Ballista and SATAN are all penetration tools.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Security Management Practices, question 62, PDF page 27–28"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q024",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 56,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Tokens"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Tokens"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0288",
+      "rationale-review"
+    ],
+    "stem": "They in form of credit card-size memory cards or smart cards, or those resembling small calculators, are used to supply static and dynamic passwords are called:",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Tickets",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“tickets” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Tokens”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "B",
+        "text": "Tokens",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "The question associates sast, dast, iast, sca, fuzzing, code review with “Tokens”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "C",
+        "text": "Token passing networks",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“token” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Tokens”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "D",
+        "text": "Coupons",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“coupons” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Tokens”. Use the condition in the stem to distinguish this case from the other alternatives."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The question associates sast, dast, iast, sca, fuzzing, code review with “Tokens”. Use the condition in the stem to distinguish this case from the other alternatives.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Tokens.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make Tokens applicable.",
+      "keyTakeaway": "The question associates sast, dast, iast, sca, fuzzing, code review with “Tokens”.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Access, question 288, PDF page 138"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q025",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 54,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Perform unit testing"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Perform unit testing"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0453",
+      "source-adapted",
+      "rationale-review"
+    ],
+    "stem": "Choose the best completion for this sast, dast, iast, sca, fuzzing, code review prompt. Development staff should:",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "BEST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Implement systems",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“implement” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Perform unit testing”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "B",
+        "text": "Support production data",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“support” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Perform unit testing”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "C",
+        "text": "Perform unit testing",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "The question associates sast, dast, iast, sca, fuzzing, code review with “Perform unit testing”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "D",
+        "text": "Perform acceptance testing",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“acceptance” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Perform unit testing”. Use the condition in the stem to distinguish this case from the other alternatives."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "The question associates sast, dast, iast, sca, fuzzing, code review with “Perform unit testing”. Use the condition in the stem to distinguish this case from the other alternatives.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Perform unit testing.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make Perform unit testing applicable.",
+      "keyTakeaway": "The question associates sast, dast, iast, sca, fuzzing, code review with “Perform unit testing”.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Application Development Security, question 453, PDF page 217–218"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q026",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 56,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Test environment using live workloads"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Test environment using live workloads"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0472",
+      "rationale-review"
+    ],
+    "stem": "Which of the following would provide the best stress testing environment?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "BEST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Test environment using test data",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Consider the scope of “Test environment using test data”. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Test environment using live workloads”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "B",
+        "text": "Test environment using live workloads",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "The question associates sast, dast, iast, sca, fuzzing, code review with “Test environment using live workloads”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "C",
+        "text": "Production environment using test data",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“production” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Test environment using live workloads”. Use the condition in the stem to distinguish this case from the other alternatives."
+      },
+      {
+        "id": "D",
+        "text": "Production environment using live workloads",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“production” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The question associates sast, dast, iast, sca, fuzzing, code review with “Test environment using live workloads”. Use the condition in the stem to distinguish this case from the other alternatives."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "The question associates sast, dast, iast, sca, fuzzing, code review with “Test environment using live workloads”. Use the condition in the stem to distinguish this case from the other alternatives.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Test environment using live workloads.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make Test environment using live workloads applicable.",
+      "keyTakeaway": "The question associates sast, dast, iast, sca, fuzzing, code review with “Test environment using live workloads”.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Application Development Security, question 472, PDF page 225"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q006",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 49,
+    "conceptsTested": [
+      "Internal vs. External vs. Third-Party Assessments",
+      "Manager’s secretary"
+    ],
+    "keyTerms": [
+      "Internal vs. External vs. Third-Party Assessments",
+      "Manager’s secretary"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0581"
+    ],
+    "stem": "Who should NOT have access to the log files?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Security staff.",
+        "isCorrect": false,
+        "trapType": "solves_wrong_problem",
+        "explanation": "A person is authorized if he or she is a member of the internal audit staff, security staff, system administration staff, or he or she has a need for such access to perform regular duties."
+      },
+      {
+        "id": "B",
+        "text": "Internal audit staff.",
+        "isCorrect": false,
+        "trapType": "solves_wrong_problem",
+        "explanation": "A person is authorized if he or she is a member of the internal audit staff, security staff, system administration staff, or he or she has a need for such access to perform regular duties."
+      },
+      {
+        "id": "C",
+        "text": "System administration staff.",
+        "isCorrect": false,
+        "trapType": "solves_wrong_problem",
+        "explanation": "A person is authorized if he or she is a member of the internal audit staff, security staff, system administration staff, or he or she has a need for such access to perform regular duties."
+      },
+      {
+        "id": "D",
+        "text": "Manager’s secretary.",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Logs must be secured to prevent modification, deletion, and destruction. Only authorized persons should have access or permission to read logs."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Logs must be secured to prevent modification, deletion, and destruction. Only authorized persons should have access or permission to read logs.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Manager’s secretary.",
+      "studyFocusDirective": "Review Internal vs. External vs. Third-Party Assessments and practice identifying the conditions that make Manager’s secretary applicable.",
+      "keyTakeaway": "Logs must be secured to prevent modification, deletion, and destruction.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Operations Security, question 581, PDF page 274–275"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q027",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 53,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Static or dynamic"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Static or dynamic"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q0608",
+      "source-adapted",
+      "rationale-review"
+    ],
+    "stem": "Choose the best completion for this sast, dast, iast, sca, fuzzing, code review prompt. Separation of duty can be:",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "BEST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Dynamic only",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "The more difficult case is dynamic separation of duty where compliance with requirements can only be determined during system operation. Separation of duty can be either static or dynamic."
+      },
+      {
+        "id": "B",
+        "text": "Encrypted",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“encrypted” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Separation of duty can be either static or dynamic."
+      },
+      {
+        "id": "C",
+        "text": "Static only",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Consider the scope of “Static only”. Evaluate whether that choice provides the property the question asks for. Separation of duty can be either static or dynamic."
+      },
+      {
+        "id": "D",
+        "text": "Static or dynamic",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Separation of duty can be either static or dynamic."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Separation of duty can be either static or dynamic.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Static or dynamic.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make Static or dynamic applicable.",
+      "keyTakeaway": "Separation of duty can be either static or dynamic.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Operations Security, question 608, PDF page 288"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q028",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 51,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Hardware failure"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+      "Hardware failure"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1201",
+      "rationale-review"
+    ],
+    "stem": "Most of unplanned downtime of information systems is attributed to which of the following?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "MOST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Hardware failure",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Most of the downtime is cause of unexpected hardware failure. Hardware failure is very common, it’s a good practice to have spare disks, NIC and any other hardware FRU ́s in your company to minimize the downtime with quick replacements."
+      },
+      {
+        "id": "B",
+        "text": "Natural disaster",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“natural” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Most of the downtime is cause of unexpected hardware failure."
+      },
+      {
+        "id": "C",
+        "text": "Human error",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“human” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Most of the downtime is cause of unexpected hardware failure."
+      },
+      {
+        "id": "D",
+        "text": "Software failure",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“software” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Most of the downtime is cause of unexpected hardware failure."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Most of the downtime is cause of unexpected hardware failure. Hardware failure is very common, it’s a good practice to have spare disks, NIC and any other hardware FRU ́s in your company to minimize the downtime with quick replacements.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Hardware failure.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make Hardware failure applicable.",
+      "keyTakeaway": "Most of the downtime is cause of unexpected hardware failure.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Extra Practice, question 1201, PDF page 570"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q029",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 56,
+    "conceptsTested": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Red Boxes"
+    ],
+    "keyTerms": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Red Boxes"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1189",
+      "rationale-review"
+    ],
+    "stem": "Phreakers are hackers who specialize in telephone fraud. What type of telephone fraud simulates the tones of coins being deposited into a payphone?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Red Boxes",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls. The Red box basically simulates the sounds of coins being dropped into the coin slot of a payphone."
+      },
+      {
+        "id": "B",
+        "text": "Blue Boxes",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "The Blue Box, The mother of all boxes, The first box in history, which started the whole phreaking scene. Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls."
+      },
+      {
+        "id": "C",
+        "text": "White Boxes",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“white” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls."
+      },
+      {
+        "id": "D",
+        "text": "Black Boxes",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“black” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls. The Red box basically simulates the sounds of coins being dropped into the coin slot of a payphone.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Red Boxes.",
+      "studyFocusDirective": "Review Vulnerability Scanning vs. Penetration Testing and practice identifying the conditions that make Red Boxes applicable.",
+      "keyTakeaway": "Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Extra Practice, question 1189, PDF page 562–563"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q030",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.1",
+    "topicName": "Vulnerability Scanning vs. Penetration Testing",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 55,
+    "conceptsTested": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Black Boxes"
+    ],
+    "keyTerms": [
+      "Vulnerability Scanning vs. Penetration Testing",
+      "Black Boxes"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1268",
+      "rationale-review"
+    ],
+    "stem": "Phreakers are hackers who specialize in telephone fraud. What type of telephone fraud manipulates the line voltage to receive a tool-free call?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Red Boxes",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Red Boxes is right because a red box is a phreaking device that generates tones to simulate inserting coins in pay phones, thus fooling the system into completing free calls. The choices share terminology, so compare the behavior each one provides. A Black Box is a device that is hooked up to your phone that fixes your phone so that when you get a call, the caller doesn't get charged for the call."
+      },
+      {
+        "id": "B",
+        "text": "Blue Boxes",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "The Blue Box, The mother of all boxes, The first box in history, which started the whole phreaking scene. A Black Box is a device that is hooked up to your phone that fixes your phone so that when you get a call, the caller doesn't get charged for the call."
+      },
+      {
+        "id": "C",
+        "text": "White Boxes",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“white” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. A Black Box is a device that is hooked up to your phone that fixes your phone so that when you get a call, the caller doesn't get charged for the call."
+      },
+      {
+        "id": "D",
+        "text": "Black Boxes",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "A Black Box is a device that is hooked up to your phone that fixes your phone so that when you get a call, the caller doesn't get charged for the call."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "A Black Box is a device that is hooked up to your phone that fixes your phone so that when you get a call, the caller doesn't get charged for the call.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Black Boxes.",
+      "studyFocusDirective": "Review Vulnerability Scanning vs. Penetration Testing and practice identifying the conditions that make Black Boxes applicable.",
+      "keyTakeaway": "A Black Box is a device that is hooked up to your phone that fixes your phone so that when you get a call, the caller doesn't get charged for the call.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Extra Practice, question 1268, PDF page 610"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q031",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 72,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1292",
+      "rationale-review"
+    ],
+    "stem": "Which of the following statements pertaining to software testing approaches is correct?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A bottom-up approach allows interface errors to be detected earlier.",
+        "isCorrect": false,
+        "trapType": "incomplete_partial_answer",
+        "explanation": "“bottom-up” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. This is an absolute best practice in the software testing field, you should always have to keep all your testing approaches with the results as part of the product documentation."
+      },
+      {
+        "id": "B",
+        "text": "A top-down approach allows errors in critical modules to be detected earlier.",
+        "isCorrect": false,
+        "trapType": "incomplete_partial_answer",
+        "explanation": "“top-down” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. This is an absolute best practice in the software testing field, you should always have to keep all your testing approaches with the results as part of the product documentation."
+      },
+      {
+        "id": "C",
+        "text": "The test plan and results should be retained as part of the system’s permanent documentation.",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "This is an absolute best practice in the software testing field, you should always have to keep all your testing approaches with the results as part of the product documentation."
+      },
+      {
+        "id": "D",
+        "text": "Black box testing is predicted on a close examination of procedural detail.",
+        "isCorrect": false,
+        "trapType": "incomplete_partial_answer",
+        "explanation": "“black” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. This is an absolute best practice in the software testing field, you should always have to keep all your testing approaches with the results as part of the product documentation."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "This is an absolute best practice in the software testing field, you should always have to keep all your testing approaches with the results as part of the product documentation.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate SAST, DAST, IAST, SCA, Fuzzing, Code Review.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make SAST, DAST, IAST, SCA, Fuzzing, Code Review applicable.",
+      "keyTakeaway": "This is an absolute best practice in the software testing field, you should always have to keep all your testing approaches with the results as part of the product documentation.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Extra Practice, question 1292, PDF page 623"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q007",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cognitiveLevel": "understand",
+    "perspective": "risk_advisor",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Internal vs. External vs. Third-Party Assessments"
+    ],
+    "keyTerms": [
+      "Internal vs. External vs. Third-Party Assessments"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1599",
+      "rationale-review"
+    ],
+    "stem": "Which question below is NOT accurate regarding the process of risk assessment?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Risk assessment is the final result of the risk management methodology.",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Risk assessment is the first process in the risk management methodology."
+      },
+      {
+        "id": "B",
+        "text": "The likelihood of a threat must be determined as an element of the risk assessment.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“The likelihood of a threat must be determined as an element of the risk assessment.” is another proposed example under the rule being tested. Compare its scope with the exception in this question. Risk assessment is the first process in the risk management methodology."
+      },
+      {
+        "id": "C",
+        "text": "Risk assessment is the first process in the risk management methodology",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Risk assessment is the first process in the risk management methodology."
+      },
+      {
+        "id": "D",
+        "text": "The level of impact of a threat must be determined as an element of the risk assessment.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“The level of impact of a threat must be determined as an element of the risk assessment.” is another proposed example under the rule being tested. Compare its scope with the exception in this question. Risk assessment is the first process in the risk management methodology."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Risk assessment is the first process in the risk management methodology.",
+      "managerMindsetTip": "Relate Internal vs. External vs. Third-Party Assessments to the exposure and evaluate the effect on the business objective.",
+      "studyFocusDirective": "Review Internal vs. External vs. Third-Party Assessments and practice identifying the conditions that make Internal vs. External vs. Third-Party Assessments applicable.",
+      "keyTakeaway": "Risk assessment is the first process in the risk management methodology.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Exam SET A, question 1599, PDF page 790–791"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q008",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cognitiveLevel": "evaluate",
+    "perspective": "compliance_auditor",
+    "questionStyle": "first_action",
+    "difficulty": 4,
+    "difficultyLabel": "exam_hard",
+    "estimatedTimeSeconds": 83,
+    "conceptsTested": [
+      "Internal vs. External vs. Third-Party Assessments",
+      "Complex Instruction Set Computer (CISC)"
+    ],
+    "keyTerms": [
+      "Internal vs. External vs. Third-Party Assessments",
+      "Complex Instruction Set Computer (CISC)"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1777"
+    ],
+    "stem": "When microcomputers were first developed, the instruction fetch time was much longer than the instruction execution time because of the relatively slow speed of memory accesses. This situation led to the design of the:",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "FIRST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Very-Long-Instruction-Word (VLIW) processor",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "The term superscalar denotes multiple, concurrent operations performed on scalar values as opposed to vectors or arrays that are used as objects of computation in array processors. * For answer \"Very-Long-Instruction-Word (VLIW) processor\" multiple, concurrent operations are performed in a single instruction. This situation was ameliorated by pipelining the instructions wherein the decode and execution cycles of one instruction would be overlapped in time with the fetch cycle of the next instruction. * Answer \"Reduced Instruction Set Computer (RISC)\", RISC, evolved when…"
+      },
+      {
+        "id": "B",
+        "text": "Superscalar processor",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Essentially, the RISC architecture uses simpler instructions but makes use of other features such as optimizing compilers to reduce the number of instructions required and large numbers of general purpose registers in the processor and data caches. * The superscalar processor, answer \"Superscalar processor\", allows concurrent execution of instructions in the same pipelined stage. The term superscalar denotes multiple, concurrent operations performed on scalar values as opposed to vectors or arrays that are used as objects of computation in array processors. * For answer \"Very-Long-Instruction-Word (VLIW) processor\" multiple, concurrent operations are performed in a single instruction."
+      },
+      {
+        "id": "C",
+        "text": "Reduced Instruction Set Computer (RISC)",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "This situation was ameliorated by pipelining the instructions wherein the decode and execution cycles of one instruction would be overlapped in time with the fetch cycle of the next instruction. * Answer \"Reduced Instruction Set Computer (RISC)\", RISC, evolved when packaging and memory technology advanced to the point where there was not much difference in memory access times and processor execution times. This situation was ameliorated by pipelining the instructions wherein the decode and execution cycles of one instruction would be overlapped in time with the fetch cycle of the next instruction. * Answer \"Reduced Instruction Set Computer (RISC)\", RISC, evolved when…"
+      },
+      {
+        "id": "D",
+        "text": "Complex Instruction Set Computer (CISC)",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "This situation was ameliorated by pipelining the instructions wherein the decode and execution cycles of one instruction would be overlapped in time with the fetch cycle of the next instruction. * Answer \"Reduced Instruction Set Computer (RISC)\", RISC, evolved when packaging and memory technology advanced to the point where there was not much difference in memory access times and processor execution times."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "This situation was ameliorated by pipelining the instructions wherein the decode and execution cycles of one instruction would be overlapped in time with the fetch cycle of the next instruction. * Answer \"Reduced Instruction Set Computer (RISC)\", RISC, evolved when packaging and memory technology advanced to the point where there was not much difference in memory access times and processor execution times.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Complex Instruction Set Computer (CISC).",
+      "studyFocusDirective": "Review Internal vs. External vs. Third-Party Assessments and practice identifying the conditions that make Complex Instruction Set Computer (CISC) applicable.",
+      "keyTakeaway": "This situation was ameliorated by pipelining the instructions wherein the decode and execution cycles of one instruction would be overlapped in time with the fetch cycle of the next instruction. * Answer \"Reduced Instruction Set…",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Exam SET B, question 1777, PDF page 912–913"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q032",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 72,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1917",
+      "source-adapted"
+    ],
+    "stem": "Choose the best completion for this sast, dast, iast, sca, fuzzing, code review prompt. A pen register is a:",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "BEST"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Device that records the caller-ID of incoming calls",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that identifies the cell in which a mobile phone is operating\" and \"Device that records the URLs accessed by an individual\". * The device referred to in answer \"Device that records the caller-ID of incoming calls\" is called a trap-and-trace device. Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that…"
+      },
+      {
+        "id": "B",
+        "text": "Device that records the URLs accessed by an individual",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that identifies the cell in which a mobile phone is operating\" and \"Device that records the URLs accessed by an individual\". * The device referred to in answer \"Device that records the caller-ID of incoming calls\" is called a trap-and-trace device. Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that…"
+      },
+      {
+        "id": "C",
+        "text": "Device that identifies the cell in which a mobile phone is operating",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that identifies the cell in which a mobile phone is operating\" and \"Device that records the URLs accessed by an individual\". * The device referred to in answer \"Device that records the caller-ID of incoming calls\" is called a trap-and-trace device. Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that…"
+      },
+      {
+        "id": "D",
+        "text": "Device that records all the numbers dialed from a specific telephone line",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that identifies the cell in which a mobile phone is operating\" and \"Device that records the URLs accessed by an individual\". * The device referred to in answer \"Device that records the caller-ID of incoming calls\" is called a trap-and-trace device."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the information listed in answers \"Device that identifies the cell in which a mobile phone is operating\" and \"Device that records the URLs accessed by an individual\". * The device referred to in answer \"Device that records the caller-ID of incoming calls\" is called a trap-and-trace device.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate SAST, DAST, IAST, SCA, Fuzzing, Code Review.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make SAST, DAST, IAST, SCA, Fuzzing, Code Review applicable.",
+      "keyTakeaway": "Gathering information as to which numbers are dialed from a specific telephone line is less costly and time-consuming than installing a wiretap and recording the information. * There is also equipment that can record the…",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Exam SET C, question 1917, PDF page 1005–1006"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q033",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "least_likely",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 67,
+    "conceptsTested": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review"
+    ],
+    "keyTerms": [
+      "SAST, DAST, IAST, SCA, Fuzzing, Code Review"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q1996",
+      "rationale-review"
+    ],
+    "stem": "Which of the following is NOT true regarding software unit testing?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "NOT"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "The test data is part of the specifications.",
+        "isCorrect": false,
+        "trapType": "incomplete_partial_answer",
+        "explanation": "“The test data is part of the specifications.” is another proposed example under the rule being tested. Compare its scope with the exception in this question. Live or actual field data are NOT recommended for use in testing because they do not thoroughly test all normal and abnormal situations and the test results are not known beforehand."
+      },
+      {
+        "id": "B",
+        "text": "Testing should check for out-of-range values and other bounds conditions.",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“Testing should check for out-of-range values and other bounds conditions.” is another proposed example under the rule being tested. Compare its scope with the exception in this question. Live or actual field data are NOT recommended for use in testing because they do not thoroughly test all normal and abnormal situations and the test results are not known beforehand."
+      },
+      {
+        "id": "C",
+        "text": "Correct test output results should be developed and known beforehand.",
+        "isCorrect": false,
+        "trapType": "solves_wrong_problem",
+        "explanation": "Live or actual field data are NOT recommended for use in testing because they do not thoroughly test all normal and abnormal situations and the test results are not known beforehand."
+      },
+      {
+        "id": "D",
+        "text": "Live or actual field data is recommended for use in the testing procedures.",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "Live or actual field data are NOT recommended for use in testing because they do not thoroughly test all normal and abnormal situations and the test results are not known beforehand."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Live or actual field data are NOT recommended for use in testing because they do not thoroughly test all normal and abnormal situations and the test results are not known beforehand.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate SAST, DAST, IAST, SCA, Fuzzing, Code Review.",
+      "studyFocusDirective": "Review SAST, DAST, IAST, SCA, Fuzzing, Code Review and practice identifying the conditions that make SAST, DAST, IAST, SCA, Fuzzing, Code Review applicable.",
+      "keyTakeaway": "Live or actual field data are NOT recommended for use in testing because they do not thoroughly test all normal and abnormal situations and the test results are not known beforehand.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Exam SET C, question 1996, PDF page 1062"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q009",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.2",
+    "topicName": "Rules of Engagement (RoE) & Scope",
+    "cognitiveLevel": "understand",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 79,
+    "conceptsTested": [
+      "Rules of Engagement"
+    ],
+    "keyTerms": [
+      "Rules of Engagement"
+    ],
+    "tags": [
+      "actualtests-v118",
+      "a-q2057",
+      "rationale-review"
+    ],
+    "stem": "In the context of legal proceedings and trial practice, discovery refers to:",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The process in which the prosecution presents information it has uncovered to the defense, including potential witnesses, reports resulting from the investigation, evidence, and so on",
+        "isCorrect": true,
+        "trapType": null,
+        "explanation": "The key words are legal proceedings and trial practice."
+      },
+      {
+        "id": "B",
+        "text": "The process undertaken by the investigators to acquire evidence needed for prosecution of a case",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "During an investigation, answers \"The process undertaken by the investigators to acquire evidence needed for prosecution of a case\" and \"A step in the computer forensic process\" are appropriate definitions of discovery. The key words are legal proceedings and trial practice."
+      },
+      {
+        "id": "C",
+        "text": "The process of obtaining information on potential and existing employees using background checks",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "“obtaining” is a distinguishing cue in this choice. Evaluate whether that choice provides the property the question asks for. The key words are legal proceedings and trial practice."
+      },
+      {
+        "id": "D",
+        "text": "A step in the computer forensic process",
+        "isCorrect": false,
+        "trapType": "confuses_similar_terms",
+        "explanation": "During an investigation, answers \"The process undertaken by the investigators to acquire evidence needed for prosecution of a case\" and \"A step in the computer forensic process\" are appropriate definitions of discovery. The key words are legal proceedings and trial practice."
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "The key words are legal proceedings and trial practice.",
+      "managerMindsetTip": "Identify the criteria, scope, and evidence needed to evaluate Rules of Engagement.",
+      "studyFocusDirective": "Review Rules of Engagement and practice identifying the conditions that make Rules of Engagement applicable.",
+      "keyTakeaway": "The key words are legal proceedings and trial practice.",
+      "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Exam SET D, question 2057, PDF page 1104"
+        }
+      ]
+    }
+  }
+]

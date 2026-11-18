@@ -1561,7 +1561,7 @@
   },
   {
     "id": "cissp-d7-s7.2-q012",
-    "version": 1,
+    "version": 2,
     "domainId": "dom-7",
     "subdomainId": "7.2",
     "subdomainName": "Conduct Logging and Monitoring Activities",
@@ -1574,11 +1574,14 @@
     "difficultyLabel": "foundational",
     "estimatedTimeSeconds": 40,
     "conceptsTested": [
-      "SIEM, SOAR, UEBA, NDR, EDR/XDR",
-      "FAR"
+      "Audit trails",
+      "Authentication",
+      "Accountability"
     ],
     "keyTerms": [
-      "FAR"
+      "Audit trails",
+      "Authentication",
+      "Accountability"
     ],
     "tags": [
       "domain-7",
@@ -1586,7 +1589,7 @@
       "certkingdom-1373",
       "book-q157"
     ],
-    "stem": "Which of the following is required in order to provide accountability?",
+    "stem": "An application already authenticates administrators. Which record provides evidence of what each authenticated administrator did after signing in?",
     "scenarioContext": null,
     "highlightKeywords": [],
     "options": [
@@ -1594,38 +1597,42 @@
         "id": "A",
         "text": "Authentication",
         "isCorrect": false,
-        "explanation": "Incorrect. 'Authentication' does not fulfill the core requirement tested in Conduct Logging and Monitoring Activities; 'Audit trails' is the accurate choice.",
-        "trapType": "solves_wrong_problem"
+        "explanation": "Authentication verifies identity at sign-in. A separate record is needed to show which actions the authenticated administrator subsequently performed.",
+        "trapType": "confuses_similar_terms"
       },
       {
         "id": "B",
         "text": "Integrity",
         "isCorrect": false,
-        "explanation": "Incorrect. 'Integrity' does not fulfill the core requirement tested in Conduct Logging and Monitoring Activities; 'Audit trails' is the accurate choice.",
-        "trapType": "solves_wrong_problem"
+        "explanation": "Integrity safeguards can help preserve evidence, but they do not themselves create the chronological record of an administrator's actions.",
+        "trapType": "confuses_similar_terms"
       },
       {
         "id": "C",
         "text": "Confidentiality",
         "isCorrect": false,
-        "explanation": "Incorrect. 'Confidentiality' does not fulfill the core requirement tested in Conduct Logging and Monitoring Activities; 'Audit trails' is the accurate choice.",
-        "trapType": "solves_wrong_problem"
+        "explanation": "Confidentiality limits disclosure of information. It does not provide the event record needed to reconstruct administrative actions.",
+        "trapType": "confuses_similar_terms"
       },
       {
         "id": "D",
         "text": "Audit trails",
         "isCorrect": true,
-        "explanation": "Correct. Audit trails is right because accountability can actually be seen in two different ways:\n1) Although audit trails are also needed for accountability, no user can be accountable for their\nactions unless properly authenticated.\n2) Accountability is another facet of access control. Individuals on a system are responsible for\ntheir actions. This accountability property enables system activities to be traced to the proper individuals. Accountability is supported by audit trails that record events on the system and network. Audit trails can be used for intrusion detection and for the reconstruction of past events. Monitoring individual activities, such as keystroke monitoring, should be accomplished in accordance with the company policy and appropriate laws. Banners at the log-on time should notify the user of any monitoring that is being conducted. The point is that unless you employ an appropriate auditing mechanism, you don't have accountability. Authorization only gives a user certain permissions on the network. Accountability\n\nis far more complex because it also includes intrusion detection, unauthorized actions by both unauthorized users and authorized users, and system faults. The audit trail provides the proof that unauthorized modifications by both authorized and unauthorized users took place. No proof, No accountability.",
+        "explanation": "An audit trail records events, identities, timestamps, and outcomes. It supports attribution of actions to the authenticated administrator.",
         "trapType": null
       }
     ],
     "explanation": {
       "correctOptionId": "D",
-      "summary": "Accountability can actually be seen in two different ways:\n1) Although audit trails are also needed for accountability, no user can be accountable for their\nactions unless properly authenticated.\n2) Accountability is another facet of access control. Individuals on a system are responsible for\ntheir actions. This accountability property enables system activities to be traced to the proper individuals. Accountability is supported by audit trails that record events on the system and network. Audit trails can be used for intrusion detection and for the reconstruction of past events. Monitoring individual activities, such as keystroke monitoring, should be accomplished in accordance with the company policy and appropriate laws. Banners at the log-on time should notify the user of any monitoring that is being conducted. The point is that unless you employ an appropriate auditing mechanism, you don't have accountability. Authorization only gives a user certain permissions on the network. Accountability\n\nis far more complex because it also includes intrusion detection, unauthorized actions by both unauthorized users and authorized users, and system faults. The audit trail provides the proof that unauthorized modifications by both authorized and unauthorized users took place. No proof, No accountability.",
-      "managerMindsetTip": "When designing controls for Conduct Logging and Monitoring Activities, match the exact security mechanism (FAR) to the security property and layer required by the architecture.",
-      "studyFocusDirective": "Review SIEM, SOAR, UEBA, NDR, EDR/XDR (7.2.1) focusing on FAR, and contrast why 'Audit trails' outperforms close distractors.",
-      "keyTakeaway": "Accountability can actually be seen in two different ways:\n1) Although audit trails are also needed for accountability, no user can be accountable for their\nactions unless properly authenticated.",
+      "summary": "An audit trail records actions by an authenticated identity and provides evidence for accountability. Authentication identifies the actor, and logging records what that actor did.",
+      "managerMindsetTip": "Ensure that privileged activity records identify the actor, timestamp, and outcome and are protected against alteration.",
+      "studyFocusDirective": "Trace a privileged change from authentication through the event and its subsequent audit record.",
+      "keyTakeaway": "Audit trails support accountability by linking authenticated identities to recorded actions.",
       "references": [
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AU-3 Content of Audit Records"
+        },
         {
           "source": "KRUTZ, Ronald L. & VINES, Russel D., The CISSP Prep Guide: Mastering the Ten Domains of Computer Security, John Wiley & Sons, 2001",
           "section": "Page 50 The Shon Harris AIO book, 4th Edition, on Page 243 also states: Auditing Capabilities ensures users are accountable for their actions, verify that the secutiy policies are enforced, and can be used as investigation tools. Accountability is tracked by recording user, system, and application activities. This recording is done through auditing functions and mechanisms within an operating sytem or application. Audit trail contain information about operating System activities, application events, and user actions."
@@ -2765,7 +2772,7 @@
   },
   {
     "id": "cissp-d7-s7.2-q015",
-    "version": 1,
+    "version": 2,
     "domainId": "dom-7",
     "subdomainId": "7.2",
     "subdomainName": "Conduct Logging and Monitoring Activities",
@@ -2778,10 +2785,14 @@
     "difficultyLabel": "intermediate",
     "estimatedTimeSeconds": 58,
     "conceptsTested": [
-      "SIEM, SOAR, UEBA, NDR, EDR/XDR"
+      "Network availability",
+      "Availability in the CIA triad",
+      "Service monitoring"
     ],
     "keyTerms": [
-      "SIEM, SOAR, UEBA, NDR, EDR/XDR"
+      "Network availability",
+      "Availability in the CIA triad",
+      "Service monitoring"
     ],
     "tags": [
       "domain-7",
@@ -2796,39 +2807,43 @@
       {
         "id": "A",
         "text": "Netware availability",
-        "isCorrect": true,
-        "explanation": "Correct. Netware availability is right because network availability Network availability can be defined as an area of the Telecommunications and Network Security domain that directly affects the Information Systems Security tenet of Availability.",
-        "trapType": null
+        "isCorrect": false,
+        "explanation": "NetWare refers to a legacy operating system. Its uptime is narrower than the general availability property of a network.",
+        "trapType": "confuses_similar_terms"
       },
       {
         "id": "B",
         "text": "Network availability",
-        "isCorrect": false,
-        "explanation": "Incorrect. Network availability Network availability can be defined as an area of the Telecommunications and Network Security domain that directly affects the Information Systems Security tenet of Availability.",
-        "trapType": "confuses_similar_terms"
+        "isCorrect": true,
+        "explanation": "Network availability is the ability of authorized users to reach network services when needed. Monitoring reachability and uptime helps measure that property.",
+        "trapType": null
       },
       {
         "id": "C",
         "text": "Network acceptability",
         "isCorrect": false,
-        "explanation": "Incorrect. Network availability Network availability can be defined as an area of the Telecommunications and Network Security domain that directly affects the Information Systems Security tenet of Availability.",
+        "explanation": "Network acceptability is not the term for service reachability or resilience. Availability is the CIA property being evaluated.",
         "trapType": "confuses_similar_terms"
       },
       {
         "id": "D",
         "text": "Network accountability",
         "isCorrect": false,
-        "explanation": "Incorrect. Network availability Network availability can be defined as an area of the Telecommunications and Network Security domain that directly affects the Information Systems Security tenet of Availability.",
+        "explanation": "Network accountability concerns attributing activity to a user or system. It does not describe whether a service is reachable when needed.",
         "trapType": "confuses_similar_terms"
       }
     ],
     "explanation": {
-      "correctOptionId": "A",
-      "summary": "Network availability Network availability can be defined as an area of the Telecommunications and Network Security domain that directly affects the Information Systems Security tenet of Availability.",
-      "managerMindsetTip": "When designing controls for Conduct Logging and Monitoring Activities, match the exact security mechanism (SIEM, SOAR, UEBA, NDR, EDR/XDR) to the security property and layer required by the architecture.",
-      "studyFocusDirective": "Review SIEM, SOAR, UEBA, NDR, EDR/XDR (7.2.1) focusing on SIEM, SOAR, UEBA, NDR, EDR/XDR, and contrast why 'Netware availability' outperforms close distractors.",
-      "keyTakeaway": "Network availability Network availability can be defined as an area of the Telecommunications and Network Security domain that directly affects the Information Systems Security tenet of Availability.",
+      "correctOptionId": "B",
+      "summary": "Network availability describes whether authorized users can access network services when they need them. Service uptime, reachability, and recovery design contribute to this property.",
+      "managerMindsetTip": "Define availability targets in terms of which service must be reachable and who relies on it.",
+      "studyFocusDirective": "Compare availability metrics for an individual host, a network path, and an end-to-end service.",
+      "keyTakeaway": "Network availability describes authorized access to network services when needed.",
       "references": [
+        {
+          "source": "ActualTests CISSP v11.8",
+          "section": "Question 28, PDF page 13"
+        },
         {
           "source": "KRUTZ, Ronald L. & VINES, Russel D., The CISSP Prep Guide: Mastering the Ten Domains of Computer Security, 2001, John Wiley & Sons",
           "section": "Page 64."

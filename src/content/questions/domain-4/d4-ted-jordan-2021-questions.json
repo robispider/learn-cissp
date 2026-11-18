@@ -1,0 +1,396 @@
+[
+  {
+    "id": "cissp-d4-s4.1-q149",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.1",
+    "topicName": "OSI & TCP/IP Models & Encapsulation",
+    "cognitiveLevel": "evaluate",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Fiber-optic media",
+      "Long-distance networking",
+      "Physical layer"
+    ],
+    "keyTerms": [
+      "Fiber-optic media",
+      "Long-distance networking",
+      "Physical layer"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A company needs a high-capacity terrestrial link between sites 50 miles apart. A carrier can engineer a link along the route. Which medium is the best starting point for the long-haul design?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "A single indoor 802.11n access point.",
+        "isCorrect": false,
+        "explanation": "A typical indoor Wi-Fi access point serves a local area. It does not meet the distance or capacity requirements on its own.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "A single Category 5 copper Ethernet run.",
+        "isCorrect": false,
+        "explanation": "Copper twisted-pair Ethernet has a bounded link length suited to local cabling. A single run does not serve a 50-mile route.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "A single office-grade coaxial cable run.",
+        "isCorrect": false,
+        "explanation": "Office-grade coaxial cabling has distance and attenuation limits. The question calls for a high-capacity carrier link over a much longer distance.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "A carrier-engineered fiber-optic link.",
+        "isCorrect": true,
+        "explanation": "Installed fiber with appropriately designed optics and an adequate power budget supports high-capacity links over long distances and resists electromagnetic interference.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Optical fiber is suitable for long-haul high-capacity links. The route, transceivers, attenuation budget, and any intermediate equipment determine the actual engineered reach.",
+      "managerMindsetTip": "Evaluate link distance, capacity, and physical route before treating an available cable as suitable.",
+      "studyFocusDirective": "Compare the reach of typical enterprise copper and carrier optical links, then list the inputs to a fiber loss budget.",
+      "keyTakeaway": "Carrier-engineered optical fiber is suitable for high-capacity long-distance links.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 4, question 19, PDF page 157 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 4, Secure design principles in network architectures and transmission media"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d4-s4.2-q050",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.2",
+    "subdomainName": "Secure Network Components",
+    "topicId": "4.2.2",
+    "topicName": "Network Segmentation (VLANs, DMZ, Micro-segmentation, SDN, SD-WAN, SASE)",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "N-tier architecture",
+      "Network segmentation",
+      "Inter-tier controls"
+    ],
+    "keyTerms": [
+      "N-tier architecture",
+      "Network segmentation",
+      "Inter-tier controls"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A web team wants to scale the presentation, business logic, and database services independently. Security also wants to enforce rules at the boundary between those services. Which architecture best supports both goals?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "A single demilitarized zone with all three services on the same host.",
+        "isCorrect": false,
+        "explanation": "A DMZ isolates an exposed boundary, but putting all services together leaves the application and data components without independent boundaries or scaling.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "An N-tier architecture with explicit network boundaries between tiers.",
+        "isCorrect": true,
+        "explanation": "Splitting services into tiers allows independent scaling and separate access policy. Network boundaries can limit each tier to authorized flows.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Split DNS serving separate internal and external records.",
+        "isCorrect": false,
+        "explanation": "Split DNS supplies different DNS answers by client context. It does not divide application components or govern their traffic.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "A VPN client configured for split tunneling.",
+        "isCorrect": false,
+        "explanation": "Split tunneling determines which client traffic traverses the VPN. It does not establish controlled communication between a web application's tiers.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "An N-tier design separates application responsibilities. When tiers are also separated by enforced network boundaries, the organization can restrict traffic to the interfaces each tier actually uses.",
+      "managerMindsetTip": "Write the allowed trust-boundary flows before building rules for each tier.",
+      "studyFocusDirective": "Draw web, application, and database tiers and specify one allowed and one prohibited flow for each boundary.",
+      "keyTakeaway": "Separate tiers support independent scaling and targeted network controls.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 4, question 31, PDF page 159 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "SC-7 Boundary Protection"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d4-s4.1-q150",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.3",
+    "topicName": "Wireless Security (WPA2/WPA3, 802.1X/EAP), Cellular (4G/5G)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "IEEE 802.1X",
+      "Enterprise Wi-Fi",
+      "EAP"
+    ],
+    "keyTerms": [
+      "IEEE 802.1X",
+      "Enterprise Wi-Fi",
+      "EAP"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A corporate Wi-Fi laptop associates with an access point, but ordinary network traffic remains blocked until an EAP exchange validates its device certificate. Which control provides this admission step?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Kerberos ticket issuance on the application server.",
+        "isCorrect": false,
+        "explanation": "A Kerberos service ticket authenticates access to a service. The EAP exchange described controls network admission itself.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "SAML sign-in to a cloud application.",
+        "isCorrect": false,
+        "explanation": "SAML can convey an application login assertion. It does not control the port-based link admission described here.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "MAC-address lookup in the switch forwarding table.",
+        "isCorrect": false,
+        "explanation": "A forwarding table helps a switch choose where to send frames. It does not validate device credentials before granting network access.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "IEEE 802.1X port-based network access control.",
+        "isCorrect": true,
+        "explanation": "IEEE 802.1X controls access at the network connection. In this setup the authenticator admits ordinary traffic only after successful EAP authentication.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "IEEE 802.1X works with EAP methods, such as a certificate-based method, to authenticate a supplicant before granting network access.",
+      "managerMindsetTip": "Distinguish joining a wireless link, authenticating to the network, and signing in to an application.",
+      "studyFocusDirective": "Label the supplicant, authenticator, and authentication server in an enterprise Wi-Fi admission flow.",
+      "keyTakeaway": "802.1X controls network admission through an authenticated port or association.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 4, question 34, PDF page 160 (adapted)"
+        },
+        {
+          "source": "IEEE 802.1X",
+          "section": "Port-Based Network Access Control"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d4-s4.2-q051",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.2",
+    "subdomainName": "Secure Network Components",
+    "topicId": "4.2.2",
+    "topicName": "Network Segmentation (VLANs, DMZ, Micro-segmentation, SDN, SD-WAN, SASE)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Virtual LAN",
+      "Logical segmentation",
+      "Broadcast domain"
+    ],
+    "keyTerms": [
+      "Virtual LAN",
+      "Logical segmentation",
+      "Broadcast domain"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A network engineer wants phones and workstations on the same physical switches but in distinct logical Layer 2 broadcast domains. Which technology supplies that separation?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "VLANs",
+        "isCorrect": true,
+        "explanation": "VLANs partition switching into separate logical broadcast domains. Inter-VLAN traffic requires Layer 3 forwarding and can be subject to a separate policy.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "A site-to-site VPN",
+        "isCorrect": false,
+        "explanation": "A site-to-site VPN protects traffic across an inter-site path. It does not by itself partition local switch ports into broadcast domains.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Private DNS zones",
+        "isCorrect": false,
+        "explanation": "DNS zones control name resolution. They do not change the boundaries over which Layer 2 frames are forwarded.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "A perimeter DMZ",
+        "isCorrect": false,
+        "explanation": "A DMZ is an architectural security zone. VLANs provide the specific logical Layer 2 separation requested for endpoints on shared switches.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "VLANs let endpoints share physical switching equipment while using distinct logical networks. Routing and policy controls govern permitted traffic between those networks.",
+      "managerMindsetTip": "Pair VLAN design with explicit policy for any routed traffic between segments.",
+      "studyFocusDirective": "Sketch a voice and workstation VLAN on shared switches and identify where you would enforce inter-VLAN access.",
+      "keyTakeaway": "VLANs create separate logical Layer 2 broadcast domains.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 4, question 69, PDF page 168 (adapted)"
+        },
+        {
+          "source": "IEEE 802.1Q",
+          "section": "Bridges and Bridged Networks"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d4-s4.1-q151",
+    "version": 1,
+    "domainId": "dom-4",
+    "subdomainId": "4.1",
+    "subdomainName": "Secure Design Principles in Network Architecture",
+    "topicId": "4.1.2",
+    "topicName": "IPsec (AH vs. ESP, Tunnel vs. Transport, IKE), TLS 1.3, SSH",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "IPsec",
+      "Network layer",
+      "IP packet protection"
+    ],
+    "keyTerms": [
+      "IPsec",
+      "Network layer",
+      "IP packet protection"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A gateway uses IPsec to protect IP traffic between two sites without requiring application changes. At which OSI layer does the protection principally operate?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Application layer.",
+        "isCorrect": false,
+        "explanation": "Application-layer protection is applied by or for an application protocol. IPsec can protect IP packets below those applications.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Physical layer.",
+        "isCorrect": false,
+        "explanation": "The physical layer transmits signals over a medium. It does not implement the IP packet protection performed by IPsec.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Data link layer.",
+        "isCorrect": false,
+        "explanation": "Link-layer protection operates over frames on a particular link. IPsec protection operates at the IP layer and can cross routed links.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Network layer.",
+        "isCorrect": true,
+        "explanation": "IPsec applies security services at the IP layer, corresponding to the OSI network layer.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "IPsec protects IP traffic at the network layer. Its security associations and mode determine the packet protection between endpoints.",
+      "managerMindsetTip": "Identify which layer a control sees when evaluating what traffic it can protect.",
+      "studyFocusDirective": "Compare the protocol layer and scope of IPsec, link encryption, and application-protocol security.",
+      "keyTakeaway": "IPsec protects traffic at the network layer.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 4, question 94, PDF page 174 (adapted)"
+        },
+        {
+          "source": "IETF RFC 4301",
+          "section": "Section 3.1, What IPsec Does"
+        }
+      ]
+    }
+  }
+]

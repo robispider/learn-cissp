@@ -1,0 +1,396 @@
+[
+  {
+    "id": "cissp-d7-s7.10-q078",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.2",
+    "topicName": "Recovery Sites (Cold, Warm, Hot, Mirrored), RAID Levels",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "RAID 6",
+      "Dual parity",
+      "Drive failure tolerance"
+    ],
+    "keyTerms": [
+      "RAID 6",
+      "Dual parity",
+      "Drive failure tolerance"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A file service must remain available after any two drives in the same array fail. The team is choosing among standard RAID 0, two-way RAID 1, RAID 5, and RAID 6. Which meets the requirement?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "RAID 0",
+        "isCorrect": false,
+        "explanation": "RAID 0 stripes data for throughput. With no mirroring or parity, the loss of one drive can make the array unusable.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Two-way RAID 1",
+        "isCorrect": false,
+        "explanation": "A two-way mirror tolerates losing one copy. Losing both drives in that mirror loses both copies.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "RAID 5",
+        "isCorrect": false,
+        "explanation": "RAID 5 uses single parity and tolerates a single drive failure. Two failed drives exceed that redundancy.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "RAID 6",
+        "isCorrect": true,
+        "explanation": "RAID 6 uses dual parity and is designed to tolerate any two drive failures within the array.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "RAID 6 protects availability against two failed drives using dual parity. Independent recovery copies address loss scenarios outside drive redundancy.",
+      "managerMindsetTip": "Check the number and placement of simultaneous failures the storage design can tolerate.",
+      "studyFocusDirective": "Compare the tolerated failures for striping, a two-way mirror, single parity, and dual parity.",
+      "keyTakeaway": "RAID 6 tolerates two drive failures in an array through dual parity.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 7, question 28, PDF page 267 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 7, Recovery strategies and system resilience"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.2-q024",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.2",
+    "subdomainName": "Conduct Logging and Monitoring Activities",
+    "topicId": "7.2.1",
+    "topicName": "SIEM, SOAR, UEBA, NDR, EDR/XDR",
+    "cognitiveLevel": "analyze",
+    "perspective": "incident_responder",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "UEBA",
+      "Behavior baselines",
+      "Security monitoring"
+    ],
+    "keyTerms": [
+      "UEBA",
+      "Behavior baselines",
+      "Security monitoring"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A security team already centralizes its logs. It needs a capability that learns normal patterns for employee and service identities and flags unusual timing or resource use for review. Which is the best match?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Log aggregation with fixed forwarding rules.",
+        "isCorrect": false,
+        "explanation": "Aggregation supplies the underlying events, but fixed forwarding rules alone do not establish account or entity behavior baselines.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "An inline intrusion prevention system.",
+        "isCorrect": false,
+        "explanation": "An inline IPS can block traffic it identifies as harmful. The requirement is to detect deviations from learned identity and entity behavior.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "User and entity behavior analytics.",
+        "isCorrect": true,
+        "explanation": "UEBA analyzes telemetry to establish behavior baselines for users and other entities and surfaces departures from those baselines for investigation.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "A network intrusion detection system configured only for signatures.",
+        "isCorrect": false,
+        "explanation": "Signature-based detection matches known patterns. It does not establish the identity-specific behavior baselines required here.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "UEBA looks for changes relative to typical behavior for users and entities. An alert is a reason to investigate and can be correlated with other evidence.",
+      "managerMindsetTip": "Define expected behavioral coverage and the evidence an analyst needs before responding to an alert.",
+      "studyFocusDirective": "Compare a behavior deviation, a known signature match, and a policy rule using the same log sources.",
+      "keyTakeaway": "UEBA surfaces unusual user or entity behavior relative to a baseline.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 7, question 41, PDF page 270 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 7, Logging and monitoring activities"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.10-q079",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.10",
+    "subdomainName": "Implement Recovery Strategies",
+    "topicId": "7.10.2",
+    "topicName": "Recovery Sites (Cold, Warm, Hot, Mirrored), RAID Levels",
+    "cognitiveLevel": "analyze",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Alternate site",
+      "Shared failure domain",
+      "Reciprocal agreement"
+    ],
+    "keyTerms": [
+      "Alternate site",
+      "Shared failure domain",
+      "Reciprocal agreement"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "Two clinics agree to host each other's essential operations after an outage. One clinic is on the second floor and the other is on the third floor of the same building. What is the most significant weakness in the reciprocal recovery arrangement?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "most"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "The clinics have different wired network providers.",
+        "isCorrect": false,
+        "explanation": "Different providers can even reduce some shared dependencies. They do not address loss of the common building.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Their Wi-Fi networks use different equipment.",
+        "isCorrect": false,
+        "explanation": "Wi-Fi compatibility can be handled during recovery design. It has little value when neither party can enter or operate in the building.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "C",
+        "text": "A building-wide outage can make both the primary and alternate sites unavailable.",
+        "isCorrect": true,
+        "explanation": "Both locations depend on the same building and can be affected by the same fire, utility interruption, or closure. That defeats their role as independent alternates.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "The clinics use different brands of staff computers.",
+        "isCorrect": false,
+        "explanation": "Different workstations can be evaluated for compatibility. Both facilities still share the risk that most directly invalidates the arrangement.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "An alternate site must remain usable for the outage it addresses. Evaluate common physical, utility, and regional dependencies before relying on a reciprocal agreement.",
+      "managerMindsetTip": "Evaluate the failure scenarios covered by each alternate, including common utilities and facility access.",
+      "studyFocusDirective": "List two failures shared by floors of one building and compare them with independent-site dependencies.",
+      "keyTakeaway": "A recovery site in the same failure domain may fail alongside the primary site.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 7, question 61, PDF page 275 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-34 Rev. 1",
+          "section": "Section 3.4, Contingency Strategies and Alternate Sites"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.11-q024",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.11",
+    "subdomainName": "Implement Disaster Recovery (DR) Processes",
+    "topicId": "7.11.1",
+    "topicName": "DRP Activation, Emergency Communications, Restoration vs. Salvage",
+    "cognitiveLevel": "analyze",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Emergency communications",
+      "Contact validation",
+      "Disaster recovery plan"
+    ],
+    "keyTerms": [
+      "Emergency communications",
+      "Contact validation",
+      "Disaster recovery plan"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "After a disaster, responders cannot reach the system recovery lead because the number in the call tree is obsolete. The organization has a written contact list but has never exercised it. Which control activity was missing?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Require every responder to keep the same phone number.",
+        "isCorrect": false,
+        "explanation": "Contact information can change for legitimate reasons. Keeping the plan validated is a more reliable control than trying to prohibit changes.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "B",
+        "text": "Verify emergency contacts and backup routes as part of recovery exercises.",
+        "isCorrect": true,
+        "explanation": "An exercise verifies that the listed contacts and backup paths actually work and reveals gaps before a real activation.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Require use of personal instead of business phone numbers.",
+        "isCorrect": false,
+        "explanation": "The correct contact channels depend on the plan and policy. A personal number can become obsolete just as a business number can.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Issue a corporate phone to every employee.",
+        "isCorrect": false,
+        "explanation": "Corporate devices may support communications, but issuing them does not keep the contact list accurate or demonstrate that the process works.",
+        "trapType": "technical_fix_over_process"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Emergency communications need current information, alternates, and practiced activation. Exercise the call tree or notification process and fix the gaps it exposes.",
+      "managerMindsetTip": "Assign ownership for contact updates and test the escalation path when the primary contact is unavailable.",
+      "studyFocusDirective": "Plan a contact-tree drill that records both successful contacts and fallback attempts.",
+      "keyTakeaway": "Exercises verify that recovery contacts and alternate communications routes work.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 7, question 63, PDF page 275 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-34 Rev. 1",
+          "section": "Sections 3.5 and 3.6, Notification and Testing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d7-s7.3-q012",
+    "version": 1,
+    "domainId": "dom-7",
+    "subdomainId": "7.3",
+    "subdomainName": "Configuration Management (CM) & Hardening",
+    "topicId": "7.3.1",
+    "topicName": "Baseline Images, Drift Detection, Asset Inventory",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Golden image",
+      "Configuration baseline",
+      "Desktop provisioning"
+    ],
+    "keyTerms": [
+      "Golden image",
+      "Configuration baseline",
+      "Desktop provisioning"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "Operations builds a patched, hardened virtual desktop image, verifies its settings, and approves it as the template for new desktops. What is this approved template called?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A golden image.",
+        "isCorrect": true,
+        "explanation": "A golden image is a known, approved reference image from which systems can be provisioned consistently.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "A least-privilege access profile.",
+        "isCorrect": false,
+        "explanation": "An access profile restricts privileges for an identity or workload. It does not contain the approved operating system and baseline configuration.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "A virtual machine cache.",
+        "isCorrect": false,
+        "explanation": "A cache stores data to improve access performance. It is distinct from the controlled image used to provision a virtual desktop.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "An application allowlist.",
+        "isCorrect": false,
+        "explanation": "An allowlist can be one control included in the image. It is only one part of a fully approved and reproducible configuration.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "A golden image is a versioned reference for deploying systems with known configuration and controls. Its approval and patch status need maintenance like any other baseline.",
+      "managerMindsetTip": "Require a controlled rebuild and change record so the image remains trustworthy over time.",
+      "studyFocusDirective": "Draft an approval checklist for a desktop image covering patch level, secure settings, and version tracking.",
+      "keyTakeaway": "A golden image provides an approved starting configuration for repeatable deployment.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 7, question 79, PDF page 278 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CM-2 Baseline Configuration"
+        }
+      ]
+    }
+  }
+]

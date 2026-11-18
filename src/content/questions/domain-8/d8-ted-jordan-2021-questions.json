@@ -1,0 +1,478 @@
+[
+  {
+    "id": "cissp-d8-s8.2-q012",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.2",
+    "subdomainName": "Identify and Apply Security Controls in Development Environments",
+    "topicId": "8.2.1",
+    "topicName": "CI/CD Pipeline Security, Secrets Management, Environment Separation",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Sandboxing",
+      "Environment separation",
+      "Test isolation"
+    ],
+    "keyTerms": [
+      "Sandboxing",
+      "Environment separation",
+      "Test isolation"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "Developers need to run experimental code while preventing it from directly accessing production accounts, systems, or customer records. Which practice most directly addresses that requirement?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "most"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Automate deployment to the production environment.",
+        "isCorrect": false,
+        "explanation": "Automation makes a workflow repeatable. Deploying the tests directly to production leaves them inside the environment that must be protected.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Store experimental code in a separate folder on the production server.",
+        "isCorrect": false,
+        "explanation": "A folder changes organization but does not provide a reliable execution boundary from shared identity, network, and storage resources.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Track each test change in revision control.",
+        "isCorrect": false,
+        "explanation": "Revision control tracks changes to source. It does not constrain what the running code can reach.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Run the code in a sandbox with isolated resources and restricted access.",
+        "isCorrect": true,
+        "explanation": "A sandbox limits the resources and networks available to the test code. Separating credentials and using suitable test data helps protect production.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "Sandboxing constrains what a program can access during execution. Separate test identities, networks, and data to protect production from experimental code.",
+      "managerMindsetTip": "Test that the isolation boundary prevents access with the identities actually used by test workloads.",
+      "studyFocusDirective": "List which identities, network paths, and datasets must be separate in a development sandbox.",
+      "keyTakeaway": "A sandbox isolates test execution from production resources.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Practice Exam 2, question 36, PDF page 367 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-218",
+          "section": "PO.5 Implement and Maintain Secure Environments for Software Development"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.2-q013",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.2",
+    "subdomainName": "Identify and Apply Security Controls in Development Environments",
+    "topicId": "8.2.1",
+    "topicName": "CI/CD Pipeline Security, Secrets Management, Environment Separation",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Blue-green deployment",
+      "Release strategy",
+      "Traffic cutover"
+    ],
+    "keyTerms": [
+      "Blue-green deployment",
+      "Release strategy",
+      "Traffic cutover"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A team runs two production-capable environments. The active environment handles all live traffic while the candidate release is verified in the idle one. At cutover the router sends normal traffic to the candidate environment, with the former environment retained for rollback. What is this strategy?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Blue-green deployment.",
+        "isCorrect": true,
+        "explanation": "Blue-green deployment holds active and candidate environments separately and switches traffic when the candidate is ready. The former environment can be retained for rollback.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Canary deployment.",
+        "isCorrect": false,
+        "explanation": "A canary typically introduces the candidate to a small share of live traffic before increasing it. The described cutover moves normal traffic after validation of an idle environment.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "In-place rolling update.",
+        "isCorrect": false,
+        "explanation": "A rolling update replaces instances in a fleet in sequence. It does not use the described switch between complete paired environments.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A/B testing.",
+        "isCorrect": false,
+        "explanation": "A/B testing splits audiences to compare variants, often against business metrics. The scenario uses paired environments mainly to validate and release a new version.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Blue-green deployment separates the candidate from the active environment until traffic switches. A rollback plan should account for shared state changes that a traffic switch cannot reverse.",
+      "managerMindsetTip": "Verify both the cutover and the rollback assumptions, including compatibility with any database changes.",
+      "studyFocusDirective": "Compare blue-green, canary, and rolling deployments by traffic allocation and rollback path.",
+      "keyTakeaway": "Blue-green deployment switches production traffic between two complete environments.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 6, question 67, PDF page 239 (adapted)"
+        },
+        {
+          "source": "AWS Prescriptive Guidance",
+          "section": "Blue/green deployments"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.4-q001",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.4",
+    "subdomainName": "Assess Security Impact of Acquired Software",
+    "topicId": "8.4.1",
+    "topicName": "COTS, SaaS, Open-Source Libraries, SBOM, Supply Chain Tampering",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "least_likely",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Code signing",
+      "Software provenance",
+      "Release integrity"
+    ],
+    "keyTerms": [
+      "Code signing",
+      "Software provenance",
+      "Release integrity"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "An acquiring team verifies a library's digital signature against the supplier's trusted signing key and confirms that the signature covers the package. Which conclusion is unsupported by signature verification alone?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "unsupported"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "The signature corresponds to the expected supplier signing key.",
+        "isCorrect": false,
+        "explanation": "Successful verification against the expected trusted key supports the association between the signature and its signing key.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "The package contains no functional defects.",
+        "isCorrect": true,
+        "explanation": "A valid signature provides evidence of origin and integrity. Testing and review are still needed for functional correctness and security.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "The signed package can be linked to the expected signer through the trusted key.",
+        "isCorrect": false,
+        "explanation": "When the trusted key is reliably associated with the supplier, the verified signature provides evidence connecting the package with that signer.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "The verified package bytes match the content covered by the signature.",
+        "isCorrect": false,
+        "explanation": "Verification detects changes in the signed content. The conclusion is limited to the package bytes covered by the signature.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Code signing helps verify provenance and integrity when the signing key is trusted. Keep supplier assessment, defect testing, and security verification as separate sources of assurance.",
+      "managerMindsetTip": "Check trusted key identity and package coverage, then review the evidence for the supplier's development and testing practices.",
+      "studyFocusDirective": "List the claims supported by signature verification and those that require component review or testing.",
+      "keyTakeaway": "A valid code signature supports provenance and integrity. Product quality needs separate evidence.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 8, question 48, PDF page 307 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-218",
+          "section": "PS.2 Provide a Mechanism for Verifying Software Release Integrity"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.3-q002",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.3",
+    "subdomainName": "Assess the Effectiveness of Software Security",
+    "topicId": "8.3.1",
+    "topicName": "Software Assurance Maturity Model (SAMM / BSIMM), Acceptance Testing",
+    "cognitiveLevel": "apply",
+    "perspective": "manager_governance",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Bug bar",
+      "Release criteria",
+      "Defect severity"
+    ],
+    "keyTerms": [
+      "Bug bar",
+      "Release criteria",
+      "Defect severity"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A release team wants consistent rules for deciding which open defects must be fixed before ship approval. It defines severity levels and a threshold above which release is blocked. What does that threshold policy represent?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A general software life cycle phase diagram.",
+        "isCorrect": false,
+        "explanation": "A life cycle diagram describes how work is organized. It does not define criteria for the severity of defects permitted at release.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "A bug bar for release decisions.",
+        "isCorrect": true,
+        "explanation": "A bug bar defines severity thresholds for defects. The release process uses it to decide which defects require resolution or explicit disposition.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "A threat model's trust boundaries.",
+        "isCorrect": false,
+        "explanation": "A trust boundary describes where assumptions about trust change. It is useful for modeling risk but provides no defect release threshold by itself.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "A build pipeline checkpoint with no severity criteria.",
+        "isCorrect": false,
+        "explanation": "A pipeline checkpoint can enforce a bug bar. Without severity criteria it does not supply the rule used to accept or block defects.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "A bug bar defines criteria for release-blocking defects. A release gate can enforce those criteria and capture any authorized exceptions.",
+      "managerMindsetTip": "Record who can accept exceptions and what evidence is needed before a release proceeds.",
+      "studyFocusDirective": "Create a severity threshold for a sample release and classify three unresolved findings against it.",
+      "keyTakeaway": "A bug bar sets the defect severity threshold used for release decisions.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 8, question 54, PDF page 308 (adapted)"
+        },
+        {
+          "source": "Microsoft Security Development Lifecycle",
+          "section": "SDL Security Bug Bar (Sample)"
+        },
+        {
+          "source": "NIST SP 800-218",
+          "section": "PO.4 Define and Use Criteria for Software Security Checks"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.3-q003",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.3",
+    "subdomainName": "Assess the Effectiveness of Software Security",
+    "topicId": "8.3.1",
+    "topicName": "Software Assurance Maturity Model (SAMM / BSIMM), Acceptance Testing",
+    "cognitiveLevel": "apply",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "OWASP SAMM",
+      "Software assurance maturity",
+      "Business functions"
+    ],
+    "keyTerms": [
+      "OWASP SAMM",
+      "Software assurance maturity",
+      "Business functions"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "An organization is organizing a software assurance maturity assessment using OWASP SAMM's business functions. Which set contains all five functions at the correct level?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Governance, Design, Implementation, Verification, Operations.",
+        "isCorrect": true,
+        "explanation": "These are the five business functions that organize SAMM's practices across software assurance activities.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Governance, Threat Assessment, Implementation, Verification, Operations.",
+        "isCorrect": false,
+        "explanation": "Threat Assessment is a practice within the Design business function. It does not replace Design in the five-function structure.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Strategy, Architecture, Defect Management, Requirements, Incident Management.",
+        "isCorrect": false,
+        "explanation": "These labels refer to narrower activities or concepts. The model organizes its assessment around broader business functions.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Policy and Compliance, Secure Build, Secure Deployment, Security Testing, Environment Management.",
+        "isCorrect": false,
+        "explanation": "These are examples of practices within the model. The business functions form the next level up in the assessment hierarchy.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "OWASP SAMM organizes practices under Governance, Design, Implementation, Verification, and Operations. Using those functions helps a team assess maturity across the whole development organization.",
+      "managerMindsetTip": "Assess practices in all five functions so the improvement plan covers governance and operations as well as testing.",
+      "studyFocusDirective": "Map threat assessment, secure deployment, and incident management to their SAMM business functions.",
+      "keyTakeaway": "OWASP SAMM groups its practices under five software assurance business functions.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 8, question 77, PDF page 313 (adapted)"
+        },
+        {
+          "source": "OWASP Software Assurance Maturity Model",
+          "section": "The SAMM Model and its Business Functions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d8-s8.4-q002",
+    "version": 1,
+    "domainId": "dom-8",
+    "subdomainId": "8.4",
+    "subdomainName": "Assess Security Impact of Acquired Software",
+    "topicId": "8.4.1",
+    "topicName": "COTS, SaaS, Open-Source Libraries, SBOM, Supply Chain Tampering",
+    "cognitiveLevel": "evaluate",
+    "perspective": "risk_advisor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Reusable components",
+      "Component validation",
+      "Dependency review"
+    ],
+    "keyTerms": [
+      "Reusable components",
+      "Component validation",
+      "Dependency review"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A developer proposes reusing a tested library from an older product in a new application with different data and network boundaries. What should the development manager require before approving reuse?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Reject every previously used component as inherently unsafe.",
+        "isCorrect": false,
+        "explanation": "Reuse can reduce new development and may benefit from established testing. A blanket ban ignores the evidence available for the particular component.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "B",
+        "text": "Rely on the earlier release's approval because the library's code is unchanged.",
+        "isCorrect": false,
+        "explanation": "Earlier approval provides evidence for the old environment. New inputs, privileges, dependencies, or boundaries can change the risk.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Evaluate the library in the new context and test it against the new application's requirements.",
+        "isCorrect": true,
+        "explanation": "Review provenance and maintenance, then check the library against the new system's requirements and test its integration with the other components.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Approve it if the previous product passed a functional demonstration.",
+        "isCorrect": false,
+        "explanation": "A prior demonstration shows selected functions worked in an earlier context. It says little about broader security requirements or the new integration.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Evaluate reused components for both their own assurance and their fit in the new application. Prior testing can inform the review, while the new environment still needs integration and security evidence.",
+      "managerMindsetTip": "Make ownership for keeping the reused component supported and updated explicit.",
+      "studyFocusDirective": "Draft an acceptance checklist for a reused library covering provenance, support, context, and integration tests.",
+      "keyTakeaway": "Evaluate and test reused components in the context where they will run.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 8, question 79, PDF page 314 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-218",
+          "section": "PW.4 Reuse Existing, Well-Secured Software When Feasible"
+        }
+      ]
+    }
+  }
+]

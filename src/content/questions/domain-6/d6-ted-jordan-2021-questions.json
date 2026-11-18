@@ -1,0 +1,396 @@
+[
+  {
+    "id": "cissp-d6-s6.5-q015",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.5",
+    "subdomainName": "Conduct or Facilitate Security Audits",
+    "topicId": "6.5.1",
+    "topicName": "SOC 1 (Type I/II), SOC 2 (Type I/II), SOC 3, ISO 27001 Audits",
+    "cognitiveLevel": "evaluate",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "SOC 2 Type 2",
+      "Operating effectiveness",
+      "SOC 1 and SOC 3"
+    ],
+    "keyTerms": [
+      "SOC 2 Type 2",
+      "Operating effectiveness",
+      "SOC 1 and SOC 3"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A vendor's customer needs a detailed auditor report with tests and results showing whether the vendor's security controls operated effectively over the previous year. Which report best meets the requirement?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "SOC 2 Type 1.",
+        "isCorrect": false,
+        "explanation": "SOC 2 Type 1 addresses the system description and suitability of control design as of a specified date. It does not include operating effectiveness over a period.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "SOC 2 Type 2.",
+        "isCorrect": true,
+        "explanation": "SOC 2 Type 2 addresses operating effectiveness over the covered period and includes the auditor's tests of controls and their results.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "SOC 1 Type 2.",
+        "isCorrect": false,
+        "explanation": "SOC 1 Type 2 addresses controls relevant to user entities' financial reporting. The stated need concerns security under the trust services criteria.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "SOC 3 general-use report.",
+        "isCorrect": false,
+        "explanation": "SOC 3 provides general-use assurance regarding applicable trust services criteria. It omits the detailed control tests and results the customer requires.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Choose SOC 2 Type 2 when interested users need detailed evidence of how in-scope controls operated over a period. Confirm the system, criteria, period, and exceptions in the report.",
+      "managerMindsetTip": "Match the requested evidence to the report's scope, period and level of detail.",
+      "studyFocusDirective": "Compare SOC 1, SOC 2 Type 1, SOC 2 Type 2, and SOC 3 for a service-provider review.",
+      "keyTakeaway": "SOC 2 Type 2 reports on operating effectiveness over a period and includes tests and results.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 6, question 18, PDF page 227 (adapted)"
+        },
+        {
+          "source": "AICPA SOC Suite of Services",
+          "section": "Illustrative SOC 2 Type 2 and SOC 3 reports"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.2-q020",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.2",
+    "subdomainName": "Conduct Security Control Testing",
+    "topicId": "6.2.2",
+    "topicName": "SAST, DAST, IAST, SCA, Fuzzing, Code Review",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Regression testing",
+      "Defect recurrence",
+      "Release testing"
+    ],
+    "keyTerms": [
+      "Regression testing",
+      "Defect recurrence",
+      "Release testing"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A patch fixed an authorization defect. A later release fixes a separate problem and passes its new feature tests, but reintroduces the authorization defect. Which testing objective would have detected the recurrence?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Acceptance testing limited to the new requirement.",
+        "isCorrect": false,
+        "explanation": "Acceptance tests for the newly addressed requirement may pass while previously verified behavior fails. A test for the older scenario is needed.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "Regression testing of the previously fixed authorization behavior.",
+        "isCorrect": true,
+        "explanation": "Regression testing checks whether a change has broken behavior that previously worked. Re-running the authorization test can detect the recurrence.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Performance testing under peak traffic.",
+        "isCorrect": false,
+        "explanation": "Performance tests measure capacity or response under load. They do not demonstrate the continued correctness of the earlier authorization fix.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Unit testing only the newly written component.",
+        "isCorrect": false,
+        "explanation": "A unit test can be a regression test when it covers old behavior. Testing only the new component does not verify the scenario that was reintroduced.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "A regression suite checks existing behavior after changes. Turn the verified behavior from a fixed defect into a repeatable release test.",
+      "managerMindsetTip": "Maintain test cases for important controls even when a release is intended to change unrelated functionality.",
+      "studyFocusDirective": "Write a regression assertion for the prior authorization bug and choose the release stage where it should run.",
+      "keyTakeaway": "Regression testing detects breakage of previously working behavior.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 6, question 58, PDF page 237 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-218",
+          "section": "PW.8 Test Executable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.3-q001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.3",
+    "subdomainName": "Collect Security Process Data",
+    "topicId": "6.3.1",
+    "topicName": "Account Management Reviews, KPIs/KRIs, Backup Verification",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Backup verification",
+      "Restore testing",
+      "Recovery evidence"
+    ],
+    "keyTerms": [
+      "Backup verification",
+      "Restore testing",
+      "Recovery evidence"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "Backup jobs have reported success for several weeks. When a disk fails, the recovery team discovers that no usable data can be restored from the latest backup. Which assurance activity would have provided the strongest evidence before the failure?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Checking that the production storage array had enough disk space.",
+        "isCorrect": false,
+        "explanation": "Production storage capacity can affect operations. It does not prove that a backup contains readable recovery data.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "B",
+        "text": "Performing and validating a representative restore from the backup.",
+        "isCorrect": true,
+        "explanation": "A representative restore checks that the team can read the backup and recover usable data, and provides evidence beyond a successful job status.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Confirming that the media had sufficient capacity.",
+        "isCorrect": false,
+        "explanation": "Capacity may be needed for a complete backup. It cannot establish readability, data integrity, or the team's ability to restore.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "D",
+        "text": "Enabling compression and encryption on the backup job.",
+        "isCorrect": false,
+        "explanation": "Encryption protects confidentiality and compression saves space. Both can be enabled while a backup still fails to restore.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Backup verification needs evidence of recoverability. Restore representative data in a controlled environment and confirm the result against expected integrity and recovery requirements.",
+      "managerMindsetTip": "Review restoration results and elapsed time alongside successful backup job counts.",
+      "studyFocusDirective": "Define a test restore and document checks for availability, integrity, and recovery time.",
+      "keyTakeaway": "A successful backup job is strongest when supported by a validated restore.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 6, question 83, PDF page 242 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CP-9(1) Testing for Reliability and Integrity and CP-9(2) Test Restoration Using Sampling"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.1-q004",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.1",
+    "subdomainName": "Design and Validate Assessment, Test, and Audit Strategies",
+    "topicId": "6.1.1",
+    "topicName": "Internal vs. External vs. Third-Party Assessments",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Internal audit",
+      "Independent assessment",
+      "Organizational knowledge"
+    ],
+    "keyTerms": [
+      "Internal audit",
+      "Independent assessment",
+      "Organizational knowledge"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A company must choose between its independent internal audit team and a third-party auditor for an optional assessment. Which potential advantage is most characteristic of using the internal team?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "most"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "It already understands the company's systems, personnel, and business processes.",
+        "isCorrect": true,
+        "explanation": "An internal team can draw on familiarity with the company's processes and history. That context can improve scoping and interpretation of evidence.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "It brings a broader view drawn from many unrelated client organizations.",
+        "isCorrect": false,
+        "explanation": "Exposure across many client organizations is more typical of an external practice. Internal auditors are likely to know their own company in greater depth.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "It is institutionally independent of the company it audits.",
+        "isCorrect": false,
+        "explanation": "An internal audit function can be independent of the work under review. It remains inside the organization, unlike a third party.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Its report automatically satisfies all external attestation requirements.",
+        "isCorrect": false,
+        "explanation": "External assurance requirements depend on the purpose and applicable rules. An internal report does not automatically fulfill a third-party attestation requirement.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "Internal auditing can use deeper organizational knowledge. Third-party auditing may provide more organizational independence or meet a specific external requirement.",
+      "managerMindsetTip": "Decide who will rely on the report and what level of independence they require.",
+      "studyFocusDirective": "Compare internal and external assessments by scope, independence, company knowledge, and intended audience.",
+      "keyTakeaway": "Internal auditors can bring deep organizational context to an assessment.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 6, question 97, PDF page 246 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "CA-2 and CA-2(1) Independent Assessors"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d6-s6.4-q001",
+    "version": 1,
+    "domainId": "dom-6",
+    "subdomainId": "6.4",
+    "subdomainName": "Analyze Test Output and Generate Report",
+    "topicId": "6.4.1",
+    "topicName": "False Positives vs. False Negatives, CVSS Prioritization",
+    "cognitiveLevel": "evaluate",
+    "perspective": "compliance_auditor",
+    "questionStyle": "first_action",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Audit reporting",
+      "Documented findings",
+      "Traceable evidence"
+    ],
+    "keyTerms": [
+      "Audit reporting",
+      "Documented findings",
+      "Traceable evidence"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "An internal auditor has completed fieldwork and reviewed the supporting evidence. No findings require immediate escalation. What should the auditor do next to communicate a defensible conclusion?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Document findings, criteria, evidence, and impact in the audit results.",
+        "isCorrect": true,
+        "explanation": "Documenting the connection between criteria, observations, evidence, and impact gives reviewers a traceable basis for the conclusions.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Send management an informal list of suspected problems before documenting the evidence.",
+        "isCorrect": false,
+        "explanation": "Communication is important, but routine findings need clear documentation and supporting evidence before formal communication. The stem rules out urgent escalation.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "C",
+        "text": "Choose the objectives and testing boundaries for the first time.",
+        "isCorrect": false,
+        "explanation": "Objectives and boundaries are planning work. They should have governed evidence collection and fieldwork.",
+        "trapType": "wrong_lifecycle_phase"
+      },
+      {
+        "id": "D",
+        "text": "Select the audit team that should have performed fieldwork.",
+        "isCorrect": false,
+        "explanation": "Selecting the audit team is a planning step. After fieldwork, the immediate task is to document the evaluated results.",
+        "trapType": "wrong_lifecycle_phase"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "After fieldwork, document what was assessed, which criteria applied, what evidence was gathered, and what the evidence supports. A report enables management to respond to specific findings.",
+      "managerMindsetTip": "Require each finding to be traceable to evidence and the criterion that was evaluated.",
+      "studyFocusDirective": "Write an audit finding with a criterion, observed condition, evidence, business impact, and proposed action.",
+      "keyTakeaway": "A defensible audit conclusion ties findings to criteria and evidence.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 6, question 100, PDF page 246 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-115",
+          "section": "Chapter 8, Post-Testing Activities and Reporting"
+        }
+      ]
+    }
+  }
+]

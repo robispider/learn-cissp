@@ -1,0 +1,394 @@
+[
+  {
+    "id": "cissp-d5-s5.2-q069",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.2",
+    "subdomainName": "Identification and Authentication of People, Devices, and Services",
+    "topicId": "5.2.2",
+    "topicName": "Biometrics (FAR/CER/FRR, Crossover Error Rate)",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Crossover error rate",
+      "False acceptance rate",
+      "False rejection rate"
+    ],
+    "keyTerms": [
+      "Crossover error rate",
+      "False acceptance rate",
+      "False rejection rate"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "Two biometric readers are evaluated on the same dataset under the same conditions. Reader A has a crossover error rate of 3.5% and reader B has a crossover error rate of 3.1%. What conclusion follows from these results?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Reader A has the lower error rate where its false acceptance and false rejection rates are equal.",
+        "isCorrect": false,
+        "explanation": "A's balanced error rate is 3.5%, which is higher than B's 3.1% on the same test.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Reader B has the lower error rate where its false acceptance and false rejection rates are equal.",
+        "isCorrect": true,
+        "explanation": "At the crossover point, false acceptance and false rejection are equal. B's errors are lower at its crossover under the stated test conditions.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Combining the readers guarantees lower error rates in production.",
+        "isCorrect": false,
+        "explanation": "Combining readers changes the decision logic and can shift the errors in either direction. The two individual CERs do not guarantee the combined result.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "D",
+        "text": "The readings establish that whichever reader costs less is better at every threshold.",
+        "isCorrect": false,
+        "explanation": "CER compares one point on each reader's error curve. Cost is a separate consideration and the CER values cannot establish performance at every operating threshold.",
+        "trapType": "extreme_absolutist"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "When measured under comparable conditions, lower CER indicates a lower balanced error rate. A deployment may choose a different operating threshold based on its tolerance for false acceptance and rejection.",
+      "managerMindsetTip": "Use the expected operating threshold and deployment conditions when turning a benchmark into a procurement decision.",
+      "studyFocusDirective": "Sketch false acceptance and false rejection curves and locate the equal-error point.",
+      "keyTakeaway": "A lower CER means fewer errors at the crossover point under comparable test conditions.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 5, question 24, PDF page 194 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 5, Biometric identification and authentication"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.2-q070",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.2",
+    "subdomainName": "Identification and Authentication of People, Devices, and Services",
+    "topicId": "5.2.1",
+    "topicName": "MFA Factors (Something You Know, Have, Are, Somewhere You Are)",
+    "cognitiveLevel": "understand",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Time-based one-time password",
+      "Possession factor",
+      "Authenticator"
+    ],
+    "keyTerms": [
+      "Time-based one-time password",
+      "Possession factor",
+      "Authenticator"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A user has an authenticator synchronized with the verifier. It uses time and a shared secret to produce a short value the user submits after entering a password. What does the authenticator display?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A time-based one-time password.",
+        "isCorrect": true,
+        "explanation": "A TOTP authenticator derives a short code from a shared secret and the current time step. The code is accepted only according to the verifier's time window and reuse rules.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "The current time as the authentication credential.",
+        "isCorrect": false,
+        "explanation": "Time is an input to the derivation. The displayed authenticator output is a code computed with the shared secret.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "The current date as the authentication credential.",
+        "isCorrect": false,
+        "explanation": "A calendar date can contribute to the notion of time. The verifier checks the output of the OTP algorithm using the configured time step.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "The user's long-term password.",
+        "isCorrect": false,
+        "explanation": "The user enters a long-term knowledge factor separately. The authenticator supplies a short-lived code demonstrating possession of the enrolled authenticator.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "A time-based token supplies a one-time code derived from a secret and a time step. It can accompany a separate password as a possession factor.",
+      "managerMindsetTip": "Check that authenticator enrollment and recovery preserve the independence of the two factors.",
+      "studyFocusDirective": "Compare what a verifier checks for a password, an event-based OTP, and a time-based OTP.",
+      "keyTakeaway": "A synchronized time-based token displays a time-based one-time password.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 5, question 28, PDF page 195 (adapted)"
+        },
+        {
+          "source": "IETF RFC 6238",
+          "section": "Section 4, TOTP Algorithm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.5-q005",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.5",
+    "subdomainName": "Manage the Identity and Access Provisioning Lifecycle",
+    "topicId": "5.5.1",
+    "topicName": "Provisioning, Onboarding, Role Changes, Deprovisioning, Access Reviews",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Deprovisioning",
+      "Offboarding",
+      "Access revocation"
+    ],
+    "keyTerms": [
+      "Deprovisioning",
+      "Offboarding",
+      "Access revocation"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A former employee can still sign in to a company application months after leaving. Which control would best prevent that access while preserving any business records tied to the account?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Disable remote sign-in while leaving local sign-in enabled.",
+        "isCorrect": false,
+        "explanation": "Disabling one sign-in path leaves other access paths open. Offboarding should remove the departed person's authorization across applicable services.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "Disable the account and revoke its access as part of offboarding.",
+        "isCorrect": true,
+        "explanation": "Offboarding can disable sign-in and revoke credentials, sessions, and entitlements while transferring or retaining business records under policy.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Lock the account after three failed password attempts.",
+        "isCorrect": false,
+        "explanation": "A lockout threshold responds to failed authentication. The former employee could still authenticate with a valid credential.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "Require regular password changes for the account.",
+        "isCorrect": false,
+        "explanation": "Changing passwords is a credential maintenance task. The underlying account and authorization would still be present.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Deprovisioning removes access when the business relationship ends. Records needed for operations or retention can be preserved while the former user's access is revoked.",
+      "managerMindsetTip": "Tie the termination event to verifiable revocation across applications, tokens, and groups.",
+      "studyFocusDirective": "Design an offboarding check that reconciles the accounts disabled, access removed, and records transferred.",
+      "keyTakeaway": "Revoke access promptly at offboarding while retaining business records as required.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 5, question 47, PDF page 199 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "AC-2 Account Management and PS-4 Personnel Termination"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.3-q036",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.3",
+    "subdomainName": "Federated Identity with a Third-Party Service",
+    "topicId": "5.3.1",
+    "topicName": "SAML 2.0, OAuth 2.0, OpenID Connect (OIDC)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "OAuth 2.0",
+      "Delegated authorization",
+      "Scopes"
+    ],
+    "keyTerms": [
+      "OAuth 2.0",
+      "Delegated authorization",
+      "Scopes"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A CRM needs permission to read a user's address book from a different provider. The user approves contacts-only access without giving the CRM the provider password. Which framework is designed for this?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A certificate registration authority.",
+        "isCorrect": false,
+        "explanation": "A registration authority handles identity verification for certificate issuance. It does not grant scoped access to the user's account resources.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "OAuth 2.0.",
+        "isCorrect": true,
+        "explanation": "OAuth 2.0 supports delegated access. The client can receive an access token limited to the permissions granted for the address book.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "A Kerberos key distribution center.",
+        "isCorrect": false,
+        "explanation": "A Kerberos KDC issues tickets within its authentication architecture. It is separate from the cross-service delegated authorization described.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A ticket-granting ticket.",
+        "isCorrect": false,
+        "explanation": "A Kerberos ticket-granting ticket helps obtain service tickets. It is not the client authorization mechanism for the provider's contacts API.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "OAuth 2.0 lets a resource owner grant a client limited access to protected resources through an authorization server. Scope restricts the permitted actions.",
+      "managerMindsetTip": "Ask what authority the client receives and whether it is limited to the resource it needs.",
+      "studyFocusDirective": "Label the resource owner, client, authorization server, and resource server in the contacts example.",
+      "keyTakeaway": "OAuth 2.0 delegates scoped access to a resource without sharing the user's password.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 5, question 67, PDF page 204 (adapted)"
+        },
+        {
+          "source": "IETF RFC 6749",
+          "section": "Sections 1.1, 1.4, and 3.3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d5-s5.4-q038",
+    "version": 1,
+    "domainId": "dom-5",
+    "subdomainId": "5.4",
+    "subdomainName": "Implement and Manage Authorization Mechanisms",
+    "topicId": "5.4.1",
+    "topicName": "DAC, MAC, RBAC, ABAC, Rule-Based, Risk-Based Access Control",
+    "cognitiveLevel": "analyze",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Hierarchical RBAC",
+      "Role inheritance",
+      "Permissions"
+    ],
+    "keyTerms": [
+      "Hierarchical RBAC",
+      "Role inheritance",
+      "Permissions"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "In an access system, the senior payroll role inherits the read permissions of the payroll clerk role and adds approval permissions. What kind of role-based access control supports this relationship?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "An unrestricted superuser account.",
+        "isCorrect": false,
+        "explanation": "A superuser has broad privileges by design. The scenario describes controlled inheritance between two business roles.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Flat RBAC with independent role assignments.",
+        "isCorrect": false,
+        "explanation": "Flat RBAC can assign roles and permissions independently. It does not express the inheritance relationship described.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Dynamic separation of duties in a session.",
+        "isCorrect": false,
+        "explanation": "Dynamic separation of duties constrains which roles can be activated together. The scenario concerns how one role obtains another role's permissions.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Hierarchical RBAC.",
+        "isCorrect": true,
+        "explanation": "Hierarchical RBAC defines role relationships that enable a senior role to inherit permissions from a junior role.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "A role hierarchy models inheritance between roles. Review inherited permissions when defining promotion, approval, and separation-of-duties rules.",
+      "managerMindsetTip": "Include inherited permissions when reviewing a role's effective access.",
+      "studyFocusDirective": "Draw junior and senior payroll roles and mark the permissions the senior role inherits and adds.",
+      "keyTakeaway": "Hierarchical RBAC supports permission inheritance among roles.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Practice Exam 2, question 42, PDF page 369 (adapted)"
+        },
+        {
+          "source": "NIST Role-Based Access Control Model",
+          "section": "Hierarchical RBAC"
+        }
+      ]
+    }
+  }
+]

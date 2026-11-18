@@ -1,0 +1,398 @@
+[
+  {
+    "id": "cissp-d2-s2.4-q009",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.1",
+    "topicName": "Record Retention Schedules",
+    "cognitiveLevel": "evaluate",
+    "perspective": "manager_governance",
+    "questionStyle": "best_answer",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Retention schedule",
+      "Legal holds",
+      "Defensible disposition"
+    ],
+    "keyTerms": [
+      "Retention schedule",
+      "Legal holds",
+      "Defensible disposition"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "An archivist finds old access logs on retired media. The records are past their retention period, and the records team has confirmed that no preservation hold applies. Which action best supports defensible disposition?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Retain the logs indefinitely in an offline archive.",
+        "isCorrect": false,
+        "explanation": "Indefinite retention ignores the approved disposition schedule and continues storing information whose retention period has ended.",
+        "trapType": "extreme_absolutist"
+      },
+      {
+        "id": "B",
+        "text": "Delete the index entries so the files are no longer listed.",
+        "isCorrect": false,
+        "explanation": "Deleting an index changes discoverability. It supplies neither media sanitization nor a record that approved disposition was completed.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "C",
+        "text": "Apply the approved media sanitization or destruction method and record its completion.",
+        "isCorrect": true,
+        "explanation": "Approved disposition follows the retention policy, applies a method appropriate to the media and data, and documents what was completed.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Move the logs to encrypted storage and keep them for future requests.",
+        "isCorrect": false,
+        "explanation": "Encryption protects retained data. Moving and keeping the logs extends retention after the approved disposition conditions are met.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Records past retention can be disposed of when preservation obligations have been checked. Apply the authorized method and retain evidence of disposition according to policy.",
+      "managerMindsetTip": "Have the records owner confirm the retention decision and how compliance will be evidenced.",
+      "studyFocusDirective": "Outline a disposition record that links the schedule, hold check, approved method, and completion evidence.",
+      "keyTakeaway": "Defensible disposition ties actual disposal to an approved schedule and documented authorization.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 2, question 65, PDF page 90 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-88 Rev. 2",
+          "section": "Sanitization program and documentation"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "SI-12 Information Management and Retention"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.4-q010",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.4",
+    "subdomainName": "Asset Retention & End-of-Life Media Sanitization",
+    "topicId": "2.4.2",
+    "topicName": "Media Sanitization (NIST SP 800-88: Clear, Purge, Destroy, Cryptographic Erase)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Media sanitization",
+      "Clear",
+      "Internal reuse"
+    ],
+    "keyTerms": [
+      "Media sanitization",
+      "Clear",
+      "Internal reuse"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A magnetic drive will be reused for another project in the same controlled environment. The approved method sanitizes its user-addressable storage and protects against ordinary recovery through its standard interface. Which NIST category applies?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "File deletion",
+        "isCorrect": false,
+        "explanation": "File deletion generally changes filesystem metadata. Clearing treats the user-addressable storage according to an approved method.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Purge",
+        "isCorrect": false,
+        "explanation": "Purging is designed to resist more advanced recovery methods. The question describes the assurance provided by clearing through standard access paths.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Clear",
+        "isCorrect": true,
+        "explanation": "Clear uses a technique that covers user-addressable storage and protects against simple recovery using normal interfaces, consistent with the stated requirement.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "Destroy",
+        "isCorrect": false,
+        "explanation": "Destroy renders the media unusable for storage. Reusing the drive requires a sanitization category compatible with continued operation.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "Clear, purge, and destroy describe different sanitization outcomes. Choose the approved method based on media type, the sensitivity of the data, and where the media goes next.",
+      "managerMindsetTip": "Treat continued use of the device and the required resistance to recovery as separate decisions.",
+      "studyFocusDirective": "Compare the required outcomes for internal reuse, external transfer, and physical disposal.",
+      "keyTakeaway": "Clearing protects user-addressable data against ordinary recovery and can permit reuse.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 2, question 72, PDF page 91 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-88 Rev. 2",
+          "section": "Sanitization methods and assurance"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.2-q009",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.2",
+    "subdomainName": "Information and Asset Ownership",
+    "topicId": "2.2.1",
+    "topicName": "Data Owner vs. Data Controller vs. Data Processor",
+    "cognitiveLevel": "analyze",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "GDPR controller",
+      "GDPR processor",
+      "Documented instructions"
+    ],
+    "keyTerms": [
+      "GDPR controller",
+      "GDPR processor",
+      "Documented instructions"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A retailer selects recipients and decides why to send a customer mailing. Its fulfillment vendor receives the addresses and processes them solely on the retailer's documented instructions. Under GDPR, what is the vendor's role for that mailing?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Controller",
+        "isCorrect": false,
+        "explanation": "The retailer determines the purpose and essential means for the mailing. The vendor acts on the retailer's instructions for that activity.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Processor",
+        "isCorrect": true,
+        "explanation": "A processor handles personal data on a controller's behalf. The vendor fulfills the retailer's defined purpose under documented instructions.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Custodian",
+        "isCorrect": false,
+        "explanation": "Custodian describes an operational responsibility for protecting data. The GDPR role specified by this processing relationship is processor.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Steward",
+        "isCorrect": false,
+        "explanation": "Stewardship is an organizational data-governance role. It does not describe the vendor's legal relationship to the controller for this mailing.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "GDPR distinguishes the party directing the purposes and means from the party carrying out processing on its behalf. The role is determined for the specific processing activity.",
+      "managerMindsetTip": "Check actual decision rights and instructions when mapping vendor roles.",
+      "studyFocusDirective": "Map a mailing campaign to the data subject, controller, and processor and identify the instruction handoff.",
+      "keyTakeaway": "A GDPR processor handles personal data on behalf of a controller.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Practice Exam 2, question 78, PDF page 377 (adapted)"
+        },
+        {
+          "source": "Regulation (EU) 2016/679",
+          "section": "Articles 4(7), 4(8), and 28"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.5-q001",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.5",
+    "subdomainName": "Data Security Controls & States of Data",
+    "topicId": "2.5.2",
+    "topicName": "DLP (Network vs. Endpoint) & CASB",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Cloud access security broker",
+      "Cloud policy enforcement",
+      "Data visibility"
+    ],
+    "keyTerms": [
+      "Cloud access security broker",
+      "Cloud policy enforcement",
+      "Data visibility"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A security team needs consistent visibility and sharing-policy enforcement across several approved SaaS applications. Which capability is designed specifically to mediate that cloud service use?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A single public cloud hosting contract.",
+        "isCorrect": false,
+        "explanation": "A hosting contract can define terms for one provider. It does not supply mediation and policy enforcement across separate SaaS applications.",
+        "trapType": "incomplete_partial_answer"
+      },
+      {
+        "id": "B",
+        "text": "A cloud access security broker.",
+        "isCorrect": true,
+        "explanation": "A CASB can apply organizational security policies to cloud application use through integrations such as proxies or provider APIs.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "An additional SaaS application.",
+        "isCorrect": false,
+        "explanation": "SaaS is an application delivery model. Adding another application does not by itself provide cross-service controls.",
+        "trapType": "solves_wrong_problem"
+      },
+      {
+        "id": "D",
+        "text": "A private cloud for unrelated workloads.",
+        "isCorrect": false,
+        "explanation": "Hosting other workloads in a private cloud leaves the existing SaaS sharing activity outside that environment.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "A CASB supplies visibility or policy enforcement for cloud service use. Its supported applications and integration modes determine which controls are available.",
+      "managerMindsetTip": "Define the cloud sharing policies and evidence requirements before selecting the broker.",
+      "studyFocusDirective": "List which cloud sharing actions an API-based or proxy-based integration can observe or control.",
+      "keyTakeaway": "A CASB mediates and enforces policies for cloud application use.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 2, question 85, PDF page 94 (adapted)"
+        },
+        {
+          "source": "ISC2 CISSP Certification Exam Outline",
+          "section": "Domain 2, Data security controls and protection methods"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d2-s2.5-q002",
+    "version": 1,
+    "domainId": "dom-2",
+    "subdomainId": "2.5",
+    "subdomainName": "Data Security Controls & States of Data",
+    "topicId": "2.5.1",
+    "topicName": "Data at Rest, Data in Transit, Data in Use",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Data in transit",
+      "Data at rest",
+      "VPN encryption"
+    ],
+    "keyTerms": [
+      "Data in transit",
+      "Data at rest",
+      "VPN encryption"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "An employee downloads a payroll report through an encrypted tunnel from headquarters. Which data state is directly protected while the report travels between the VPN endpoints?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Data in transit",
+        "isCorrect": true,
+        "explanation": "The VPN protects the data as network traffic passes through the tunnel between its endpoints. That is the in-transit state.",
+        "trapType": null
+      },
+      {
+        "id": "B",
+        "text": "Data at rest",
+        "isCorrect": false,
+        "explanation": "Data at rest is stored on media. File or disk encryption addresses storage exposure after the report has been saved.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "Data in use",
+        "isCorrect": false,
+        "explanation": "Data in use is being processed by an application. Tunnel encryption does not protect the plaintext being actively handled by an authorized endpoint.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Archived data",
+        "isCorrect": false,
+        "explanation": "Archives are stored copies and are treated as data at rest. Download protection does not establish the controls for an archived file.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "A",
+      "summary": "VPN encryption provides in-transit protection for traffic carried across the tunnel. Endpoint storage and processing have their own exposure and security requirements.",
+      "managerMindsetTip": "Follow a sensitive file through transfer, storage, and processing to assign controls to each state.",
+      "studyFocusDirective": "Name one control for each data state as a downloaded report moves through an employee's workflow.",
+      "keyTakeaway": "A VPN protects data in transit within the tunnel.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 2, question 67, PDF page 90 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "SC-8 Transmission Confidentiality and Integrity and SC-28 Protection of Information at Rest"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,472 @@
+[
+  {
+    "id": "cissp-d3-s3.4-q051",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.4",
+    "subdomainName": "Security Capabilities of Information Systems",
+    "topicId": "3.4.1",
+    "topicName": "Memory Protection, Protection Rings, TPM, HSM, Reference Monitor",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Trusted Platform Module",
+      "Measured boot",
+      "Key sealing"
+    ],
+    "keyTerms": [
+      "Trusted Platform Module",
+      "Measured boot",
+      "Key sealing"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A workstation must measure its boot components and make a disk-unlock secret available only when the approved boot measurements are present. Which component provides the platform capability for this?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "A remote hardware security module shared by applications.",
+        "isCorrect": false,
+        "explanation": "A shared HSM can protect cryptographic keys. The boot measurements and sealed-object behavior in this scenario depend on the platform's trusted module.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "The Trusted Computing Group standards organization.",
+        "isCorrect": false,
+        "explanation": "The Trusted Computing Group publishes the TPM specifications. The organization itself is not a component that records measurements or releases secrets.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "The master boot record on the workstation.",
+        "isCorrect": false,
+        "explanation": "A master boot record may contain boot code and can be measured. It does not supply hardware-backed measurement registers or key sealing.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "A Trusted Platform Module.",
+        "isCorrect": true,
+        "explanation": "A TPM provides platform configuration registers that hold boot measurements. Authorization policy can tie use of a protected secret to expected register values.",
+        "trapType": null
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "D",
+      "summary": "A TPM is a platform trust component. It can support measured boot by holding hashes in platform configuration registers and restricting use of protected objects to an approved platform state.",
+      "managerMindsetTip": "Decide whether the requirement is platform state verification or centralized key management for applications.",
+      "studyFocusDirective": "Trace a measured boot from the firmware measurement to the policy that controls release of a disk-unlock secret.",
+      "keyTakeaway": "A TPM can bind use of a secret to measured platform state.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Practice Exam 1, question 4, PDF page 335 (adapted)"
+        },
+        {
+          "source": "Trusted Computing Group TPM 2.0 Library Specification",
+          "section": "Platform configuration registers and policy authorization"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.1-q005",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.1",
+    "subdomainName": "Secure Design Principles",
+    "topicId": "3.1.1",
+    "topicName": "Saltzer & Schroeder Principles",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Fail-secure design",
+      "Fail-open behavior",
+      "Availability tradeoff"
+    ],
+    "keyTerms": [
+      "Fail-secure design",
+      "Fail-open behavior",
+      "Availability tradeoff"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A firewall detects that it can no longer enforce its policy and blocks traffic until a healthy peer takes over. Which failure behavior did the affected firewall use?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Fail over directly without changing forwarding behavior.",
+        "isCorrect": false,
+        "explanation": "Failover concerns how another device assumes service. The question asks what the failed device itself did while policy enforcement was unavailable.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Fail secure by denying traffic during the failure.",
+        "isCorrect": true,
+        "explanation": "The firewall denied traffic when it could no longer apply its policy. That protects the security boundary during the failure.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Fail open by preserving connectivity without enforcement.",
+        "isCorrect": false,
+        "explanation": "Fail open would permit forwarding while normal enforcement was unavailable. The firewall in the scenario blocked traffic.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Continue forwarding using its last valid sessions.",
+        "isCorrect": false,
+        "explanation": "Retaining session state can support availability during some failures. It would leave forwarding active, unlike the stated deny behavior.",
+        "trapType": "incomplete_partial_answer"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Fail-secure behavior preserves the access boundary when normal enforcement fails. Redundancy can restore service while maintaining the same policy.",
+      "managerMindsetTip": "Specify both the failed component's behavior and how an approved alternate restores service.",
+      "studyFocusDirective": "Compare the security and availability implications of fail open, fail secure, and failover.",
+      "keyTakeaway": "A fail-secure firewall denies traffic it can no longer evaluate.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 3, question 33, PDF page 121 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-53 Rev. 5",
+          "section": "SC-7(18) Fail Secure"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.5-q010",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.5",
+    "subdomainName": "Cloud, Virtualization, IoT & Embedded Systems Security",
+    "topicId": "3.5.2",
+    "topicName": "Cloud Shared Responsibility (IaaS, PaaS, SaaS)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "best_answer",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "PaaS",
+      "Cloud shared responsibility",
+      "Managed runtimes"
+    ],
+    "keyTerms": [
+      "PaaS",
+      "Cloud shared responsibility",
+      "Managed runtimes"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A software team wants to deploy its own web application without administering virtual machines, operating systems, or the application runtime. Which cloud service model best fits?",
+    "scenarioContext": null,
+    "highlightKeywords": [
+      "best"
+    ],
+    "options": [
+      {
+        "id": "A",
+        "text": "Software as a service.",
+        "isCorrect": false,
+        "explanation": "SaaS delivers a finished application. The customer uses that application, while this team needs to deploy its own code.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "Platform as a service.",
+        "isCorrect": true,
+        "explanation": "PaaS supplies a provider-managed runtime and deployment platform. The customer controls the application and applicable configuration.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "Infrastructure as a service.",
+        "isCorrect": false,
+        "explanation": "IaaS supplies foundational compute, storage and networking. The customer typically remains responsible for the guest OS and software runtime.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "Network as a service.",
+        "isCorrect": false,
+        "explanation": "Network as a service supplies managed network capabilities. It does not by itself provide a platform for running custom application code.",
+        "trapType": "solves_wrong_problem"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "With PaaS, the provider manages the underlying infrastructure and platform, while the customer deploys its application and manages its data and application settings.",
+      "managerMindsetTip": "Ask who patches the operating system and runtime to locate the boundary of the service model.",
+      "studyFocusDirective": "Build a responsibility matrix for a custom application under SaaS, PaaS, and IaaS.",
+      "keyTakeaway": "PaaS lets customers deploy their own applications on provider-managed platforms.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 3, question 51, PDF page 125 (adapted)"
+        },
+        {
+          "source": "NIST SP 800-145",
+          "section": "Service Models"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.6-q072",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.6",
+    "subdomainName": "Cryptography & Symmetric/Asymmetric Algorithms",
+    "topicId": "3.6.2",
+    "topicName": "Asymmetric Cryptography (RSA, ECC, Diffie-Hellman) & Post-Quantum Crypto",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Public-key encryption",
+      "Recipient private key",
+      "Hybrid encryption"
+    ],
+    "keyTerms": [
+      "Public-key encryption",
+      "Recipient private key",
+      "Hybrid encryption"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A sender encrypts a message for a colleague using a hybrid public-key system. The envelope contains a symmetric content key protected using the recipient's encryption public key. Which key lets the colleague recover the content key?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "The sender's private key.",
+        "isCorrect": false,
+        "explanation": "The sender's private key can generate a sender signature. Recovering the protected content key requires the private key that corresponds to the recipient's encryption public key.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "The recipient's private key.",
+        "isCorrect": true,
+        "explanation": "The recipient's matching private key recovers the symmetric content key. The content key then decrypts the protected message.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "The recipient's public key.",
+        "isCorrect": false,
+        "explanation": "The sender used this public key to protect the content key. The asymmetric design requires the matching private key to perform recovery.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "The sender's public key.",
+        "isCorrect": false,
+        "explanation": "The sender's public key can verify a sender signature. It does not recover a content key encrypted to the recipient.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Hybrid encryption protects the message with a symmetric key and protects that key for the recipient. The recipient uses the matching private key before decrypting the message.",
+      "managerMindsetTip": "Identify whose security property the public-key operation serves before choosing which key belongs in the workflow.",
+      "studyFocusDirective": "Draw separate message confidentiality and signature workflows and label the public and private keys used in each.",
+      "keyTakeaway": "The recipient's private key recovers a content key encrypted to the recipient's public key.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 3, question 55, PDF page 126 (adapted)"
+        },
+        {
+          "source": "IETF RFC 5652",
+          "section": "Section 6, Enveloped-Data Content Type"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.7-q056",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.7",
+    "subdomainName": "PKI, Digital Signatures, Hashing & Key Management",
+    "topicId": "3.7.2",
+    "topicName": "Digital Signatures & Certificates (X.509, CA, CRL, OCSP, Pinning)",
+    "cognitiveLevel": "apply",
+    "perspective": "technical_architect",
+    "questionStyle": "concept_mapping",
+    "difficulty": 2,
+    "difficultyLabel": "intermediate",
+    "estimatedTimeSeconds": 60,
+    "conceptsTested": [
+      "Certificate revocation list",
+      "Certificate status",
+      "X.509"
+    ],
+    "keyTerms": [
+      "Certificate revocation list",
+      "Certificate status",
+      "X.509"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A certificate authority revokes a certificate before its validity period ends. Relying parties download a signed, periodically published list of revoked certificate serial numbers. What is that list called?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "Public key infrastructure.",
+        "isCorrect": false,
+        "explanation": "Public key infrastructure includes authorities, certificates, and mechanisms for relying parties to obtain status information. It is broader than the signed list.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "A certificate authority.",
+        "isCorrect": false,
+        "explanation": "The certificate authority may publish and sign revocation information. It is the entity, while the question asks for the published artifact.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "C",
+        "text": "A certificate revocation list.",
+        "isCorrect": true,
+        "explanation": "A CRL records serial numbers of revoked certificates within its scope and carries a signature so relying parties can verify its authenticity.",
+        "trapType": null
+      },
+      {
+        "id": "D",
+        "text": "A registration authority.",
+        "isCorrect": false,
+        "explanation": "A registration authority can verify applicant identity and handle enrollment or requests. It is separate from the published revocation list.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "C",
+      "summary": "A certificate revocation list lets relying parties check revocation status from a signed publication. Certificate expiration is evaluated using the validity period.",
+      "managerMindsetTip": "Check issuer, applicable scope, and freshness when relying on published certificate status.",
+      "studyFocusDirective": "Compare how a relying party checks expiration, revocation from a CRL, and an OCSP response.",
+      "keyTakeaway": "A CRL communicates revocation before ordinary expiry through a signed list.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 3, question 88, PDF page 134 (adapted)"
+        },
+        {
+          "source": "IETF RFC 5280",
+          "section": "Section 5, CRL and CRL Extensions Profile"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cissp-d3-s3.3-q043",
+    "version": 1,
+    "domainId": "dom-3",
+    "subdomainId": "3.3",
+    "subdomainName": "Select Controls Based Upon Systems Security Requirements",
+    "topicId": "3.3.1",
+    "topicName": "Common Criteria (ISO 15408: TOE, PP, ST, EALs)",
+    "cognitiveLevel": "apply",
+    "perspective": "compliance_auditor",
+    "questionStyle": "concept_mapping",
+    "difficulty": 3,
+    "difficultyLabel": "advanced",
+    "estimatedTimeSeconds": 75,
+    "conceptsTested": [
+      "Common Criteria",
+      "Evaluation assurance level",
+      "EAL4"
+    ],
+    "keyTerms": [
+      "Common Criteria",
+      "Evaluation assurance level",
+      "EAL4"
+    ],
+    "tags": [
+      "ted-jordan-2021"
+    ],
+    "stem": "A procurement specification calls for a Common Criteria evaluation assurance package described as methodically designed, tested, and reviewed. Which assurance level corresponds to that description?",
+    "scenarioContext": null,
+    "highlightKeywords": [],
+    "options": [
+      {
+        "id": "A",
+        "text": "EAL7",
+        "isCorrect": false,
+        "explanation": "EAL7 specifies a higher assurance package involving formally verified design and testing. The quoted procurement description is the EAL4 package.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "B",
+        "text": "EAL4",
+        "isCorrect": true,
+        "explanation": "The Common Criteria describes EAL4 as methodically designed, tested, and reviewed. The package defines a level of evaluation assurance for the target.",
+        "trapType": null
+      },
+      {
+        "id": "C",
+        "text": "EAL2",
+        "isCorrect": false,
+        "explanation": "EAL2 is structurally tested. It requires a lower level of evaluation evidence and rigor than the requested package.",
+        "trapType": "confuses_similar_terms"
+      },
+      {
+        "id": "D",
+        "text": "EAL1",
+        "isCorrect": false,
+        "explanation": "EAL1 is functionally tested. That level does not match the methodical design, testing, and review description.",
+        "trapType": "confuses_similar_terms"
+      }
+    ],
+    "explanation": {
+      "correctOptionId": "B",
+      "summary": "Common Criteria EALs describe assurance packages for evaluating the target against stated requirements. EAL4 corresponds to methodical design, testing, and review.",
+      "managerMindsetTip": "Check the target and Security Target scope along with the assurance package when assessing a product certificate.",
+      "studyFocusDirective": "Match EAL1, EAL2, EAL4, and EAL7 to their package descriptions and explain what the number measures.",
+      "keyTakeaway": "EAL4 identifies the Common Criteria package for methodical design, testing, and review.",
+      "references": [
+        {
+          "source": "Ted Jordan, CISSP (ISC)² Certification Practice Exams and Tests (Packt, 2021)",
+          "section": "Chapter 3, question 53, PDF page 126 (adapted)"
+        },
+        {
+          "source": "Common Criteria CC:2022",
+          "section": "Part 5, Pre-defined Packages of Security Requirements, EAL4"
+        }
+      ]
+    }
+  }
+]
